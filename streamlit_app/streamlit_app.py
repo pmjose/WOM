@@ -1471,7 +1471,6 @@ with st.sidebar:
     st.markdown(dedent(f"""
         <div class="mf-sidebar-logo">
             <img src="{LOGO_URL}" alt="WOM">
-            <div class="mf-sidebar-brand">W<span>OM</span></div>
             <div class="mf-sidebar-tagline">Movil | Fibra | TV</div>
         </div>
     """), unsafe_allow_html=True)
@@ -1497,8 +1496,10 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown(dedent("""
-        <div style="text-align:center; padding: 8px;">
+        <div style="text-align:center; padding: 8px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
             <span class="mf-sidebar-badge">5G</span>
+            <span class="mf-sidebar-badge" style="background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);">Fibra</span>
+            <span class="mf-sidebar-badge" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">Hogar</span>
         </div>
     """), unsafe_allow_html=True)
 
@@ -2624,6 +2625,354 @@ elif selected_menu == "Executive Overview":
                     "Capture +CLP 0.2M monthly incremental revenue.",
                 )
 
+        # ── Mobile Network Insights ─────────────────────────────────────────
+        st.markdown('<div class="eo-title">📱 Mobile Network Insights</div>', unsafe_allow_html=True)
+        
+        mobile_kpi_col1, mobile_kpi_col2, mobile_kpi_col3, mobile_kpi_col4 = st.columns(4)
+        mobile_subscribers = 2_847_000
+        mobile_data_gb = 18.7
+        mobile_arpu = 12850
+        mobile_5g_coverage = 68.4
+        
+        with mobile_kpi_col1:
+            st.markdown(f"""<div style="background: linear-gradient(135deg, #8B5CF615 0%, #8B5CF608 100%); border-left: 4px solid #8B5CF6; border-radius: 0 12px 12px 0; padding: 1rem;">
+                <div style="font-size: 0.75rem; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px;">Mobile Subscribers</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: #1B2A4E;">{mobile_subscribers/1_000_000:.2f}M</div>
+                <div style="font-size: 0.75rem; color: #10B981;">↑ +6.8% YoY</div>
+            </div>""", unsafe_allow_html=True)
+        with mobile_kpi_col2:
+            st.markdown(f"""<div style="background: linear-gradient(135deg, #06B6D415 0%, #06B6D408 100%); border-left: 4px solid #06B6D4; border-radius: 0 12px 12px 0; padding: 1rem;">
+                <div style="font-size: 0.75rem; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px;">Avg Data Usage</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: #1B2A4E;">{mobile_data_gb:.1f} GB</div>
+                <div style="font-size: 0.75rem; color: #10B981;">↑ +22% YoY</div>
+            </div>""", unsafe_allow_html=True)
+        with mobile_kpi_col3:
+            st.markdown(f"""<div style="background: linear-gradient(135deg, #10B98115 0%, #10B98108 100%); border-left: 4px solid #10B981; border-radius: 0 12px 12px 0; padding: 1rem;">
+                <div style="font-size: 0.75rem; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px;">Mobile ARPU</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: #1B2A4E;">CLP {mobile_arpu:,}</div>
+                <div style="font-size: 0.75rem; color: #10B981;">↑ +3.2% QoQ</div>
+            </div>""", unsafe_allow_html=True)
+        with mobile_kpi_col4:
+            st.markdown(f"""<div style="background: linear-gradient(135deg, #F59E0B15 0%, #F59E0B08 100%); border-left: 4px solid #F59E0B; border-radius: 0 12px 12px 0; padding: 1rem;">
+                <div style="font-size: 0.75rem; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px;">5G Coverage</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: #1B2A4E;">{mobile_5g_coverage:.1f}%</div>
+                <div style="font-size: 0.75rem; color: #10B981;">↑ +12pp YoY</div>
+            </div>""", unsafe_allow_html=True)
+
+        mobile_col1, mobile_col2 = st.columns(2)
+        
+        with mobile_col1:
+            st.markdown('<div class="eo-mini-title">Mobile Plan Distribution</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                mobile_plan_df = pd.DataFrame({
+                    'Plan': ['WOM Libre 30GB', 'WOM Libre 50GB', 'WOM Libre Ilimitado', 'WOM Prepago', 'WOM Empresas'],
+                    'Subscribers': [680, 520, 890, 450, 307],
+                    'ARPU': [9900, 12900, 18900, 5500, 24500],
+                })
+                mobile_plan_df['Subscribers_K'] = mobile_plan_df['Subscribers']
+                mobile_plan_bar = (
+                    alt.Chart(mobile_plan_df)
+                    .mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=20)
+                    .encode(
+                        x=alt.X('Subscribers_K:Q', title='Subscribers (K)', axis=alt.Axis(tickCount=5)),
+                        y=alt.Y('Plan:N', sort='-x', title=None),
+                        color=alt.Color(
+                            'Plan:N',
+                            scale=alt.Scale(
+                                domain=['WOM Libre Ilimitado', 'WOM Libre 30GB', 'WOM Libre 50GB', 'WOM Prepago', 'WOM Empresas'],
+                                range=['#8B5CF6', '#A78BFA', '#C4B5FD', '#DDD6FE', '#6D28D9'],
+                            ),
+                            legend=None,
+                        ),
+                        tooltip=[
+                            alt.Tooltip('Plan:N', title='Plan'),
+                            alt.Tooltip('Subscribers_K:Q', title='Subscribers (K)', format=','),
+                            alt.Tooltip('ARPU:Q', title='ARPU (CLP)', format=','),
+                        ],
+                    )
+                )
+                st.altair_chart(style_exec_chart(mobile_plan_bar, height=200), use_container_width=True)
+                top_mobile_plan = mobile_plan_df.loc[mobile_plan_df["Subscribers"].idxmax()]
+                render_ai_recommendation(
+                    "Mobile Plan Mix",
+                    f"{top_mobile_plan['Plan']} leads with {top_mobile_plan['Subscribers']}K subscribers.",
+                    "Promote unlimited plan upgrades with data add-on bundles for heavy users.",
+                    "Increase mobile ARPU by CLP 800 in Q2.",
+                )
+
+        with mobile_col2:
+            st.markdown('<div class="eo-mini-title">Mobile Data Consumption Trend</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                data_trend_df = pd.DataFrame({
+                    'Month': ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+                    'Data_GB': [15.2, 16.1, 16.8, 17.5, 18.1, 18.7],
+                    '5G_Users_K': [420, 485, 550, 620, 695, 780],
+                })
+                data_line = alt.Chart(data_trend_df).mark_line(
+                    point=alt.OverlayMarkDef(filled=True, size=60),
+                    strokeWidth=3,
+                    color='#8B5CF6',
+                ).encode(
+                    x=alt.X('Month:N', title=None, sort=['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb']),
+                    y=alt.Y('Data_GB:Q', title='Avg Data (GB)', scale=alt.Scale(domain=[14, 20])),
+                    tooltip=[alt.Tooltip('Month:N'), alt.Tooltip('Data_GB:Q', title='Avg GB', format='.1f')],
+                )
+                users_bar = alt.Chart(data_trend_df).mark_bar(
+                    opacity=0.3,
+                    color='#06B6D4',
+                    cornerRadiusTopLeft=4,
+                    cornerRadiusTopRight=4,
+                ).encode(
+                    x=alt.X('Month:N', sort=['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb']),
+                    y=alt.Y('5G_Users_K:Q', title='5G Users (K)'),
+                    tooltip=[alt.Tooltip('Month:N'), alt.Tooltip('5G_Users_K:Q', title='5G Users (K)')],
+                )
+                st.altair_chart(
+                    style_exec_chart(
+                        alt.layer(users_bar, data_line).resolve_scale(y='independent'),
+                        height=200,
+                    ),
+                    use_container_width=True,
+                )
+                render_ai_recommendation(
+                    "Data Growth",
+                    f"Mobile data usage grew 23% in 6 months; 5G adoption driving consumption.",
+                    "Accelerate 5G device financing programs to capture high-ARPU users.",
+                    "Add 100K 5G subscribers by Q3 with +CLP 2.1M revenue uplift.",
+                )
+
+        mobile_col3, mobile_col4 = st.columns(2)
+        
+        with mobile_col3:
+            st.markdown('<div class="eo-mini-title">Network Technology Mix</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                tech_df = pd.DataFrame({
+                    'Technology': ['5G', '4G LTE', '3G'],
+                    'Users': [780, 1720, 347],
+                    'Percentage': [27.4, 60.4, 12.2],
+                })
+                tech_donut = alt.Chart(tech_df).mark_arc(innerRadius=50, outerRadius=85, cornerRadius=4).encode(
+                    theta=alt.Theta('Users:Q', stack=True),
+                    color=alt.Color(
+                        'Technology:N',
+                        scale=alt.Scale(domain=['5G', '4G LTE', '3G'], range=['#8B5CF6', '#06B6D4', '#94A3B8']),
+                        legend=alt.Legend(title=None, orient='right'),
+                    ),
+                    tooltip=[
+                        alt.Tooltip('Technology:N'),
+                        alt.Tooltip('Users:Q', title='Users (K)', format=','),
+                        alt.Tooltip('Percentage:Q', title='Share %', format='.1f'),
+                    ],
+                )
+                tech_center = alt.Chart(pd.DataFrame({'text': ['2.85M']})).mark_text(fontSize=18, fontWeight='bold', color='#1B2A4E').encode(text='text:N')
+                st.altair_chart(style_exec_chart(tech_donut + tech_center, height=180), use_container_width=True)
+                render_ai_recommendation(
+                    "Technology Migration",
+                    f"27% of users now on 5G; 3G still at 12% requiring migration.",
+                    "Launch 3G sunset campaign with subsidized 4G/5G device trade-ins.",
+                    "Reduce 3G users by 50% and improve network efficiency.",
+                    level="warning",
+                )
+
+        with mobile_col4:
+            st.markdown('<div class="eo-mini-title">Mobile Churn by Tenure</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                tenure_df = pd.DataFrame({
+                    'Tenure': ['0-6 months', '6-12 months', '1-2 years', '2+ years'],
+                    'Churn_Rate': [4.8, 2.9, 1.8, 0.9],
+                    'Subscribers_K': [380, 520, 890, 1057],
+                })
+                tenure_bar = alt.Chart(tenure_df).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=18).encode(
+                    x=alt.X('Churn_Rate:Q', title='Churn Rate %', scale=alt.Scale(domain=[0, 6])),
+                    y=alt.Y('Tenure:N', sort=['0-6 months', '6-12 months', '1-2 years', '2+ years'], title=None),
+                    color=alt.Color(
+                        'Churn_Rate:Q',
+                        scale=alt.Scale(scheme='orangered', domain=[0.5, 5]),
+                        legend=None,
+                    ),
+                    tooltip=[
+                        alt.Tooltip('Tenure:N'),
+                        alt.Tooltip('Churn_Rate:Q', title='Churn %', format='.1f'),
+                        alt.Tooltip('Subscribers_K:Q', title='Subscribers (K)', format=','),
+                    ],
+                )
+                st.altair_chart(style_exec_chart(tenure_bar, height=180), use_container_width=True)
+                render_ai_recommendation(
+                    "Tenure-Based Churn",
+                    f"New subscribers (0-6mo) show 4.8% churn vs 0.9% for loyal users.",
+                    "Implement 90-day onboarding program with usage milestones and rewards.",
+                    "Reduce early churn by 1.5pp and improve LTV by CLP 45K.",
+                    level="critical",
+                )
+
+        # ── Fibre/Hogar Insights ───────────────────────────────────────────
+        st.markdown('<div class="eo-title">🏠 Fibre Hogar Insights</div>', unsafe_allow_html=True)
+        
+        fibre_kpi_col1, fibre_kpi_col2, fibre_kpi_col3, fibre_kpi_col4 = st.columns(4)
+        fibre_subscribers = 485_000
+        fibre_avg_speed = 412
+        fibre_arpu = 24900
+        fibre_ftth_coverage = 72.3
+        
+        with fibre_kpi_col1:
+            st.markdown(f"""<div style="background: linear-gradient(135deg, #3B82F615 0%, #3B82F608 100%); border-left: 4px solid #3B82F6; border-radius: 0 12px 12px 0; padding: 1rem;">
+                <div style="font-size: 0.75rem; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px;">Fibre Subscribers</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: #1B2A4E;">{fibre_subscribers/1_000:.0f}K</div>
+                <div style="font-size: 0.75rem; color: #10B981;">↑ +12.4% YoY</div>
+            </div>""", unsafe_allow_html=True)
+        with fibre_kpi_col2:
+            st.markdown(f"""<div style="background: linear-gradient(135deg, #10B98115 0%, #10B98108 100%); border-left: 4px solid #10B981; border-radius: 0 12px 12px 0; padding: 1rem;">
+                <div style="font-size: 0.75rem; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px;">Avg Speed Delivered</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: #1B2A4E;">{fibre_avg_speed} Mbps</div>
+                <div style="font-size: 0.75rem; color: #10B981;">↑ +18% YoY</div>
+            </div>""", unsafe_allow_html=True)
+        with fibre_kpi_col3:
+            st.markdown(f"""<div style="background: linear-gradient(135deg, #F59E0B15 0%, #F59E0B08 100%); border-left: 4px solid #F59E0B; border-radius: 0 12px 12px 0; padding: 1rem;">
+                <div style="font-size: 0.75rem; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px;">Fibre ARPU</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: #1B2A4E;">CLP {fibre_arpu:,}</div>
+                <div style="font-size: 0.75rem; color: #10B981;">↑ +4.8% QoQ</div>
+            </div>""", unsafe_allow_html=True)
+        with fibre_kpi_col4:
+            st.markdown(f"""<div style="background: linear-gradient(135deg, #EC489915 0%, #EC489908 100%); border-left: 4px solid #EC4899; border-radius: 0 12px 12px 0; padding: 1rem;">
+                <div style="font-size: 0.75rem; color: #6B7280; text-transform: uppercase; letter-spacing: 0.5px;">FTTH Coverage</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: #1B2A4E;">{fibre_ftth_coverage:.1f}%</div>
+                <div style="font-size: 0.75rem; color: #10B981;">↑ +8pp YoY</div>
+            </div>""", unsafe_allow_html=True)
+
+        fibre_col1, fibre_col2 = st.columns(2)
+        
+        with fibre_col1:
+            st.markdown('<div class="eo-mini-title">Fibre Plan Distribution</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                fibre_plan_df = pd.DataFrame({
+                    'Plan': ['WOM Hogar 300', 'WOM Hogar 600', 'WOM Gamer 1G', 'WOM Mesh Plus', 'WOM Empresas Fibra'],
+                    'Subscribers': [195, 142, 78, 45, 25],
+                    'ARPU': [18900, 24900, 32900, 38900, 54900],
+                })
+                fibre_plan_df['Subscribers_K'] = fibre_plan_df['Subscribers']
+                fibre_plan_bar = (
+                    alt.Chart(fibre_plan_df)
+                    .mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=20)
+                    .encode(
+                        x=alt.X('Subscribers_K:Q', title='Subscribers (K)', axis=alt.Axis(tickCount=5)),
+                        y=alt.Y('Plan:N', sort='-x', title=None),
+                        color=alt.Color(
+                            'Plan:N',
+                            scale=alt.Scale(
+                                domain=['WOM Hogar 300', 'WOM Hogar 600', 'WOM Gamer 1G', 'WOM Mesh Plus', 'WOM Empresas Fibra'],
+                                range=['#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', '#1D4ED8'],
+                            ),
+                            legend=None,
+                        ),
+                        tooltip=[
+                            alt.Tooltip('Plan:N', title='Plan'),
+                            alt.Tooltip('Subscribers_K:Q', title='Subscribers (K)', format=','),
+                            alt.Tooltip('ARPU:Q', title='ARPU (CLP)', format=','),
+                        ],
+                    )
+                )
+                st.altair_chart(style_exec_chart(fibre_plan_bar, height=200), use_container_width=True)
+                top_fibre_plan = fibre_plan_df.loc[fibre_plan_df["Subscribers"].idxmax()]
+                render_ai_recommendation(
+                    "Fibre Plan Mix",
+                    f"{top_fibre_plan['Plan']} leads with {top_fibre_plan['Subscribers']}K subscribers.",
+                    "Promote speed upgrades with gaming bundles and Mesh add-ons.",
+                    "Increase fibre ARPU by CLP 1,200 in Q2.",
+                )
+
+        with fibre_col2:
+            st.markdown('<div class="eo-mini-title">Speed Tier Adoption Trend</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                speed_trend_df = pd.DataFrame({
+                    'Month': ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+                    '300Mbps': [52, 50, 48, 45, 42, 40],
+                    '600Mbps': [28, 29, 30, 31, 31, 32],
+                    '1Gbps': [20, 21, 22, 24, 27, 28],
+                })
+                speed_melt = speed_trend_df.melt('Month', var_name='Tier', value_name='Share')
+                speed_area = alt.Chart(speed_melt).mark_area(opacity=0.8).encode(
+                    x=alt.X('Month:N', title=None, sort=['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb']),
+                    y=alt.Y('Share:Q', title='Share %', stack='normalize'),
+                    color=alt.Color(
+                        'Tier:N',
+                        scale=alt.Scale(domain=['300Mbps', '600Mbps', '1Gbps'], range=['#93C5FD', '#3B82F6', '#1E40AF']),
+                        legend=alt.Legend(title=None, orient='right'),
+                    ),
+                    tooltip=[alt.Tooltip('Month:N'), alt.Tooltip('Tier:N'), alt.Tooltip('Share:Q', format='.0f')],
+                )
+                st.altair_chart(style_exec_chart(speed_area, height=200), use_container_width=True)
+                render_ai_recommendation(
+                    "Speed Migration",
+                    f"1Gbps tier grew from 20% to 28% in 6 months; 300Mbps declining.",
+                    "Offer free speed trial upgrades to accelerate premium tier adoption.",
+                    "Shift 15% more users to 600Mbps+ tiers by Q3.",
+                )
+
+        fibre_col3, fibre_col4 = st.columns(2)
+        
+        with fibre_col3:
+            st.markdown('<div class="eo-mini-title">Installation & Service Quality</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                quality_df = pd.DataFrame({
+                    'Metric': ['Install SLA Met', 'First-Call Resolution', 'Uptime SLA', 'Tech NPS'],
+                    'Score': [94.2, 78.5, 99.4, 87.3],
+                })
+                quality_bar = alt.Chart(quality_df).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=18).encode(
+                    x=alt.X('Score:Q', title='Score %', scale=alt.Scale(domain=[0, 100])),
+                    y=alt.Y('Metric:N', sort='-x', title=None),
+                    color=alt.Color(
+                        'Score:Q',
+                        scale=alt.Scale(domain=[70, 100], range=['#F59E0B', '#10B981']),
+                        legend=None,
+                    ),
+                    tooltip=[
+                        alt.Tooltip('Metric:N'),
+                        alt.Tooltip('Score:Q', title='Score %', format='.1f'),
+                    ],
+                )
+                quality_text = alt.Chart(quality_df).mark_text(align='left', dx=4, fontSize=10, fontWeight='bold', color='#1B2A4E').encode(
+                    x='Score:Q',
+                    y=alt.Y('Metric:N', sort='-x'),
+                    text=alt.Text('Score:Q', format='.1f'),
+                )
+                st.altair_chart(style_exec_chart(quality_bar + quality_text, height=180), use_container_width=True)
+                render_ai_recommendation(
+                    "Service Quality",
+                    f"Install SLA at 94.2% vs 95% target; first-call resolution lagging.",
+                    "Add field technician capacity in high-growth zones; improve diagnostic tools.",
+                    "Hit 95% SLA and reduce repeat visits by 12%.",
+                    level="warning",
+                )
+
+        with fibre_col4:
+            st.markdown('<div class="eo-mini-title">Fibre Churn Drivers</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                churn_driver_df = pd.DataFrame({
+                    'Reason': ['Price Sensitivity', 'Service Issues', 'Competitor Offer', 'Moving/Relocation', 'Speed Needs'],
+                    'Percentage': [32, 28, 22, 12, 6],
+                })
+                churn_driver_bar = alt.Chart(churn_driver_df).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=18).encode(
+                    x=alt.X('Percentage:Q', title='% of Churned Users'),
+                    y=alt.Y('Reason:N', sort='-x', title=None),
+                    color=alt.Color(
+                        'Percentage:Q',
+                        scale=alt.Scale(scheme='reds', domain=[5, 35]),
+                        legend=None,
+                    ),
+                    tooltip=[
+                        alt.Tooltip('Reason:N'),
+                        alt.Tooltip('Percentage:Q', title='Share %'),
+                    ],
+                )
+                st.altair_chart(style_exec_chart(churn_driver_bar, height=180), use_container_width=True)
+                render_ai_recommendation(
+                    "Churn Root Causes",
+                    f"Price sensitivity (32%) and service issues (28%) drive 60% of fibre churn.",
+                    "Launch loyalty pricing for 12+ month customers; accelerate service quality fixes.",
+                    "Reduce voluntary churn by 0.8pp and save CLP 0.5M ARR.",
+                    level="critical",
+                )
+
         # ── Revenue Mix by Customer Segment ────────────────────────────────
         col_left, col_right = st.columns([1.2, 1])
 
@@ -2715,9 +3064,9 @@ elif selected_menu == "Executive Overview":
         with board_view_tab:
             st.markdown(dedent(f"""
             <div class="cxo-snapshot">
-                <div class="cxo-snapshot-title">CEO Snapshot · Next 90 Days</div>
-                <div class="cxo-snapshot-text">Growth remains on-track, but churn concentration in Budget and Standard segments is putting <strong>CLP {at_risk_revenue_m:.1f}M ARR</strong> at risk. Fast approval of targeted retention and network quality initiatives can protect ~<strong>CLP {protectable_arr_m:.1f}M</strong> in the next quarter.</div>
-                <div class="cxo-snapshot-risk">⚠ Critical Watch: Churn Concentration + Price Pressure</div>
+                <div class="cxo-snapshot-title">CEO Snapshot · WOM Chile Next 90 Days</div>
+                <div class="cxo-snapshot-text">Mobile growth strong with 5G adoption accelerating, but Fibre churn in Santiago metro and portability pressure from Entel/Movistar is putting <strong>CLP {at_risk_revenue_m:.1f}M ARR</strong> at risk. Fast approval of 5G migration incentives and Fibre bundle retention can protect ~<strong>CLP {protectable_arr_m:.1f}M</strong> this quarter.</div>
+                <div class="cxo-snapshot-risk">⚠ Critical Watch: Mobile Portability + Fibre Competition in RM</div>
             </div>
             """), unsafe_allow_html=True)
 
@@ -2783,8 +3132,8 @@ elif selected_menu == "Executive Overview":
                     render_ai_recommendation(
                         "Network Operations",
                         f"Major incidents improved by {incident_drop} over 6 weeks; MTTR improved by {mttr_drop} minutes.",
-                        "Scale proactive fiber maintenance to the two highest-incident clusters to keep trend downward.",
-                        "Protect SLA levels and reduce churn pressure in affected zones.",
+                        "Scale proactive 5G/4G maintenance in Santiago metro and expand fiber NOC monitoring in Regiones.",
+                        "Protect mobile NPS and reduce Fibre churn in affected comunas.",
                     )
 
             with net_col2:
@@ -2816,8 +3165,8 @@ elif selected_menu == "Executive Overview":
                     render_ai_recommendation(
                         "Network Experience Link",
                         f"{weakest_region['Region']} is the weakest node with score {weakest_region['Network Score']:.1f} and NPS {int(weakest_region['NPS'])}.",
-                        f"Prioritize SLA restoration and field capacity in {weakest_region['Region']} this month.",
-                        "Improve NPS by 2-3 points and reduce local churn risk.",
+                        f"Prioritize 5G signal optimization and Fibre installation SLA in {weakest_region['Region']} this month.",
+                        "Improve NPS by 2-3 points and reduce portability-out requests in the region.",
                         level="warning",
                     )
 
@@ -2843,8 +3192,8 @@ elif selected_menu == "Executive Overview":
                 variance = 15.0 - quarterly_revenue_m
                 render_ai_recommendation(
                     "Plan Variance",
-                    f"Current quarter is {variance:.1f}M below plan but forecast suggests partial recovery.",
-                    "Fast-track retention and enterprise deals to close remaining plan gap.",
+                    f"Current quarter is {variance:.1f}M below plan but forecast suggests partial recovery via 5G and Fibre growth.",
+                    "Fast-track WOM Libre 5G migrations and Fibre+TV bundle campaigns to close remaining gap.",
                     "Recover up to CLP 0.6M against plan by quarter close.",
                     level="warning",
                 )
@@ -2854,18 +3203,18 @@ elif selected_menu == "Executive Overview":
             <div class="cxo-decision-grid">
                 <div class="cxo-decision">
                     <span class="cxo-badge high">Immediate</span>
-                    <div class="cxo-decision-title">Approve targeted save-offers for Budget cohort</div>
-                    <div class="cxo-decision-meta"><strong>Impact:</strong> Protect CLP 0.6M ARR<br><strong>Confidence:</strong> 78%<br><strong>Owner:</strong> CCO · <strong>ETA:</strong> 30 days</div>
+                    <div class="cxo-decision-title">Launch 5G migration campaign for WOM Libre users</div>
+                    <div class="cxo-decision-meta"><strong>Impact:</strong> +CLP 0.9M ARR from ARPU uplift<br><strong>Confidence:</strong> 82%<br><strong>Owner:</strong> CMO · <strong>ETA:</strong> 30 days</div>
                 </div>
                 <div class="cxo-decision">
                     <span class="cxo-badge med">Priority</span>
-                    <div class="cxo-decision-title">Accelerate enterprise acquisition package</div>
-                    <div class="cxo-decision-meta"><strong>Impact:</strong> +CLP 0.8M ARR<br><strong>Confidence:</strong> 64%<br><strong>Owner:</strong> CRO · <strong>ETA:</strong> 45 days</div>
+                    <div class="cxo-decision-title">Approve Fibre + TV bundle discount for new FTTH zones</div>
+                    <div class="cxo-decision-meta"><strong>Impact:</strong> +12K Fibre subs, CLP 0.7M ARR<br><strong>Confidence:</strong> 74%<br><strong>Owner:</strong> CRO · <strong>ETA:</strong> 45 days</div>
                 </div>
                 <div class="cxo-decision">
                     <span class="cxo-badge ok">Monitor</span>
-                    <div class="cxo-decision-title">Prioritize 3 low-NPS network clusters</div>
-                    <div class="cxo-decision-meta"><strong>Impact:</strong> +2.5 NPS points<br><strong>Confidence:</strong> 71%<br><strong>Owner:</strong> CTO · <strong>ETA:</strong> 60 days</div>
+                    <div class="cxo-decision-title">Prepago to Postpago conversion incentive program</div>
+                    <div class="cxo-decision-meta"><strong>Impact:</strong> +8% conversion, +CLP 0.5M ARR<br><strong>Confidence:</strong> 68%<br><strong>Owner:</strong> CCO · <strong>ETA:</strong> 60 days</div>
                 </div>
             </div>
             """), unsafe_allow_html=True)
@@ -2874,28 +3223,28 @@ elif selected_menu == "Executive Overview":
             st.markdown(dedent("""
             <div class="cxo-initiatives">
                 <div class="cxo-initiative">
-                    <div class="cxo-init-head"><div class="cxo-init-title">Retention War Room</div><span class="cxo-rag amber">At Risk</span></div>
-                    <div class="cxo-init-meta">Owner: CCO · Budget used: 62% · Benefit captured: CLP 0.42M</div>
-                    <div class="cxo-progress" style="--p: 68%;"><span style="--p: 68%;"></span></div>
-                    <div class="cxo-init-foot">Progress: 68% · Next Milestone: Offer rollout for Budget segment</div>
+                    <div class="cxo-init-head"><div class="cxo-init-title">5G Network Rollout (Santiago & Regiones)</div><span class="cxo-rag green">On Track</span></div>
+                    <div class="cxo-init-meta">Owner: CTO · Budget used: 58% · Coverage: 68% → 85% target</div>
+                    <div class="cxo-progress" style="--p: 72%;"><span style="--p: 72%;"></span></div>
+                    <div class="cxo-init-foot">Progress: 72% · Next Milestone: Valparaíso & Concepción 5G activation</div>
                 </div>
                 <div class="cxo-initiative">
-                    <div class="cxo-init-head"><div class="cxo-init-title">Enterprise Expansion Sprint</div><span class="cxo-rag green">On Track</span></div>
-                    <div class="cxo-init-meta">Owner: CRO · Budget used: 48% · Benefit captured: CLP 0.55M</div>
-                    <div class="cxo-progress" style="--p: 74%;"><span style="--p: 74%;"></span></div>
-                    <div class="cxo-init-foot">Progress: 74% · Next Milestone: 20 new high-ARPU accounts</div>
+                    <div class="cxo-init-head"><div class="cxo-init-title">FTTH Fibre Expansion Program</div><span class="cxo-rag amber">At Risk</span></div>
+                    <div class="cxo-init-meta">Owner: COO · Budget used: 67% · Homes passed: 1.2M → 1.8M target</div>
+                    <div class="cxo-progress" style="--p: 54%;"><span style="--p: 54%;"></span></div>
+                    <div class="cxo-init-foot">Progress: 54% · Next Milestone: Complete La Florida & Maipú deployment</div>
                 </div>
                 <div class="cxo-initiative">
-                    <div class="cxo-init-head"><div class="cxo-init-title">Network Quality Recovery Clusters</div><span class="cxo-rag red">Critical</span></div>
-                    <div class="cxo-init-meta">Owner: CTO · Budget used: 39% · Benefit captured: CLP 0.18M</div>
-                    <div class="cxo-progress" style="--p: 43%;"><span style="--p: 43%;"></span></div>
-                    <div class="cxo-init-foot">Progress: 43% · Next Milestone: stabilize 3 low-NPS zones</div>
+                    <div class="cxo-init-head"><div class="cxo-init-title">Mobile Portability Retention</div><span class="cxo-rag red">Critical</span></div>
+                    <div class="cxo-init-meta">Owner: CCO · Budget used: 44% · Save rate: 32% → 55% target</div>
+                    <div class="cxo-progress" style="--p: 38%;"><span style="--p: 38%;"></span></div>
+                    <div class="cxo-init-foot">Progress: 38% · Next Milestone: Launch proactive retention for high-value mobile</div>
                 </div>
                 <div class="cxo-initiative">
-                    <div class="cxo-init-head"><div class="cxo-init-title">Collections and Credit Optimization</div><span class="cxo-rag green">On Track</span></div>
-                    <div class="cxo-init-meta">Owner: CFO · Budget used: 54% · Benefit captured: CLP 0.29M</div>
-                    <div class="cxo-progress" style="--p: 71%;"><span style="--p: 71%;"></span></div>
-                    <div class="cxo-init-foot">Progress: 71% · Next Milestone: reduce failed payments by 1.2pp</div>
+                    <div class="cxo-init-head"><div class="cxo-init-title">WOM TV + Triple Play Bundling</div><span class="cxo-rag green">On Track</span></div>
+                    <div class="cxo-init-meta">Owner: CRO · Budget used: 51% · Bundle attach: 18% → 35% target</div>
+                    <div class="cxo-progress" style="--p: 65%;"><span style="--p: 65%;"></span></div>
+                    <div class="cxo-init-foot">Progress: 65% · Next Milestone: Launch Fibre + TV promo in 5 new comunas</div>
                 </div>
             </div>
             """), unsafe_allow_html=True)
@@ -2906,19 +3255,19 @@ elif selected_menu == "Executive Overview":
                 <div class="cxo-board-grid">
                     <div class="cxo-board-cell">
                         <h5>What Changed</h5>
-                        <p>Revenue and ARPU improved, but churn intent rose in price-sensitive cohorts.</p>
+                        <p>Mobile ARPU grew 4.2% driven by 5G migrations, but Fibre churn spiked in competitive zones against VTR/Movistar.</p>
                     </div>
                     <div class="cxo-board-cell">
                         <h5>Why It Changed</h5>
-                        <p>Competitor discounts and service incidents in two clusters raised attrition risk.</p>
+                        <p>Entel's aggressive Prepago pricing and Movistar Fibre bundles are pressuring WOM in Santiago metro.</p>
                     </div>
                     <div class="cxo-board-cell">
                         <h5>Next 30 Days</h5>
-                        <p>Deploy save-offers, stabilize network hotspots, and accelerate enterprise pipeline.</p>
+                        <p>Accelerate 5G device subsidies, launch Fibre+TV retention offers, expand FTTH in high-demand comunas.</p>
                     </div>
                     <div class="cxo-board-cell">
                         <h5>Expected Impact</h5>
-                        <p>Protect up to CLP {protectable_arr_m:.1f}M ARR and improve churn by 0.2-0.3pp by next quarter.</p>
+                        <p>Protect up to CLP {protectable_arr_m:.1f}M ARR, reduce mobile portability-out by 15%, grow Fibre base by 8K subs.</p>
                     </div>
                 </div>
             </div>
@@ -3006,10 +3355,10 @@ elif selected_menu == "Executive Overview":
             with rr_col1:
                 st.markdown('<div class="eo-mini-title">Risk Radar</div>', unsafe_allow_html=True)
                 risk_radar_df = pd.DataFrame({
-                    "Risk": ["Churn concentration", "Price war", "Network SLA", "Collections", "Brand perception"],
-                    "Likelihood": [4.2, 3.9, 3.2, 2.9, 2.7],
-                    "Impact": [4.6, 4.0, 4.4, 3.1, 3.3],
-                    "Exposure": [2.4, 1.6, 1.9, 0.8, 0.7],
+                    "Risk": ["Entel/Movistar price war", "Mobile portability loss", "5G spectrum costs", "FTTH competition (VTR)", "Subtel regulatory"],
+                    "Likelihood": [4.4, 4.1, 3.5, 3.8, 2.9],
+                    "Impact": [4.5, 4.3, 3.8, 4.0, 3.4],
+                    "Exposure": [2.6, 2.1, 1.4, 1.8, 0.9],
                 })
                 risk_scatter = alt.Chart(risk_radar_df).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
                     x=alt.X("Likelihood:Q", title="Likelihood (1-5)", scale=alt.Scale(domain=[2.2, 4.6])),
@@ -3041,9 +3390,9 @@ elif selected_menu == "Executive Overview":
             with rr_col2:
                 st.markdown('<div class="eo-mini-title">Leading Indicators</div>', unsafe_allow_html=True)
                 lead_df = pd.DataFrame({
-                    "Indicator": ["Downgrade requests", "Payment failure rate", "NOC repeat incidents", "Support backlog age", "Churn intent score"],
-                    "Delta": [18, 11, 9, 14, 21],
-                    "Status": ["Watch", "Watch", "Stable", "Watch", "Critical"],
+                    "Indicator": ["Portability-out requests", "5G device activations", "Fibre install backlog", "WOM App engagement", "Prepago recharge drop"],
+                    "Delta": [22, -15, 18, -12, 16],
+                    "Status": ["Critical", "Watch", "Watch", "Watch", "Watch"],
                 })
                 lead_bar = alt.Chart(lead_df).mark_bar(cornerRadiusTopRight=6, cornerRadiusBottomRight=6, size=18).encode(
                     x=alt.X("Delta:Q", title="Change vs baseline (%)", scale=alt.Scale(domain=[0, 24])),
@@ -3193,556 +3542,522 @@ elif selected_menu == "Subscribers":
 </style>""", unsafe_allow_html=True)
 
     # -------------------------------------------------------------------
-    # Synthetic and internally consistent subscriber dataset
+    # WOM MÓVIL Data
     # -------------------------------------------------------------------
-    sub_monthly = pd.DataFrame({
+    movil_monthly = pd.DataFrame({
         "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
-        "Adds": [820, 790, 870, 830, 860, 900],
-        "Churned": [610, 610, 620, 640, 640, 643],
+        "Adds": [48500, 52100, 55800, 51200, 54600, 58200],
+        "Churned": [32100, 33400, 34200, 35800, 34100, 33800],
+        "Portability In": [18200, 19800, 21400, 19100, 20800, 22100],
+        "Portability Out": [14600, 15200, 15800, 16400, 15100, 14800],
     })
-    sub_monthly["Net Adds"] = sub_monthly["Adds"] - sub_monthly["Churned"]
-    starting_base = 28940
-    sub_monthly["Base"] = starting_base + sub_monthly["Net Adds"].cumsum()
-    sub_monthly["Churn %"] = (sub_monthly["Churned"] / (sub_monthly["Base"] - sub_monthly["Net Adds"]) * 100).round(2)
+    movil_monthly["Net Adds"] = movil_monthly["Adds"] - movil_monthly["Churned"]
+    movil_monthly["Net Portability"] = movil_monthly["Portability In"] - movil_monthly["Portability Out"]
+    movil_starting_base = 2680000
+    movil_monthly["Base"] = movil_starting_base + movil_monthly["Net Adds"].cumsum()
+    movil_monthly["Churn %"] = (movil_monthly["Churned"] / (movil_monthly["Base"] - movil_monthly["Net Adds"]) * 100).round(2)
 
-    sub_segments = pd.DataFrame({
-        "Segment": ["Consumer", "SMB", "Enterprise"],
-        "Subscribers": [20500, 7600, 2147],
-        "NPS": [45, 51, 60],
-        "ARPU": [123, 164, 286],
+    movil_plans = pd.DataFrame({
+        "Plan": ["WOM Libre 30GB", "WOM Libre 50GB", "WOM Libre Ilimitado", "WOM Prepago", "WOM Empresas Móvil"],
+        "Subscribers K": [680, 920, 540, 480, 232],
+        "ARPU CLP": [9900, 12900, 18900, 5200, 24500],
+        "5G Enabled %": [42, 68, 85, 12, 78],
     })
+    movil_plans["Revenue M CLP"] = (movil_plans["Subscribers K"] * movil_plans["ARPU CLP"] / 1000).round(1)
 
-    sub_risk = pd.DataFrame({
-        "Segment": ["Budget", "Standard", "Premium", "VIP"],
-        "At Risk": [312, 289, 178, 68],
-        "Revenue at Risk K": [95, 78, 51, 16],
-        "Propensity": [0.78, 0.65, 0.52, 0.41],
-    })
-
-    funnel_df = pd.DataFrame({
-        "Stage": ["Leads", "Qualified", "Orders", "Installed", "Activated"],
-        "Users": [6200, 4100, 2900, 2480, 2310],
+    movil_network = pd.DataFrame({
+        "Technology": ["5G", "4G LTE", "3G"],
+        "Users K": [1945, 780, 127],
+        "Avg Data GB": [24.8, 14.2, 6.1],
     })
 
-    support_df = pd.DataFrame({
-        "Queue": ["Billing", "Tech L1", "Tech L2", "Install", "Retention"],
-        "Resolution Hrs": [7.2, 5.4, 10.6, 6.8, 4.1],
-        "CSAT": [4.1, 4.4, 3.8, 4.2, 4.5],
-        "Tickets": [920, 1280, 510, 640, 430],
+    movil_churn_reasons = pd.DataFrame({
+        "Reason": ["Portabilidad a Entel", "Portabilidad a Movistar", "Portabilidad a Claro", "No pago / Involuntario", "Otros"],
+        "Volume": [5200, 4100, 2800, 8400, 3300],
     })
 
-    retention_df = pd.DataFrame({
-        "Campaign": ["Save Offer A", "Save Offer B", "Proactive NOC", "VIP Concierge"],
-        "Contacted": [480, 390, 260, 120],
-        "Saved": [228, 156, 123, 66],
-    })
-    retention_df["Save Rate"] = (retention_df["Saved"] / retention_df["Contacted"] * 100).round(1)
-    retention_df["Value Saved K"] = [420, 280, 190, 120]
-
-    churn_type_df = pd.DataFrame({
-        "Month": sub_monthly["Month"],
-        "Voluntary": [430, 425, 432, 438, 436, 430],
-        "Involuntary": [180, 185, 188, 202, 204, 213],
+    movil_tenure = pd.DataFrame({
+        "Tenure": ["0-3m", "4-6m", "7-12m", "13-24m", "25m+"],
+        "Subscribers K": [420, 380, 620, 780, 652],
+        "Churn %": [5.2, 3.8, 2.4, 1.6, 1.1],
     })
 
-    reactivation_df = pd.DataFrame({
-        "Month": sub_monthly["Month"],
-        "Reactivated": [105, 112, 118, 121, 126, 133],
+    movil_regions = pd.DataFrame({
+        "Region": ["Metropolitana", "Valparaíso", "Biobío", "Maule", "Araucanía", "Otros"],
+        "Subscribers K": [1480, 320, 280, 180, 140, 452],
+        "5G Coverage %": [82, 68, 62, 45, 38, 42],
+        "NPS": [48, 44, 42, 40, 38, 41],
     })
 
-    tenure_df = pd.DataFrame({
-        "Tenure Band": ["0-3m", "4-6m", "7-12m", "13-24m", "25m+"],
-        "Subscribers": [4200, 5200, 7800, 6900, 6147],
-        "Churn %": [4.8, 3.4, 2.3, 1.6, 1.1],
+    movil_device_mix = pd.DataFrame({
+        "Device Type": ["5G Smartphone", "4G Smartphone", "Feature Phone", "Mobile Router"],
+        "Count K": [1420, 1180, 198, 54],
     })
 
-    channel_df = pd.DataFrame({
-        "Channel": ["WOM Web Leads", "Referidos WOM", "Tiendas WOM", "Fuerza Comercial FTTH", "Canal Constructoras"],
-        "Leads": [2400, 1100, 1700, 1200, 900],
-        "Activations": [920, 560, 610, 470, 340],
-    })
-    channel_df["Conversion %"] = (channel_df["Activations"] / channel_df["Leads"] * 100).round(1)
-
-    channel_econ_df = pd.DataFrame({
-        "Channel": ["WOM Web Leads", "Referidos WOM", "Tiendas WOM", "Fuerza Comercial FTTH", "Canal Constructoras"],
-        "CAC": [128, 74, 112, 156, 138],
-        "LTV": [468, 512, 472, 520, 495],
-    })
-    channel_econ_df["LTV/CAC"] = (channel_econ_df["LTV"] / channel_econ_df["CAC"]).round(2)
-
-    csat_contact_df = pd.DataFrame({
-        "Contact Type": ["Chat", "Phone", "Email", "App", "Field Visit"],
-        "CSAT": [4.5, 4.1, 4.0, 4.6, 3.9],
+    movil_data_trend = pd.DataFrame({
+        "Month": movil_monthly["Month"],
+        "Avg Data GB": [16.2, 16.8, 17.4, 17.9, 18.3, 18.7],
+        "5G Users K": [1680, 1740, 1800, 1860, 1905, 1945],
     })
 
-    digital_df = pd.DataFrame({
-        "Month": sub_monthly["Month"],
-        "SelfService Users": [9800, 10150, 10420, 10810, 11120, 11560],
+    movil_retention = pd.DataFrame({
+        "Campaign": ["5G Upgrade Offer", "Loyalty Data Bonus", "Prepago→Postpago", "Win-back 30 días"],
+        "Contacted": [12400, 8600, 6200, 4800],
+        "Saved": [5580, 3440, 2480, 1440],
+    })
+    movil_retention["Save Rate %"] = (movil_retention["Saved"] / movil_retention["Contacted"] * 100).round(1)
+
+    # -------------------------------------------------------------------
+    # WOM FIBRA/HOGAR Data
+    # -------------------------------------------------------------------
+    fibra_monthly = pd.DataFrame({
+        "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
+        "Adds": [8200, 8800, 9400, 8600, 9200, 9800],
+        "Churned": [4100, 4300, 4500, 4800, 4400, 4200],
+    })
+    fibra_monthly["Net Adds"] = fibra_monthly["Adds"] - fibra_monthly["Churned"]
+    fibra_starting_base = 432000
+    fibra_monthly["Base"] = fibra_starting_base + fibra_monthly["Net Adds"].cumsum()
+    fibra_monthly["Churn %"] = (fibra_monthly["Churned"] / (fibra_monthly["Base"] - fibra_monthly["Net Adds"]) * 100).round(2)
+
+    fibra_plans = pd.DataFrame({
+        "Plan": ["WOM Hogar 300 Mbps", "WOM Hogar 600 Mbps", "WOM Gamer 1 Gbps", "WOM Empresas Fibra"],
+        "Subscribers K": [185, 168, 82, 50],
+        "ARPU CLP": [18900, 24900, 34900, 48500],
+        "Avg Speed Mbps": [298, 592, 945, 920],
+    })
+    fibra_plans["Revenue M CLP"] = (fibra_plans["Subscribers K"] * fibra_plans["ARPU CLP"] / 1000).round(1)
+
+    fibra_speed_tiers = pd.DataFrame({
+        "Speed Tier": ["300 Mbps", "600 Mbps", "1 Gbps"],
+        "Subscribers K": [185, 168, 132],
+        "Avg Actual Mbps": [298, 592, 945],
+        "Speed Delivery %": [99.3, 98.7, 94.5],
     })
 
-    complaint_df = pd.DataFrame({
-        "Reason": ["Slow speed", "Billing disputes", "Service downtime", "Installation delays", "WiFi issues"],
-        "Volume": [420, 310, 280, 190, 260],
+    fibra_churn_reasons = pd.DataFrame({
+        "Reason": ["Competencia VTR/Movistar", "Precio", "Mudanza", "Calidad servicio", "Otros"],
+        "Volume": [1420, 980, 720, 640, 440],
     })
 
-    risk_score_df = pd.DataFrame({
-        "Band": ["0.0-0.2", "0.2-0.4", "0.4-0.6", "0.6-0.8", "0.8-1.0"],
-        "Customers": [9600, 8400, 6200, 4200, 1847],
+    fibra_tenure = pd.DataFrame({
+        "Tenure": ["0-3m", "4-6m", "7-12m", "13-24m", "25m+"],
+        "Subscribers K": [68, 72, 118, 142, 85],
+        "Churn %": [4.2, 2.8, 1.8, 1.2, 0.9],
     })
 
-    total_subs = int(sub_segments["Subscribers"].sum())
-    latest = sub_monthly.iloc[-1]
-    prev = sub_monthly.iloc[-2]
-    qoq_ref = sub_monthly.iloc[-4]
-    latest_net = int(latest["Net Adds"])
-    latest_churn = float(latest["Churn %"])
-    latest_base = int(latest["Base"])
-    prev_base = int(prev["Base"])
-    adds_last = int(latest["Adds"])
-    churned_last = int(latest["Churned"])
-    weighted_nps = int(round((sub_segments["NPS"] * sub_segments["Subscribers"]).sum() / total_subs, 0))
-    blended_arpu = round((sub_segments["ARPU"] * sub_segments["Subscribers"]).sum() / total_subs, 2)
-    risk_customers = int(sub_risk["At Risk"].sum())
-    risk_arr_m = round(sub_risk["Revenue at Risk K"].sum() * 12 / 1000, 1)
-    growth_mom = round((latest_base - prev_base) / prev_base * 100, 2)
-    growth_qoq = round((latest_base - int(qoq_ref["Base"])) / int(qoq_ref["Base"]) * 100, 2)
-    voluntary_pct = round(churn_type_df.iloc[-1]["Voluntary"] / churned_last * 100, 1)
-    involuntary_pct = round(churn_type_df.iloc[-1]["Involuntary"] / churned_last * 100, 1)
-    early_life_churn = float(tenure_df.loc[tenure_df["Tenure Band"] == "0-3m", "Churn %"].iloc[0])
-    save_rate_overall = round(retention_df["Saved"].sum() / retention_df["Contacted"].sum() * 100, 1)
-    risk_coverage = round(retention_df["Contacted"].sum() / risk_customers * 100, 1)
-    reactivation_rate = round(reactivation_df.iloc[-1]["Reactivated"] / churned_last * 100, 1)
-    avg_tenure_months = round((tenure_df["Subscribers"] * pd.Series([2, 5, 9, 18, 36])).sum() / tenure_df["Subscribers"].sum(), 1)
-    long_tenure_mix = round((tenure_df.loc[tenure_df["Tenure Band"].isin(["13-24m", "25m+"]), "Subscribers"].sum() / total_subs) * 100, 1)
-    fcr = 78.4
-    avg_resolution = round((support_df["Resolution Hrs"] * support_df["Tickets"]).sum() / support_df["Tickets"].sum(), 1)
-    complaint_rate = round(complaint_df["Volume"].sum() / total_subs * 1000, 1)
-    install_to_activation = round((funnel_df.loc[funnel_df["Stage"] == "Activated", "Users"].iloc[0] / funnel_df.loc[funnel_df["Stage"] == "Installed", "Users"].iloc[0]) * 100, 1)
-    activation_lead_days = 2.8
-    digital_adoption = round(digital_df.iloc[-1]["SelfService Users"] / total_subs * 100, 1)
-    arpu_uplift = "+CLP 3.8"
-    churn_cost_avoided_m = round(retention_df["Value Saved K"].sum() / 1000, 2)
-    ltv_cac_blended = round(channel_econ_df["LTV/CAC"].mean(), 2)
-    predictive_churn_index = round(sub_risk["Propensity"].mean() * 100, 1)
+    fibra_regions = pd.DataFrame({
+        "Region": ["Metropolitana", "Valparaíso", "Biobío", "O'Higgins", "Maule", "Otros"],
+        "Subscribers K": [268, 62, 54, 38, 32, 31],
+        "FTTH Coverage %": [78, 65, 58, 48, 42, 38],
+        "NPS": [52, 48, 46, 44, 42, 40],
+    })
+
+    fibra_install_metrics = pd.DataFrame({
+        "Metric": ["Install SLA Met", "First-Call Resolution", "Uptime SLA", "Tech NPS"],
+        "Score": [94.2, 78.5, 99.4, 87.3],
+    })
+
+    fibra_tv_bundle = pd.DataFrame({
+        "Bundle": ["Fibra Only", "Fibra + TV", "Fibra + TV + Móvil"],
+        "Subscribers K": [312, 128, 45],
+        "ARPU CLP": [22400, 32800, 48600],
+        "Churn %": [1.8, 1.2, 0.8],
+    })
+
+    fibra_retention = pd.DataFrame({
+        "Campaign": ["TV Bundle Upsell", "Speed Upgrade Offer", "Loyalty Discount", "Win-back"],
+        "Contacted": [4200, 3800, 2600, 1800],
+        "Saved": [1890, 1520, 1040, 540],
+    })
+    fibra_retention["Save Rate %"] = (fibra_retention["Saved"] / fibra_retention["Contacted"] * 100).round(1)
+
+    fibra_complaint_df = pd.DataFrame({
+        "Reason": ["Velocidad lenta", "Cortes de servicio", "WiFi inestable", "Instalación demorada", "Facturación"],
+        "Volume": [380, 290, 260, 180, 150],
+    })
+
+    # Computed metrics - Móvil
+    movil_total_subs = int(movil_plans["Subscribers K"].sum() * 1000)
+    movil_latest = movil_monthly.iloc[-1]
+    movil_prev = movil_monthly.iloc[-2]
+    movil_net_adds = int(movil_latest["Net Adds"])
+    movil_churn_rate = float(movil_latest["Churn %"])
+    movil_5g_pct = round(movil_network.loc[movil_network["Technology"] == "5G", "Users K"].iloc[0] / (movil_network["Users K"].sum()) * 100, 1)
+    movil_avg_data = round(movil_data_trend.iloc[-1]["Avg Data GB"], 1)
+    movil_arpu = round((movil_plans["Subscribers K"] * movil_plans["ARPU CLP"]).sum() / movil_plans["Subscribers K"].sum(), 0)
+    movil_portability_net = int(movil_latest["Net Portability"])
+
+    # Computed metrics - Fibra
+    fibra_total_subs = int(fibra_plans["Subscribers K"].sum() * 1000)
+    fibra_latest = fibra_monthly.iloc[-1]
+    fibra_prev = fibra_monthly.iloc[-2]
+    fibra_net_adds = int(fibra_latest["Net Adds"])
+    fibra_churn_rate = float(fibra_latest["Churn %"])
+    fibra_avg_speed = round((fibra_plans["Subscribers K"] * fibra_plans["Avg Speed Mbps"]).sum() / fibra_plans["Subscribers K"].sum(), 0)
+    fibra_arpu = round((fibra_plans["Subscribers K"] * fibra_plans["ARPU CLP"]).sum() / fibra_plans["Subscribers K"].sum(), 0)
+    fibra_bundle_rate = round((fibra_tv_bundle.loc[fibra_tv_bundle["Bundle"] != "Fibra Only", "Subscribers K"].sum() / fibra_tv_bundle["Subscribers K"].sum()) * 100, 1)
 
     st.markdown(dedent(f"""
     <div class="sub-pulse">
         <div class="sub-pulse-head">
-            <span class="sub-pulse-title">👥 Subscriber Pulse · Key Customer Metrics</span>
+            <span class="sub-pulse-title">📱🏠 WOM Subscribers · Móvil + Fibra/Hogar</span>
             <span class="sub-pulse-live">Live</span>
         </div>
         <div class="sub-pulse-grid">
             <div class="sub-pulse-card">
-                <div class="sub-pulse-label">Total Subscribers</div>
-                <div class="sub-pulse-value">{total_subs:,}</div>
-                <div class="sub-pulse-delta">↑ +{latest_net} net adds</div>
+                <div class="sub-pulse-label">Total Móvil</div>
+                <div class="sub-pulse-value">{movil_total_subs/1000000:.2f}M</div>
+                <div class="sub-pulse-delta">↑ +{movil_net_adds:,} net adds</div>
             </div>
             <div class="sub-pulse-card">
-                <div class="sub-pulse-label">New Adds (Month)</div>
-                <div class="sub-pulse-value">{adds_last:,}</div>
-                <div class="sub-pulse-delta">↑ +{int(latest['Adds']-prev['Adds'])} vs prior month</div>
+                <div class="sub-pulse-label">Total Fibra</div>
+                <div class="sub-pulse-value">{fibra_total_subs/1000:.0f}K</div>
+                <div class="sub-pulse-delta">↑ +{fibra_net_adds:,} net adds</div>
             </div>
             <div class="sub-pulse-card">
-                <div class="sub-pulse-label">Churn Rate</div>
-                <div class="sub-pulse-value">{latest_churn:.1f}%</div>
-                <div class="sub-pulse-delta">↓ {(prev['Churn %']-latest_churn):.1f}pp improvement</div>
+                <div class="sub-pulse-label">Móvil Churn</div>
+                <div class="sub-pulse-value">{movil_churn_rate:.2f}%</div>
+                <div class="sub-pulse-delta">5G adoption helping</div>
             </div>
             <div class="sub-pulse-card">
-                <div class="sub-pulse-label">NPS</div>
-                <div class="sub-pulse-value">+{weighted_nps}</div>
-                <div class="sub-pulse-delta">Strong CX momentum</div>
+                <div class="sub-pulse-label">Fibra Churn</div>
+                <div class="sub-pulse-value">{fibra_churn_rate:.2f}%</div>
+                <div class="sub-pulse-delta">Bundles reduce churn</div>
             </div>
             <div class="sub-pulse-card">
-                <div class="sub-pulse-label">At-Risk Base</div>
-                <div class="sub-pulse-value">{risk_customers}</div>
-                <div class="sub-pulse-delta">CLP {risk_arr_m:.1f}M ARR exposed</div>
+                <div class="sub-pulse-label">5G Adoption</div>
+                <div class="sub-pulse-value">{movil_5g_pct:.1f}%</div>
+                <div class="sub-pulse-delta">Growing fast</div>
             </div>
         </div>
     </div>
     """), unsafe_allow_html=True)
 
-    sub_tab_overview, sub_tab_journey, sub_tab_risk = st.tabs(
-        ["📈 Subscriber Overview", "🧭 Journey & Experience", "⚠️ Risk & Retention"]
+    sub_tab_movil, sub_tab_fibra = st.tabs(
+        ["📱 WOM Móvil", "🏠 WOM Fibra/Hogar"]
     )
 
-    with sub_tab_overview:
-        st.markdown('<div class="sub-title">Subscriber Growth Momentum</div>', unsafe_allow_html=True)
+    with sub_tab_movil:
+        st.markdown('<div class="sub-title">WOM Móvil · Subscriber Analytics</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="sub-kpi-grid">
-                <div class="sub-kpi-card"><div class="k">Gross Adds</div><div class="v">{adds_last:,}</div><div class="d">Monthly intake</div></div>
-                <div class="sub-kpi-card"><div class="k">Churned Subs</div><div class="v">{churned_last:,}</div><div class="d">Monthly exits</div></div>
-                <div class="sub-kpi-card"><div class="k">Net Adds</div><div class="v">{latest_net:,}</div><div class="d">Positive momentum</div></div>
-                <div class="sub-kpi-card"><div class="k">Growth MoM</div><div class="v">{growth_mom:.2f}%</div><div class="d">Base acceleration</div></div>
-                <div class="sub-kpi-card"><div class="k">Growth QoQ</div><div class="v">{growth_qoq:.2f}%</div><div class="d">Quarter trend</div></div>
-                <div class="sub-kpi-card"><div class="k">Voluntary Churn</div><div class="v">{voluntary_pct:.1f}%</div><div class="d">Of total churn</div></div>
-                <div class="sub-kpi-card warn"><div class="k">Involuntary Churn</div><div class="v">{involuntary_pct:.1f}%</div><div class="d">Billing-driven exits</div></div>
-                <div class="sub-kpi-card crit"><div class="k">Early-Life Churn</div><div class="v">{early_life_churn:.1f}%</div><div class="d">0-3 month risk</div></div>
-                <div class="sub-kpi-card"><div class="k">Average Tenure</div><div class="v">{avg_tenure_months:.1f}m</div><div class="d">Customer maturity</div></div>
-                <div class="sub-kpi-card"><div class="k">Long Tenure Mix</div><div class="v">{long_tenure_mix:.1f}%</div><div class="d">13+ months</div></div>
-                <div class="sub-kpi-card"><div class="k">NPS (Weighted)</div><div class="v">+{weighted_nps}</div><div class="d">Brand loyalty</div></div>
-                <div class="sub-kpi-card"><div class="k">ARPU (Blended)</div><div class="v">CLP {blended_arpu:.2f}</div><div class="d">{arpu_uplift} vs last qtr</div></div>
+                <div class="sub-kpi-card"><div class="k">Total Suscriptores</div><div class="v">{movil_total_subs/1000000:.2f}M</div><div class="d">Base activa</div></div>
+                <div class="sub-kpi-card"><div class="k">Net Adds (Mes)</div><div class="v">+{movil_net_adds:,}</div><div class="d">Crecimiento neto</div></div>
+                <div class="sub-kpi-card"><div class="k">ARPU Móvil</div><div class="v">CLP {movil_arpu:,.0f}</div><div class="d">Promedio ponderado</div></div>
+                <div class="sub-kpi-card"><div class="k">Churn Rate</div><div class="v">{movil_churn_rate:.2f}%</div><div class="d">Mensual</div></div>
+                <div class="sub-kpi-card"><div class="k">5G Users</div><div class="v">{movil_5g_pct:.1f}%</div><div class="d">De la base total</div></div>
+                <div class="sub-kpi-card"><div class="k">Avg Data Usage</div><div class="v">{movil_avg_data:.1f} GB</div><div class="d">Por usuario/mes</div></div>
+                <div class="sub-kpi-card"><div class="k">Portabilidad Neta</div><div class="v">+{movil_portability_net:,}</div><div class="d">Ganancia vs competencia</div></div>
+                <div class="sub-kpi-card warn"><div class="k">Portabilidad Out</div><div class="v">{int(movil_latest['Portability Out']):,}</div><div class="d">A Entel/Movistar/Claro</div></div>
             </div>
         """), unsafe_allow_html=True)
-        ov_col1, ov_col2 = st.columns(2)
 
-        with ov_col1:
-            st.markdown('<div class="sub-mini-title">Adds vs Churn vs Base Trend</div>', unsafe_allow_html=True)
+        mv_col1, mv_col2 = st.columns(2)
+        with mv_col1:
+            st.markdown('<div class="sub-mini-title">Altas vs Bajas y Base Móvil</div>', unsafe_allow_html=True)
             with st.container(border=True):
-                bars = alt.Chart(sub_monthly).transform_fold(
+                mv_bars = alt.Chart(movil_monthly).transform_fold(
                     ["Adds", "Churned"], as_=["Metric", "Count"]
                 ).mark_bar(opacity=0.82, cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
                     x=alt.X("Month:N", title=None),
-                    y=alt.Y("Count:Q", title="Adds / Churn"),
-                    color=alt.Color("Metric:N", scale=alt.Scale(domain=["Adds", "Churned"], range=["#29B5E8", "#EF4444"]), legend=alt.Legend(title=None)),
+                    y=alt.Y("Count:Q", title="Altas / Bajas"),
+                    color=alt.Color("Metric:N", scale=alt.Scale(domain=["Adds", "Churned"], range=["#10B981", "#EF4444"]), legend=alt.Legend(title=None)),
                     xOffset="Metric:N",
-                    tooltip=[alt.Tooltip("Month:N"), alt.Tooltip("Metric:N"), alt.Tooltip("Count:Q")],
+                    tooltip=[alt.Tooltip("Month:N"), alt.Tooltip("Metric:N"), alt.Tooltip("Count:Q", format=",")],
                 )
-                base_line = alt.Chart(sub_monthly).mark_line(point=True, color="#10B981", strokeWidth=3).encode(
+                mv_base_line = alt.Chart(movil_monthly).mark_line(point=True, color="#29B5E8", strokeWidth=3).encode(
                     x=alt.X("Month:N", title=None),
-                    y=alt.Y("Base:Q", title="Subscriber Base"),
+                    y=alt.Y("Base:Q", title="Base Total"),
                     tooltip=[alt.Tooltip("Month:N"), alt.Tooltip("Base:Q", format=",")],
                 )
-                st.altair_chart(style_sub_chart(alt.layer(bars, base_line).resolve_scale(y="independent"), height=230), use_container_width=True)
-                net_total = int(sub_monthly["Net Adds"].sum())
+                st.altair_chart(style_sub_chart(alt.layer(mv_bars, mv_base_line).resolve_scale(y="independent"), height=230), use_container_width=True)
+                mv_net_total = int(movil_monthly["Net Adds"].sum())
                 render_sub_ai_reco(
-                    "Growth Momentum",
-                    f"Subscriber base grew by {net_total:,} over the last 6 months with stable monthly additions.",
-                    "Maintain acquisition pace while tightening early-life churn controls in first 30 days.",
-                    "Sustain positive net adds and improve growth quality.",
+                    "Crecimiento Móvil",
+                    f"Base móvil creció +{mv_net_total:,} en los últimos 6 meses. Portabilidad neta positiva.",
+                    "Acelerar campañas 5G para retener usuarios de alto valor y reducir portabilidad a Entel.",
+                    "Mantener crecimiento neto y mejorar mix de usuarios 5G.",
                 )
 
-        with ov_col2:
-            st.markdown('<div class="sub-mini-title">Segment Mix, NPS and ARPU</div>', unsafe_allow_html=True)
+        with mv_col2:
+            st.markdown('<div class="sub-mini-title">Distribución por Plan WOM</div>', unsafe_allow_html=True)
             with st.container(border=True):
-                seg_bubble = alt.Chart(sub_segments).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
-                    x=alt.X("Subscribers:Q", title="Subscribers"),
-                    y=alt.Y("NPS:Q", title="NPS", scale=alt.Scale(domain=[40, 64])),
-                    size=alt.Size("ARPU:Q", title="ARPU", scale=alt.Scale(range=[300, 1600])),
-                    color=alt.Color("Segment:N", scale=alt.Scale(domain=["Consumer", "SMB", "Enterprise"], range=["#29B5E8", "#6366F1", "#10B981"]), legend=alt.Legend(title=None)),
-                    tooltip=["Segment:N", alt.Tooltip("Subscribers:Q", format=","), "NPS:Q", alt.Tooltip("ARPU:Q", format=".0f")],
+                plan_bar = alt.Chart(movil_plans).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=22).encode(
+                    x=alt.X("Subscribers K:Q", title="Suscriptores (Miles)"),
+                    y=alt.Y("Plan:N", sort="-x", title=None),
+                    color=alt.Color("5G Enabled %:Q", scale=alt.Scale(domain=[10, 90], range=["#94A3B8", "#10B981"]), legend=alt.Legend(title="5G %")),
+                    tooltip=["Plan:N", alt.Tooltip("Subscribers K:Q", format=","), alt.Tooltip("ARPU CLP:Q", format=","), alt.Tooltip("5G Enabled %:Q", format=".0f")],
                 )
-                seg_labels = alt.Chart(sub_segments).mark_text(dy=-12, fontSize=10, color="#1E293B").encode(
-                    x="Subscribers:Q", y="NPS:Q", text="Segment:N"
-                )
-                st.altair_chart(style_sub_chart(seg_bubble + seg_labels, height=230), use_container_width=True)
-                top_seg = sub_segments.loc[sub_segments["Subscribers"].idxmax()]
+                st.altair_chart(style_sub_chart(plan_bar, height=230), use_container_width=True)
+                top_plan = movil_plans.loc[movil_plans["Subscribers K"].idxmax()]
                 render_sub_ai_reco(
-                    "Segment Quality",
-                    f"{top_seg['Segment']} drives the largest base while Enterprise leads on NPS and ARPU quality.",
-                    "Run cross-sell journeys from Consumer to SMB bundles with value-added service tiers.",
-                    "Lift blended ARPU while preserving loyalty in the largest segment.",
+                    "Mix de Planes",
+                    f"WOM Libre 50GB lidera con {top_plan['Subscribers K']:.0f}K suscriptores y {top_plan['5G Enabled %']:.0f}% en 5G.",
+                    "Promover migración de Prepago a WOM Libre con ofertas de equipo 5G subsidiado.",
+                    "Incrementar ARPU promedio +8% y adopción 5G +12%.",
                 )
 
-        st.markdown('<div class="sub-mini-title">Voluntary vs Involuntary Churn Split</div>', unsafe_allow_html=True)
-        with st.container(border=True):
-            split_latest = churn_type_df.iloc[-1]
-            churn_split_df = pd.DataFrame({
-                "Type": ["Voluntary", "Involuntary"],
-                "Customers": [int(split_latest["Voluntary"]), int(split_latest["Involuntary"])],
-            })
-            churn_donut = alt.Chart(churn_split_df).mark_arc(innerRadius=58, outerRadius=100, cornerRadius=4, stroke="#FFFFFF", strokeWidth=2).encode(
-                theta=alt.Theta("Customers:Q", stack=True),
-                color=alt.Color("Type:N", scale=alt.Scale(domain=["Voluntary", "Involuntary"], range=["#29B5E8", "#EF4444"]), legend=alt.Legend(title=None)),
-                tooltip=["Type:N", alt.Tooltip("Customers:Q", format=",")],
-            )
-            churn_center = alt.Chart(pd.DataFrame({"t": [f"{churned_last}"]})).mark_text(fontSize=22, fontWeight="bold", color="#0F172A").encode(text="t:N")
-            churn_sub = alt.Chart(pd.DataFrame({"t": ["Total Churn"]})).mark_text(fontSize=11, dy=18, color="#64748B").encode(text="t:N")
-            st.altair_chart(style_sub_chart(churn_donut + churn_center + churn_sub, height=230), use_container_width=True)
-            render_sub_ai_reco(
-                "Churn Type Mix",
-                f"Involuntary churn is {involuntary_pct:.1f}% of monthly churn, indicating a billing/process component.",
-                "Introduce proactive payment reminders + auto-retry flows before suspension events.",
-                "Recover 4-6% of involuntary churners monthly.",
-                level="warning",
-            )
-
-        st.markdown('<div class="sub-mini-title">Tenure Profile and Churn Risk Curve</div>', unsafe_allow_html=True)
-        with st.container(border=True):
-            tenure_bar = alt.Chart(tenure_df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, color="#29B5E8", opacity=0.85).encode(
-                x=alt.X("Tenure Band:N", title=None),
-                y=alt.Y("Subscribers:Q", title="Subscribers"),
-                tooltip=["Tenure Band:N", alt.Tooltip("Subscribers:Q", format=",")],
-            )
-            tenure_line = alt.Chart(tenure_df).mark_line(point=True, strokeWidth=3, color="#EF4444").encode(
-                x=alt.X("Tenure Band:N", title=None),
-                y=alt.Y("Churn %:Q", title="Churn %"),
-                tooltip=["Tenure Band:N", alt.Tooltip("Churn %:Q", format=".1f")],
-            )
-            st.altair_chart(style_sub_chart(alt.layer(tenure_bar, tenure_line).resolve_scale(y="independent"), height=240), use_container_width=True)
-            early_churn = tenure_df.loc[tenure_df["Tenure Band"] == "0-3m", "Churn %"].iloc[0]
-            mature_churn = tenure_df.loc[tenure_df["Tenure Band"] == "25m+", "Churn %"].iloc[0]
-            render_sub_ai_reco(
-                "Tenure Risk",
-                f"Churn drops from {early_churn:.1f}% in first 3 months to {mature_churn:.1f}% in mature base.",
-                "Prioritize first-90-day onboarding quality checks and proactive welcome interventions.",
-                "Reduce early-life churn by 0.6-0.9pp and improve lifetime value.",
-                level="warning",
-            )
-
-    with sub_tab_journey:
-        st.markdown('<div class="sub-title">Customer Journey & Experience</div>', unsafe_allow_html=True)
-        st.markdown(dedent(f"""
-            <div class="sub-kpi-grid">
-                <div class="sub-kpi-card"><div class="k">Install→Activation</div><div class="v">{install_to_activation:.1f}%</div><div class="d">Operational conversion</div></div>
-                <div class="sub-kpi-card"><div class="k">Activation Lead Time</div><div class="v">{activation_lead_days:.1f}d</div><div class="d">Order to live</div></div>
-                <div class="sub-kpi-card"><div class="k">First Contact Resolution</div><div class="v">{fcr:.1f}%</div><div class="d">Support effectiveness</div></div>
-                <div class="sub-kpi-card"><div class="k">Avg Resolution</div><div class="v">{avg_resolution:.1f}h</div><div class="d">Across all queues</div></div>
-                <div class="sub-kpi-card warn"><div class="k">Complaint Rate</div><div class="v">{complaint_rate:.1f}</div><div class="d">Per 1,000 subs</div></div>
-                <div class="sub-kpi-card"><div class="k">Digital Adoption</div><div class="v">{digital_adoption:.1f}%</div><div class="d">Self-service users</div></div>
-                <div class="sub-kpi-card"><div class="k">Best Contact CSAT</div><div class="v">{csat_contact_df['CSAT'].max():.1f}</div><div class="d">{csat_contact_df.loc[csat_contact_df['CSAT'].idxmax(), 'Contact Type']}</div></div>
-                <div class="sub-kpi-card crit"><div class="k">Weakest Contact CSAT</div><div class="v">{csat_contact_df['CSAT'].min():.1f}</div><div class="d">{csat_contact_df.loc[csat_contact_df['CSAT'].idxmin(), 'Contact Type']}</div></div>
-            </div>
-        """), unsafe_allow_html=True)
-        jr_col1, jr_col2 = st.columns(2)
-
-        with jr_col1:
-            st.markdown('<div class="sub-mini-title">Onboarding Funnel Conversion</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-mini-title">Portabilidad: Origen de Bajas</div>', unsafe_allow_html=True)
+        mv_col3, mv_col4 = st.columns(2)
+        with mv_col3:
             with st.container(border=True):
-                funnel = alt.Chart(funnel_df).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=26).encode(
-                    x=alt.X("Users:Q", title="Customers"),
-                    y=alt.Y("Stage:N", sort=list(funnel_df["Stage"]), title=None),
-                    color=alt.value("#29B5E8"),
-                    tooltip=["Stage:N", alt.Tooltip("Users:Q", format=",")],
+                churn_bar = alt.Chart(movil_churn_reasons).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=18, color="#EF4444").encode(
+                    x=alt.X("Volume:Q", title="Clientes Perdidos"),
+                    y=alt.Y("Reason:N", sort="-x", title=None),
+                    tooltip=["Reason:N", alt.Tooltip("Volume:Q", format=",")],
                 )
-                funnel_labels = alt.Chart(funnel_df).mark_text(align="left", dx=6, fontSize=10, color="#0F172A").encode(
-                    x="Users:Q", y=alt.Y("Stage:N", sort=list(funnel_df["Stage"])), text=alt.Text("Users:Q", format=",")
-                )
-                st.altair_chart(style_sub_chart(funnel + funnel_labels, height=230), use_container_width=True)
-                conv = 100 * funnel_df.iloc[-1]["Users"] / funnel_df.iloc[0]["Users"]
+                st.altair_chart(style_sub_chart(churn_bar, height=200), use_container_width=True)
+                top_reason = movil_churn_reasons.sort_values("Volume", ascending=False).iloc[0]
                 render_sub_ai_reco(
-                    "Onboarding Funnel",
-                    f"End-to-end conversion is {conv:.1f}% from lead to activation.",
-                    "Target the biggest drop between Qualified and Orders with assisted checkout nudges.",
-                    "Increase activation volume by 6-8% without extra media spend.",
-                    level="warning",
-                )
-
-        with jr_col2:
-            st.markdown('<div class="sub-mini-title">Resolution Time vs CSAT by Queue</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                support_scatter = alt.Chart(support_df).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
-                    x=alt.X("Resolution Hrs:Q", title="Avg Resolution (hrs)"),
-                    y=alt.Y("CSAT:Q", title="CSAT", scale=alt.Scale(domain=[3.6, 4.7])),
-                    size=alt.Size("Tickets:Q", scale=alt.Scale(range=[220, 1400]), legend=None),
-                    color=alt.Color("Queue:N", scale=alt.Scale(range=["#29B5E8", "#6366F1", "#EF4444", "#10B981", "#F59E0B"]), legend=alt.Legend(title=None)),
-                    tooltip=["Queue:N", "Resolution Hrs:Q", "CSAT:Q", alt.Tooltip("Tickets:Q", format=",")],
-                )
-                support_labels = alt.Chart(support_df).mark_text(dy=-12, fontSize=9, color="#1E293B").encode(
-                    x="Resolution Hrs:Q", y="CSAT:Q", text="Queue:N"
-                )
-                st.altair_chart(style_sub_chart(support_scatter + support_labels, height=230), use_container_width=True)
-                worst_queue = support_df.sort_values(["CSAT", "Resolution Hrs"]).iloc[0]
-                render_sub_ai_reco(
-                    "Experience Operations",
-                    f"{worst_queue['Queue']} has the weakest experience profile (CSAT {worst_queue['CSAT']:.1f}, {worst_queue['Resolution Hrs']:.1f}h resolution).",
-                    f"Deploy specialist queue optimization in {worst_queue['Queue']} and first-response SLA triggers.",
-                    "Improve CSAT by 0.2-0.3 and reduce repeat contacts.",
-                    level="warning",
-                )
-
-        st.markdown('<div class="sub-mini-title">Acquisition Channel Efficiency</div>', unsafe_allow_html=True)
-        with st.container(border=True):
-            channel_bars = alt.Chart(channel_df).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=20).encode(
-                x=alt.X("Leads:Q", title="Leads"),
-                y=alt.Y("Channel:N", sort="-x", title=None),
-                color=alt.value("#94A3B8"),
-                tooltip=["Channel:N", alt.Tooltip("Leads:Q", format=",")],
-            )
-            channel_acts = alt.Chart(channel_df).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=12).encode(
-                x=alt.X("Activations:Q", title="Leads / Activations"),
-                y=alt.Y("Channel:N", sort="-x", title=None),
-                color=alt.value("#10B981"),
-                tooltip=["Channel:N", alt.Tooltip("Activations:Q", format=","), alt.Tooltip("Conversion %:Q", format=".1f")],
-            )
-            channel_conv = alt.Chart(channel_df).mark_text(align="left", dx=6, fontSize=10, color="#0F172A").encode(
-                x="Leads:Q",
-                y=alt.Y("Channel:N", sort="-x"),
-                text=alt.Text("Conversion %:Q", format=".1f"),
-            )
-            st.altair_chart(style_sub_chart(channel_bars + channel_acts + channel_conv, height=240), use_container_width=True)
-            best_channel = channel_df.loc[channel_df["Conversion %"].idxmax()]
-            render_sub_ai_reco(
-                "Channel ROI",
-                f"{best_channel['Channel']} has the strongest conversion at {best_channel['Conversion %']:.1f}%.",
-                f"Reallocate 10-15% spend from low-converting channels into {best_channel['Channel']} and referrals.",
-                "Increase activations by 120-180/month at similar CAC.",
-            )
-
-        st.markdown('<div class="sub-mini-title">CSAT by Contact Type</div>', unsafe_allow_html=True)
-        with st.container(border=True):
-            csat_plot_df = csat_contact_df.copy()
-            csat_plot_df["Baseline"] = 3.6
-            csat_stems = alt.Chart(csat_plot_df).mark_bar(
-                size=12,
-                opacity=0.85,
-                cornerRadiusTopRight=7,
-                cornerRadiusBottomRight=7,
-            ).encode(
-                x=alt.X("Baseline:Q", title="CSAT", scale=alt.Scale(domain=[3.6, 4.8])),
-                x2=alt.X2("CSAT:Q"),
-                y=alt.Y("Contact Type:N", sort="-x", title=None),
-                color=alt.Color("Contact Type:N", legend=None, scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B", "#EF4444"])),
-                tooltip=["Contact Type:N", alt.Tooltip("CSAT:Q", format=".1f")],
-            )
-            csat_points = alt.Chart(csat_contact_df).mark_circle(size=220, opacity=0.95, stroke="#FFFFFF", strokeWidth=1.6).encode(
-                x=alt.X("CSAT:Q", title="CSAT", scale=alt.Scale(domain=[3.6, 4.8])),
-                y=alt.Y("Contact Type:N", sort="-x", title=None),
-                color=alt.Color("Contact Type:N", legend=None, scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B", "#EF4444"])),
-                tooltip=["Contact Type:N", alt.Tooltip("CSAT:Q", format=".1f")],
-            )
-            csat_label = alt.Chart(csat_contact_df).mark_text(
-                align="left",
-                dx=6,
-                fontSize=10,
-                color="#0F172A",
-            ).encode(
-                x="CSAT:Q",
-                y=alt.Y("Contact Type:N", sort="-x"),
-                text=alt.Text("CSAT:Q", format=".1f"),
-            )
-            st.altair_chart(style_sub_chart(csat_stems + csat_points + csat_label, height=220), use_container_width=True)
-            weakest_contact = csat_contact_df.loc[csat_contact_df["CSAT"].idxmin()]
-            render_sub_ai_reco(
-                "Contact Experience",
-                f"{weakest_contact['Contact Type']} has the lowest CSAT ({weakest_contact['CSAT']:.1f}).",
-                f"Create focused quality program for {weakest_contact['Contact Type']} interactions and script optimization.",
-                "Raise blended CSAT and reduce repeat contacts.",
-                level="warning",
-            )
-
-    with sub_tab_risk:
-        st.markdown('<div class="sub-title">Churn Risk & Retention Performance</div>', unsafe_allow_html=True)
-        st.markdown(dedent(f"""
-            <div class="sub-kpi-grid">
-                <div class="sub-kpi-card crit"><div class="k">At-Risk Subscribers</div><div class="v">{risk_customers:,}</div><div class="d">High-priority cohort</div></div>
-                <div class="sub-kpi-card crit"><div class="k">Revenue at Risk</div><div class="v">CLP {risk_arr_m:.1f}M</div><div class="d">ARR exposure</div></div>
-                <div class="sub-kpi-card"><div class="k">Save Rate</div><div class="v">{save_rate_overall:.1f}%</div><div class="d">Campaign effectiveness</div></div>
-                <div class="sub-kpi-card warn"><div class="k">Risk Coverage</div><div class="v">{risk_coverage:.1f}%</div><div class="d">At-risk contacted</div></div>
-                <div class="sub-kpi-card"><div class="k">Reactivation Rate</div><div class="v">{reactivation_rate:.1f}%</div><div class="d">Win-back performance</div></div>
-                <div class="sub-kpi-card"><div class="k">Churn Cost Avoided</div><div class="v">CLP {churn_cost_avoided_m:.2f}M</div><div class="d">Retention value saved</div></div>
-                <div class="sub-kpi-card"><div class="k">LTV/CAC (Blended)</div><div class="v">{ltv_cac_blended:.2f}x</div><div class="d">Acquisition efficiency</div></div>
-                <div class="sub-kpi-card warn"><div class="k">Predictive Churn Index</div><div class="v">{predictive_churn_index:.1f}</div><div class="d">Model pressure score</div></div>
-            </div>
-        """), unsafe_allow_html=True)
-        rk_col1, rk_col2 = st.columns(2)
-
-        with rk_col1:
-            st.markdown('<div class="sub-mini-title">At-Risk Cohorts by Segment</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                risk_lolli_line = alt.Chart(sub_risk).mark_rule(strokeWidth=3).encode(
-                    x=alt.X("At Risk:Q", title="Customers at Risk"),
-                    x2=alt.value(0),
-                    y=alt.Y("Segment:N", sort=["Budget", "Standard", "Premium", "VIP"], title=None),
-                    color=alt.Color("Propensity:Q", scale=alt.Scale(scheme="orangered"), legend=None),
-                )
-                risk_lolli_point = alt.Chart(sub_risk).mark_circle(size=330).encode(
-                    x="At Risk:Q",
-                    y=alt.Y("Segment:N", sort=["Budget", "Standard", "Premium", "VIP"]),
-                    color=alt.Color("Propensity:Q", scale=alt.Scale(scheme="orangered"), legend=alt.Legend(title="Churn Risk")),
-                    tooltip=["Segment:N", "At Risk:Q", alt.Tooltip("Revenue at Risk K:Q", title="Revenue at Risk (CLP  K)", format=",.0f"), alt.Tooltip("Propensity:Q", format=".0%")],
-                )
-                st.altair_chart(style_sub_chart(risk_lolli_line + risk_lolli_point, height=230), use_container_width=True)
-                high_risk = sub_risk.loc[sub_risk["Propensity"].idxmax()]
-                render_sub_ai_reco(
-                    "Risk Concentration",
-                    f"{high_risk['Segment']} is the most vulnerable cohort ({high_risk['Propensity']:.0%} propensity).",
-                    f"Activate a 2-step save journey for {high_risk['Segment']} with bill-credit + quality assurance callback.",
-                    f"Protect up to CLP {(high_risk['Revenue at Risk K']*12/1000):.1f}M ARR from this cohort.",
+                    "Fuga Competitiva",
+                    f"Principal destino de portabilidad: {top_reason['Reason']} ({top_reason['Volume']:,} clientes).",
+                    "Lanzar campaña de retención proactiva para usuarios con señales de riesgo hacia Entel.",
+                    "Reducir portabilidad-out 15% y proteger base de alto valor.",
                     level="critical",
                 )
 
-        with rk_col2:
-            st.markdown('<div class="sub-mini-title">Retention Campaign Efficiency</div>', unsafe_allow_html=True)
+        with mv_col4:
             with st.container(border=True):
-                camp_bars = alt.Chart(retention_df).transform_fold(
-                    ["Contacted", "Saved"], as_=["Metric", "Value"]
-                ).mark_bar(opacity=0.82, cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
-                    x=alt.X("Campaign:N", title=None),
-                    y=alt.Y("Value:Q", title="Customers"),
-                    color=alt.Color("Metric:N", scale=alt.Scale(domain=["Contacted", "Saved"], range=["#94A3B8", "#10B981"]), legend=alt.Legend(title=None)),
-                    xOffset="Metric:N",
-                    tooltip=["Campaign:N", "Metric:N", "Value:Q"],
+                tech_donut = alt.Chart(movil_network).mark_arc(innerRadius=55, outerRadius=95, cornerRadius=4, stroke="#FFFFFF", strokeWidth=2).encode(
+                    theta=alt.Theta("Users K:Q", stack=True),
+                    color=alt.Color("Technology:N", scale=alt.Scale(domain=["5G", "4G LTE", "3G"], range=["#10B981", "#29B5E8", "#94A3B8"]), legend=alt.Legend(title=None)),
+                    tooltip=["Technology:N", alt.Tooltip("Users K:Q", format=","), alt.Tooltip("Avg Data GB:Q", format=".1f")],
                 )
-                save_rate = alt.Chart(retention_df).mark_line(point=True, color="#F59E0B", strokeWidth=3).encode(
-                    x=alt.X("Campaign:N", title=None),
-                    y=alt.Y("Save Rate:Q", title="Save Rate %"),
-                    tooltip=["Campaign:N", alt.Tooltip("Save Rate:Q", format=".1f")],
-                )
-                st.altair_chart(style_sub_chart(alt.layer(camp_bars, save_rate).resolve_scale(y="independent"), height=230), use_container_width=True)
-                best_campaign = retention_df.loc[retention_df["Save Rate"].idxmax()]
+                st.altair_chart(style_sub_chart(tech_donut, height=200), use_container_width=True)
                 render_sub_ai_reco(
-                    "Retention ROI",
-                    f"{best_campaign['Campaign']} is the best performer with {best_campaign['Save Rate']:.1f}% save rate.",
-                    f"Scale targeting logic from {best_campaign['Campaign']} across high-propensity standard and budget users.",
-                    "Increase saves by 80-120 accounts per cycle at similar cost.",
+                    "Mix Tecnológico",
+                    f"5G representa {movil_5g_pct:.1f}% de usuarios con consumo promedio de {movil_network.loc[movil_network['Technology']=='5G', 'Avg Data GB'].iloc[0]:.1f} GB.",
+                    "Incentivar upgrade de dispositivos 4G→5G con planes de financiamiento atractivos.",
+                    "Aumentar adopción 5G y reducir churn en segmento premium.",
                 )
 
-        st.markdown('<div class="sub-mini-title">Risk Score Distribution and Complaint Pressure</div>', unsafe_allow_html=True)
-        rrk_col1, rrk_col2 = st.columns(2)
-        with rrk_col1:
-            with st.container(border=True):
-                risk_hist = alt.Chart(risk_score_df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, color="#EF4444", opacity=0.82).encode(
-                    x=alt.X("Band:N", title="Risk Score Band"),
-                    y=alt.Y("Customers:Q", title="Customers"),
-                    tooltip=["Band:N", alt.Tooltip("Customers:Q", format=",")],
-                )
-                st.altair_chart(style_sub_chart(risk_hist, height=240), use_container_width=True)
-            high_band = risk_score_df.iloc[-1]
-            band_share = (high_band["Customers"] / risk_score_df["Customers"].sum()) * 100
-            render_sub_ai_reco(
-                "Risk Band Severity",
-                f"{high_band['Customers']:,} subscribers are concentrated in the highest risk score band ({band_share:.1f}% of monitored base).",
-                "Prioritize save-offer triggers for this band and enforce proactive outreach 7-10 days before billing date.",
-                "Reduce near-term churn exposure and stabilize retention over the next cycle.",
-                level="critical",
-            )
-        with rrk_col2:
-            with st.container(border=True):
-                complaint_bar = alt.Chart(complaint_df).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=18, color="#F59E0B").encode(
-                    x=alt.X("Volume:Q", title="Complaint Volume"),
-                    y=alt.Y("Reason:N", sort="-x", title=None),
-                    tooltip=["Reason:N", "Volume:Q"],
-                )
-                st.altair_chart(style_sub_chart(complaint_bar, height=240), use_container_width=True)
-            top_reason = complaint_df.sort_values("Volume", ascending=False).iloc[0]
-            render_sub_ai_reco(
-                "Escalation Drivers",
-                f"Top complaint driver is {top_reason['Reason']} with {top_reason['Volume']:,} cases in the latest window.",
-                f"Trigger targeted remediation for {top_reason['Reason']} before next billing cycle and prioritize high-risk cohort outreach.",
-                "Lower complaint-driven churn and reduce near-term attrition pressure.",
-                level="critical",
-            )
-
-        st.markdown('<div class="sub-mini-title">LTV/CAC by Acquisition Channel</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-mini-title">Tendencia de Consumo de Datos y Usuarios 5G</div>', unsafe_allow_html=True)
         with st.container(border=True):
-            ltvcac_bar = alt.Chart(channel_econ_df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=24).encode(
-                x=alt.X("Channel:N", title=None),
-                y=alt.Y("LTV/CAC:Q", title="LTV/CAC Ratio"),
-                color=alt.Color("Channel:N", legend=None, scale=alt.Scale(range=["#29B5E8", "#10B981", "#6366F1", "#F59E0B", "#EF4444"])),
-                tooltip=["Channel:N", alt.Tooltip("LTV/CAC:Q", format=".2f"), "CAC:Q", "LTV:Q"],
+            data_line = alt.Chart(movil_data_trend).mark_line(point=True, strokeWidth=3, color="#29B5E8").encode(
+                x=alt.X("Month:N", title=None),
+                y=alt.Y("Avg Data GB:Q", title="Consumo Promedio (GB)"),
+                tooltip=[alt.Tooltip("Month:N"), alt.Tooltip("Avg Data GB:Q", format=".1f")],
             )
-            ltv_target = alt.Chart(pd.DataFrame({"y": [3.0]})).mark_rule(color="#94A3B8", strokeDash=[4, 4]).encode(y="y:Q")
-            st.altair_chart(style_sub_chart(ltvcac_bar + ltv_target, height=220), use_container_width=True)
-            worst_ratio = channel_econ_df.loc[channel_econ_df["LTV/CAC"].idxmin()]
+            users_5g = alt.Chart(movil_data_trend).mark_bar(opacity=0.6, color="#10B981").encode(
+                x=alt.X("Month:N", title=None),
+                y=alt.Y("5G Users K:Q", title="Usuarios 5G (K)"),
+                tooltip=[alt.Tooltip("Month:N"), alt.Tooltip("5G Users K:Q", format=",")],
+            )
+            st.altair_chart(style_sub_chart(alt.layer(users_5g, data_line).resolve_scale(y="independent"), height=220), use_container_width=True)
+
+        st.markdown('<div class="sub-mini-title">Retención Móvil: Campañas Activas</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            ret_bars = alt.Chart(movil_retention).transform_fold(
+                ["Contacted", "Saved"], as_=["Metric", "Value"]
+            ).mark_bar(opacity=0.82, cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
+                x=alt.X("Campaign:N", title=None),
+                y=alt.Y("Value:Q", title="Clientes"),
+                color=alt.Color("Metric:N", scale=alt.Scale(domain=["Contacted", "Saved"], range=["#94A3B8", "#10B981"]), legend=alt.Legend(title=None)),
+                xOffset="Metric:N",
+                tooltip=["Campaign:N", "Metric:N", alt.Tooltip("Value:Q", format=",")],
+            )
+            st.altair_chart(style_sub_chart(ret_bars, height=220), use_container_width=True)
+            best_camp = movil_retention.loc[movil_retention["Save Rate %"].idxmax()]
             render_sub_ai_reco(
-                "Acquisition Economics",
-                f"{worst_ratio['Channel']} is the weakest economics channel at {worst_ratio['LTV/CAC']:.2f}x.",
-                f"Tighten spend efficiency in {worst_ratio['Channel']} and shift acquisition mix toward higher-ratio channels.",
-                "Improve blended LTV/CAC and protect payback timelines.",
+                "Efectividad Retención",
+                f"Mejor campaña: {best_camp['Campaign']} con {best_camp['Save Rate %']:.1f}% tasa de salvación.",
+                "Escalar targeting de {best_camp['Campaign']} a usuarios de alto ARPU con señales de riesgo.",
+                "Incrementar saves mensuales +25% y reducir churn 0.3pp.",
+            )
+
+        st.markdown('<div class="sub-mini-title">Cobertura Regional y NPS</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            region_scatter = alt.Chart(movil_regions).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
+                x=alt.X("5G Coverage %:Q", title="Cobertura 5G (%)", scale=alt.Scale(domain=[35, 90])),
+                y=alt.Y("NPS:Q", title="NPS", scale=alt.Scale(domain=[35, 52])),
+                size=alt.Size("Subscribers K:Q", scale=alt.Scale(range=[200, 1800]), legend=None),
+                color=alt.Color("Region:N", legend=alt.Legend(title=None)),
+                tooltip=["Region:N", alt.Tooltip("Subscribers K:Q", format=","), alt.Tooltip("5G Coverage %:Q", format=".0f"), "NPS:Q"],
+            )
+            region_labels = alt.Chart(movil_regions).mark_text(dy=-14, fontSize=9, color="#1E293B").encode(
+                x="5G Coverage %:Q", y="NPS:Q", text="Region:N"
+            )
+            st.altair_chart(style_sub_chart(region_scatter + region_labels, height=240), use_container_width=True)
+            weakest = movil_regions.sort_values("NPS").iloc[0]
+            render_sub_ai_reco(
+                "Experiencia Regional",
+                f"Región con menor NPS: {weakest['Region']} (NPS {weakest['NPS']}) con {weakest['5G Coverage %']:.0f}% cobertura 5G.",
+                f"Priorizar expansión 5G en {weakest['Region']} y mejorar atención en tiendas WOM locales.",
+                "Elevar NPS regional +4 puntos y reducir churn geográfico.",
                 level="warning",
             )
 
+    with sub_tab_fibra:
+        st.markdown('<div class="sub-title">WOM Fibra/Hogar · Subscriber Analytics</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
-            <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border-radius: 10px; padding: 0.82rem 0.95rem; margin-top: 0.55rem; border-left: 4px solid #F59E0B;">
-                <div style="display: flex; align-items: center;">
-                    <span style="font-size: 1.35rem; margin-right: 0.55rem;">⚠️</span>
-                    <div>
-                        <strong style="color: #92400E;">Urgent: {risk_customers} subscribers at risk</strong>
-                        <div style="color: #B45309; font-size: 0.84rem;">CLP {risk_arr_m:.1f}M ARR exposed · Budget segment highest propensity</div>
-                    </div>
-                </div>
+            <div class="sub-kpi-grid">
+                <div class="sub-kpi-card"><div class="k">Total Suscriptores</div><div class="v">{fibra_total_subs/1000:.0f}K</div><div class="d">Base activa</div></div>
+                <div class="sub-kpi-card"><div class="k">Net Adds (Mes)</div><div class="v">+{fibra_net_adds:,}</div><div class="d">Crecimiento neto</div></div>
+                <div class="sub-kpi-card"><div class="k">ARPU Fibra</div><div class="v">CLP {fibra_arpu:,.0f}</div><div class="d">Promedio ponderado</div></div>
+                <div class="sub-kpi-card"><div class="k">Churn Rate</div><div class="v">{fibra_churn_rate:.2f}%</div><div class="d">Mensual</div></div>
+                <div class="sub-kpi-card"><div class="k">Avg Speed</div><div class="v">{fibra_avg_speed:.0f} Mbps</div><div class="d">Velocidad promedio</div></div>
+                <div class="sub-kpi-card"><div class="k">FTTH Coverage</div><div class="v">72.3%</div><div class="d">Hogares pasados</div></div>
+                <div class="sub-kpi-card"><div class="k">Bundle Rate</div><div class="v">{fibra_bundle_rate:.1f}%</div><div class="d">Con TV o Triple Play</div></div>
+                <div class="sub-kpi-card warn"><div class="k">Competencia VTR</div><div class="v">1,420</div><div class="d">Bajas a VTR/Movistar</div></div>
             </div>
         """), unsafe_allow_html=True)
+
+        fb_col1, fb_col2 = st.columns(2)
+        with fb_col1:
+            st.markdown('<div class="sub-mini-title">Altas vs Bajas y Base Fibra</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                fb_bars = alt.Chart(fibra_monthly).transform_fold(
+                    ["Adds", "Churned"], as_=["Metric", "Count"]
+                ).mark_bar(opacity=0.82, cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("Count:Q", title="Altas / Bajas"),
+                    color=alt.Color("Metric:N", scale=alt.Scale(domain=["Adds", "Churned"], range=["#10B981", "#EF4444"]), legend=alt.Legend(title=None)),
+                    xOffset="Metric:N",
+                    tooltip=[alt.Tooltip("Month:N"), alt.Tooltip("Metric:N"), alt.Tooltip("Count:Q", format=",")],
+                )
+                fb_base_line = alt.Chart(fibra_monthly).mark_line(point=True, color="#6366F1", strokeWidth=3).encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("Base:Q", title="Base Total"),
+                    tooltip=[alt.Tooltip("Month:N"), alt.Tooltip("Base:Q", format=",")],
+                )
+                st.altair_chart(style_sub_chart(alt.layer(fb_bars, fb_base_line).resolve_scale(y="independent"), height=230), use_container_width=True)
+                fb_net_total = int(fibra_monthly["Net Adds"].sum())
+                render_sub_ai_reco(
+                    "Crecimiento Fibra",
+                    f"Base fibra creció +{fb_net_total:,} en los últimos 6 meses. Competencia VTR/Movistar presiona.",
+                    "Acelerar instalaciones en comunas nuevas y promover bundles Fibra+TV para reducir churn.",
+                    "Mantener crecimiento neto y mejorar rentabilidad por cliente.",
+                )
+
+        with fb_col2:
+            st.markdown('<div class="sub-mini-title">Distribución por Plan Fibra</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                fb_plan_bar = alt.Chart(fibra_plans).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=22).encode(
+                    x=alt.X("Subscribers K:Q", title="Suscriptores (Miles)"),
+                    y=alt.Y("Plan:N", sort="-x", title=None),
+                    color=alt.Color("Avg Speed Mbps:Q", scale=alt.Scale(domain=[200, 1000], range=["#29B5E8", "#6366F1"]), legend=alt.Legend(title="Velocidad")),
+                    tooltip=["Plan:N", alt.Tooltip("Subscribers K:Q", format=","), alt.Tooltip("ARPU CLP:Q", format=","), alt.Tooltip("Avg Speed Mbps:Q", format=".0f")],
+                )
+                st.altair_chart(style_sub_chart(fb_plan_bar, height=230), use_container_width=True)
+                top_fb_plan = fibra_plans.loc[fibra_plans["Subscribers K"].idxmax()]
+                render_sub_ai_reco(
+                    "Mix de Planes Fibra",
+                    f"WOM Hogar 300 Mbps lidera con {top_fb_plan['Subscribers K']:.0f}K suscriptores.",
+                    "Promover upgrade a 600 Mbps y 1 Gbps con ofertas de instalación gratuita.",
+                    "Incrementar ARPU promedio +12% y mejorar satisfacción.",
+                )
+
+        st.markdown('<div class="sub-mini-title">Razones de Baja Fibra</div>', unsafe_allow_html=True)
+        fb_col3, fb_col4 = st.columns(2)
+        with fb_col3:
+            with st.container(border=True):
+                fb_churn_bar = alt.Chart(fibra_churn_reasons).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=18, color="#EF4444").encode(
+                    x=alt.X("Volume:Q", title="Clientes Perdidos"),
+                    y=alt.Y("Reason:N", sort="-x", title=None),
+                    tooltip=["Reason:N", alt.Tooltip("Volume:Q", format=",")],
+                )
+                st.altair_chart(style_sub_chart(fb_churn_bar, height=200), use_container_width=True)
+                top_fb_reason = fibra_churn_reasons.sort_values("Volume", ascending=False).iloc[0]
+                render_sub_ai_reco(
+                    "Drivers de Churn",
+                    f"Principal razón de baja: {top_fb_reason['Reason']} ({top_fb_reason['Volume']:,} clientes).",
+                    "Lanzar campaña de retención con descuento y mejora de velocidad para usuarios en riesgo.",
+                    "Reducir churn competitivo 20% y proteger base de alto valor.",
+                    level="critical",
+                )
+
+        with fb_col4:
+            with st.container(border=True):
+                bundle_donut = alt.Chart(fibra_tv_bundle).mark_arc(innerRadius=55, outerRadius=95, cornerRadius=4, stroke="#FFFFFF", strokeWidth=2).encode(
+                    theta=alt.Theta("Subscribers K:Q", stack=True),
+                    color=alt.Color("Bundle:N", scale=alt.Scale(domain=["Fibra Only", "Fibra + TV", "Fibra + TV + Móvil"], range=["#94A3B8", "#6366F1", "#10B981"]), legend=alt.Legend(title=None)),
+                    tooltip=["Bundle:N", alt.Tooltip("Subscribers K:Q", format=","), alt.Tooltip("ARPU CLP:Q", format=","), alt.Tooltip("Churn %:Q", format=".1f")],
+                )
+                st.altair_chart(style_sub_chart(bundle_donut, height=200), use_container_width=True)
+                render_sub_ai_reco(
+                    "Bundles y Retención",
+                    f"Clientes con bundle tienen {fibra_tv_bundle.loc[fibra_tv_bundle['Bundle']=='Fibra + TV + Móvil', 'Churn %'].iloc[0]:.1f}% churn vs {fibra_tv_bundle.loc[fibra_tv_bundle['Bundle']=='Fibra Only', 'Churn %'].iloc[0]:.1f}% sin bundle.",
+                    "Promover Triple Play (Fibra+TV+Móvil) en base existente para reducir churn.",
+                    "Incrementar bundle rate a 45% y reducir churn global 0.4pp.",
+                )
+
+        st.markdown('<div class="sub-mini-title">Calidad de Instalación y Servicio</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            install_bar = alt.Chart(fibra_install_metrics).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=18).encode(
+                x=alt.X("Score:Q", title="Score %", scale=alt.Scale(domain=[0, 100])),
+                y=alt.Y("Metric:N", sort="-x", title=None),
+                color=alt.Color("Score:Q", scale=alt.Scale(domain=[70, 100], range=["#F59E0B", "#10B981"]), legend=None),
+                tooltip=[alt.Tooltip("Metric:N"), alt.Tooltip("Score:Q", title="Score %", format=".1f")],
+            )
+            st.altair_chart(style_sub_chart(install_bar, height=180), use_container_width=True)
+            worst_metric = fibra_install_metrics.loc[fibra_install_metrics["Score"].idxmin()]
+            render_sub_ai_reco(
+                "Calidad Operacional",
+                f"Métrica más débil: {worst_metric['Metric']} ({worst_metric['Score']:.1f}%).",
+                f"Priorizar mejora en {worst_metric['Metric']} con capacitación técnicos y seguimiento proactivo.",
+                "Elevar satisfacción post-instalación y reducir tickets de soporte.",
+                level="warning",
+            )
+
+        st.markdown('<div class="sub-mini-title">Quejas Principales Fibra</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            complaint_bar = alt.Chart(fibra_complaint_df).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=18, color="#F59E0B").encode(
+                x=alt.X("Volume:Q", title="Volumen de Quejas"),
+                y=alt.Y("Reason:N", sort="-x", title=None),
+                tooltip=["Reason:N", alt.Tooltip("Volume:Q", format=",")],
+            )
+            st.altair_chart(style_sub_chart(complaint_bar, height=200), use_container_width=True)
+            top_complaint = fibra_complaint_df.sort_values("Volume", ascending=False).iloc[0]
+            render_sub_ai_reco(
+                "Drivers de Quejas",
+                f"Principal queja: {top_complaint['Reason']} ({top_complaint['Volume']:,} casos).",
+                f"Implementar monitoreo proactivo de velocidad y contacto automático cuando baja del SLA.",
+                "Reducir quejas de velocidad 30% y mejorar NPS.",
+                level="warning",
+            )
+
+        st.markdown('<div class="sub-mini-title">Retención Fibra: Campañas Activas</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            fb_ret_bars = alt.Chart(fibra_retention).transform_fold(
+                ["Contacted", "Saved"], as_=["Metric", "Value"]
+            ).mark_bar(opacity=0.82, cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
+                x=alt.X("Campaign:N", title=None),
+                y=alt.Y("Value:Q", title="Clientes"),
+                color=alt.Color("Metric:N", scale=alt.Scale(domain=["Contacted", "Saved"], range=["#94A3B8", "#10B981"]), legend=alt.Legend(title=None)),
+                xOffset="Metric:N",
+                tooltip=["Campaign:N", "Metric:N", alt.Tooltip("Value:Q", format=",")],
+            )
+            st.altair_chart(style_sub_chart(fb_ret_bars, height=220), use_container_width=True)
+            best_fb_camp = fibra_retention.loc[fibra_retention["Save Rate %"].idxmax()]
+            render_sub_ai_reco(
+                "Efectividad Retención Fibra",
+                f"Mejor campaña: {best_fb_camp['Campaign']} con {best_fb_camp['Save Rate %']:.1f}% tasa de salvación.",
+                f"Escalar {best_fb_camp['Campaign']} a clientes con señales de riesgo hacia VTR.",
+                "Incrementar saves mensuales +30% y reducir churn competitivo.",
+            )
+
+        st.markdown('<div class="sub-mini-title">Cobertura Regional Fibra y NPS</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            fb_region_scatter = alt.Chart(fibra_regions).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
+                x=alt.X("FTTH Coverage %:Q", title="Cobertura FTTH (%)", scale=alt.Scale(domain=[35, 85])),
+                y=alt.Y("NPS:Q", title="NPS", scale=alt.Scale(domain=[38, 55])),
+                size=alt.Size("Subscribers K:Q", scale=alt.Scale(range=[200, 1800]), legend=None),
+                color=alt.Color("Region:N", legend=alt.Legend(title=None)),
+                tooltip=["Region:N", alt.Tooltip("Subscribers K:Q", format=","), alt.Tooltip("FTTH Coverage %:Q", format=".0f"), "NPS:Q"],
+            )
+            fb_region_labels = alt.Chart(fibra_regions).mark_text(dy=-14, fontSize=9, color="#1E293B").encode(
+                x="FTTH Coverage %:Q", y="NPS:Q", text="Region:N"
+            )
+            st.altair_chart(style_sub_chart(fb_region_scatter + fb_region_labels, height=240), use_container_width=True)
+            fb_weakest = fibra_regions.sort_values("NPS").iloc[0]
+            render_sub_ai_reco(
+                "Experiencia Regional Fibra",
+                f"Región con menor NPS: {fb_weakest['Region']} (NPS {fb_weakest['NPS']}) con {fb_weakest['FTTH Coverage %']:.0f}% cobertura FTTH.",
+                f"Priorizar expansión FTTH en {fb_weakest['Region']} y mejorar tiempos de instalación.",
+                "Elevar NPS regional +5 puntos y aumentar penetración.",
+                level="warning",
+            )
 
 elif selected_menu == "Revenue Analytics":
     import pandas as pd
@@ -3829,991 +4144,834 @@ elif selected_menu == "Revenue Analytics":
 </style>""", unsafe_allow_html=True)
 
     # -------------------------------------------------------------------
-    # Synthetic and internally consistent revenue dataset
+    # WOM Revenue Data - Móvil + Fibra/Hogar Combined
     # -------------------------------------------------------------------
     rev_monthly = pd.DataFrame({
         "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
-        "Invoiced M": [4.56, 4.62, 4.68, 4.66, 4.74, 4.82],
-        "Collected M": [4.38, 4.43, 4.49, 4.47, 4.56, 4.64],
-        "Discounts M": [0.28, 0.29, 0.30, 0.30, 0.30, 0.31],
-        "COGS M": [2.03, 2.05, 2.08, 2.07, 2.10, 2.12],
+        "Móvil Revenue M": [36.8, 37.4, 38.2, 37.9, 38.8, 39.6],
+        "Fibra Revenue M": [11.2, 11.6, 12.1, 12.4, 12.9, 13.4],
+        "TV Revenue M": [1.8, 1.9, 2.0, 2.1, 2.2, 2.3],
+        "Collected M": [46.2, 47.1, 48.4, 48.6, 50.1, 51.2],
+        "Discounts M": [2.8, 2.9, 3.0, 3.1, 3.2, 3.3],
     })
-    rev_monthly["Net Revenue M"] = rev_monthly["Invoiced M"] - rev_monthly["Discounts M"]
-    rev_monthly["Gross Margin %"] = ((rev_monthly["Net Revenue M"] - rev_monthly["COGS M"]) / rev_monthly["Net Revenue M"] * 100).round(1)
-    rev_monthly["Collection %"] = (rev_monthly["Collected M"] / rev_monthly["Invoiced M"] * 100).round(1)
+    rev_monthly["Total Revenue M"] = rev_monthly["Móvil Revenue M"] + rev_monthly["Fibra Revenue M"] + rev_monthly["TV Revenue M"]
+    rev_monthly["Net Revenue M"] = rev_monthly["Total Revenue M"] - rev_monthly["Discounts M"]
+    rev_monthly["Collection %"] = (rev_monthly["Collected M"] / rev_monthly["Total Revenue M"] * 100).round(1)
 
-    rev_segments = pd.DataFrame({
-        "Segment": ["Consumer", "SMB", "Enterprise", "Wholesale"],
-        "Revenue M": [2.4, 1.1, 0.7, 0.3],
-        "Growth %": [6.1, 8.1, 11.4, 3.2],
-        "Margin %": [47.8, 53.9, 57.4, 40.8],
+    rev_by_product = pd.DataFrame({
+        "Product": ["WOM Móvil", "WOM Fibra", "WOM TV"],
+        "Revenue M": [39.6, 13.4, 2.3],
+        "Growth %": [7.6, 19.6, 27.8],
+        "Margin %": [52.4, 48.2, 62.1],
+        "Subscribers K": [2852, 485, 173],
     })
 
-    rev_plans = pd.DataFrame({
-        "Plan": ["WOM Hogar 300", "WOM Empresas Pro", "WOM Gamer 1G", "WOM TV App", "WOM Mesh Plus"],
-        "Subs": [16500, 6100, 2100, 9800, 7200],
-        "ARPU": [121, 187, 320, 35, 30],
+    movil_plans_rev = pd.DataFrame({
+        "Plan": ["WOM Libre 30GB", "WOM Libre 50GB", "WOM Libre Ilimitado", "WOM Prepago", "WOM Empresas Móvil"],
+        "Subscribers K": [680, 920, 540, 480, 232],
+        "ARPU CLP K": [9.9, 12.9, 18.9, 5.2, 24.5],
+        "Revenue M": [6.7, 11.9, 10.2, 2.5, 5.7],
+        "Growth %": [4.2, 8.4, 12.1, -2.8, 15.4],
     })
-    rev_plans["Revenue M"] = (rev_plans["Subs"] * rev_plans["ARPU"] / 1_000_000).round(3)
 
-    rev_aging = pd.DataFrame({
-        "Bucket": ["Current", "1-30", "31-60", "61-90", "90+"],
-        "Amount M": [4.1, 1.2, 0.7, 0.4, 0.28],
+    fibra_plans_rev = pd.DataFrame({
+        "Plan": ["WOM Hogar 300 Mbps", "WOM Hogar 600 Mbps", "WOM Gamer 1 Gbps", "WOM Empresas Fibra"],
+        "Subscribers K": [185, 168, 82, 50],
+        "ARPU CLP K": [18.9, 24.9, 34.9, 48.5],
+        "Revenue M": [3.5, 4.2, 2.9, 2.4],
+        "Growth %": [12.4, 22.8, 34.2, 18.6],
+    })
+
+    rev_regions = pd.DataFrame({
+        "Region": ["Metropolitana", "Valparaíso", "Biobío", "Maule", "Araucanía", "Otros"],
+        "Móvil M": [23.8, 5.1, 4.5, 2.9, 2.2, 1.1],
+        "Fibra M": [9.4, 1.8, 1.2, 0.5, 0.3, 0.2],
+        "Total M": [33.2, 6.9, 5.7, 3.4, 2.5, 1.3],
+        "Growth %": [8.2, 11.4, 14.2, 9.8, 12.1, 6.4],
     })
 
     rev_channels = pd.DataFrame({
-        "Channel": ["WOM Web", "Referidos WOM", "Tiendas WOM", "Fuerza Comercial FTTH", "Canal Constructoras"],
-        "Revenue M": [1.45, 0.82, 0.94, 0.68, 0.61],
-        "Cost M": [0.39, 0.20, 0.31, 0.26, 0.22],
+        "Channel": ["WOM App / Web", "Tiendas WOM", "Call Center", "Distribuidores", "Empresas Directo"],
+        "Móvil M": [14.2, 12.8, 6.4, 4.1, 2.1],
+        "Fibra M": [4.8, 3.2, 2.1, 1.8, 1.5],
+        "Total M": [19.0, 16.0, 8.5, 5.9, 3.6],
+        "CAC K CLP": [8.2, 18.4, 12.6, 22.1, 32.4],
     })
-    rev_channels["ROI x"] = ((rev_channels["Revenue M"] - rev_channels["Cost M"]) / rev_channels["Cost M"]).round(2)
+
+    rev_aging = pd.DataFrame({
+        "Bucket": ["Al día", "1-30 días", "31-60 días", "61-90 días", "90+ días"],
+        "Móvil M": [34.2, 3.1, 1.4, 0.6, 0.3],
+        "Fibra M": [11.8, 0.9, 0.4, 0.2, 0.1],
+        "Total M": [46.0, 4.0, 1.8, 0.8, 0.4],
+    })
 
     rev_risk = pd.DataFrame({
-        "Risk Driver": ["Delinquency", "Discount Leakage", "Enterprise Churn", "Downgrades", "Disputes"],
-        "Exposure M": [0.95, 0.62, 0.47, 0.31, 0.19],
-        "Likelihood": [4.2, 3.8, 3.1, 2.9, 2.7],
+        "Risk Driver": ["Portabilidad Móvil", "Churn Fibra Competencia", "Morosidad Prepago", "Downgrades", "Disputas"],
+        "Exposure M": [4.2, 2.1, 1.8, 1.2, 0.6],
+        "Likelihood": [4.4, 3.8, 3.2, 2.8, 2.4],
+        "Product": ["Móvil", "Fibra", "Móvil", "Ambos", "Ambos"],
     })
 
-    rev_scenario = pd.DataFrame({
-        "Scenario": ["Downside", "Base", "Upside"],
-        "Quarter Revenue M": [12.8, 13.2, 13.7],
-        "Probability": ["25%", "50%", "25%"],
-    })
-    sales_monthly = pd.DataFrame({
+    arpu_trend = pd.DataFrame({
         "Month": rev_monthly["Month"],
-        "B2C Sales M": [2.64, 2.69, 2.73, 2.71, 2.78, 2.84],
-        "B2B Sales M": [1.22, 1.25, 1.28, 1.30, 1.33, 1.37],
-        "Digital Sales M": [1.46, 1.49, 1.52, 1.54, 1.58, 1.62],
-        "Retail Stores M": [1.18, 1.20, 1.22, 1.23, 1.25, 1.27],
-        "Field Sales M": [0.88, 0.90, 0.93, 0.91, 0.94, 0.96],
-        "Partner Sales M": [0.34, 0.35, 0.34, 0.33, 0.34, 0.36],
-    })
-    sales_monthly["Total Sales M"] = sales_monthly["B2C Sales M"] + sales_monthly["B2B Sales M"]
-    sales_monthly["Blended Margin %"] = [51.2, 51.5, 51.8, 52.1, 52.4, 52.8]
-
-    sales_channel_mix = pd.DataFrame({
-        "Channel": ["WOM Web", "Tiendas WOM", "Fuerza Comercial FTTH", "Canal Constructoras"],
-        "Motion": ["Digital", "Retail Stores", "Field Sales", "Partners"],
-        "B2C Sales M": [1.28, 0.92, 0.52, 0.12],
-        "B2B Sales M": [0.34, 0.35, 0.44, 0.24],
-        "Orders K": [7.1, 5.8, 3.2, 1.2],
-        "Margin %": [55.8, 49.7, 52.3, 57.1],
-    })
-    sales_channel_mix["Total Sales M"] = sales_channel_mix["B2C Sales M"] + sales_channel_mix["B2B Sales M"]
-
-    sales_region = pd.DataFrame({
-        "Region": ["Metropolitana", "Norte", "Sur", "Centro", "Oriente"],
-        "B2C Sales M": [1.66, 0.42, 0.33, 0.27, 0.16],
-        "B2B Sales M": [0.78, 0.20, 0.15, 0.13, 0.11],
-        "Retail Stores": [34, 12, 8, 9, 5],
-        "Margin %": [53.2, 51.0, 50.4, 49.9, 48.7],
-    })
-    sales_region["Total Sales M"] = sales_region["B2C Sales M"] + sales_region["B2B Sales M"]
-
-    sales_reps = pd.DataFrame({
-        "Sales Pod": ["Pod Santiago Premium", "Pod Empresas Centro", "Pod Norte FTTH", "Pod Sur Expansions", "Pod Sur Build"],
-        "Region": ["Metropolitana", "Metropolitana", "Norte", "Sur", "Oriente"],
-        "Sales M": [0.94, 0.81, 0.56, 0.49, 0.31],
-        "New Logos": [42, 28, 23, 19, 11],
-        "Win Rate %": [38.4, 35.1, 33.8, 31.6, 29.7],
+        "Móvil ARPU K": [12.6, 12.7, 12.8, 12.8, 12.9, 12.85],
+        "Fibra ARPU K": [23.8, 24.1, 24.4, 24.6, 24.8, 24.9],
     })
 
-    sales_product_mix = pd.DataFrame({
-        "Product": ["WOM Hogar 300", "WOM Hogar 600", "WOM Gamer 1G", "WOM Empresas Pro", "WOM Mesh Plus", "WOM TV App"],
-        "B2C Sales M": [1.18, 0.94, 0.56, 0.00, 0.31, 0.21],
-        "B2B Sales M": [0.00, 0.00, 0.00, 1.36, 0.07, 0.00],
-        "Attach Rate %": [0, 0, 0, 0, 36.0, 42.0],
+    bundle_revenue = pd.DataFrame({
+        "Bundle Type": ["Móvil Only", "Fibra Only", "Fibra + TV", "Triple Play (Móvil+Fibra+TV)"],
+        "Subscribers K": [2420, 312, 128, 45],
+        "Revenue M": [28.4, 7.4, 4.2, 2.8],
+        "ARPU K CLP": [11.7, 23.7, 32.8, 62.2],
+        "Churn %": [1.4, 1.8, 1.2, 0.8],
     })
-    sales_product_mix["Total Sales M"] = sales_product_mix["B2C Sales M"] + sales_product_mix["B2B Sales M"]
+
     sales_pipeline = pd.DataFrame({
-        "Stage": ["MQL", "SQL", "Proposal", "Negotiation", "Closed Won"],
-        "B2C K": [3.5, 2.6, 1.7, 1.0, 0.43],
-        "B2B K": [1.1, 0.8, 0.56, 0.34, 0.14],
-        "Avg Age Days": [5, 8, 12, 16, 4],
-    })
-    sales_pipeline["Total K"] = sales_pipeline["B2C K"] + sales_pipeline["B2B K"]
-
-    sales_quota = pd.DataFrame({
-        "Dimension": ["WOM Web", "Tiendas WOM", "Fuerza Comercial FTTH", "Canal Constructoras", "Metropolitana", "Norte", "Sur", "Centro", "Oriente"],
-        "Type": ["Channel", "Channel", "Channel", "Channel", "Region", "Region", "Region", "Region", "Region"],
-        "Target M": [1.55, 1.25, 1.00, 0.42, 2.55, 0.66, 0.57, 0.47, 0.35],
-        "Actual M": [1.62, 1.27, 0.96, 0.36, 2.44, 0.62, 0.48, 0.40, 0.27],
-    })
-    sales_quota["Attainment %"] = (sales_quota["Actual M"] / sales_quota["Target M"] * 100).round(1)
-    sales_quota["Gap M"] = (sales_quota["Actual M"] - sales_quota["Target M"]).round(2)
-
-    sales_forecast = pd.DataFrame({
-        "Month": ["2025-11", "2025-12", "2026-01", "2026-02"],
-        "Fcst -90d M": [3.72, 3.78, 3.90, 4.02],
-        "Fcst -30d M": [3.84, 3.88, 4.00, 4.12],
-        "Actual M": [4.01, 4.03, 4.11, 4.21],
-    })
-    sales_forecast["Error -90d %"] = ((sales_forecast["Actual M"] - sales_forecast["Fcst -90d M"]) / sales_forecast["Actual M"] * 100).round(1)
-    sales_forecast["Error -30d %"] = ((sales_forecast["Actual M"] - sales_forecast["Fcst -30d M"]) / sales_forecast["Actual M"] * 100).round(1)
-
-    sales_waterfall = pd.DataFrame({
-        "Step": ["Gross Bookings", "Discounts", "Commercial Credits", "Churn Reversals", "Net Sales"],
-        "Value M": [4.74, -0.31, -0.12, -0.10, 4.21],
-    })
-    sales_waterfall["Cumulative M"] = sales_waterfall["Value M"].cumsum()
-
-    sales_cohort = pd.DataFrame({
-        "Cohort": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
-        "Retention 30d %": [97.8, 97.5, 97.2, 97.0, 96.8, 96.7],
-        "Retention 60d %": [95.9, 95.6, 95.2, 95.0, 94.8, 94.6],
-        "Retention 90d %": [94.2, 93.9, 93.5, 93.2, 93.0, 92.8],
+        "Stage": ["Lead", "Calificado", "Propuesta", "Negociación", "Cerrado"],
+        "Móvil K": [42.0, 28.0, 18.0, 12.0, 8.4],
+        "Fibra K": [12.0, 8.0, 5.2, 3.4, 2.2],
+        "Value M": [8.4, 6.2, 4.8, 3.6, 2.8],
     })
 
-    sales_install_sla = pd.DataFrame({
-        "Region": ["Metropolitana", "Norte", "Sur", "Centro", "Oriente"],
-        "Sale to Install Days": [2.6, 3.4, 3.8, 4.1, 4.9],
-        "Install to First Invoice Days": [3.2, 3.9, 4.0, 4.4, 5.1],
-        "SLA Met %": [95.6, 91.8, 89.7, 88.4, 84.2],
+    competitor_impact = pd.DataFrame({
+        "Competitor": ["Entel", "Movistar", "Claro", "VTR", "GTD"],
+        "Lost Móvil K": [5.2, 4.1, 2.8, 0, 0],
+        "Lost Fibra K": [0, 0.8, 0, 1.4, 0.6],
+        "Revenue Impact M": [1.8, 1.4, 0.9, 0.5, 0.2],
     })
 
-    sales_productivity = pd.DataFrame({
-        "Motion": ["B2C Hunters", "B2B Hunters", "Farmers / Upsell"],
-        "Revenue per Rep K": [112, 164, 138],
-        "Win Rate %": [33.8, 29.4, 41.7],
-        "Avg Deal Size K": [3.8, 14.2, 6.4],
-        "Cycle Days": [8.5, 22.1, 11.7],
-        "Activity to Close %": [12.8, 9.3, 18.5],
+    geo_sales_data = pd.DataFrame({
+        "City": [
+            "Santiago Centro", "Providencia", "Las Condes", "Ñuñoa", "La Florida",
+            "Maipú", "Puente Alto", "Vitacura", "Lo Barnechea", "San Bernardo",
+            "Valparaíso", "Viña del Mar", "Concón", "Quilpué", "Villa Alemana",
+            "Concepción", "Talcahuano", "Chillán", "Los Ángeles", "Coronel",
+            "Temuco", "Villarrica", "Pucón", "Angol", "Victoria",
+            "Talca", "Curicó", "Linares", "Constitución", "Cauquenes",
+            "Antofagasta", "Calama", "Iquique", "Arica", "Copiapó",
+            "Puerto Montt", "Osorno", "Valdivia", "Castro", "Ancud",
+            "La Serena", "Coquimbo", "Ovalle", "Illapel", "Vicuña",
+            "Rancagua", "San Fernando", "Santa Cruz", "Rengo", "Machalí",
+        ],
+        "Region": [
+            "Metropolitana", "Metropolitana", "Metropolitana", "Metropolitana", "Metropolitana",
+            "Metropolitana", "Metropolitana", "Metropolitana", "Metropolitana", "Metropolitana",
+            "Valparaíso", "Valparaíso", "Valparaíso", "Valparaíso", "Valparaíso",
+            "Biobío", "Biobío", "Biobío", "Biobío", "Biobío",
+            "Araucanía", "Araucanía", "Araucanía", "Araucanía", "Araucanía",
+            "Maule", "Maule", "Maule", "Maule", "Maule",
+            "Antofagasta", "Antofagasta", "Tarapacá", "Arica y Parinacota", "Atacama",
+            "Los Lagos", "Los Lagos", "Los Ríos", "Los Lagos", "Los Lagos",
+            "Coquimbo", "Coquimbo", "Coquimbo", "Coquimbo", "Coquimbo",
+            "O'Higgins", "O'Higgins", "O'Higgins", "O'Higgins", "O'Higgins",
+        ],
+        "lat": [
+            -33.4489, -33.4264, -33.4103, -33.4569, -33.5167,
+            -33.5100, -33.6117, -33.3833, -33.3500, -33.5928,
+            -33.0458, -33.0153, -32.9283, -33.0475, -33.0419,
+            -36.8270, -36.7249, -36.6066, -37.4693, -37.0292,
+            -38.7359, -39.2856, -39.2726, -37.7947, -38.2333,
+            -35.4264, -34.9833, -35.8467, -35.3333, -35.9667,
+            -23.6509, -22.4560, -20.2133, -18.4783, -27.3668,
+            -41.4693, -40.5740, -39.8142, -42.4800, -41.8667,
+            -29.9027, -29.9533, -30.6017, -31.6333, -30.0333,
+            -34.1708, -34.5858, -34.6333, -34.4167, -34.1500,
+        ],
+        "lon": [
+            -70.6693, -70.6109, -70.5672, -70.5975, -70.5981,
+            -70.7578, -70.5758, -70.5667, -70.5167, -70.6994,
+            -71.6197, -71.5517, -71.5083, -71.4406, -71.3725,
+            -73.0503, -73.1169, -72.1028, -72.3536, -73.1583,
+            -72.5904, -72.2286, -71.9544, -72.7167, -72.3333,
+            -71.6554, -71.2333, -71.5933, -72.4167, -72.3167,
+            -70.3975, -68.9256, -70.1500, -70.3126, -70.3314,
+            -72.9424, -73.1353, -73.2459, -73.7622, -73.8333,
+            -71.2519, -71.3436, -71.2000, -71.1667, -70.7000,
+            -70.7444, -71.0094, -71.4000, -70.8667, -70.4167,
+        ],
+        "Móvil Revenue M": [
+            4.8, 3.2, 2.9, 2.1, 2.4, 1.9, 1.8, 1.6, 1.2, 0.9,
+            1.4, 1.2, 0.6, 0.5, 0.4, 1.2, 0.8, 0.6, 0.5, 0.4,
+            0.9, 0.4, 0.3, 0.2, 0.2, 0.8, 0.5, 0.3, 0.2, 0.1,
+            0.9, 0.4, 0.6, 0.4, 0.3, 0.5, 0.3, 0.4, 0.2, 0.1,
+            0.4, 0.3, 0.2, 0.1, 0.1, 0.6, 0.3, 0.2, 0.2, 0.1,
+        ],
+        "Fibra Revenue M": [
+            2.1, 1.4, 1.2, 0.9, 0.8, 0.6, 0.5, 0.7, 0.5, 0.3,
+            0.5, 0.4, 0.2, 0.2, 0.1, 0.4, 0.2, 0.1, 0.1, 0.1,
+            0.2, 0.1, 0.05, 0.03, 0.02, 0.15, 0.1, 0.05, 0.03, 0.02,
+            0.2, 0.1, 0.15, 0.1, 0.08, 0.12, 0.08, 0.1, 0.04, 0.02,
+            0.1, 0.08, 0.04, 0.02, 0.01, 0.15, 0.08, 0.05, 0.04, 0.03,
+        ],
+        "Subscribers Móvil K": [
+            142, 95, 86, 62, 71, 56, 53, 47, 35, 27,
+            42, 35, 18, 15, 12, 35, 24, 18, 15, 12,
+            27, 12, 9, 6, 6, 24, 15, 9, 6, 3,
+            27, 12, 18, 12, 9, 15, 9, 12, 6, 3,
+            12, 9, 6, 3, 3, 18, 9, 6, 6, 3,
+        ],
+        "Subscribers Fibra K": [
+            52, 35, 30, 22, 20, 15, 12, 18, 12, 8,
+            12, 10, 5, 5, 3, 10, 5, 3, 2, 2,
+            5, 2, 1, 0.8, 0.5, 4, 2.5, 1.2, 0.8, 0.5,
+            5, 2.5, 4, 2.5, 2, 3, 2, 2.5, 1, 0.5,
+            2.5, 2, 1, 0.5, 0.3, 4, 2, 1.2, 1, 0.8,
+        ],
+        "Tiendas WOM": [
+            8, 4, 3, 2, 3, 2, 2, 1, 1, 1,
+            2, 2, 1, 1, 1, 2, 1, 1, 1, 0,
+            1, 1, 0, 0, 0, 1, 1, 0, 0, 0,
+            1, 1, 1, 1, 0, 1, 1, 1, 0, 0,
+            1, 1, 0, 0, 0, 1, 0, 0, 0, 0,
+        ],
+        "FTTH Coverage %": [
+            92, 95, 97, 88, 78, 72, 65, 98, 96, 58,
+            82, 85, 78, 68, 62, 75, 68, 55, 48, 42,
+            62, 45, 38, 32, 28, 58, 52, 38, 28, 22,
+            68, 52, 72, 65, 48, 55, 48, 58, 35, 28,
+            58, 52, 42, 32, 28, 62, 48, 42, 38, 35,
+        ],
+        "5G Coverage %": [
+            88, 92, 95, 85, 72, 65, 58, 96, 94, 48,
+            75, 78, 68, 55, 48, 68, 58, 42, 35, 28,
+            52, 35, 28, 22, 18, 48, 42, 28, 18, 12,
+            62, 48, 65, 58, 42, 45, 38, 48, 25, 18,
+            48, 42, 32, 22, 18, 55, 42, 35, 28, 25,
+        ],
+        "Churn Móvil %": [
+            1.2, 1.1, 1.0, 1.3, 1.5, 1.6, 1.8, 0.9, 0.8, 2.0,
+            1.4, 1.3, 1.5, 1.6, 1.7, 1.5, 1.6, 1.8, 1.9, 2.0,
+            1.6, 1.8, 1.9, 2.1, 2.2, 1.7, 1.8, 2.0, 2.2, 2.4,
+            1.4, 1.6, 1.3, 1.5, 1.7, 1.7, 1.8, 1.6, 2.0, 2.2,
+            1.5, 1.6, 1.8, 2.0, 2.1, 1.5, 1.7, 1.8, 1.9, 1.8,
+        ],
+        "Churn Fibra %": [
+            1.5, 1.4, 1.3, 1.6, 1.8, 2.0, 2.2, 1.2, 1.1, 2.4,
+            1.7, 1.6, 1.8, 2.0, 2.1, 1.9, 2.0, 2.2, 2.4, 2.5,
+            2.0, 2.2, 2.4, 2.6, 2.8, 2.1, 2.2, 2.5, 2.7, 2.9,
+            1.8, 2.0, 1.7, 1.9, 2.1, 2.1, 2.2, 2.0, 2.5, 2.7,
+            1.9, 2.0, 2.2, 2.4, 2.5, 1.9, 2.1, 2.2, 2.3, 2.2,
+        ],
+        "ARPU Móvil K": [
+            14.2, 15.8, 16.5, 13.8, 12.4, 11.8, 11.2, 17.2, 18.5, 10.5,
+            13.2, 13.8, 14.5, 12.2, 11.8, 12.8, 12.2, 11.5, 11.0, 10.8,
+            12.5, 11.8, 12.2, 10.8, 10.5, 12.2, 11.8, 10.8, 10.2, 9.8,
+            13.5, 12.8, 13.8, 12.5, 11.2, 12.2, 11.5, 12.8, 10.8, 10.2,
+            12.8, 12.2, 11.2, 10.5, 10.2, 13.2, 12.2, 11.5, 11.2, 10.8,
+        ],
+        "ARPU Fibra K": [
+            26.5, 28.2, 30.5, 25.8, 23.2, 22.5, 21.8, 32.5, 35.2, 20.5,
+            24.8, 25.5, 26.2, 22.8, 21.5, 24.2, 23.5, 21.2, 20.5, 19.8,
+            23.5, 22.2, 23.8, 20.5, 19.8, 22.8, 22.2, 20.2, 19.2, 18.5,
+            25.2, 24.2, 26.5, 24.8, 22.2, 23.2, 22.5, 24.8, 20.8, 19.5,
+            24.2, 23.5, 21.8, 20.2, 19.5, 24.8, 23.2, 22.2, 21.5, 20.8,
+        ],
+        "Growth Móvil %": [
+            8.5, 9.2, 7.8, 6.5, 5.8, 5.2, 4.8, 10.2, 11.5, 3.8,
+            7.2, 7.8, 8.5, 6.2, 5.5, 6.8, 6.2, 5.2, 4.5, 4.0,
+            8.2, 9.5, 10.2, 7.5, 6.8, 6.5, 6.0, 5.2, 4.2, 3.5,
+            9.8, 8.5, 10.5, 9.2, 7.8, 7.5, 6.8, 8.2, 6.2, 5.5,
+            7.8, 7.2, 6.2, 5.2, 4.8, 7.2, 6.5, 5.8, 5.2, 4.8,
+        ],
+        "Growth Fibra %": [
+            18.5, 20.2, 22.5, 17.2, 15.8, 14.5, 13.2, 24.5, 26.8, 11.5,
+            16.2, 17.5, 19.2, 14.5, 13.2, 15.8, 14.2, 12.5, 11.2, 10.5,
+            18.5, 22.2, 25.5, 18.2, 16.5, 14.8, 13.8, 12.2, 10.8, 9.5,
+            20.5, 18.2, 22.8, 20.2, 17.5, 16.8, 15.2, 18.5, 14.2, 12.8,
+            17.2, 16.5, 14.2, 12.5, 11.2, 16.5, 15.2, 14.2, 13.2, 12.5,
+        ],
+        "Segment": [
+            "Premium", "Premium", "Premium", "Mass", "Mass",
+            "Mass", "Value", "Premium", "Premium", "Value",
+            "Mass", "Mass", "Premium", "Mass", "Value",
+            "Mass", "Mass", "Value", "Value", "Value",
+            "Mass", "Value", "Premium", "Value", "Value",
+            "Mass", "Mass", "Value", "Value", "Value",
+            "Mass", "Value", "Mass", "Mass", "Value",
+            "Mass", "Value", "Mass", "Value", "Value",
+            "Mass", "Mass", "Value", "Value", "Value",
+            "Mass", "Value", "Value", "Value", "Value",
+        ],
+        "Channel Mix": [
+            "Digital", "Digital", "Digital", "Tienda", "Tienda",
+            "Tienda", "Distribuidor", "Digital", "Digital", "Distribuidor",
+            "Tienda", "Tienda", "Digital", "Distribuidor", "Distribuidor",
+            "Tienda", "Tienda", "Distribuidor", "Distribuidor", "Distribuidor",
+            "Tienda", "Distribuidor", "Digital", "Distribuidor", "Distribuidor",
+            "Tienda", "Tienda", "Distribuidor", "Distribuidor", "Distribuidor",
+            "Tienda", "Distribuidor", "Tienda", "Tienda", "Distribuidor",
+            "Tienda", "Distribuidor", "Tienda", "Distribuidor", "Distribuidor",
+            "Tienda", "Tienda", "Distribuidor", "Distribuidor", "Distribuidor",
+            "Tienda", "Distribuidor", "Distribuidor", "Distribuidor", "Distribuidor",
+        ],
     })
+    geo_sales_data["Total Revenue M"] = geo_sales_data["Móvil Revenue M"] + geo_sales_data["Fibra Revenue M"]
+    geo_sales_data["Total Subscribers K"] = geo_sales_data["Subscribers Móvil K"] + geo_sales_data["Subscribers Fibra K"]
 
-    sales_deals = pd.DataFrame({
-        "Deal": ["Santiago Corporate Multi-site", "Providencia Residencial Tower", "Temuco SME Cluster", "Rancagua Hospitality Bundle", "Valparaiso Industrial Park", "Maipu Port Offices"],
-        "Status": ["Won", "Won", "Won", "Lost", "Lost", "Lost"],
-        "Value K": [220, 178, 146, 132, 128, 115],
-        "Region": ["Metropolitana", "Metropolitana", "Norte", "Sur", "Sur", "Metropolitana"],
-        "Reason": ["Price-value fit", "Fast install SLA", "Partner-led conversion", "Competitor discount", "Long install lead time", "Procurement delay"],
-    })
-
-    santiago_sales_map = pd.DataFrame({
-        "Neighborhood": ["Providencia", "Nunoa", "Vitacura", "Lo Barnechea", "Las Condes", "Macul", "La Reina", "Recoleta", "San Joaquin", "Independencia", "La Florida", "Penalolen"],
-        "lat": [-12.097, -12.121, -12.139, -12.084, -12.108, -12.091, -12.074, -12.073, -12.079, -12.086, -12.048, -12.168],
-        "lon": [-77.036, -77.030, -76.991, -76.958, -76.994, -77.073, -77.041, -77.070, -77.090, -77.031, -76.915, -77.022],
-        "Sales M": [0.41, 0.38, 0.35, 0.29, 0.27, 0.21, 0.23, 0.19, 0.20, 0.18, 0.20, 0.17],
-        "B2B Share %": [62, 54, 41, 39, 48, 36, 44, 32, 35, 46, 29, 25],
-        "Margin %": [56.8, 55.4, 53.2, 52.7, 53.8, 50.1, 51.5, 49.8, 50.4, 52.0, 48.4, 47.2],
-    })
-    santiago_sales_map["radius"] = (santiago_sales_map["Sales M"] * 9000).round(0)
-    santiago_sales_map["r"] = santiago_sales_map["Margin %"].apply(lambda v: 16 if v >= 53 else 41 if v >= 50 else 245)
-    santiago_sales_map["g"] = santiago_sales_map["Margin %"].apply(lambda v: 185 if v >= 53 else 121 if v >= 50 else 158)
-    santiago_sales_map["b"] = santiago_sales_map["Margin %"].apply(lambda v: 129 if v >= 53 else 255 if v >= 50 else 11)
-
+    # Computed metrics
     latest = rev_monthly.iloc[-1]
     prev = rev_monthly.iloc[-2]
-    mrr = float(latest["Net Revenue M"])
-    arr = mrr * 12
-    gross_margin = float(latest["Gross Margin %"])
+    total_mrr = float(latest["Net Revenue M"])
+    total_arr = total_mrr * 12
+    movil_mrr = float(latest["Móvil Revenue M"])
+    fibra_mrr = float(latest["Fibra Revenue M"])
+    tv_mrr = float(latest["TV Revenue M"])
     collection_rate = float(latest["Collection %"])
     mrr_growth = (latest["Net Revenue M"] - prev["Net Revenue M"]) / prev["Net Revenue M"] * 100
-    arpu_blended = round((rev_plans["Revenue M"].sum() * 1_000_000) / rev_plans["Subs"].sum(), 2)
+    movil_share = (movil_mrr / (movil_mrr + fibra_mrr + tv_mrr)) * 100
+    fibra_share = (fibra_mrr / (movil_mrr + fibra_mrr + tv_mrr)) * 100
     at_risk_rev_m = rev_risk["Exposure M"].sum()
+    movil_arpu = float(arpu_trend.iloc[-1]["Móvil ARPU K"])
+    fibra_arpu = float(arpu_trend.iloc[-1]["Fibra ARPU K"])
 
     st.markdown(dedent(f"""
     <div class="rev-pulse">
         <div class="rev-pulse-head">
-            <span class="rev-pulse-title">💰 Revenue Pulse · Key Financial Metrics</span>
+            <span class="rev-pulse-title">💰 WOM Revenue Pulse · Móvil + Fibra + TV</span>
             <span class="rev-pulse-live">Live</span>
         </div>
         <div class="rev-pulse-grid">
-            <div class="rev-pulse-card"><div class="rev-pulse-label">MRR</div><div class="rev-pulse-value">CLP {mrr:.2f}M</div><div class="rev-pulse-delta">↑ {mrr_growth:.2f}% MoM</div></div>
-            <div class="rev-pulse-card"><div class="rev-pulse-label">ARR</div><div class="rev-pulse-value">CLP {arr:.1f}M</div><div class="rev-pulse-delta">Annualized run-rate</div></div>
-            <div class="rev-pulse-card"><div class="rev-pulse-label">Gross Margin</div><div class="rev-pulse-value">{gross_margin:.1f}%</div><div class="rev-pulse-delta">Healthy unit economics</div></div>
-            <div class="rev-pulse-card"><div class="rev-pulse-label">Collection Rate</div><div class="rev-pulse-value">{collection_rate:.1f}%</div><div class="rev-pulse-delta">Cash discipline</div></div>
-            <div class="rev-pulse-card"><div class="rev-pulse-label">Blended ARPU</div><div class="rev-pulse-value">CLP {arpu_blended:.2f}</div><div class="rev-pulse-delta">↑ +CLP 2.1 QoQ</div></div>
-            <div class="rev-pulse-card"><div class="rev-pulse-label">Revenue at Risk</div><div class="rev-pulse-value">CLP {at_risk_rev_m:.2f}M</div><div class="rev-pulse-delta">Watchlist exposure</div></div>
+            <div class="rev-pulse-card"><div class="rev-pulse-label">MRR Total</div><div class="rev-pulse-value">CLP {total_mrr:.1f}M</div><div class="rev-pulse-delta">↑ {mrr_growth:.1f}% MoM</div></div>
+            <div class="rev-pulse-card"><div class="rev-pulse-label">Móvil MRR</div><div class="rev-pulse-value">CLP {movil_mrr:.1f}M</div><div class="rev-pulse-delta">{movil_share:.0f}% del total</div></div>
+            <div class="rev-pulse-card"><div class="rev-pulse-label">Fibra MRR</div><div class="rev-pulse-value">CLP {fibra_mrr:.1f}M</div><div class="rev-pulse-delta">{fibra_share:.0f}% del total</div></div>
+            <div class="rev-pulse-card"><div class="rev-pulse-label">Cobranza</div><div class="rev-pulse-value">{collection_rate:.1f}%</div><div class="rev-pulse-delta">Disciplina de caja</div></div>
+            <div class="rev-pulse-card"><div class="rev-pulse-label">ARR Total</div><div class="rev-pulse-value">CLP {total_arr:.0f}M</div><div class="rev-pulse-delta">Run-rate anualizado</div></div>
+            <div class="rev-pulse-card"><div class="rev-pulse-label">Revenue at Risk</div><div class="rev-pulse-value">CLP {at_risk_rev_m:.1f}M</div><div class="rev-pulse-delta">Exposición watchlist</div></div>
         </div>
     </div>
     """), unsafe_allow_html=True)
 
-    rev_tab_overview, rev_tab_ops, rev_tab_sales, rev_tab_risk = st.tabs(
-        ["📈 Revenue Overview", "🧭 Revenue Operations", "🛍️ Sales", "⚠️ Risk & Strategy"]
+    rev_tab_movil, rev_tab_fibra, rev_tab_map, rev_tab_channels, rev_tab_risk = st.tabs(
+        ["📱 Revenue Móvil", "🏠 Revenue Fibra/Hogar", "🗺️ Mapa Geográfico", "🏪 Canales & Regiones", "⚠️ Riesgo & Cobranza"]
     )
 
-    with rev_tab_overview:
-        st.markdown('<div class="rev-title">Revenue Growth and Mix</div>', unsafe_allow_html=True)
+    with rev_tab_movil:
+        st.markdown('<div class="rev-title">WOM Móvil · Revenue Analytics</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="rev-kpi-grid">
-                <div class="rev-kpi-card"><div class="k">MRR Growth (MoM)</div><div class="v">{mrr_growth:.2f}%</div><div class="d">Top-line acceleration</div></div>
-                <div class="rev-kpi-card"><div class="k">Gross Margin %</div><div class="v">{gross_margin:.1f}%</div><div class="d">Margin efficiency</div></div>
-                <div class="rev-kpi-card"><div class="k">ARPU (Blended)</div><div class="v">CLP {arpu_blended:.2f}</div><div class="d">Value quality</div></div>
-                <div class="rev-kpi-card warn"><div class="k">Discount Impact</div><div class="v">CLP {latest['Discounts M']:.2f}M</div><div class="d">Revenue dilution</div></div>
-                <div class="rev-kpi-card"><div class="k">Best Growth Segment</div><div class="v">{rev_segments.loc[rev_segments['Growth %'].idxmax(), 'Segment']}</div><div class="d">{rev_segments['Growth %'].max():.1f}% growth</div></div>
-                <div class="rev-kpi-card"><div class="k">Highest Margin Segment</div><div class="v">{rev_segments.loc[rev_segments['Margin %'].idxmax(), 'Segment']}</div><div class="d">{rev_segments['Margin %'].max():.1f}% margin</div></div>
-                <div class="rev-kpi-card"><div class="k">Quarter Revenue</div><div class="v">CLP {(rev_monthly.tail(3)['Net Revenue M'].sum()):.2f}M</div><div class="d">Last 3 months</div></div>
-                <div class="rev-kpi-card crit"><div class="k">Revenue at Risk</div><div class="v">CLP {at_risk_rev_m:.2f}M</div><div class="d">Needs mitigation</div></div>
+                <div class="rev-kpi-card"><div class="k">Revenue Móvil</div><div class="v">CLP {movil_mrr:.1f}M</div><div class="d">MRR mensual</div></div>
+                <div class="rev-kpi-card"><div class="k">ARPU Móvil</div><div class="v">CLP {movil_arpu:.2f}K</div><div class="d">Por suscriptor</div></div>
+                <div class="rev-kpi-card"><div class="k">Crecimiento</div><div class="v">+7.6%</div><div class="d">vs. trimestre anterior</div></div>
+                <div class="rev-kpi-card"><div class="k">Margen</div><div class="v">52.4%</div><div class="d">Margen bruto</div></div>
+                <div class="rev-kpi-card"><div class="k">Suscriptores</div><div class="v">2.85M</div><div class="d">Base activa</div></div>
+                <div class="rev-kpi-card"><div class="k">5G Revenue</div><div class="v">CLP 18.2M</div><div class="d">46% del móvil</div></div>
+                <div class="rev-kpi-card warn"><div class="k">Prepago Decline</div><div class="v">-2.8%</div><div class="d">Migración a postpago</div></div>
+                <div class="rev-kpi-card"><div class="k">Empresas Móvil</div><div class="v">CLP 5.7M</div><div class="d">+15.4% crecimiento</div></div>
             </div>
         """), unsafe_allow_html=True)
 
-        rv_col1, rv_col2 = st.columns(2)
-        with rv_col1:
-            st.markdown('<div class="rev-mini-title">MRR vs Collections Trend</div>', unsafe_allow_html=True)
+        mv_rev_col1, mv_rev_col2 = st.columns(2)
+        with mv_rev_col1:
+            st.markdown('<div class="rev-mini-title">Revenue por Plan Móvil</div>', unsafe_allow_html=True)
             with st.container(border=True):
-                mrr_line = alt.Chart(rev_monthly).mark_line(point=True, strokeWidth=3, color="#29B5E8").encode(
-                    x=alt.X("Month:N", title=None),
-                    y=alt.Y("Net Revenue M:Q", title="Revenue (CLP  M)"),
-                    tooltip=["Month:N", alt.Tooltip("Net Revenue M:Q", format=".2f"), alt.Tooltip("Collected M:Q", format=".2f")],
+                plan_bar = alt.Chart(movil_plans_rev).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=20).encode(
+                    x=alt.X("Revenue M:Q", title="Revenue (CLP M)"),
+                    y=alt.Y("Plan:N", sort="-x", title=None),
+                    color=alt.Color("Growth %:Q", scale=alt.Scale(domain=[-5, 20], range=["#EF4444", "#10B981"]), legend=alt.Legend(title="Crecimiento %")),
+                    tooltip=["Plan:N", alt.Tooltip("Revenue M:Q", format=".1f"), alt.Tooltip("Subscribers K:Q", format=","), alt.Tooltip("ARPU CLP K:Q", format=".1f"), alt.Tooltip("Growth %:Q", format=".1f")],
                 )
-                coll_line = alt.Chart(rev_monthly).mark_line(point=True, strokeWidth=3, color="#10B981").encode(
-                    x=alt.X("Month:N", title=None),
-                    y=alt.Y("Collected M:Q", title="Revenue (CLP  M)"),
-                )
-                st.altair_chart(style_rev_chart(mrr_line + coll_line, height=230), use_container_width=True)
-                gap = latest["Net Revenue M"] - latest["Collected M"]
+                st.altair_chart(style_rev_chart(plan_bar, height=220), use_container_width=True)
+                top_plan = movil_plans_rev.loc[movil_plans_rev["Revenue M"].idxmax()]
                 render_rev_ai_reco(
-                    "Cash Conversion",
-                    f"Current month cash gap is CLP {gap:.2f}M between net revenue and collections.",
-                    "Tighten collections for 1-30 day bucket and auto-reminder cadence.",
-                    "Lift collection rate by 0.8-1.2pp in one cycle.",
-                    level="warning",
+                    "Revenue por Plan",
+                    f"WOM Libre 50GB genera CLP {top_plan['Revenue M']:.1f}M con {top_plan['Growth %']:.1f}% crecimiento.",
+                    "Promover migración de 30GB a 50GB con ofertas de equipo 5G.",
+                    "Incrementar revenue +8% en segmento Libre.",
                 )
 
-        with rv_col2:
-            st.markdown('<div class="rev-mini-title">Revenue Mix by Segment</div>', unsafe_allow_html=True)
+        with mv_rev_col2:
+            st.markdown('<div class="rev-mini-title">Tendencia Revenue Móvil</div>', unsafe_allow_html=True)
             with st.container(border=True):
-                seg_donut = alt.Chart(rev_segments).mark_arc(innerRadius=66, outerRadius=108, cornerRadius=4, stroke="#FFFFFF", strokeWidth=2).encode(
-                    theta=alt.Theta("Revenue M:Q", stack=True),
-                    color=alt.Color("Segment:N", scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B"]), legend=alt.Legend(title=None)),
-                    tooltip=["Segment:N", alt.Tooltip("Revenue M:Q", format=".2f"), alt.Tooltip("Growth %:Q", format=".1f")],
+                movil_trend = alt.Chart(rev_monthly).mark_area(
+                    opacity=0.6,
+                    color="#10B981",
+                    line={"color": "#10B981", "strokeWidth": 2},
+                ).encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("Móvil Revenue M:Q", title="Revenue (CLP M)"),
+                    tooltip=[alt.Tooltip("Month:N"), alt.Tooltip("Móvil Revenue M:Q", format=".1f")],
                 )
-                seg_center = alt.Chart(pd.DataFrame({"t": [f"CLP {rev_segments['Revenue M'].sum():.1f}M"]})).mark_text(fontSize=22, fontWeight="bold", color="#0F172A").encode(text="t:N")
-                seg_sub = alt.Chart(pd.DataFrame({"t": ["Monthly Mix"]})).mark_text(fontSize=11, dy=18, color="#64748B").encode(text="t:N")
-                st.altair_chart(style_rev_chart(seg_donut + seg_center + seg_sub, height=230), use_container_width=True)
-                dom = rev_segments.loc[rev_segments["Revenue M"].idxmax()]
+                st.altair_chart(style_rev_chart(movil_trend, height=220), use_container_width=True)
+                growth_6m = ((rev_monthly.iloc[-1]["Móvil Revenue M"] - rev_monthly.iloc[0]["Móvil Revenue M"]) / rev_monthly.iloc[0]["Móvil Revenue M"] * 100)
                 render_rev_ai_reco(
-                    "Mix Concentration",
-                    f"{dom['Segment']} contributes the highest revenue share at CLP {dom['Revenue M']:.2f}M.",
-                    "Increase SMB and Enterprise expansion to reduce concentration risk.",
-                    "Improve resilience of revenue mix against single-segment volatility.",
+                    "Tendencia Móvil",
+                    f"Revenue móvil creció {growth_6m:.1f}% en 6 meses, impulsado por 5G y Empresas.",
+                    "Mantener momentum con campañas 5G device trade-in y bundles empresariales.",
+                    "Alcanzar CLP 42M MRR móvil al cierre Q2.",
                 )
 
-        st.markdown('<div class="rev-mini-title">Margin vs Growth by Segment</div>', unsafe_allow_html=True)
+        st.markdown('<div class="rev-mini-title">ARPU Móvil por Mes</div>', unsafe_allow_html=True)
         with st.container(border=True):
-            mg_scatter = alt.Chart(rev_segments).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
-                x=alt.X("Growth %:Q", title="Growth %"),
-                y=alt.Y("Margin %:Q", title="Margin %"),
-                size=alt.Size("Revenue M:Q", scale=alt.Scale(range=[250, 1400]), legend=None),
-                color=alt.Color("Segment:N", scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B"]), legend=alt.Legend(title=None)),
-                tooltip=["Segment:N", alt.Tooltip("Growth %:Q", format=".1f"), alt.Tooltip("Margin %:Q", format=".1f"), alt.Tooltip("Revenue M:Q", format=".2f")],
+            arpu_line = alt.Chart(arpu_trend).mark_line(point=True, strokeWidth=3, color="#29B5E8").encode(
+                x=alt.X("Month:N", title=None),
+                y=alt.Y("Móvil ARPU K:Q", title="ARPU (CLP K)", scale=alt.Scale(domain=[12.4, 13.2])),
+                tooltip=[alt.Tooltip("Month:N"), alt.Tooltip("Móvil ARPU K:Q", format=".2f")],
             )
-            mg_labels = alt.Chart(rev_segments).mark_text(dy=-12, fontSize=9, color="#1E293B").encode(
-                x="Growth %:Q", y="Margin %:Q", text="Segment:N"
-            )
-            st.altair_chart(style_rev_chart(mg_scatter + mg_labels, height=235), use_container_width=True)
-            best_quad = rev_segments.sort_values(["Growth %", "Margin %"], ascending=False).iloc[0]
-            render_rev_ai_reco(
-                "Growth Quality",
-                f"{best_quad['Segment']} sits in the strongest growth-margin quadrant.",
-                f"Prioritize go-to-market around {best_quad['Segment']} bundles and adjacent offerings.",
-                "Maximize profitable growth instead of top-line only.",
-            )
+            st.altair_chart(style_rev_chart(arpu_line, height=180), use_container_width=True)
 
-    with rev_tab_ops:
-        st.markdown('<div class="rev-title">Revenue Operations and Efficiency</div>', unsafe_allow_html=True)
-        st.markdown(dedent(f"""
-            <div class="rev-kpi-grid">
-                <div class="rev-kpi-card"><div class="k">Collection Rate</div><div class="v">{collection_rate:.1f}%</div><div class="d">Latest month</div></div>
-                <div class="rev-kpi-card warn"><div class="k">90+ Aging</div><div class="v">CLP {rev_aging.loc[rev_aging['Bucket']=='90+', 'Amount M'].iloc[0]:.2f}M</div><div class="d">Delinquency risk</div></div>
-                <div class="rev-kpi-card"><div class="k">Best ROI Channel</div><div class="v">{rev_channels.loc[rev_channels['ROI x'].idxmax(), 'Channel']}</div><div class="d">{rev_channels['ROI x'].max():.2f}x</div></div>
-                <div class="rev-kpi-card crit"><div class="k">Weak ROI Channel</div><div class="v">{rev_channels.loc[rev_channels['ROI x'].idxmin(), 'Channel']}</div><div class="d">{rev_channels['ROI x'].min():.2f}x</div></div>
-                <div class="rev-kpi-card"><div class="k">Plan Mix ARPU</div><div class="v">CLP {arpu_blended:.2f}</div><div class="d">Weighted across plans</div></div>
-                <div class="rev-kpi-card"><div class="k">Discount Ratio</div><div class="v">{(latest['Discounts M']/latest['Invoiced M']*100):.1f}%</div><div class="d">Promotion intensity</div></div>
-                <div class="rev-kpi-card"><div class="k">Gross Margin Trend</div><div class="v">{(rev_monthly['Gross Margin %'].iloc[-1]-rev_monthly['Gross Margin %'].iloc[0]):+.1f}pp</div><div class="d">6-month move</div></div>
-                <div class="rev-kpi-card warn"><div class="k">Cash Gap</div><div class="v">CLP {(latest['Net Revenue M']-latest['Collected M']):.2f}M</div><div class="d">Needs cash focus</div></div>
-            </div>
-        """), unsafe_allow_html=True)
-
-        op_col1, op_col2 = st.columns(2)
-        with op_col1:
-            st.markdown('<div class="rev-mini-title">Receivables Aging Waterfall</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                aging_bar = alt.Chart(rev_aging).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=22).encode(
-                    x=alt.X("Amount M:Q", title="Amount (CLP  M)"),
-                    y=alt.Y("Bucket:N", sort=["Current", "1-30", "31-60", "61-90", "90+"], title=None),
-                    color=alt.Color("Bucket:N", legend=None, scale=alt.Scale(range=["#10B981", "#29B5E8", "#6366F1", "#F59E0B", "#EF4444"])),
-                    tooltip=["Bucket:N", alt.Tooltip("Amount M:Q", format=".2f")],
-                )
-                st.altair_chart(style_rev_chart(aging_bar, height=230), use_container_width=True)
-                over_60 = rev_aging.loc[rev_aging["Bucket"].isin(["61-90", "90+"]), "Amount M"].sum()
-                render_rev_ai_reco(
-                    "Receivables Health",
-                    f"Over-60-day receivables are at CLP {over_60:.2f}M.",
-                    "Start escalation workflow for 61+ buckets with account-level prioritization.",
-                    "Improve cash collection and reduce bad-debt risk.",
-                    level="warning",
-                )
-
-        with op_col2:
-            st.markdown('<div class="rev-mini-title">Channel Revenue vs Cost (ROI)</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                ch_bars = alt.Chart(rev_channels).transform_fold(["Revenue M", "Cost M"], as_=["Metric", "Amount"]).mark_bar(opacity=0.82, cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
-                    x=alt.X("Channel:N", title=None),
-                    y=alt.Y("Amount:Q", title="CLP  M"),
-                    color=alt.Color("Metric:N", scale=alt.Scale(domain=["Revenue M", "Cost M"], range=["#29B5E8", "#94A3B8"]), legend=alt.Legend(title=None)),
-                    xOffset="Metric:N",
-                    tooltip=["Channel:N", "Metric:N", alt.Tooltip("Amount:Q", format=".2f")],
-                )
-                roi_line = alt.Chart(rev_channels).mark_line(point=True, color="#10B981", strokeWidth=3).encode(
-                    x=alt.X("Channel:N", title=None),
-                    y=alt.Y("ROI x:Q", title="ROI x"),
-                    tooltip=["Channel:N", alt.Tooltip("ROI x:Q", format=".2f")],
-                )
-                st.altair_chart(style_rev_chart(alt.layer(ch_bars, roi_line).resolve_scale(y="independent"), height=230), use_container_width=True)
-                weak = rev_channels.loc[rev_channels["ROI x"].idxmin()]
-                render_rev_ai_reco(
-                    "Channel Efficiency",
-                    f"{weak['Channel']} is the weakest channel at {weak['ROI x']:.2f}x ROI.",
-                    f"Rebalance spend from {weak['Channel']} to higher-ROI channels next cycle.",
-                    "Improve blended channel profitability by 8-12%.",
-                    level="warning",
-                )
-
-        st.markdown('<div class="rev-mini-title">Plan ARPU vs Subscriber Base</div>', unsafe_allow_html=True)
+        st.markdown('<div class="rev-mini-title">Impacto Competencia en Revenue Móvil</div>', unsafe_allow_html=True)
         with st.container(border=True):
-            plan_scatter = alt.Chart(rev_plans).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
-                x=alt.X("Subs:Q", title="Subscribers"),
-                y=alt.Y("ARPU:Q", title="ARPU (CLP )"),
-                size=alt.Size("Revenue M:Q", scale=alt.Scale(range=[220, 1400]), legend=None),
-                color=alt.Color("Plan:N", legend=alt.Legend(title=None), scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B", "#EF4444"])),
-                tooltip=["Plan:N", alt.Tooltip("Subs:Q", format=","), alt.Tooltip("ARPU:Q", format=".0f"), alt.Tooltip("Revenue M:Q", format=".3f")],
+            comp_bar = alt.Chart(competitor_impact).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=18, color="#EF4444").encode(
+                x=alt.X("Revenue Impact M:Q", title="Impacto Revenue (CLP M)"),
+                y=alt.Y("Competitor:N", sort="-x", title=None),
+                tooltip=["Competitor:N", alt.Tooltip("Lost Móvil K:Q", format=","), alt.Tooltip("Revenue Impact M:Q", format=".1f")],
             )
-            plan_labels = alt.Chart(rev_plans).mark_text(dy=-12, fontSize=9, color="#1E293B").encode(
-                x="Subs:Q", y="ARPU:Q", text="Plan:N"
-            )
-            st.altair_chart(style_rev_chart(plan_scatter + plan_labels, height=235), use_container_width=True)
-            top_arpu_plan = rev_plans.loc[rev_plans["ARPU"].idxmax()]
+            st.altair_chart(style_rev_chart(comp_bar, height=200), use_container_width=True)
+            top_comp = competitor_impact.loc[competitor_impact["Revenue Impact M"].idxmax()]
             render_rev_ai_reco(
-                "Plan Monetization",
-                f"{top_arpu_plan['Plan']} has the highest ARPU at CLP {top_arpu_plan['ARPU']:.0f}.",
-                f"Use migration offers from WOM Hogar 300 into {top_arpu_plan['Plan']} tiers where feasible.",
-                "Increase blended ARPU while preserving retention.",
-            )
-
-    with rev_tab_sales:
-        st.markdown('<div class="rev-title">Sales Performance Command Center</div>', unsafe_allow_html=True)
-        sales_latest = sales_monthly.iloc[-1]
-        sales_prev = sales_monthly.iloc[-2]
-        sales_growth = (sales_latest["Total Sales M"] - sales_prev["Total Sales M"]) / sales_prev["Total Sales M"] * 100
-        b2c_share = (sales_latest["B2C Sales M"] / sales_latest["Total Sales M"]) * 100
-        b2b_share = (sales_latest["B2B Sales M"] / sales_latest["Total Sales M"]) * 100
-        best_sales_channel = sales_channel_mix.loc[sales_channel_mix["Total Sales M"].idxmax()]
-        best_sales_region = sales_region.loc[sales_region["Total Sales M"].idxmax()]
-        top_pod = sales_reps.loc[sales_reps["Sales M"].idxmax()]
-        sales_top_product = sales_product_mix.loc[sales_product_mix["Total Sales M"].idxmax()]
-        digital_share = (sales_latest["Digital Sales M"] / sales_latest["Total Sales M"]) * 100
-        retail_share = (sales_latest["Retail Stores M"] / sales_latest["Total Sales M"]) * 100
-
-        st.markdown(dedent(f"""
-            <div class="rev-pulse">
-                <div class="rev-pulse-head">
-                    <span class="rev-pulse-title">🛍️ Sales Pulse · WOM Commercial KPIs</span>
-                    <span class="rev-pulse-live">Live</span>
-                </div>
-                <div class="rev-pulse-grid">
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">Total Sales</div><div class="rev-pulse-value">CLP {sales_latest['Total Sales M']:.2f}M</div><div class="rev-pulse-delta">{sales_growth:+.2f}% MoM</div></div>
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">B2C Sales</div><div class="rev-pulse-value">CLP {sales_latest['B2C Sales M']:.2f}M</div><div class="rev-pulse-delta">{b2c_share:.1f}% mix</div></div>
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">B2B Sales</div><div class="rev-pulse-value">CLP {sales_latest['B2B Sales M']:.2f}M</div><div class="rev-pulse-delta">{b2b_share:.1f}% mix</div></div>
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">Digital Sales</div><div class="rev-pulse-value">CLP {sales_latest['Digital Sales M']:.2f}M</div><div class="rev-pulse-delta">{digital_share:.1f}% of sales</div></div>
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">Retail Stores</div><div class="rev-pulse-value">CLP {sales_latest['Retail Stores M']:.2f}M</div><div class="rev-pulse-delta">{retail_share:.1f}% of sales</div></div>
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">Blended Sales Margin</div><div class="rev-pulse-value">{sales_latest['Blended Margin %']:.1f}%</div><div class="rev-pulse-delta">Margin expansion trend</div></div>
-                </div>
-            </div>
-        """), unsafe_allow_html=True)
-
-        st.markdown(dedent(f"""
-            <div class="rev-kpi-grid">
-                <div class="rev-kpi-card"><div class="k">Top Channel</div><div class="v">{best_sales_channel['Channel']}</div><div class="d">CLP {best_sales_channel['Total Sales M']:.2f}M</div></div>
-                <div class="rev-kpi-card"><div class="k">Top Region</div><div class="v">{best_sales_region['Region']}</div><div class="d">CLP {best_sales_region['Total Sales M']:.2f}M sales</div></div>
-                <div class="rev-kpi-card"><div class="k">Top Sales Pod</div><div class="v">{top_pod['Sales Pod']}</div><div class="d">{top_pod['Win Rate %']:.1f}% win rate</div></div>
-                <div class="rev-kpi-card warn"><div class="k">Lowest Margin Region</div><div class="v">{sales_region.loc[sales_region['Margin %'].idxmin(), 'Region']}</div><div class="d">{sales_region['Margin %'].min():.1f}% margin</div></div>
-                <div class="rev-kpi-card"><div class="k">Best Product</div><div class="v">{sales_top_product['Product']}</div><div class="d">CLP {sales_top_product['Total Sales M']:.2f}M sales</div></div>
-                <div class="rev-kpi-card"><div class="k">B2C/B2B Balance</div><div class="v">{b2c_share:.0f}% / {b2b_share:.0f}%</div><div class="d">Latest month mix</div></div>
-                <div class="rev-kpi-card"><div class="k">Store Footprint</div><div class="v">{int(sales_region['Retail Stores'].sum())}</div><div class="d">Active retail points</div></div>
-                <div class="rev-kpi-card crit"><div class="k">Sales Concentration</div><div class="v">{(best_sales_region['Total Sales M']/sales_region['Total Sales M'].sum()*100):.1f}%</div><div class="d">Top-region dependence</div></div>
-            </div>
-        """), unsafe_allow_html=True)
-
-        sl_col1, sl_col2 = st.columns(2)
-        with sl_col1:
-            st.markdown('<div class="rev-mini-title">B2C vs B2B Monthly Sales</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                b2c_line = alt.Chart(sales_monthly).mark_line(point=True, strokeWidth=3, color="#29B5E8").encode(
-                    x=alt.X("Month:N", title=None),
-                    y=alt.Y("B2C Sales M:Q", title="Sales (CLP  M)"),
-                    tooltip=["Month:N", alt.Tooltip("B2C Sales M:Q", format=".2f"), alt.Tooltip("B2B Sales M:Q", format=".2f"), alt.Tooltip("Total Sales M:Q", format=".2f")],
-                )
-                b2b_line = alt.Chart(sales_monthly).mark_line(point=True, strokeWidth=3, color="#6366F1").encode(
-                    x=alt.X("Month:N", title=None),
-                    y=alt.Y("B2B Sales M:Q", title="Sales (CLP  M)"),
-                )
-                st.altair_chart(style_rev_chart(b2c_line + b2b_line, height=230), use_container_width=True)
-                render_rev_ai_reco(
-                    "Commercial Balance",
-                    f"B2C leads with {b2c_share:.1f}% share while B2B contributes {b2b_share:.1f}% at higher ticket size.",
-                    "Keep B2C volume engine in digital channels and scale B2B hunting in Metropolitana and Norte.",
-                    "Sustain top-line momentum while improving sales quality.",
-                )
-
-        with sl_col2:
-            st.markdown('<div class="rev-mini-title">Digital, Retail, Field and Partner Sales</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                motion_df = sales_monthly[["Month", "Digital Sales M", "Retail Stores M", "Field Sales M", "Partner Sales M"]].copy()
-                motion_long = motion_df.melt("Month", var_name="Motion", value_name="Sales M")
-                motion_bar = alt.Chart(motion_long).mark_bar(opacity=0.85).encode(
-                    x=alt.X("Month:N", title=None),
-                    y=alt.Y("Sales M:Q", title="Sales (CLP  M)"),
-                    color=alt.Color("Motion:N", scale=alt.Scale(domain=["Digital Sales M", "Retail Stores M", "Field Sales M", "Partner Sales M"], range=["#29B5E8", "#10B981", "#6366F1", "#F59E0B"]), legend=alt.Legend(title=None)),
-                    tooltip=["Month:N", "Motion:N", alt.Tooltip("Sales M:Q", format=".2f")],
-                )
-                margin_line = alt.Chart(sales_monthly).mark_line(point=True, strokeWidth=3, color="#EF4444").encode(
-                    x=alt.X("Month:N", title=None),
-                    y=alt.Y("Blended Margin %:Q", title="Margin %"),
-                    tooltip=["Month:N", alt.Tooltip("Blended Margin %:Q", format=".1f")],
-                )
-                st.altair_chart(style_rev_chart(alt.layer(motion_bar, margin_line).resolve_scale(y="independent"), height=230), use_container_width=True)
-                render_rev_ai_reco(
-                    "Channel Mix and Margin",
-                    f"Digital is the largest motion at {digital_share:.1f}% of current sales while margins improved to {sales_latest['Blended Margin %']:.1f}%.",
-                    "Increase conversion spend in WOM Web and protect margin guardrails in retail promotions.",
-                    "Lift sales throughput without diluting profitability.",
-                )
-
-        sl_col3, sl_col4 = st.columns(2)
-        with sl_col3:
-            st.markdown('<div class="rev-mini-title">B2C vs B2B by Region</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                reg_long = sales_region.melt(id_vars=["Region"], value_vars=["B2C Sales M", "B2B Sales M"], var_name="Segment", value_name="Sales M")
-                reg_bar = alt.Chart(reg_long).mark_bar(opacity=0.84, cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
-                    x=alt.X("Region:N", title=None),
-                    y=alt.Y("Sales M:Q", title="Sales (CLP  M)"),
-                    color=alt.Color("Segment:N", scale=alt.Scale(domain=["B2C Sales M", "B2B Sales M"], range=["#29B5E8", "#6366F1"]), legend=alt.Legend(title=None)),
-                    xOffset="Segment:N",
-                    tooltip=["Region:N", "Segment:N", alt.Tooltip("Sales M:Q", format=".2f")],
-                )
-                st.altair_chart(style_rev_chart(reg_bar, height=230), use_container_width=True)
-                render_rev_ai_reco(
-                    "Regional Segment Focus",
-                    f"{best_sales_region['Region']} is the strongest sales region with balanced B2C and B2B pull.",
-                    f"Replicate {best_sales_region['Region']} playbook in Centro and Oriente through targeted field coverage.",
-                    "Improve regional productivity and reduce concentration risk.",
-                )
-
-        with sl_col4:
-            st.markdown('<div class="rev-mini-title">Top Sales Regions and Margin</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                top_region = sales_region.sort_values("Total Sales M", ascending=False)
-                top_reg_bar = alt.Chart(top_region).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=22).encode(
-                    x=alt.X("Total Sales M:Q", title="Total Sales (CLP  M)"),
-                    y=alt.Y("Region:N", sort="-x", title=None),
-                    color=alt.Color("Margin %:Q", scale=alt.Scale(scheme="blues"), legend=alt.Legend(title="Margin %")),
-                    tooltip=["Region:N", alt.Tooltip("Total Sales M:Q", format=".2f"), alt.Tooltip("Margin %:Q", format=".1f"), "Retail Stores:Q"],
-                )
-                st.altair_chart(style_rev_chart(top_reg_bar, height=230), use_container_width=True)
-                low_margin_region = sales_region.loc[sales_region["Margin %"].idxmin()]
-                render_rev_ai_reco(
-                    "Regional Margin Management",
-                    f"{low_margin_region['Region']} has the lowest sales margin at {low_margin_region['Margin %']:.1f}%.",
-                    f"Tighten discount policy and improve bundle attach in {low_margin_region['Region']}.",
-                    "Recover 1-2pp margin while maintaining local sales velocity.",
-                    level="warning",
-                )
-
-        sl_col5, sl_col6 = st.columns(2)
-        with sl_col5:
-            st.markdown('<div class="rev-mini-title">Top Sales Pods Performance</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                pod_scatter = alt.Chart(sales_reps).mark_circle(opacity=0.9, stroke="#FFFFFF", strokeWidth=1.2).encode(
-                    x=alt.X("Win Rate %:Q", title="Win Rate %"),
-                    y=alt.Y("Sales M:Q", title="Sales (CLP  M)"),
-                    size=alt.Size("New Logos:Q", scale=alt.Scale(range=[240, 1300]), legend=alt.Legend(title="New Logos")),
-                    color=alt.Color("Region:N", legend=alt.Legend(title=None), scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B", "#EF4444"])),
-                    tooltip=["Sales Pod:N", "Region:N", alt.Tooltip("Sales M:Q", format=".2f"), alt.Tooltip("Win Rate %:Q", format=".1f"), "New Logos:Q"],
-                )
-                pod_labels = alt.Chart(sales_reps).mark_text(dy=-10, fontSize=9, color="#1E293B").encode(
-                    x="Win Rate %:Q", y="Sales M:Q", text="Sales Pod:N"
-                )
-                st.altair_chart(style_rev_chart(pod_scatter + pod_labels, height=235), use_container_width=True)
-                render_rev_ai_reco(
-                    "Top Sales Execution",
-                    f"{top_pod['Sales Pod']} leads with CLP {top_pod['Sales M']:.2f}M and {top_pod['Win Rate %']:.1f}% win rate.",
-                    "Codify this pod's discovery and closing framework for other regional teams.",
-                    "Increase close rates across the sales organization.",
-                )
-
-        with sl_col6:
-            st.markdown('<div class="rev-mini-title">Sales by WOM Product</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                prod_donut = alt.Chart(sales_product_mix).mark_arc(innerRadius=62, outerRadius=105, stroke="#FFFFFF", strokeWidth=2).encode(
-                    theta=alt.Theta("Total Sales M:Q", stack=True),
-                    color=alt.Color("Product:N", scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B", "#EF4444", "#14B8A6"]), legend=alt.Legend(title=None)),
-                    tooltip=["Product:N", alt.Tooltip("Total Sales M:Q", format=".2f"), alt.Tooltip("B2C Sales M:Q", format=".2f"), alt.Tooltip("B2B Sales M:Q", format=".2f"), alt.Tooltip("Attach Rate %:Q", format=".1f")],
-                )
-                prod_center = alt.Chart(pd.DataFrame({"t": [f"CLP {sales_product_mix['Total Sales M'].sum():.1f}M"]})).mark_text(fontSize=21, fontWeight="bold", color="#0F172A").encode(text="t:N")
-                prod_sub = alt.Chart(pd.DataFrame({"t": ["Product Sales Mix"]})).mark_text(fontSize=11, dy=18, color="#64748B").encode(text="t:N")
-                st.altair_chart(style_rev_chart(prod_donut + prod_center + prod_sub, height=235), use_container_width=True)
-                render_rev_ai_reco(
-                    "Portfolio Sales Priorities",
-                    f"{sales_top_product['Product']} is the strongest product by sales at CLP {sales_top_product['Total Sales M']:.2f}M.",
-                    "Push attach bundles (Mesh Plus and TV App) into high-volume plans and B2B migrations.",
-                    "Increase ARPU and raise cross-sell contribution.",
-                )
-
-        st.markdown('<div class="rev-title">Sales Pipeline, Targets and Forecast Discipline</div>', unsafe_allow_html=True)
-        pp_col1, pp_col2 = st.columns(2)
-        with pp_col1:
-            st.markdown('<div class="rev-mini-title">Pipeline Health by Stage (B2C + B2B)</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                pipe_long = sales_pipeline.melt(id_vars=["Stage", "Avg Age Days"], value_vars=["B2C K", "B2B K"], var_name="Segment", value_name="Volume K")
-                pipe_bar = alt.Chart(pipe_long).mark_bar(opacity=0.85, cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
-                    x=alt.X("Stage:N", title=None),
-                    y=alt.Y("Volume K:Q", title="Volume (K)"),
-                    color=alt.Color("Segment:N", scale=alt.Scale(domain=["B2C K", "B2B K"], range=["#29B5E8", "#6366F1"]), legend=alt.Legend(title=None)),
-                    xOffset="Segment:N",
-                    tooltip=["Stage:N", "Segment:N", alt.Tooltip("Volume K:Q", format=".2f"), "Avg Age Days:Q"],
-                )
-                age_line = alt.Chart(sales_pipeline).mark_line(point=True, strokeWidth=3, color="#F59E0B").encode(
-                    x=alt.X("Stage:N", title=None),
-                    y=alt.Y("Avg Age Days:Q", title="Avg Age (days)"),
-                    tooltip=["Stage:N", alt.Tooltip("Avg Age Days:Q", format=".0f")],
-                )
-                st.altair_chart(style_rev_chart(alt.layer(pipe_bar, age_line).resolve_scale(y="independent"), height=235), use_container_width=True)
-                neg_age = sales_pipeline.loc[sales_pipeline["Stage"] == "Negotiation", "Avg Age Days"].iloc[0]
-                render_rev_ai_reco(
-                    "Pipeline Flow",
-                    f"Negotiation stage aging reached {neg_age:.0f} days and is the main close-speed constraint.",
-                    "Launch weekly deal review for negotiation-stage opportunities with pricing and legal fast-track.",
-                    "Improve close velocity and reduce carry-over risk.",
-                    level="warning",
-                )
-
-        with pp_col2:
-            st.markdown('<div class="rev-mini-title">Target vs Actual Attainment</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                quota_chart = alt.Chart(sales_quota).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5, opacity=0.85).encode(
-                    x=alt.X("Dimension:N", title=None),
-                    y=alt.Y("Actual M:Q", title="Sales (CLP  M)"),
-                    color=alt.Color("Type:N", scale=alt.Scale(domain=["Channel", "Region"], range=["#29B5E8", "#10B981"]), legend=alt.Legend(title=None)),
-                    tooltip=["Dimension:N", "Type:N", alt.Tooltip("Target M:Q", format=".2f"), alt.Tooltip("Actual M:Q", format=".2f"), alt.Tooltip("Attainment %:Q", format=".1f")],
-                )
-                target_rule = alt.Chart(sales_quota).mark_tick(color="#334155", thickness=2, size=20).encode(
-                    x=alt.X("Dimension:N", title=None),
-                    y="Target M:Q",
-                )
-                st.altair_chart(style_rev_chart(quota_chart + target_rule, height=235), use_container_width=True)
-                low_att = sales_quota.loc[sales_quota["Attainment %"].idxmin()]
-                render_rev_ai_reco(
-                    "Quota Attainment",
-                    f"{low_att['Dimension']} is the lowest attainment point at {low_att['Attainment %']:.1f}%.",
-                    f"Deploy focused recovery plan for {low_att['Dimension']} with weekly target checkpoints.",
-                    "Close target gap faster before quarter end.",
-                    level="warning",
-                )
-
-        ff_col1, ff_col2 = st.columns(2)
-        with ff_col1:
-            st.markdown('<div class="rev-mini-title">Forecast Accuracy (Snapshot vs Actual)</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                fcst_long = sales_forecast.melt(id_vars=["Month", "Actual M"], value_vars=["Fcst -90d M", "Fcst -30d M"], var_name="Forecast", value_name="Forecast M")
-                fcst_line = alt.Chart(fcst_long).mark_line(point=True, strokeWidth=3).encode(
-                    x=alt.X("Month:N", title=None),
-                    y=alt.Y("Forecast M:Q", title="Sales (CLP  M)"),
-                    color=alt.Color("Forecast:N", scale=alt.Scale(domain=["Fcst -90d M", "Fcst -30d M"], range=["#94A3B8", "#29B5E8"]), legend=alt.Legend(title=None)),
-                    tooltip=["Month:N", "Forecast:N", alt.Tooltip("Forecast M:Q", format=".2f")],
-                )
-                actual_line = alt.Chart(sales_forecast).mark_line(point=True, strokeWidth=3, color="#10B981").encode(
-                    x=alt.X("Month:N", title=None),
-                    y=alt.Y("Actual M:Q", title="Sales (CLP  M)"),
-                    tooltip=["Month:N", alt.Tooltip("Actual M:Q", format=".2f"), alt.Tooltip("Error -30d %:Q", format=".1f"), alt.Tooltip("Error -90d %:Q", format=".1f")],
-                )
-                st.altair_chart(style_rev_chart(fcst_line + actual_line, height=235), use_container_width=True)
-                err30 = sales_forecast["Error -30d %"].abs().mean()
-                render_rev_ai_reco(
-                    "Forecast Reliability",
-                    f"Average 30-day forecast error is {err30:.1f}% across recent closes.",
-                    "Tighten stage probability calibration and enforce forecast commit criteria by pod.",
-                    "Improve forecast confidence for board-level planning.",
-                )
-
-        with ff_col2:
-            st.markdown('<div class="rev-mini-title">Price and Discount Waterfall</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                wf = sales_waterfall.copy()
-                wf["Type"] = wf["Value M"].apply(lambda v: "Up" if v >= 0 else "Down")
-                wf_bar = alt.Chart(wf).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5, size=44).encode(
-                    x=alt.X("Step:N", title=None),
-                    y=alt.Y("Value M:Q", title="Impact (CLP  M)"),
-                    color=alt.Color("Type:N", scale=alt.Scale(domain=["Up", "Down"], range=["#10B981", "#EF4444"]), legend=None),
-                    tooltip=["Step:N", alt.Tooltip("Value M:Q", format="+.2f"), alt.Tooltip("Cumulative M:Q", format=".2f")],
-                )
-                zero_rule = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(color="#94A3B8", strokeDash=[4, 4]).encode(y="y:Q")
-                st.altair_chart(style_rev_chart(zero_rule + wf_bar, height=235), use_container_width=True)
-                discount_impact = abs(float(sales_waterfall.loc[sales_waterfall["Step"] == "Discounts", "Value M"].iloc[0]))
-                render_rev_ai_reco(
-                    "Discount Discipline",
-                    f"Discount drag is CLP {discount_impact:.2f}M in the latest month waterfall.",
-                    "Set discount guardrails by product and require approval above threshold levels.",
-                    "Protect margin while sustaining close rates.",
-                    level="warning",
-                )
-
-        st.markdown('<div class="rev-title">Retention Quality, SLA and Productivity</div>', unsafe_allow_html=True)
-        rq_col1, rq_col2 = st.columns(2)
-        with rq_col1:
-            st.markdown('<div class="rev-mini-title">30/60/90-Day Retention by Sales Cohort</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                cohort_long = sales_cohort.melt(id_vars=["Cohort"], value_vars=["Retention 30d %", "Retention 60d %", "Retention 90d %"], var_name="Window", value_name="Retention %")
-                cohort_line = alt.Chart(cohort_long).mark_line(point=True, strokeWidth=3).encode(
-                    x=alt.X("Cohort:N", title=None),
-                    y=alt.Y("Retention %:Q", title="Retention %"),
-                    color=alt.Color("Window:N", scale=alt.Scale(domain=["Retention 30d %", "Retention 60d %", "Retention 90d %"], range=["#10B981", "#29B5E8", "#6366F1"]), legend=alt.Legend(title=None)),
-                    tooltip=["Cohort:N", "Window:N", alt.Tooltip("Retention %:Q", format=".1f")],
-                )
-                st.altair_chart(style_rev_chart(cohort_line, height=230), use_container_width=True)
-                latest_90 = sales_cohort.iloc[-1]["Retention 90d %"]
-                render_rev_ai_reco(
-                    "Sales Quality Cohorts",
-                    f"Latest cohort 90-day retention is {latest_90:.1f}%, signaling good post-sale quality.",
-                    "Prioritize proactive care journeys for lower-retention cohorts immediately after activation.",
-                    "Reduce early-life churn and protect realized sales value.",
-                )
-
-        with rq_col2:
-            st.markdown('<div class="rev-mini-title">Install-to-Revenue SLA by Region</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                sla_bar = alt.Chart(sales_install_sla).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5, opacity=0.84).encode(
-                    x=alt.X("Region:N", title=None),
-                    y=alt.Y("Sale to Install Days:Q", title="Days"),
-                    color=alt.Color("SLA Met %:Q", scale=alt.Scale(scheme="tealblues"), legend=alt.Legend(title="SLA Met %")),
-                    tooltip=["Region:N", alt.Tooltip("Sale to Install Days:Q", format=".1f"), alt.Tooltip("Install to First Invoice Days:Q", format=".1f"), alt.Tooltip("SLA Met %:Q", format=".1f")],
-                )
-                invoice_line = alt.Chart(sales_install_sla).mark_line(point=True, strokeWidth=3, color="#F59E0B").encode(
-                    x=alt.X("Region:N", title=None),
-                    y=alt.Y("Install to First Invoice Days:Q", title="Days"),
-                )
-                st.altair_chart(style_rev_chart(alt.layer(sla_bar, invoice_line).resolve_scale(y="independent"), height=230), use_container_width=True)
-                slow_region = sales_install_sla.loc[sales_install_sla["Sale to Install Days"].idxmax()]
-                render_rev_ai_reco(
-                    "Order-to-Cash SLA",
-                    f"{slow_region['Region']} has the longest sale-to-install cycle at {slow_region['Sale to Install Days']:.1f} days.",
-                    f"Prioritize installation slots and first-invoice automation in {slow_region['Region']}.",
-                    "Accelerate revenue recognition and customer activation experience.",
-                    level="warning",
-                )
-
-        st.markdown('<div class="rev-mini-title">Sales Productivity by Motion</div>', unsafe_allow_html=True)
-        with st.container(border=True):
-            prod_scatter = alt.Chart(sales_productivity).mark_circle(opacity=0.9, stroke="#FFFFFF", strokeWidth=1.2).encode(
-                x=alt.X("Cycle Days:Q", title="Sales Cycle (days)"),
-                y=alt.Y("Revenue per Rep K:Q", title="Revenue per Rep (CLP  K)"),
-                size=alt.Size("Avg Deal Size K:Q", scale=alt.Scale(range=[300, 1800]), legend=alt.Legend(title="Avg Deal Size K")),
-                color=alt.Color("Motion:N", scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981"]), legend=alt.Legend(title=None)),
-                tooltip=["Motion:N", alt.Tooltip("Revenue per Rep K:Q", format=".0f"), alt.Tooltip("Win Rate %:Q", format=".1f"), alt.Tooltip("Activity to Close %:Q", format=".1f")],
-            )
-            prod_label = alt.Chart(sales_productivity).mark_text(dy=-10, fontSize=9, color="#1E293B").encode(
-                x="Cycle Days:Q", y="Revenue per Rep K:Q", text="Motion:N"
-            )
-            st.altair_chart(style_rev_chart(prod_scatter + prod_label, height=235), use_container_width=True)
-            top_motion = sales_productivity.loc[sales_productivity["Revenue per Rep K"].idxmax()]
-            render_rev_ai_reco(
-                "Productivity Focus",
-                f"{top_motion['Motion']} delivers the highest productivity at CLP {top_motion['Revenue per Rep K']:.0f}K per rep.",
-                "Scale playbooks from top motion and rebalance capacity from lower-efficiency motions.",
-                "Lift overall sales productivity and shorten cycle times.",
-            )
-
-        st.markdown('<div class="rev-title">Santiago Neighborhood Sales Heatmap</div>', unsafe_allow_html=True)
-        with st.container(border=True):
-            santiago_layers = [
-                pdk.Layer(
-                    "ScatterplotLayer",
-                    data=santiago_sales_map,
-                    get_position="[lon, lat]",
-                    get_radius="radius",
-                    get_fill_color="[r, g, b, 165]",
-                    get_line_color="[255, 255, 255, 220]",
-                    line_width_min_pixels=1.2,
-                    stroked=True,
-                    pickable=True,
-                ),
-                pdk.Layer(
-                    "TextLayer",
-                    data=santiago_sales_map,
-                    get_position="[lon, lat]",
-                    get_text="Neighborhood",
-                    get_size=12,
-                    get_color=[15, 23, 42, 230],
-                    get_alignment_baseline="'top'",
-                    get_pixel_offset=[0, 14],
-                    pickable=False,
-                ),
-            ]
-            santiago_deck = pdk.Deck(
-                layers=santiago_layers,
-                initial_view_state=pdk.ViewState(latitude=-12.10, longitude=-77.03, zoom=11.6, pitch=8),
-                map_style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
-                tooltip={
-                    "html": "<b>{Neighborhood}</b><br/>Sales: CLP {Sales M}M<br/>B2B Share: {B2B Share %}%<br/>Margin: {Margin %}%"
-                },
-            )
-            st.pydeck_chart(santiago_deck, use_container_width=True)
-            st.markdown(dedent("""
-                <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem;">
-                    <span style="display:inline-flex; align-items:center; gap:0.34rem; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:999px; padding:0.16rem 0.5rem; font-size:0.72rem; color:#334155; font-weight:700;">
-                        <span style="width:10px; height:10px; border-radius:50%; background:#10B981; display:inline-block;"></span> High Margin / High Sales
-                    </span>
-                    <span style="display:inline-flex; align-items:center; gap:0.34rem; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:999px; padding:0.16rem 0.5rem; font-size:0.72rem; color:#334155; font-weight:700;">
-                        <span style="width:10px; height:10px; border-radius:50%; background:#2979FF; display:inline-block;"></span> Medium Margin
-                    </span>
-                    <span style="display:inline-flex; align-items:center; gap:0.34rem; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:999px; padding:0.16rem 0.5rem; font-size:0.72rem; color:#334155; font-weight:700;">
-                        <span style="width:10px; height:10px; border-radius:50%; background:#F59E0B; display:inline-block;"></span> Low Margin Priority
-                    </span>
-                </div>
-            """), unsafe_allow_html=True)
-            top_santiago = santiago_sales_map.loc[santiago_sales_map["Sales M"].idxmax()]
-            low_santiago = santiago_sales_map.loc[santiago_sales_map["Margin %"].idxmin()]
-            render_rev_ai_reco(
-                "Santiago Neighborhood White-Space",
-                f"{top_santiago['Neighborhood']} is the top Santiago sales pocket at CLP {top_santiago['Sales M']:.2f}M, while {low_santiago['Neighborhood']} has the lowest margin.",
-                f"Keep high-intent investment in {top_santiago['Neighborhood']} and run pricing/attach correction in {low_santiago['Neighborhood']}.",
-                "Grow Santiago revenue while improving unit economics by district.",
-                level="warning",
-            )
-
-        st.markdown('<div class="rev-title">Top Deals, Loss Insights and Action Queue</div>', unsafe_allow_html=True)
-        td_col1, td_col2 = st.columns(2)
-        with td_col1:
-            st.markdown('<div class="rev-mini-title">Top Won and Lost Deals</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                deals_bar = alt.Chart(sales_deals).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
-                    x=alt.X("Deal:N", title=None),
-                    y=alt.Y("Value K:Q", title="Deal Value (CLP  K)"),
-                    color=alt.Color("Status:N", scale=alt.Scale(domain=["Won", "Lost"], range=["#10B981", "#EF4444"]), legend=alt.Legend(title=None)),
-                    tooltip=["Deal:N", "Status:N", "Region:N", alt.Tooltip("Value K:Q", format=".0f"), "Reason:N"],
-                )
-                st.altair_chart(style_rev_chart(deals_bar, height=230), use_container_width=True)
-                lost_top = sales_deals[sales_deals["Status"] == "Lost"].sort_values("Value K", ascending=False).iloc[0]
-                render_rev_ai_reco(
-                    "Top Loss Recovery",
-                    f"Highest lost deal is {lost_top['Deal']} at CLP {lost_top['Value K']:.0f}K, mostly due to {lost_top['Reason'].lower()}.",
-                    "Build dedicated save-kit for high-value loss reasons (pricing, SLA, procurement).",
-                    "Recover strategic deals and improve win-rate in enterprise opportunities.",
-                    level="warning",
-                )
-
-        with td_col2:
-            st.markdown('<div class="rev-mini-title">Sales Alert and Action Queue</div>', unsafe_allow_html=True)
-            weak_att = sales_quota.loc[sales_quota["Attainment %"].idxmin()]
-            aging_peak = sales_pipeline.loc[sales_pipeline["Avg Age Days"].idxmax()]
-            sla_low = sales_install_sla.loc[sales_install_sla["SLA Met %"].idxmin()]
-            st.markdown(dedent(f"""
-                <div class="rev-ai-card warning">
-                    <div class="rev-ai-head">🚦 This Week Priority Queue</div>
-                    <div class="rev-ai-line"><strong>Target Risk:</strong> {weak_att['Dimension']} is at {weak_att['Attainment %']:.1f}% attainment ({weak_att['Gap M']:+.2f}M gap).</div>
-                    <div class="rev-ai-line"><strong>Pipeline Risk:</strong> {aging_peak['Stage']} stage is aging at {aging_peak['Avg Age Days']:.0f} days.</div>
-                    <div class="rev-ai-line"><strong>Execution Risk:</strong> {sla_low['Region']} SLA compliance is {sla_low['SLA Met %']:.1f}%.</div>
-                </div>
-            """), unsafe_allow_html=True)
-            render_rev_ai_reco(
-                "Action Queue",
-                "Three risks are active: target gap, stage aging, and install SLA slippage.",
-                "Run daily huddle with sales + operations for the flagged dimensions until normalized.",
-                "Faster tactical recovery and stronger month-end close predictability.",
+                "Fuga Competitiva",
+                f"Entel genera mayor impacto con CLP {top_comp['Revenue Impact M']:.1f}M revenue perdido.",
+                "Lanzar campaña anti-Entel con match de precio y beneficios 5G exclusivos.",
+                "Recuperar CLP 0.6M revenue mensual de portabilidad.",
                 level="critical",
             )
 
-    with rev_tab_risk:
-        st.markdown('<div class="rev-title">Revenue Risk and Strategy</div>', unsafe_allow_html=True)
+    with rev_tab_fibra:
+        st.markdown('<div class="rev-title">WOM Fibra/Hogar · Revenue Analytics</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="rev-kpi-grid">
-                <div class="rev-kpi-card crit"><div class="k">Revenue at Risk</div><div class="v">CLP {at_risk_rev_m:.2f}M</div><div class="d">Current exposure</div></div>
-                <div class="rev-kpi-card warn"><div class="k">Top Risk Driver</div><div class="v">{rev_risk.loc[rev_risk['Exposure M'].idxmax(), 'Risk Driver']}</div><div class="d">Highest exposure line</div></div>
-                <div class="rev-kpi-card"><div class="k">Base Scenario (Q)</div><div class="v">CLP {rev_scenario.loc[rev_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0]:.1f}M</div><div class="d">Highest probability</div></div>
-                <div class="rev-kpi-card"><div class="k">Upside Potential</div><div class="v">CLP {(rev_scenario.iloc[-1]['Quarter Revenue M']-rev_scenario.iloc[1]['Quarter Revenue M']):.1f}M</div><div class="d">vs base scenario</div></div>
-                <div class="rev-kpi-card warn"><div class="k">Downside Gap</div><div class="v">CLP {(rev_scenario.iloc[1]['Quarter Revenue M']-rev_scenario.iloc[0]['Quarter Revenue M']):.1f}M</div><div class="d">vs base scenario</div></div>
-                <div class="rev-kpi-card"><div class="k">Risk Coverage</div><div class="v">{(1 - rev_risk['Exposure M'].sum()/arr):.1%}</div><div class="d">ARR protected</div></div>
-                <div class="rev-kpi-card"><div class="k">Collection Quality</div><div class="v">{collection_rate:.1f}%</div><div class="d">Cash resilience</div></div>
-                <div class="rev-kpi-card crit"><div class="k">Delinquency Exposure</div><div class="v">CLP {rev_risk.loc[rev_risk['Risk Driver']=='Delinquency', 'Exposure M'].iloc[0]:.2f}M</div><div class="d">Critical watch</div></div>
+                <div class="rev-kpi-card"><div class="k">Revenue Fibra</div><div class="v">CLP {fibra_mrr:.1f}M</div><div class="d">MRR mensual</div></div>
+                <div class="rev-kpi-card"><div class="k">ARPU Fibra</div><div class="v">CLP {fibra_arpu:.1f}K</div><div class="d">Por suscriptor</div></div>
+                <div class="rev-kpi-card"><div class="k">Crecimiento</div><div class="v">+19.6%</div><div class="d">vs. trimestre anterior</div></div>
+                <div class="rev-kpi-card"><div class="k">Margen</div><div class="v">48.2%</div><div class="d">Margen bruto</div></div>
+                <div class="rev-kpi-card"><div class="k">Suscriptores</div><div class="v">485K</div><div class="d">Base activa</div></div>
+                <div class="rev-kpi-card"><div class="k">TV Revenue</div><div class="v">CLP {tv_mrr:.1f}M</div><div class="d">+27.8% crecimiento</div></div>
+                <div class="rev-kpi-card"><div class="k">Bundle ARPU</div><div class="v">CLP 32.8K</div><div class="d">Fibra + TV</div></div>
+                <div class="rev-kpi-card warn"><div class="k">Empresas Fibra</div><div class="v">CLP 2.4M</div><div class="d">+18.6% crecimiento</div></div>
+            </div>
+        """), unsafe_allow_html=True)
+
+        fb_rev_col1, fb_rev_col2 = st.columns(2)
+        with fb_rev_col1:
+            st.markdown('<div class="rev-mini-title">Revenue por Plan Fibra</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                fb_plan_bar = alt.Chart(fibra_plans_rev).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=20).encode(
+                    x=alt.X("Revenue M:Q", title="Revenue (CLP M)"),
+                    y=alt.Y("Plan:N", sort="-x", title=None),
+                    color=alt.Color("Growth %:Q", scale=alt.Scale(domain=[10, 40], range=["#29B5E8", "#10B981"]), legend=alt.Legend(title="Crecimiento %")),
+                    tooltip=["Plan:N", alt.Tooltip("Revenue M:Q", format=".1f"), alt.Tooltip("Subscribers K:Q", format=","), alt.Tooltip("ARPU CLP K:Q", format=".1f"), alt.Tooltip("Growth %:Q", format=".1f")],
+                )
+                st.altair_chart(style_rev_chart(fb_plan_bar, height=220), use_container_width=True)
+                top_fb_plan = fibra_plans_rev.loc[fibra_plans_rev["Growth %"].idxmax()]
+                render_rev_ai_reco(
+                    "Crecimiento Fibra",
+                    f"WOM Gamer 1 Gbps lidera crecimiento con +{top_fb_plan['Growth %']:.1f}%.",
+                    "Expandir marketing de Gamer 1G en segmento gamer y streaming.",
+                    "Incrementar penetración de planes premium +15%.",
+                )
+
+        with fb_rev_col2:
+            st.markdown('<div class="rev-mini-title">Tendencia Revenue Fibra + TV</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                fibra_area = alt.Chart(rev_monthly).mark_area(opacity=0.5, color="#6366F1").encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("Fibra Revenue M:Q", title="Revenue (CLP M)"),
+                )
+                tv_area = alt.Chart(rev_monthly).mark_area(opacity=0.5, color="#F59E0B").encode(
+                    x=alt.X("Month:N", title=None),
+                    y=alt.Y("TV Revenue M:Q", title="Revenue (CLP M)"),
+                )
+                st.altair_chart(style_rev_chart(fibra_area + tv_area, height=220), use_container_width=True)
+                fb_growth = ((rev_monthly.iloc[-1]["Fibra Revenue M"] - rev_monthly.iloc[0]["Fibra Revenue M"]) / rev_monthly.iloc[0]["Fibra Revenue M"] * 100)
+                render_rev_ai_reco(
+                    "Tendencia Fibra",
+                    f"Revenue Fibra creció {fb_growth:.1f}% en 6 meses. TV crece aún más rápido.",
+                    "Potenciar bundles Fibra+TV con promociones de instalación gratuita.",
+                    "Alcanzar CLP 16M MRR Fibra+TV al cierre Q2.",
+                )
+
+        st.markdown('<div class="rev-mini-title">Revenue por Tipo de Bundle</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            bundle_bar = alt.Chart(bundle_revenue).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=32).encode(
+                x=alt.X("Bundle Type:N", title=None),
+                y=alt.Y("Revenue M:Q", title="Revenue (CLP M)"),
+                color=alt.Color("ARPU K CLP:Q", scale=alt.Scale(domain=[10, 65], range=["#94A3B8", "#10B981"]), legend=alt.Legend(title="ARPU (K)")),
+                tooltip=["Bundle Type:N", alt.Tooltip("Revenue M:Q", format=".1f"), alt.Tooltip("Subscribers K:Q", format=","), alt.Tooltip("ARPU K CLP:Q", format=".1f"), alt.Tooltip("Churn %:Q", format=".1f")],
+            )
+            st.altair_chart(style_rev_chart(bundle_bar, height=220), use_container_width=True)
+            triple_play = bundle_revenue.loc[bundle_revenue["Bundle Type"] == "Triple Play (Móvil+Fibra+TV)"].iloc[0]
+            render_rev_ai_reco(
+                "Valor de Bundles",
+                f"Triple Play tiene ARPU de CLP {triple_play['ARPU K CLP']:.1f}K y churn de solo {triple_play['Churn %']:.1f}%.",
+                "Promover agresivamente Triple Play en base existente de Fibra y Móvil.",
+                "Incrementar penetración Triple Play a 80K subs y revenue +CLP 1.5M.",
+            )
+
+        st.markdown('<div class="rev-mini-title">ARPU Fibra por Mes</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            fb_arpu_line = alt.Chart(arpu_trend).mark_line(point=True, strokeWidth=3, color="#6366F1").encode(
+                x=alt.X("Month:N", title=None),
+                y=alt.Y("Fibra ARPU K:Q", title="ARPU (CLP K)", scale=alt.Scale(domain=[23.5, 25.5])),
+                tooltip=[alt.Tooltip("Month:N"), alt.Tooltip("Fibra ARPU K:Q", format=".2f")],
+            )
+            st.altair_chart(style_rev_chart(fb_arpu_line, height=180), use_container_width=True)
+
+    with rev_tab_map:
+        st.markdown('<div class="rev-title">🗺️ Mapa de Revenue & Ventas por Ciudad</div>', unsafe_allow_html=True)
+
+        map_filter_col1, map_filter_col2, map_filter_col3, map_filter_col4 = st.columns(4)
+
+        with map_filter_col1:
+            selected_regions = st.multiselect(
+                "Región",
+                options=sorted(geo_sales_data["Region"].unique()),
+                default=[],
+                placeholder="Todas las regiones",
+                key="rev_map_region",
+            )
+
+        with map_filter_col2:
+            selected_product = st.selectbox(
+                "Producto",
+                options=["Todos", "Móvil", "Fibra"],
+                index=0,
+                key="rev_map_product",
+            )
+
+        with map_filter_col3:
+            selected_segment = st.multiselect(
+                "Segmento",
+                options=sorted(geo_sales_data["Segment"].unique()),
+                default=[],
+                placeholder="Todos los segmentos",
+                key="rev_map_segment",
+            )
+
+        with map_filter_col4:
+            selected_channel = st.multiselect(
+                "Canal Principal",
+                options=sorted(geo_sales_data["Channel Mix"].unique()),
+                default=[],
+                placeholder="Todos los canales",
+                key="rev_map_channel",
+            )
+
+        map_filter_col5, map_filter_col6, map_filter_col7, map_filter_col8 = st.columns(4)
+
+        with map_filter_col5:
+            min_revenue = st.slider(
+                "Revenue Mínimo (CLP M)",
+                min_value=0.0,
+                max_value=float(geo_sales_data["Total Revenue M"].max()),
+                value=0.0,
+                step=0.1,
+                key="rev_map_min_rev",
+            )
+
+        with map_filter_col6:
+            color_metric = st.selectbox(
+                "Colorear por",
+                options=["Total Revenue M", "Móvil Revenue M", "Fibra Revenue M", "Growth Móvil %", "Growth Fibra %", "Churn Móvil %", "Churn Fibra %", "5G Coverage %", "FTTH Coverage %", "ARPU Móvil K", "ARPU Fibra K"],
+                index=0,
+                key="rev_map_color",
+            )
+
+        with map_filter_col7:
+            size_metric = st.selectbox(
+                "Tamaño por",
+                options=["Total Subscribers K", "Subscribers Móvil K", "Subscribers Fibra K", "Total Revenue M", "Tiendas WOM"],
+                index=0,
+                key="rev_map_size",
+            )
+
+        with map_filter_col8:
+            has_store_filter = st.checkbox("Solo con Tienda WOM", value=False, key="rev_map_store")
+
+        filtered_geo = geo_sales_data.copy()
+        if selected_regions:
+            filtered_geo = filtered_geo[filtered_geo["Region"].isin(selected_regions)]
+        if selected_segment:
+            filtered_geo = filtered_geo[filtered_geo["Segment"].isin(selected_segment)]
+        if selected_channel:
+            filtered_geo = filtered_geo[filtered_geo["Channel Mix"].isin(selected_channel)]
+        if min_revenue > 0:
+            filtered_geo = filtered_geo[filtered_geo["Total Revenue M"] >= min_revenue]
+        if has_store_filter:
+            filtered_geo = filtered_geo[filtered_geo["Tiendas WOM"] > 0]
+
+        if selected_product == "Móvil":
+            filtered_geo["Display Revenue M"] = filtered_geo["Móvil Revenue M"]
+            filtered_geo["Display Subs K"] = filtered_geo["Subscribers Móvil K"]
+        elif selected_product == "Fibra":
+            filtered_geo["Display Revenue M"] = filtered_geo["Fibra Revenue M"]
+            filtered_geo["Display Subs K"] = filtered_geo["Subscribers Fibra K"]
+        else:
+            filtered_geo["Display Revenue M"] = filtered_geo["Total Revenue M"]
+            filtered_geo["Display Subs K"] = filtered_geo["Total Subscribers K"]
+
+        total_filtered_rev = filtered_geo["Display Revenue M"].sum()
+        total_filtered_subs = filtered_geo["Display Subs K"].sum()
+        avg_filtered_growth = filtered_geo["Growth Móvil %"].mean() if selected_product != "Fibra" else filtered_geo["Growth Fibra %"].mean()
+        num_cities = len(filtered_geo)
+
+        st.markdown(dedent(f"""
+            <div class="rev-kpi-grid">
+                <div class="rev-kpi-card"><div class="k">Ciudades</div><div class="v">{num_cities}</div><div class="d">En filtro actual</div></div>
+                <div class="rev-kpi-card"><div class="k">Revenue Total</div><div class="v">CLP {total_filtered_rev:.1f}M</div><div class="d">Filtrado</div></div>
+                <div class="rev-kpi-card"><div class="k">Suscriptores</div><div class="v">{total_filtered_subs:.0f}K</div><div class="d">Base filtrada</div></div>
+                <div class="rev-kpi-card"><div class="k">Crecimiento Prom</div><div class="v">{avg_filtered_growth:.1f}%</div><div class="d">Ciudades filtradas</div></div>
+            </div>
+        """), unsafe_allow_html=True)
+
+        if len(filtered_geo) > 0:
+            color_val = filtered_geo[color_metric]
+            color_min, color_max = color_val.min(), color_val.max()
+            if "Churn" in color_metric:
+                filtered_geo["r"] = ((color_val - color_min) / (color_max - color_min + 0.001) * 200 + 55).astype(int)
+                filtered_geo["g"] = (200 - (color_val - color_min) / (color_max - color_min + 0.001) * 150).astype(int)
+                filtered_geo["b"] = 80
+            else:
+                filtered_geo["r"] = (80 - (color_val - color_min) / (color_max - color_min + 0.001) * 40).astype(int)
+                filtered_geo["g"] = ((color_val - color_min) / (color_max - color_min + 0.001) * 150 + 100).astype(int)
+                filtered_geo["b"] = ((color_val - color_min) / (color_max - color_min + 0.001) * 100 + 130).astype(int)
+
+            size_val = filtered_geo[size_metric]
+            size_min, size_max = size_val.min(), size_val.max()
+            filtered_geo["radius"] = ((size_val - size_min) / (size_max - size_min + 0.001) * 18000 + 3000).astype(int)
+
+            center_lat = filtered_geo["lat"].mean()
+            center_lon = filtered_geo["lon"].mean()
+            zoom = 5 if len(selected_regions) == 0 else (7 if len(selected_regions) <= 2 else 6)
+            if num_cities <= 10:
+                zoom = 8
+
+            map_data = filtered_geo.to_dict("records")
+
+            map_col, table_col = st.columns([2, 1])
+
+            with map_col:
+                st.pydeck_chart(
+                    pdk.Deck(
+                        initial_view_state=pdk.ViewState(
+                            latitude=center_lat,
+                            longitude=center_lon,
+                            zoom=zoom,
+                            pitch=35,
+                        ),
+                        layers=[
+                            pdk.Layer(
+                                "ScatterplotLayer",
+                                data=map_data,
+                                get_position=["lon", "lat"],
+                                get_radius="radius",
+                                get_fill_color=["r", "g", "b", 180],
+                                pickable=True,
+                                auto_highlight=True,
+                            ),
+                        ],
+                        tooltip={
+                            "html": "<b>{City}</b><br/>Región: {Region}<br/>Revenue: CLP {Total Revenue M}M<br/>Subs Móvil: {Subscribers Móvil K}K<br/>Subs Fibra: {Subscribers Fibra K}K<br/>5G: {5G Coverage %}%<br/>FTTH: {FTTH Coverage %}%<br/>Tiendas: {Tiendas WOM}",
+                            "style": {"backgroundColor": "#1E3A8A", "color": "white", "fontSize": "12px", "padding": "8px", "borderRadius": "6px"},
+                        },
+                        map_style="https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
+                    ),
+                    use_container_width=True,
+                    height=480,
+                    key=f"rev_map_{len(map_data)}_{selected_product}_{'-'.join(selected_segment) if selected_segment else 'all'}",
+                )
+
+            with table_col:
+                st.markdown('<div class="rev-mini-title">Top Ciudades (Filtradas)</div>', unsafe_allow_html=True)
+                top_cities = filtered_geo.nlargest(10, "Display Revenue M")[["City", "Region", "Display Revenue M", "Display Subs K"]].copy()
+                top_cities.columns = ["Ciudad", "Región", "Revenue M", "Subs K"]
+                st.dataframe(top_cities, use_container_width=True, hide_index=True, height=420)
+
+            st.markdown('<div class="rev-mini-title">Análisis por Región (Filtradas)</div>', unsafe_allow_html=True)
+            region_agg = filtered_geo.groupby("Region").agg({
+                "Display Revenue M": "sum",
+                "Display Subs K": "sum",
+                "Tiendas WOM": "sum",
+                "5G Coverage %": "mean",
+                "FTTH Coverage %": "mean",
+                "Churn Móvil %": "mean",
+                "Growth Móvil %": "mean",
+            }).reset_index()
+            region_agg.columns = ["Región", "Revenue M", "Subs K", "Tiendas", "5G %", "FTTH %", "Churn %", "Growth %"]
+            region_agg = region_agg.sort_values("Revenue M", ascending=False)
+
+            agg_col1, agg_col2 = st.columns(2)
+            with agg_col1:
+                with st.container(border=True):
+                    region_bar = alt.Chart(region_agg).mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=22).encode(
+                        x=alt.X("Revenue M:Q", title="Revenue (CLP M)"),
+                        y=alt.Y("Región:N", sort="-x", title=None),
+                        color=alt.Color("Growth %:Q", scale=alt.Scale(domain=[0, 15], range=["#F59E0B", "#10B981"]), legend=alt.Legend(title="Growth %")),
+                        tooltip=["Región:N", alt.Tooltip("Revenue M:Q", format=".1f"), alt.Tooltip("Subs K:Q", format=",.0f"), alt.Tooltip("Growth %:Q", format=".1f")],
+                    )
+                    st.altair_chart(style_rev_chart(region_bar, height=220), use_container_width=True)
+
+            with agg_col2:
+                with st.container(border=True):
+                    coverage_scatter = alt.Chart(region_agg).mark_circle(opacity=0.85, stroke="#FFFFFF", strokeWidth=1.5).encode(
+                        x=alt.X("5G %:Q", title="Cobertura 5G (%)"),
+                        y=alt.Y("FTTH %:Q", title="Cobertura FTTH (%)"),
+                        size=alt.Size("Revenue M:Q", scale=alt.Scale(range=[200, 1200]), legend=None),
+                        color=alt.Color("Región:N", legend=alt.Legend(title=None)),
+                        tooltip=["Región:N", alt.Tooltip("5G %:Q", format=".0f"), alt.Tooltip("FTTH %:Q", format=".0f"), alt.Tooltip("Revenue M:Q", format=".1f")],
+                    )
+                    st.altair_chart(style_rev_chart(coverage_scatter, height=220), use_container_width=True)
+
+            if len(filtered_geo) > 0:
+                best_city = filtered_geo.loc[filtered_geo["Display Revenue M"].idxmax()]
+                low_coverage_cities = filtered_geo[filtered_geo["FTTH Coverage %"] < 50]
+                render_rev_ai_reco(
+                    "Análisis Geográfico",
+                    f"{best_city['City']} lidera con CLP {best_city['Total Revenue M']:.1f}M. {len(low_coverage_cities)} ciudades tienen FTTH <50%.",
+                    "Priorizar expansión de cobertura en ciudades con alto potencial y baja penetración.",
+                    "Incrementar revenue +12% en ciudades de expansión.",
+                )
+        else:
+            st.warning("No hay datos con los filtros seleccionados. Ajusta los filtros para ver resultados.")
+
+    with rev_tab_channels:
+        st.markdown('<div class="rev-title">Canales de Venta & Regiones</div>', unsafe_allow_html=True)
+
+        best_channel = rev_channels.loc[rev_channels["Total M"].idxmax()]
+        best_region = rev_regions.loc[rev_regions["Total M"].idxmax()]
+        digital_pct = (rev_channels.loc[rev_channels["Channel"] == "WOM App / Web", "Total M"].iloc[0] / rev_channels["Total M"].sum() * 100)
+
+        st.markdown(dedent(f"""
+            <div class="rev-kpi-grid">
+                <div class="rev-kpi-card"><div class="k">Top Canal</div><div class="v">{best_channel['Channel']}</div><div class="d">CLP {best_channel['Total M']:.1f}M</div></div>
+                <div class="rev-kpi-card"><div class="k">Top Región</div><div class="v">{best_region['Region']}</div><div class="d">CLP {best_region['Total M']:.1f}M</div></div>
+                <div class="rev-kpi-card"><div class="k">Digital %</div><div class="v">{digital_pct:.1f}%</div><div class="d">App + Web</div></div>
+                <div class="rev-kpi-card"><div class="k">CAC Promedio</div><div class="v">CLP {rev_channels['CAC K CLP'].mean():.1f}K</div><div class="d">Por adquisición</div></div>
+            </div>
+        """), unsafe_allow_html=True)
+
+        ch_col1, ch_col2 = st.columns(2)
+        with ch_col1:
+            st.markdown('<div class="rev-mini-title">Revenue por Canal (Móvil vs Fibra)</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                ch_long = rev_channels.melt(id_vars=["Channel"], value_vars=["Móvil M", "Fibra M"], var_name="Producto", value_name="Revenue M")
+                ch_bar = alt.Chart(ch_long).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
+                    x=alt.X("Channel:N", title=None),
+                    y=alt.Y("Revenue M:Q", title="Revenue (CLP M)"),
+                    color=alt.Color("Producto:N", scale=alt.Scale(domain=["Móvil M", "Fibra M"], range=["#10B981", "#6366F1"]), legend=alt.Legend(title=None)),
+                    xOffset="Producto:N",
+                    tooltip=["Channel:N", "Producto:N", alt.Tooltip("Revenue M:Q", format=".1f")],
+                )
+                st.altair_chart(style_rev_chart(ch_bar, height=230), use_container_width=True)
+                render_rev_ai_reco(
+                    "Canales de Venta",
+                    f"WOM App/Web genera CLP {best_channel['Total M']:.1f}M con menor CAC.",
+                    "Incrementar inversión en app marketing y optimizar UX de conversión.",
+                    "Aumentar digital a 40% del mix total.",
+                )
+
+        with ch_col2:
+            st.markdown('<div class="rev-mini-title">Revenue por Región</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                reg_long = rev_regions.melt(id_vars=["Region"], value_vars=["Móvil M", "Fibra M"], var_name="Producto", value_name="Revenue M")
+                reg_bar = alt.Chart(reg_long).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
+                    x=alt.X("Region:N", title=None, sort="-y"),
+                    y=alt.Y("Revenue M:Q", title="Revenue (CLP M)"),
+                    color=alt.Color("Producto:N", scale=alt.Scale(domain=["Móvil M", "Fibra M"], range=["#10B981", "#6366F1"]), legend=alt.Legend(title=None)),
+                    xOffset="Producto:N",
+                    tooltip=["Region:N", "Producto:N", alt.Tooltip("Revenue M:Q", format=".1f")],
+                )
+                st.altair_chart(style_rev_chart(reg_bar, height=230), use_container_width=True)
+                metro_pct = (rev_regions.loc[rev_regions["Region"] == "Metropolitana", "Total M"].iloc[0] / rev_regions["Total M"].sum() * 100)
+                render_rev_ai_reco(
+                    "Concentración Regional",
+                    f"Metropolitana representa {metro_pct:.0f}% del revenue total.",
+                    "Expandir cobertura en Valparaíso y Biobío con promociones regionales.",
+                    "Reducir dependencia de RM a <55% del revenue.",
+                    level="warning",
+                )
+
+        st.markdown('<div class="rev-mini-title">Pipeline de Ventas (Móvil + Fibra)</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            pipe_long = sales_pipeline.melt(id_vars=["Stage"], value_vars=["Móvil K", "Fibra K"], var_name="Producto", value_name="Leads K")
+            pipe_bar = alt.Chart(pipe_long).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5, size=28).encode(
+                x=alt.X("Stage:N", title=None, sort=["Lead", "Calificado", "Propuesta", "Negociación", "Cerrado"]),
+                y=alt.Y("Leads K:Q", title="Leads (K)"),
+                color=alt.Color("Producto:N", scale=alt.Scale(domain=["Móvil K", "Fibra K"], range=["#10B981", "#6366F1"]), legend=alt.Legend(title=None)),
+                xOffset="Producto:N",
+                tooltip=["Stage:N", "Producto:N", alt.Tooltip("Leads K:Q", format=".1f")],
+            )
+            st.altair_chart(style_rev_chart(pipe_bar, height=200), use_container_width=True)
+            conversion = (sales_pipeline.iloc[-1]["Móvil K"] / sales_pipeline.iloc[0]["Móvil K"]) * 100
+            render_rev_ai_reco(
+                "Conversión Pipeline",
+                f"Conversión Lead-to-Close de {conversion:.0f}% en móvil.",
+                "Optimizar etapa Propuesta con ofertas personalizadas por segmento.",
+                "Incrementar tasa de cierre +3pp.",
+            )
+
+    with rev_tab_risk:
+        st.markdown('<div class="rev-title">Riesgo de Revenue & Cobranza</div>', unsafe_allow_html=True)
+
+        over_30 = rev_aging.loc[rev_aging["Bucket"].isin(["31-60 días", "61-90 días", "90+ días"]), "Total M"].sum()
+        delinquency_pct = (over_30 / rev_aging["Total M"].sum()) * 100
+
+        st.markdown(dedent(f"""
+            <div class="rev-kpi-grid">
+                <div class="rev-kpi-card"><div class="k">Cobranza</div><div class="v">{collection_rate:.1f}%</div><div class="d">Tasa de cobro</div></div>
+                <div class="rev-kpi-card warn"><div class="k">Revenue at Risk</div><div class="v">CLP {at_risk_rev_m:.1f}M</div><div class="d">Exposición total</div></div>
+                <div class="rev-kpi-card crit"><div class="k">Morosidad 30+</div><div class="v">{delinquency_pct:.1f}%</div><div class="d">Del revenue facturado</div></div>
+                <div class="rev-kpi-card"><div class="k">Al día</div><div class="v">CLP {rev_aging.iloc[0]['Total M']:.1f}M</div><div class="d">Cartera sana</div></div>
             </div>
         """), unsafe_allow_html=True)
 
         rk_col1, rk_col2 = st.columns(2)
         with rk_col1:
-            st.markdown('<div class="rev-mini-title">Revenue Risk Drivers</div>', unsafe_allow_html=True)
+            st.markdown('<div class="rev-mini-title">Aging de Cartera (Móvil vs Fibra)</div>', unsafe_allow_html=True)
             with st.container(border=True):
-                risk_bar = alt.Chart(rev_risk).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=20).encode(
-                    x=alt.X("Exposure M:Q", title="Exposure (CLP  M)"),
-                    y=alt.Y("Risk Driver:N", sort="-x", title=None),
-                    color=alt.Color("Likelihood:Q", scale=alt.Scale(scheme="orangered"), legend=None),
-                    tooltip=["Risk Driver:N", alt.Tooltip("Exposure M:Q", format=".2f"), alt.Tooltip("Likelihood:Q", format=".1f")],
+                aging_long = rev_aging.melt(id_vars=["Bucket"], value_vars=["Móvil M", "Fibra M"], var_name="Producto", value_name="Amount M")
+                aging_bar = alt.Chart(aging_long).mark_bar(cornerRadiusTopRight=6, cornerRadiusBottomRight=6, size=18).encode(
+                    y=alt.Y("Bucket:N", title=None, sort=["Al día", "1-30 días", "31-60 días", "61-90 días", "90+ días"]),
+                    x=alt.X("Amount M:Q", title="Monto (CLP M)"),
+                    color=alt.Color("Producto:N", scale=alt.Scale(domain=["Móvil M", "Fibra M"], range=["#10B981", "#6366F1"]), legend=alt.Legend(title=None)),
+                    yOffset="Producto:N",
+                    tooltip=["Bucket:N", "Producto:N", alt.Tooltip("Amount M:Q", format=".1f")],
                 )
-                risk_labels = alt.Chart(rev_risk).mark_text(align="left", dx=6, fontSize=10, color="#0F172A").encode(
-                    x="Exposure M:Q",
-                    y=alt.Y("Risk Driver:N", sort="-x"),
-                    text=alt.Text("Exposure M:Q", format=".2f"),
-                )
-                st.altair_chart(style_rev_chart(risk_bar + risk_labels, height=230), use_container_width=True)
-                top_risk = rev_risk.loc[rev_risk["Exposure M"].idxmax()]
+                st.altair_chart(style_rev_chart(aging_bar, height=230), use_container_width=True)
                 render_rev_ai_reco(
-                    "Risk Prioritization",
-                    f"{top_risk['Risk Driver']} is the highest exposure risk at CLP {top_risk['Exposure M']:.2f}M.",
-                    f"Assign cross-functional mitigation sprint for {top_risk['Risk Driver']} with weekly governance.",
-                    "Reduce downside risk and improve forecast confidence.",
+                    "Salud de Cartera",
+                    f"Cartera 90+ días suma CLP {rev_aging.iloc[-1]['Total M']:.1f}M en riesgo de incobrabilidad.",
+                    "Activar gestión de cobranza intensiva y ofertas de regularización.",
+                    "Recuperar 40% de cartera morosa en próximos 60 días.",
                     level="critical",
                 )
 
         with rk_col2:
-            st.markdown('<div class="rev-mini-title">Quarter Revenue Scenarios</div>', unsafe_allow_html=True)
+            st.markdown('<div class="rev-mini-title">Drivers de Riesgo de Revenue</div>', unsafe_allow_html=True)
             with st.container(border=True):
-                sc_bar = alt.Chart(rev_scenario).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=56).encode(
-                    x=alt.X("Scenario:N", title=None),
-                    y=alt.Y("Quarter Revenue M:Q", title="Revenue (CLP  M)"),
-                    color=alt.Color("Scenario:N", scale=alt.Scale(domain=["Downside", "Base", "Upside"], range=["#EF4444", "#3B82F6", "#10B981"]), legend=None),
-                    tooltip=["Scenario:N", alt.Tooltip("Quarter Revenue M:Q", format=".1f"), "Probability:N"],
+                risk_bar = alt.Chart(rev_risk).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=20, color="#EF4444").encode(
+                    x=alt.X("Exposure M:Q", title="Exposición (CLP M)"),
+                    y=alt.Y("Risk Driver:N", sort="-x", title=None),
+                    color=alt.Color("Product:N", scale=alt.Scale(domain=["Móvil", "Fibra", "Ambos"], range=["#10B981", "#6366F1", "#F59E0B"]), legend=alt.Legend(title="Producto")),
+                    tooltip=["Risk Driver:N", alt.Tooltip("Exposure M:Q", format=".1f"), alt.Tooltip("Likelihood:Q", format=".1f"), "Product:N"],
                 )
-                sc_labels = alt.Chart(rev_scenario).mark_text(dy=-8, fontSize=11, fontWeight="bold", color="#0F172A").encode(
-                    x="Scenario:N",
-                    y="Quarter Revenue M:Q",
-                    text=alt.Text("Quarter Revenue M:Q", format=".1f"),
-                )
-                st.altair_chart(style_rev_chart(sc_bar + sc_labels, height=230), use_container_width=True)
-                base_q = rev_scenario.loc[rev_scenario["Scenario"] == "Base", "Quarter Revenue M"].iloc[0]
+                st.altair_chart(style_rev_chart(risk_bar, height=230), use_container_width=True)
+                top_risk = rev_risk.loc[rev_risk["Exposure M"].idxmax()]
                 render_rev_ai_reco(
-                    "Scenario Planning",
-                    f"Base scenario is CLP {base_q:.1f}M with balanced probability weight.",
-                    "Pre-authorize tactical levers for downside triggers and expansion offers for upside capture.",
-                    "Shorten reaction time and stabilize quarter-close outcomes.",
+                    "Principal Riesgo",
+                    f"Portabilidad Móvil genera CLP {top_risk['Exposure M']:.1f}M en riesgo.",
+                    "Lanzar programa de retención proactiva pre-portabilidad.",
+                    "Reducir fuga por portabilidad 25%.",
+                    level="critical",
                 )
 
-        st.markdown('<div class="rev-title">Interactive What-If Analysis</div>', unsafe_allow_html=True)
-        whatif_presets = {
-            "Defensive": {"churn": 1.2, "price": -0.5, "collection": -0.4, "discount": 1.6},
-            "Base": {"churn": 0.4, "price": 0.8, "collection": 0.4, "discount": 0.3},
-            "Growth": {"churn": 0.1, "price": 2.0, "collection": 0.9, "discount": 0.1},
-            "Stretch": {"churn": -0.2, "price": 3.2, "collection": 1.4, "discount": -0.4},
-        }
-
-        # Keep widget state owned by session_state to avoid key/default conflicts.
-        st.session_state.setdefault("rev_whatif_churn", whatif_presets["Base"]["churn"])
-        st.session_state.setdefault("rev_whatif_price", whatif_presets["Base"]["price"])
-        st.session_state.setdefault("rev_whatif_collection", whatif_presets["Base"]["collection"])
-        st.session_state.setdefault("rev_whatif_discount", whatif_presets["Base"]["discount"])
-
-        st.markdown('<div class="rev-mini-title">Scenario Presets</div>', unsafe_allow_html=True)
-        preset_col1, preset_col2, preset_col3, preset_col4 = st.columns(4)
-        with preset_col1:
-            if st.button("🛡️ Defensive", use_container_width=True, key="rev_preset_defensive"):
-                st.session_state["rev_whatif_churn"] = whatif_presets["Defensive"]["churn"]
-                st.session_state["rev_whatif_price"] = whatif_presets["Defensive"]["price"]
-                st.session_state["rev_whatif_collection"] = whatif_presets["Defensive"]["collection"]
-                st.session_state["rev_whatif_discount"] = whatif_presets["Defensive"]["discount"]
-        with preset_col2:
-            if st.button("⚖️ Base", use_container_width=True, key="rev_preset_base"):
-                st.session_state["rev_whatif_churn"] = whatif_presets["Base"]["churn"]
-                st.session_state["rev_whatif_price"] = whatif_presets["Base"]["price"]
-                st.session_state["rev_whatif_collection"] = whatif_presets["Base"]["collection"]
-                st.session_state["rev_whatif_discount"] = whatif_presets["Base"]["discount"]
-        with preset_col3:
-            if st.button("🚀 Growth", use_container_width=True, key="rev_preset_growth"):
-                st.session_state["rev_whatif_churn"] = whatif_presets["Growth"]["churn"]
-                st.session_state["rev_whatif_price"] = whatif_presets["Growth"]["price"]
-                st.session_state["rev_whatif_collection"] = whatif_presets["Growth"]["collection"]
-                st.session_state["rev_whatif_discount"] = whatif_presets["Growth"]["discount"]
-        with preset_col4:
-            if st.button("🏆 Stretch", use_container_width=True, key="rev_preset_stretch"):
-                st.session_state["rev_whatif_churn"] = whatif_presets["Stretch"]["churn"]
-                st.session_state["rev_whatif_price"] = whatif_presets["Stretch"]["price"]
-                st.session_state["rev_whatif_collection"] = whatif_presets["Stretch"]["collection"]
-                st.session_state["rev_whatif_discount"] = whatif_presets["Stretch"]["discount"]
-
-        ctrl_col1, ctrl_col2, ctrl_col3, ctrl_col4 = st.columns(4)
-        with ctrl_col1:
-            churn_shock_pp = st.slider("Churn Shock (pp)", -1.0, 2.0, step=0.1, key="rev_whatif_churn")
-        with ctrl_col2:
-            price_uplift_pct = st.slider("Price Uplift (%)", -3.0, 5.0, step=0.1, key="rev_whatif_price")
-        with ctrl_col3:
-            collection_improve_pp = st.slider("Collection Delta (pp)", -1.0, 2.0, step=0.1, key="rev_whatif_collection")
-        with ctrl_col4:
-            discount_change_pp = st.slider("Discount Pressure (pp)", -2.0, 3.0, step=0.1, key="rev_whatif_discount")
-
-        base_q_whatif = float(rev_scenario.loc[rev_scenario["Scenario"] == "Base", "Quarter Revenue M"].iloc[0])
-        churn_impact_m = -base_q_whatif * (churn_shock_pp * 0.012)
-        price_impact_m = base_q_whatif * (price_uplift_pct / 100) * 0.85
-        collection_impact_m = base_q_whatif * (collection_improve_pp / 100) * 0.35
-        discount_impact_m = -base_q_whatif * (discount_change_pp / 100) * 0.75
-        scenario_q_m = base_q_whatif + churn_impact_m + price_impact_m + collection_impact_m + discount_impact_m
-        delta_q_m = scenario_q_m - base_q_whatif
-
-        scenario_margin = gross_margin + (0.6 * price_uplift_pct) - (0.8 * discount_change_pp) - (0.5 * churn_shock_pp) + (0.2 * collection_improve_pp)
-        scenario_margin = max(35.0, min(65.0, scenario_margin))
-
-        st.markdown(dedent(f"""
-            <div class="rev-kpi-grid">
-                <div class="rev-kpi-card"><div class="k">Base Quarter</div><div class="v">CLP {base_q_whatif:.2f}M</div><div class="d">Reference case</div></div>
-                <div class="rev-kpi-card {'crit' if delta_q_m < 0 else ''}"><div class="k">What-If Quarter</div><div class="v">CLP {scenario_q_m:.2f}M</div><div class="d">{delta_q_m:+.2f}M vs base</div></div>
-                <div class="rev-kpi-card {'warn' if scenario_margin < gross_margin else ''}"><div class="k">What-If Margin</div><div class="v">{scenario_margin:.1f}%</div><div class="d">{(scenario_margin-gross_margin):+.1f}pp vs current</div></div>
-                <div class="rev-kpi-card {'crit' if delta_q_m < -0.3 else 'warn' if delta_q_m < 0 else ''}"><div class="k">Scenario Health</div><div class="v">{'At Risk' if delta_q_m < -0.3 else 'Watch' if delta_q_m < 0 else 'Favorable'}</div><div class="d">Composite result</div></div>
-            </div>
-        """), unsafe_allow_html=True)
-
-        wf_col1, wf_col2 = st.columns(2)
-        with wf_col1:
-            st.markdown('<div class="rev-mini-title">Driver Impact Decomposition</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                driver_df = pd.DataFrame({
-                    "Driver": ["Churn", "Pricing", "Collections", "Discounts"],
-                    "Impact M": [churn_impact_m, price_impact_m, collection_impact_m, discount_impact_m],
-                })
-                driver_df["Type"] = driver_df["Impact M"].apply(lambda v: "Up" if v >= 0 else "Down")
-                d_bar = alt.Chart(driver_df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=46).encode(
-                    x=alt.X("Driver:N", title=None),
-                    y=alt.Y("Impact M:Q", title="Impact (CLP  M)"),
-                    color=alt.Color("Type:N", scale=alt.Scale(domain=["Up", "Down"], range=["#10B981", "#EF4444"]), legend=None),
-                    tooltip=["Driver:N", alt.Tooltip("Impact M:Q", format=".2f")],
-                )
-                d_text = alt.Chart(driver_df).mark_text(dy=-8, fontSize=10, fontWeight="bold", color="#0F172A").encode(
-                    x="Driver:N",
-                    y="Impact M:Q",
-                    text=alt.Text("Impact M:Q", format="+.2f"),
-                )
-                d_zero = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(color="#94A3B8", strokeDash=[4, 4]).encode(y="y:Q")
-                st.altair_chart(style_rev_chart(d_zero + d_bar + d_text, height=220), use_container_width=True)
-
-        with wf_col2:
-            st.markdown('<div class="rev-mini-title">Base vs What-If Outcome</div>', unsafe_allow_html=True)
-            with st.container(border=True):
-                compare_df = pd.DataFrame({
-                    "Case": ["Base", "What-If"],
-                    "Revenue M": [base_q_whatif, scenario_q_m],
-                })
-                c_bar = alt.Chart(compare_df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=58).encode(
-                    x=alt.X("Case:N", title=None),
-                    y=alt.Y("Revenue M:Q", title="Quarter Revenue (CLP  M)"),
-                    color=alt.Color("Case:N", scale=alt.Scale(domain=["Base", "What-If"], range=["#3B82F6", "#10B981" if delta_q_m >= 0 else "#EF4444"]), legend=None),
-                    tooltip=["Case:N", alt.Tooltip("Revenue M:Q", format=".2f")],
-                )
-                c_text = alt.Chart(compare_df).mark_text(dy=-8, fontSize=11, fontWeight="bold", color="#0F172A").encode(
-                    x="Case:N",
-                    y="Revenue M:Q",
-                    text=alt.Text("Revenue M:Q", format=".2f"),
-                )
-                st.altair_chart(style_rev_chart(c_bar + c_text, height=220), use_container_width=True)
-
-        if delta_q_m >= 0:
-            render_rev_ai_reco(
-                "What-If Outcome",
-                f"This scenario improves quarter revenue by CLP {delta_q_m:.2f}M with margin at {scenario_margin:.1f}%.",
-                "Proceed with pricing and collections levers; keep discount expansion controlled.",
-                "Higher quarter close with stable profitability.",
+        st.markdown('<div class="rev-mini-title">Impacto Competitivo en Revenue</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            comp_total = competitor_impact.copy()
+            comp_total["Total Lost K"] = comp_total["Lost Móvil K"] + comp_total["Lost Fibra K"]
+            comp_bar = alt.Chart(comp_total).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=32).encode(
+                x=alt.X("Competitor:N", title=None, sort="-y"),
+                y=alt.Y("Revenue Impact M:Q", title="Impacto Revenue (CLP M)"),
+                color=alt.Color("Revenue Impact M:Q", scale=alt.Scale(domain=[0, 2], range=["#FCD34D", "#EF4444"]), legend=None),
+                tooltip=["Competitor:N", alt.Tooltip("Lost Móvil K:Q", format=","), alt.Tooltip("Lost Fibra K:Q", format=","), alt.Tooltip("Revenue Impact M:Q", format=".1f")],
             )
-        else:
+            st.altair_chart(style_rev_chart(comp_bar, height=200), use_container_width=True)
+            total_impact = competitor_impact["Revenue Impact M"].sum()
             render_rev_ai_reco(
-                "What-If Outcome",
-                f"This scenario reduces quarter revenue by CLP {abs(delta_q_m):.2f}M and margin shifts to {scenario_margin:.1f}%.",
-                "Trigger mitigation playbook: protect collections, limit discounting, and prioritize churn containment.",
-                "Contain downside and recover part of the revenue gap before close.",
-                level="critical" if delta_q_m < -0.3 else "warning",
+                "Fuga Competitiva Total",
+                f"Competidores capturan CLP {total_impact:.1f}M mensual en revenue WOM.",
+                "Desarrollar ofertas win-back y campañas anti-competencia por segmento.",
+                "Recuperar CLP 1.2M de revenue perdido en próximo trimestre.",
+                level="warning",
             )
 
         st.markdown(dedent(f"""
@@ -4821,8 +4979,8 @@ elif selected_menu == "Revenue Analytics":
                 <div style="display: flex; align-items: center;">
                     <span style="font-size: 1.35rem; margin-right: 0.55rem;">⚠️</span>
                     <div>
-                        <strong style="color: #92400E;">Urgent: CLP {at_risk_rev_m:.2f}M revenue exposure</strong>
-                        <div style="color: #B45309; font-size: 0.84rem;">Top driver: {rev_risk.loc[rev_risk['Exposure M'].idxmax(), 'Risk Driver']} · prioritize mitigation in next cycle</div>
+                        <strong style="color: #92400E;">Alerta: CLP {at_risk_rev_m:.1f}M revenue en riesgo</strong>
+                        <div style="color: #B45309; font-size: 0.84rem;">Principal driver: {rev_risk.loc[rev_risk['Exposure M'].idxmax(), 'Risk Driver']} · priorizar mitigación en próximo ciclo</div>
                     </div>
                 </div>
             </div>
@@ -4978,11 +5136,14 @@ elif selected_menu == "Network Status":
         "Incidents": [1, 1, 2, 4, 3, 2],
     })
     net_regions = pd.DataFrame({
-        "Region": ["Santiago Centro", "Santiago Norte", "Santiago Sur", "Valparaiso", "Concepcion", "Temuco"],
+        "Region": ["Metropolitana", "Valparaíso", "Biobío", "Araucanía", "O'Higgins", "Antofagasta"],
         "Availability %": [99.94, 99.91, 99.90, 99.86, 99.88, 99.84],
-        "NPS": [57, 54, 53, 49, 50, 47],
-        "Active OLTs": [82, 63, 58, 36, 34, 29],
-        "MTTR Min": [44, 47, 48, 55, 52, 59],
+        "NPS": [58, 55, 53, 50, 51, 48],
+        "Active OLTs": [124, 68, 54, 38, 32, 28],
+        "MTTR Min": [42, 46, 49, 54, 51, 58],
+        "Tiendas WOM": [45, 18, 14, 12, 8, 6],
+        "5G Sites": [186, 72, 48, 34, 28, 22],
+        "FTTH Homes Passed K": [1420, 580, 440, 320, 260, 180],
     })
     net_incident_trend = pd.DataFrame({
         "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
@@ -4990,15 +5151,15 @@ elif selected_menu == "Network Status":
         "MTTR Min": [56, 54, 52, 50, 48, 46],
     })
     net_queue = pd.DataFrame({
-        "Queue": ["Core", "Access", "Field", "Transport", "CPE"],
+        "Queue": ["Core WOM", "Acceso FTTH", "Field Ops", "Backbone 5G", "CPE Hogar"],
         "Open Tickets": [22, 34, 31, 17, 28],
         "SLA Breach %": [7.5, 10.4, 9.8, 5.1, 8.9],
         "Avg Age Hr": [9.2, 12.1, 10.8, 7.4, 9.9],
     })
     net_risk = pd.DataFrame({
-        "Risk Driver": ["Backbone Saturation", "Power Instability", "Fiber Cuts", "Vendor Delay", "Config Drift"],
-        "Exposure Hr": [94, 71, 86, 49, 44],
-        "Likelihood": [3.8, 3.1, 3.6, 2.9, 2.7],
+        "Risk Driver": ["Saturación 5G", "Cortes Fibra FTTH", "Inestabilidad Energía", "Delay Proveedores", "Congestión HFC"],
+        "Exposure Hr": [94, 86, 71, 49, 44],
+        "Likelihood": [3.8, 3.6, 3.1, 2.9, 2.7],
     })
     net_scenario = pd.DataFrame({
         "Scenario": ["Downside", "Base", "Upside"],
@@ -5008,19 +5169,21 @@ elif selected_menu == "Network Status":
         "Probability": ["25%", "50%", "25%"],
     })
     net_map_nodes = pd.DataFrame({
-        "Node": ["Santiago Centro", "Santiago Norte", "Santiago Sur", "Valparaiso", "Concepcion", "Temuco", "Antofagasta", "Rancagua"],
-        "lat": [-12.0464, -11.96, -12.24, -16.4090, -8.1118, -5.1945, -6.7714, -13.5319],
-        "lon": [-77.0428, -77.07, -76.95, -71.5375, -79.0287, -80.6328, -79.8409, -71.9675],
-        "Availability %": [99.94, 99.91, 99.90, 99.86, 99.88, 99.84, 99.87, 99.89],
+        "Node": ["WOM Santiago Centro", "WOM Providencia", "WOM Maipú", "WOM Valparaíso", "WOM Concepción", "WOM Temuco", "WOM Antofagasta", "WOM Rancagua"],
+        "lat": [-33.45, -33.43, -33.51, -33.05, -36.82, -38.74, -23.65, -34.17],
+        "lon": [-70.65, -70.61, -70.76, -71.62, -73.05, -72.60, -70.40, -70.74],
+        "Availability %": [99.94, 99.92, 99.90, 99.86, 99.88, 99.84, 99.87, 99.89],
         "Utilization %": [72, 76, 74, 68, 66, 71, 67, 64],
         "Open Incidents": [5, 7, 6, 9, 8, 10, 7, 6],
         "Status": ["Healthy", "Watch", "Watch", "At Risk", "Watch", "At Risk", "Watch", "Healthy"],
+        "5G Coverage %": [92, 94, 88, 78, 72, 65, 70, 75],
+        "FTTH Homes K": [320, 280, 240, 160, 140, 95, 85, 110],
     })
     net_incident_points = pd.DataFrame({
-        "lat": [-12.05, -12.03, -11.97, -12.20, -16.41, -16.39, -8.10, -8.12, -5.19, -5.21, -6.77, -13.53],
-        "lon": [-77.04, -77.01, -77.05, -76.95, -71.54, -71.51, -79.03, -79.00, -80.64, -80.60, -79.84, -71.97],
+        "lat": [-33.44, -33.46, -33.40, -33.51, -33.04, -33.06, -36.81, -36.83, -38.73, -38.75, -23.64, -34.16],
+        "lon": [-70.64, -70.66, -70.63, -70.67, -71.61, -71.63, -73.04, -73.06, -72.59, -72.61, -70.39, -70.73],
         "weight": [4, 3, 3, 2, 5, 4, 3, 2, 5, 4, 3, 2],
-        "Type": ["Fiber Cut", "Power", "Congestion", "Config", "Fiber Cut", "Power", "Congestion", "Config", "Fiber Cut", "Power", "Congestion", "Config"],
+        "Type": ["Corte Fibra", "Falla Energía", "Congestión 5G", "Config", "Corte Fibra", "Falla Energía", "Congestión", "Config", "Corte Fibra", "Falla Energía", "Congestión", "Config"],
     })
     # Expand sparse map points into realistic synthetic clusters for richer visuals.
     rng = random.Random(17)
@@ -5087,127 +5250,133 @@ elif selected_menu == "Network Status":
     net_node_labels = net_map_nodes.merge(node_sites, on="Node", how="left")
     net_node_labels["Label"] = net_node_labels["Node"] + " • " + net_node_labels["Access Sites"].astype(int).astype(str) + " sites"
     net_fiber_paths = pd.DataFrame({
-        "from_lon": [-77.04, -77.04, -77.04, -77.04, -79.03],
-        "from_lat": [-12.04, -12.04, -12.04, -12.04, -8.11],
-        "to_lon": [-79.03, -71.54, -80.63, -71.97, -79.84],
-        "to_lat": [-8.11, -16.41, -5.19, -13.53, -6.77],
+        "from_lon": [-70.65, -70.65, -70.65, -70.65, -73.05],
+        "from_lat": [-33.45, -33.45, -33.45, -33.45, -36.82],
+        "to_lon": [-73.05, -71.62, -72.60, -70.74, -70.40],
+        "to_lat": [-36.82, -33.05, -38.74, -34.17, -23.65],
         "Cuts": [7, 9, 8, 6, 5],
     })
     net_backbone_flows = pd.DataFrame({
-        "source_lon": [-77.04, -77.04, -77.04, -77.04, -77.04],
-        "source_lat": [-12.04, -12.04, -12.04, -12.04, -12.04],
-        "target_lon": [-79.03, -71.54, -80.63, -79.84, -71.97],
-        "target_lat": [-8.11, -16.41, -5.19, -6.77, -13.53],
+        "source_lon": [-70.65, -70.65, -70.65, -70.65, -70.65],
+        "source_lat": [-33.45, -33.45, -33.45, -33.45, -33.45],
+        "target_lon": [-73.05, -71.62, -72.60, -70.40, -70.74],
+        "target_lat": [-36.82, -33.05, -38.74, -23.65, -34.17],
         "Utilization %": [77, 71, 83, 68, 64],
     })
     net_sla_geo = pd.DataFrame({
-        "City": ["Santiago", "Concepcion", "Valparaiso", "Temuco", "Antofagasta", "Rancagua"],
-        "lat": [-12.0464, -8.1118, -16.4090, -5.1945, -6.7714, -13.5319],
-        "lon": [-77.0428, -79.0287, -71.5375, -80.6328, -79.8409, -71.9675],
-        "SLA Risk": [31, 38, 43, 48, 36, 34],
+        "City": ["Metropolitana", "Biobío", "Valparaíso", "Araucanía", "Antofagasta", "O'Higgins"],
+        "lat": [-33.45, -36.82, -33.05, -38.74, -23.65, -34.17],
+        "lon": [-70.65, -73.05, -71.62, -72.60, -70.40, -70.74],
+        "SLA Risk": [28, 38, 42, 48, 34, 32],
     })
     net_opportunity_geo = pd.DataFrame({
-        "Zone": ["Santiago Este", "Santiago Norte", "Santiago Sur", "Concepcion Sur", "Temuco Norte", "Valparaiso Norte", "Antofagasta Centro", "Rancagua Valle"],
-        "lat": [-12.00, -11.95, -12.25, -8.16, -5.15, -16.35, -6.78, -13.50],
-        "lon": [-76.90, -77.08, -76.92, -79.01, -80.61, -71.50, -79.82, -71.92],
-        "Demand Index": [84, 73, 70, 68, 75, 66, 64, 62],
-        "Coverage Gap %": [18, 14, 12, 16, 19, 13, 11, 10],
-        "ARR Risk M": [1.40, 1.05, 0.92, 0.86, 1.22, 0.79, 0.67, 0.58],
-        "Capex M": [1.10, 0.84, 0.78, 0.73, 1.04, 0.70, 0.62, 0.56],
-        "Payback Mo": [15, 13, 12, 14, 16, 12, 11, 10],
-        "Priority Score": [88, 81, 77, 79, 86, 74, 72, 70],
+        "Zone": ["Metropolitana Este", "Metropolitana Norte", "Metropolitana Sur", "Biobío Sur", "Araucanía Norte", "Valparaíso Norte", "Antofagasta Centro", "O'Higgins Valle"],
+        "lat": [-33.40, -33.38, -33.52, -36.85, -38.76, -33.02, -23.68, -34.14],
+        "lon": [-70.58, -70.62, -70.68, -73.08, -72.62, -71.58, -70.42, -70.70],
+        "Demand Index": [88, 76, 72, 70, 78, 68, 66, 64],
+        "Coverage Gap %": [16, 14, 12, 18, 20, 13, 11, 10],
+        "ARR Risk M": [1.60, 1.15, 0.98, 0.92, 1.32, 0.84, 0.72, 0.62],
+        "Capex M": [1.20, 0.92, 0.82, 0.78, 1.12, 0.74, 0.66, 0.58],
+        "Payback Mo": [14, 12, 11, 14, 15, 11, 10, 9],
+        "Priority Score": [92, 84, 80, 82, 88, 76, 74, 72],
+        "FTTH Potential K": [48, 32, 28, 24, 36, 22, 18, 16],
+        "5G Sites Planned": [24, 16, 14, 12, 18, 10, 8, 8],
     })
     net_major_cities_geo = pd.DataFrame({
         "City": [
-            "Santiago", "Maipu", "Valparaiso", "Concepcion", "Temuco", "Antofagasta", "Rancagua", "Iquique",
-            "Puerto Montt", "Arica", "Osorno", "Coyhaique", "Talcahuano", "Calama", "Los Angeles", "Curico",
-            "Tumbes", "Moquegua", "Talca", "Tarapoto", "Puerto Maldonado", "Talca", "Sullana", "Cerro de Pasco",
+            "Santiago Centro", "Providencia", "Las Condes", "Maipú", "Valparaíso", "Viña del Mar", "Concepción", "Temuco",
+            "Antofagasta", "Rancagua", "Talca", "Chillán", "Puerto Montt", "Iquique", "La Serena", "Osorno",
+            "Copiapó", "Punta Arenas", "Curicó", "Los Ángeles", "Talcahuano", "Arica", "Quilpué", "San Bernardo",
         ],
         "lat": [
-            -12.0464, -12.0566, -16.4090, -8.1118, -5.1945, -6.7714, -13.5319, -3.7437,
-            -12.0667, -18.0066, -15.4905, -8.3791, -9.0853, -7.1617, -13.1631, -9.5278,
-            -3.5669, -17.1935, -15.8402, -6.4898, -12.5933, -14.0678, -4.9039, -10.6864,
+            -33.45, -33.43, -33.42, -33.51, -33.05, -33.02, -36.82, -38.74,
+            -23.65, -34.17, -35.43, -36.61, -41.47, -20.21, -29.90, -40.57,
+            -27.37, -53.16, -34.98, -37.47, -36.72, -18.48, -33.05, -33.60,
         ],
         "lon": [
-            -77.0428, -77.1181, -71.5375, -79.0287, -80.6328, -79.8409, -71.9675, -73.2516,
-            -75.2100, -70.2463, -70.1339, -74.5539, -78.5783, -78.5128, -74.2236, -77.5278,
-            -80.4515, -70.9344, -70.0219, -76.3680, -69.1891, -75.7286, -80.6853, -76.2627,
+            -70.65, -70.61, -70.59, -70.76, -71.62, -71.55, -73.05, -72.60,
+            -70.40, -70.74, -71.67, -72.10, -72.94, -70.15, -71.25, -73.13,
+            -70.33, -70.91, -71.24, -72.35, -73.12, -70.32, -71.44, -70.70,
         ],
         "City Tier": [
-            "Core Hub", "Core Hub", "Core Hub", "Core Hub", "Growth Node", "Growth Node", "Growth Node", "Growth Node",
-            "Growth Node", "Growth Node", "Emerging Node", "Emerging Node", "Growth Node", "Emerging Node", "Emerging Node", "Emerging Node",
-            "Emerging Node", "Emerging Node", "Emerging Node", "Growth Node", "Emerging Node", "Growth Node", "Growth Node", "Emerging Node",
+            "Core Hub", "Core Hub", "Core Hub", "Core Hub", "Core Hub", "Core Hub", "Core Hub", "Growth Node",
+            "Growth Node", "Growth Node", "Growth Node", "Growth Node", "Growth Node", "Growth Node", "Growth Node", "Emerging Node",
+            "Emerging Node", "Emerging Node", "Emerging Node", "Emerging Node", "Growth Node", "Growth Node", "Emerging Node", "Emerging Node",
         ],
-        "Investment Signal": [97, 92, 90, 88, 86, 84, 83, 81, 80, 79, 77, 76, 82, 74, 73, 72, 71, 70, 69, 78, 68, 81, 85, 67],
+        "Investment Signal": [98, 95, 94, 91, 92, 90, 89, 86, 85, 84, 82, 80, 81, 83, 79, 77, 75, 73, 76, 74, 84, 82, 78, 77],
+        "5G Priority": ["Alta", "Alta", "Alta", "Alta", "Alta", "Alta", "Alta", "Media", "Media", "Media", "Media", "Media", "Media", "Media", "Media", "Baja", "Baja", "Baja", "Baja", "Baja", "Media", "Media", "Baja", "Baja"],
+        "FTTH Status": ["Activo", "Activo", "Activo", "Activo", "Activo", "Activo", "Activo", "Activo", "Activo", "Activo", "Activo", "Activo", "En Expansión", "Activo", "Activo", "En Expansión", "Planificado", "Planificado", "Activo", "En Expansión", "Activo", "Activo", "Activo", "Activo"],
     })
     net_major_cities_geo["r"] = net_major_cities_geo["City Tier"].apply(lambda v: 37 if v == "Core Hub" else 16 if v == "Growth Node" else 245)
     net_major_cities_geo["g"] = net_major_cities_geo["City Tier"].apply(lambda v: 99 if v == "Core Hub" else 185 if v == "Growth Node" else 158)
     net_major_cities_geo["b"] = net_major_cities_geo["City Tier"].apply(lambda v: 235 if v == "Core Hub" else 129 if v == "Growth Node" else 11)
     net_major_cities_geo["radius"] = net_major_cities_geo["City Tier"].apply(lambda v: 13500 if v == "Core Hub" else 11000 if v == "Growth Node" else 9500)
     net_infra_assets = pd.DataFrame({
-        "Domain": ["Core", "Transport", "Access OLT", "Field Fiber", "CPE Edge"],
-        "Sites": [18, 42, 302, 1120, 640],
-        "Capacity Gbps": [520, 710, 910, 640, 480],
-        "Utilization %": [68, 74, 79, 66, 61],
-        "Redundancy %": [96, 92, 88, 81, 76],
-        "Health Score": [91, 87, 83, 79, 82],
+        "Domain": ["Core Network", "5G Radio", "FTTH OLT", "Backbone Fibra", "CPE Hogar/Móvil"],
+        "Sites": [22, 486, 324, 1280, 720],
+        "Capacity Gbps": [680, 920, 1100, 780, 540],
+        "Utilization %": [68, 76, 79, 66, 61],
+        "Redundancy %": [96, 88, 92, 81, 76],
+        "Health Score": [91, 85, 87, 79, 82],
     })
     net_maintenance = pd.DataFrame({
-        "Asset Type": ["Core Routers", "Transport Links", "OLT Shelves", "Fiber Junctions", "Power Units"],
-        "Open Workorders": [16, 24, 38, 45, 29],
-        "Critical %": [14, 17, 20, 23, 19],
-        "Avg Delay Hr": [6.2, 7.4, 8.6, 9.1, 7.8],
+        "Asset Type": ["Core Routers WOM", "5G eNodeB", "OLT FTTH", "Nodos Fibra", "Unidades Energía"],
+        "Open Workorders": [16, 32, 38, 45, 29],
+        "Critical %": [14, 19, 20, 23, 17],
+        "Avg Delay Hr": [6.2, 7.8, 8.6, 9.1, 7.4],
     })
     net_upgrade_program = pd.DataFrame({
-        "Initiative": ["WOM Core Santiago Refresh", "WOM Northern Backbone Ring", "WOM OLT Densification Wave 2", "WOM South Fiber Hardening", "WOM Critical Site Power Backup"],
-        "Domain": ["Core", "Transport", "Access OLT", "Field Fiber", "Power"],
-        "Capex M": [1.6, 1.9, 1.3, 1.5, 1.1],
-        "Impact Score": [89, 92, 84, 81, 78],
-        "Delivery Risk": [2.4, 2.8, 2.1, 2.6, 2.2],
-        "Quarter": ["Q1", "Q2", "Q2", "Q3", "Q1"],
+        "Initiative": ["WOM 5G SA Rollout Fase 2", "WOM FTTH Expansion Norte", "WOM Core Upgrade Santiago", "WOM Backbone Sur Redundancia", "WOM Power Backup Crítico"],
+        "Domain": ["5G Radio", "FTTH Access", "Core Network", "Backbone", "Infrastructure"],
+        "Capex M": [2.4, 1.9, 1.6, 1.5, 1.1],
+        "Impact Score": [94, 92, 89, 84, 78],
+        "Delivery Risk": [2.8, 2.4, 2.1, 2.6, 2.2],
+        "Quarter": ["Q1", "Q2", "Q1", "Q3", "Q1"],
     })
     net_spof = pd.DataFrame({
-        "Region": ["Santiago Norte", "Santiago Sur", "Valparaiso", "Concepcion", "Temuco"],
+        "Region": ["Metropolitana Norte", "Metropolitana Sur", "Valparaíso", "Biobío", "Araucanía"],
         "SPOF Count": [4, 3, 5, 4, 6],
-        "Subscribers K": [52, 48, 35, 31, 29],
+        "Subscribers K": [62, 54, 38, 34, 29],
         "Criticality": [3.2, 2.9, 3.5, 3.1, 3.8],
     })
     net_resilience_sites = pd.DataFrame({
-        "Region": ["Santiago Centro", "Santiago Norte", "Santiago Sur", "Valparaiso", "Concepcion", "Temuco"],
-        "Backup Autonomy Hr": [8.8, 7.6, 7.1, 6.2, 6.5, 5.8],
-        "Power Events / Mo": [2.3, 2.8, 2.9, 3.6, 3.1, 3.8],
-        "Critical Sites": [24, 19, 18, 12, 11, 10],
+        "Region": ["Metropolitana", "Valparaíso", "Biobío", "Araucanía", "O'Higgins", "Antofagasta"],
+        "Backup Autonomy Hr": [8.8, 7.2, 6.8, 5.8, 6.5, 7.1],
+        "Power Events / Mo": [2.3, 3.2, 3.4, 3.8, 3.1, 2.6],
+        "Critical Sites": [28, 14, 12, 10, 9, 8],
     })
     net_enterprise_geo = pd.DataFrame({
-        "City": ["Santiago", "Maipu", "Concepcion", "Temuco", "Valparaiso", "Rancagua", "Antofagasta", "Talca"],
-        "lat": [-12.0464, -12.056, -8.1118, -5.1945, -16.4090, -13.5319, -6.7714, -14.0678],
-        "lon": [-77.0428, -77.118, -79.0287, -80.6328, -71.5375, -71.9675, -79.8409, -75.7286],
-        "Accounts": [190, 122, 74, 66, 59, 48, 44, 37],
+        "City": ["Santiago", "Providencia", "Concepción", "Temuco", "Valparaíso", "Rancagua", "Antofagasta", "Talca"],
+        "lat": [-33.45, -33.43, -36.82, -38.74, -33.05, -34.17, -23.65, -35.01],
+        "lon": [-70.65, -70.61, -73.05, -72.60, -71.62, -70.74, -70.40, -71.13],
+        "Accounts": [210, 145, 82, 68, 62, 52, 48, 38],
         "Priority": ["Tier 1", "Tier 1", "Tier 2", "Tier 2", "Tier 2", "Tier 3", "Tier 3", "Tier 3"],
+        "Product Mix": ["Móvil+Fibra", "Móvil+Fibra", "Móvil", "Móvil", "Móvil+Fibra", "Móvil", "Móvil", "Móvil"],
     })
     net_enterprise_geo["radius"] = (net_enterprise_geo["Accounts"] * 30).clip(lower=1200, upper=7200)
     net_weather_risk_geo = pd.DataFrame({
-        "Zone": ["Santiago Norte", "Santiago Sur", "Concepcion Costa", "Temuco Costa", "Valparaiso Valle", "Rancagua Sierra"],
-        "lat": [-11.95, -12.24, -8.13, -5.22, -16.42, -13.54],
-        "lon": [-77.06, -76.97, -79.03, -80.64, -71.54, -71.97],
-        "Weather Risk": [72, 66, 78, 84, 63, 57],
+        "Zone": ["Metropolitana Norte", "Metropolitana Sur", "Biobío Costa", "Araucanía Costa", "Valparaíso Valle", "O'Higgins Sierra"],
+        "lat": [-33.38, -33.52, -36.85, -38.76, -33.04, -34.18],
+        "lon": [-70.62, -70.68, -73.08, -72.62, -71.60, -70.76],
+        "Weather Risk": [68, 64, 78, 84, 62, 56],
     })
     net_weather_risk_geo["radius"] = net_weather_risk_geo["Weather Risk"] * 150
     net_build_corridors = pd.DataFrame({
-        "from_lon": [-77.0428, -77.0428, -77.0428, -77.0428],
-        "from_lat": [-12.0464, -12.0464, -12.0464, -12.0464],
-        "to_lon": [-79.0287, -80.6328, -71.5375, -71.9675],
-        "to_lat": [-8.1118, -5.1945, -16.4090, -13.5319],
+        "from_lon": [-70.65, -70.65, -70.65, -70.65],
+        "from_lat": [-33.45, -33.45, -33.45, -33.45],
+        "to_lon": [-73.05, -72.60, -71.62, -70.74],
+        "to_lat": [-36.82, -38.74, -33.05, -34.17],
         "Phase": ["Wave 1", "Wave 1", "Wave 2", "Wave 2"],
         "Capex M": [0.88, 1.04, 0.96, 0.74],
     })
     net_build_corridors["width"] = net_build_corridors["Phase"].map({"Wave 1": 4.8, "Wave 2": 3.6})
     net_service_impact = pd.DataFrame({
-        "Incident Type": ["Fiber Cut", "Power", "Congestion", "Config Drift", "Vendor Fault"],
-        "Subs Impacted K": [3.4, 2.6, 2.1, 1.2, 0.9],
-        "ARR at Risk M": [0.38, 0.31, 0.24, 0.16, 0.11],
-        "Enterprise Accounts": [12, 9, 7, 4, 3],
-        "Avg Restore Hr": [3.8, 3.1, 2.5, 2.0, 2.4],
+        "Incident Type": ["Corte Fibra", "Falla Energía", "Congestión 5G", "Config Drift", "Falla Proveedor"],
+        "Subs Impacted K": [3.8, 2.9, 2.4, 1.4, 1.1],
+        "ARR at Risk M": [0.42, 0.34, 0.28, 0.18, 0.13],
+        "Enterprise Accounts": [14, 11, 8, 5, 4],
+        "Avg Restore Hr": [3.6, 2.9, 2.3, 1.8, 2.2],
+        "Product Impact": ["FTTH+Móvil", "Todos", "Móvil", "FTTH", "Móvil"],
     })
     net_sla_command = pd.DataFrame({
         "Day": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -5227,27 +5396,27 @@ elif selected_menu == "Network Status":
         "Projected Util %": [74, 79, 84, 69, 73, 77, 81, 86, 91, 66, 70, 74],
     })
     net_critical_sites = pd.DataFrame({
-        "Site": ["LIM-CORE-01", "PIU-EDGE-04", "AQP-TR-02", "TRU-ACC-05", "LIM-ACC-09", "CUS-TR-01", "CHI-ACC-03", "LIM-TR-07", "PIU-ACC-02", "AQP-ACC-06"],
-        "Region": ["Santiago", "Temuco", "Valparaiso", "Concepcion", "Santiago", "Rancagua", "Antofagasta", "Santiago", "Temuco", "Valparaiso"],
+        "Site": ["WOM-CORE-01", "WOM-5G-STG-04", "WOM-OLT-VLP-02", "WOM-5G-CNC-05", "WOM-OLT-STG-09", "WOM-5G-RCG-01", "WOM-OLT-ANT-03", "WOM-CORE-07", "WOM-5G-TMC-02", "WOM-OLT-BIO-06"],
+        "Region": ["Metropolitana", "Metropolitana", "Valparaíso", "Biobío", "Metropolitana", "O'Higgins", "Antofagasta", "Metropolitana", "Araucanía", "Biobío"],
         "Criticality": [94, 92, 90, 88, 87, 85, 84, 83, 82, 81],
         "Subscribers Impact K": [46, 38, 29, 27, 25, 22, 20, 19, 18, 17],
         "MTTR Min": [62, 68, 58, 56, 54, 52, 50, 49, 48, 47],
         "Owner": ["Core Ops", "Field Ops", "Transport", "Access", "Access", "Transport", "Access", "Transport", "Field Ops", "Access"],
     })
     net_mitigation_tracker = pd.DataFrame({
-        "Initiative": ["Backbone Ring Redundancy", "Power Hardening North", "Fiber Route Diversification", "Config Guardrails", "Priority Queue Automation"],
-        "Owner": ["Transport", "Field Ops", "Core Ops", "NOC", "Service Ops"],
+        "Initiative": ["Redundancia Backbone Sur", "Hardening Energía Norte", "Diversificación Rutas Fibra", "Config Guardrails 5G", "Automatización Cola Prioridad"],
+        "Owner": ["Backbone WOM", "Field Ops", "Core Network", "NOC WOM", "Service Ops"],
         "ETA": ["Q2", "Q2", "Q3", "Q1", "Q1"],
         "Progress %": [58, 46, 34, 72, 64],
         "Risk Reduced %": [26, 18, 21, 14, 12],
         "Status": ["On Track", "Watch", "Watch", "On Track", "On Track"],
     })
     net_customer_link = pd.DataFrame({
-        "Region": ["Santiago Centro", "Santiago Norte", "Santiago Sur", "Valparaiso", "Concepcion", "Temuco"],
-        "Latency ms": [20.5, 22.8, 23.2, 25.4, 24.7, 26.2],
-        "Packet Loss %": [0.19, 0.24, 0.26, 0.31, 0.29, 0.34],
-        "NPS": [57, 54, 53, 49, 50, 47],
-        "Churn %": [2.2, 2.5, 2.6, 3.0, 2.9, 3.3],
+        "Region": ["Metropolitana", "Valparaíso", "Biobío", "Araucanía", "O'Higgins", "Antofagasta"],
+        "Latency ms": [18.5, 22.4, 24.1, 26.2, 23.8, 21.2],
+        "Packet Loss %": [0.17, 0.26, 0.28, 0.34, 0.27, 0.22],
+        "NPS": [58, 53, 51, 48, 52, 50],
+        "Churn %": [1.8, 2.4, 2.6, 3.2, 2.5, 2.2],
     })
     net_outage_timeline = pd.DataFrame({
         "Hour": list(range(24)),
@@ -5276,43 +5445,43 @@ elif selected_menu == "Network Status":
     infra_health_avg = net_infra_assets["Health Score"].mean()
     infra_redundancy_avg = net_infra_assets["Redundancy %"].mean()
 
-    st.markdown('<div class="net-title">Network Pulse</div>', unsafe_allow_html=True)
+    st.markdown('<div class="net-title">WOM Network Pulse - Estado Red Móvil & Fibra</div>', unsafe_allow_html=True)
     st.markdown(dedent(f"""
         <div class="net-pulse">
             <div class="net-pulse-grid">
-                <div class="net-pulse-card"><div class="k">Network Availability</div><div class="v">{avg_availability:.2f}%</div><div class="d">Last 24h blended uptime</div></div>
-                <div class="net-pulse-card"><div class="k">Active OLTs</div><div class="v">{active_olts:,}</div><div class="d">Live access nodes</div></div>
-                <div class="net-pulse-card"><div class="k">Avg Latency</div><div class="v">{avg_latency:.1f} ms</div><div class="d">Core-to-edge performance</div></div>
-                <div class="net-pulse-card"><div class="k">Open Tickets</div><div class="v">{open_tickets}</div><div class="d">Operations workload</div></div>
-                <div class="net-pulse-card"><div class="k">P95 Utilization</div><div class="v">{p95_utilization:.1f}%</div><div class="d">Capacity pressure</div></div>
-                <div class="net-pulse-card"><div class="k">Current MTTR</div><div class="v">{mttr_current:.0f} min</div><div class="d">Incident recovery speed</div></div>
+                <div class="net-pulse-card"><div class="k">Red Disponibilidad</div><div class="v">{avg_availability:.2f}%</div><div class="d">Uptime 24h (Móvil + Fibra)</div></div>
+                <div class="net-pulse-card"><div class="k">OLTs FTTH Activos</div><div class="v">{active_olts:,}</div><div class="d">Nodos acceso fibra</div></div>
+                <div class="net-pulse-card"><div class="k">Latencia Promedio</div><div class="v">{avg_latency:.1f} ms</div><div class="d">Core-to-edge performance</div></div>
+                <div class="net-pulse-card"><div class="k">Tickets Abiertos</div><div class="v">{open_tickets}</div><div class="d">Carga operaciones</div></div>
+                <div class="net-pulse-card"><div class="k">P95 Utilización</div><div class="v">{p95_utilization:.1f}%</div><div class="d">Presión capacidad</div></div>
+                <div class="net-pulse-card"><div class="k">MTTR Actual</div><div class="v">{mttr_current:.0f} min</div><div class="d">Velocidad recuperación</div></div>
             </div>
         </div>
     """), unsafe_allow_html=True)
 
     net_tab_overview, net_tab_map, net_tab_ops, net_tab_impact, net_tab_exec, net_tab_risk = st.tabs([
-        "📈 Network Overview",
-        "🗺️ Network Map",
-        "🧭 Network Operations",
-        "💼 Service Impact",
-        "🧩 Execution & Playbooks",
-        "⚠️ Risk & Strategy",
+        "📈 Vista General Red",
+        "🗺️ Mapa Cobertura WOM",
+        "🧭 Operaciones Red",
+        "💼 Impacto Servicio",
+        "🧩 Ejecución & Playbooks",
+        "⚠️ Riesgo & Estrategia",
     ])
 
     with net_tab_overview:
-        st.markdown('<div class="net-title">Network Performance Overview</div>', unsafe_allow_html=True)
+        st.markdown('<div class="net-title">Rendimiento Red WOM</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="net-kpi-grid">
-                <div class="net-kpi-card"><div class="k">Availability</div><div class="v">{avg_availability:.2f}%</div><div class="d">Service reliability baseline</div></div>
-                <div class="net-kpi-card {'warn' if avg_latency > 24 else ''}"><div class="k">Average Latency</div><div class="v">{avg_latency:.1f} ms</div><div class="d">Customer experience proxy</div></div>
-                <div class="net-kpi-card {'warn' if packet_loss_avg > 0.28 else ''}"><div class="k">Packet Loss</div><div class="v">{packet_loss_avg:.2f}%</div><div class="d">Quality consistency</div></div>
-                <div class="net-kpi-card {'crit' if weakest_region['Availability %'] < 99.86 else 'warn'}"><div class="k">Lowest Region Uptime</div><div class="v">{weakest_region['Region']}</div><div class="d">{weakest_region['Availability %']:.2f}% availability</div></div>
+                <div class="net-kpi-card"><div class="k">Disponibilidad</div><div class="v">{avg_availability:.2f}%</div><div class="d">Baseline confiabilidad</div></div>
+                <div class="net-kpi-card {'warn' if avg_latency > 24 else ''}"><div class="k">Latencia Promedio</div><div class="v">{avg_latency:.1f} ms</div><div class="d">Proxy experiencia cliente</div></div>
+                <div class="net-kpi-card {'warn' if packet_loss_avg > 0.28 else ''}"><div class="k">Pérdida Paquetes</div><div class="v">{packet_loss_avg:.2f}%</div><div class="d">Consistencia calidad</div></div>
+                <div class="net-kpi-card {'crit' if weakest_region['Availability %'] < 99.86 else 'warn'}"><div class="k">Región Menor Uptime</div><div class="v">{weakest_region['Region']}</div><div class="d">{weakest_region['Availability %']:.2f}% disponibilidad</div></div>
             </div>
         """), unsafe_allow_html=True)
 
         ov_col1, ov_col2 = st.columns(2)
         with ov_col1:
-            st.markdown('<div class="net-mini-title">Latency and Utilization by Hour</div>', unsafe_allow_html=True)
+            st.markdown('<div class="net-mini-title">Latencia y Utilización por Hora</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 lat_line = alt.Chart(net_hourly).mark_line(point=True, strokeWidth=3, color="#2563EB").encode(
                     x=alt.X("Hour:N", title=None),
@@ -5332,7 +5501,7 @@ elif selected_menu == "Network Status":
                 )
 
         with ov_col2:
-            st.markdown('<div class="net-mini-title">Regional Availability vs NPS</div>', unsafe_allow_html=True)
+            st.markdown('<div class="net-mini-title">Disponibilidad Regional vs NPS</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 regional_scatter = alt.Chart(net_regions).mark_circle(opacity=0.85, stroke="#FFFFFF", strokeWidth=1.3).encode(
                     x=alt.X("Availability %:Q", title="Availability (%)"),
@@ -5355,7 +5524,7 @@ elif selected_menu == "Network Status":
 
         ov_col3, ov_col4 = st.columns(2)
         with ov_col3:
-            st.markdown('<div class="net-mini-title">Packet Loss and Incident Pressure</div>', unsafe_allow_html=True)
+            st.markdown('<div class="net-mini-title">Pérdida Paquetes y Presión Incidentes</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 loss_line = alt.Chart(net_hourly).mark_line(point=True, strokeWidth=3, color="#F59E0B").encode(
                     x=alt.X("Hour:N", title=None),
@@ -5377,7 +5546,7 @@ elif selected_menu == "Network Status":
                 )
 
         with ov_col4:
-            st.markdown('<div class="net-mini-title">Regional Resilience Index</div>', unsafe_allow_html=True)
+            st.markdown('<div class="net-mini-title">Índice Resiliencia Regional</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 resilience_df = net_regions.copy()
                 resilience_df["Resilience Index"] = (
@@ -5406,19 +5575,19 @@ elif selected_menu == "Network Status":
                     level="warning",
                 )
 
-        st.markdown('<div class="net-title">Infrastructure Footprint and Capacity</div>', unsafe_allow_html=True)
+        st.markdown('<div class="net-title">Infraestructura WOM & Capacidad</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="net-kpi-grid">
-                <div class="net-kpi-card"><div class="k">Total Network Capacity</div><div class="v">{infra_total_capacity:,.0f} Gbps</div><div class="d">Across core, transport, access, edge</div></div>
-                <div class="net-kpi-card {'warn' if infra_weighted_util > 75 else ''}"><div class="k">Weighted Utilization</div><div class="v">{infra_weighted_util:.1f}%</div><div class="d">Capacity load profile</div></div>
-                <div class="net-kpi-card {'warn' if infra_redundancy_avg < 85 else ''}"><div class="k">Average Redundancy</div><div class="v">{infra_redundancy_avg:.1f}%</div><div class="d">Failover preparedness</div></div>
-                <div class="net-kpi-card {'warn' if infra_health_avg < 84 else ''}"><div class="k">Infrastructure Health</div><div class="v">{infra_health_avg:.1f}</div><div class="d">Asset quality score</div></div>
+                <div class="net-kpi-card"><div class="k">Capacidad Total Red</div><div class="v">{infra_total_capacity:,.0f} Gbps</div><div class="d">Core, 5G, FTTH, backbone</div></div>
+                <div class="net-kpi-card {'warn' if infra_weighted_util > 75 else ''}"><div class="k">Utilización Ponderada</div><div class="v">{infra_weighted_util:.1f}%</div><div class="d">Perfil carga capacidad</div></div>
+                <div class="net-kpi-card {'warn' if infra_redundancy_avg < 85 else ''}"><div class="k">Redundancia Promedio</div><div class="v">{infra_redundancy_avg:.1f}%</div><div class="d">Preparación failover</div></div>
+                <div class="net-kpi-card {'warn' if infra_health_avg < 84 else ''}"><div class="k">Salud Infraestructura</div><div class="v">{infra_health_avg:.1f}</div><div class="d">Score calidad activos</div></div>
             </div>
         """), unsafe_allow_html=True)
 
         inf_col1, inf_col2 = st.columns(2)
         with inf_col1:
-            st.markdown('<div class="net-mini-title">Capacity and Utilization by Domain</div>', unsafe_allow_html=True)
+            st.markdown('<div class="net-mini-title">Capacidad y Utilización por Dominio</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 infra_cap = net_infra_assets.copy()
                 infra_cap["Used Gbps"] = (infra_cap["Capacity Gbps"] * infra_cap["Utilization %"] / 100).round(1)
@@ -5442,7 +5611,7 @@ elif selected_menu == "Network Status":
                 )
 
         with inf_col2:
-            st.markdown('<div class="net-mini-title">Asset Health vs Redundancy</div>', unsafe_allow_html=True)
+            st.markdown('<div class="net-mini-title">Salud Activos vs Redundancia</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 infra_health = alt.Chart(net_infra_assets).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
                     x=alt.X("Redundancy %:Q", title="Redundancy (%)"),
@@ -5465,40 +5634,40 @@ elif selected_menu == "Network Status":
                 )
 
     with net_tab_map:
-        st.markdown('<div class="net-title">Network Map Status</div>', unsafe_allow_html=True)
+        st.markdown('<div class="net-title">Mapa Estado Red WOM</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="net-kpi-grid">
-                <div class="net-kpi-card"><div class="k">Mapped Nodes</div><div class="v">{len(net_map_nodes)}</div><div class="d">Cities with telemetry</div></div>
-                <div class="net-kpi-card {'warn' if (net_map_nodes['Status'] == 'Watch').sum() > 2 else ''}"><div class="k">Watch Nodes</div><div class="v">{(net_map_nodes['Status'] == 'Watch').sum()}</div><div class="d">Needs preventive action</div></div>
-                <div class="net-kpi-card {'crit' if (net_map_nodes['Status'] == 'At Risk').sum() > 1 else 'warn'}"><div class="k">At-Risk Nodes</div><div class="v">{(net_map_nodes['Status'] == 'At Risk').sum()}</div><div class="d">Immediate mitigation</div></div>
-                <div class="net-kpi-card"><div class="k">Incident Hotspots</div><div class="v">{net_incident_points['weight'].gt(3).sum()}</div><div class="d">High-intensity clusters</div></div>
+                <div class="net-kpi-card"><div class="k">Nodos Mapeados</div><div class="v">{len(net_map_nodes)}</div><div class="d">Ciudades con telemetría</div></div>
+                <div class="net-kpi-card {'warn' if (net_map_nodes['Status'] == 'Watch').sum() > 2 else ''}"><div class="k">Nodos Watch</div><div class="v">{(net_map_nodes['Status'] == 'Watch').sum()}</div><div class="d">Requiere acción preventiva</div></div>
+                <div class="net-kpi-card {'crit' if (net_map_nodes['Status'] == 'At Risk').sum() > 1 else 'warn'}"><div class="k">Nodos En Riesgo</div><div class="v">{(net_map_nodes['Status'] == 'At Risk').sum()}</div><div class="d">Mitigación inmediata</div></div>
+                <div class="net-kpi-card"><div class="k">Hotspots Incidentes</div><div class="v">{net_incident_points['weight'].gt(3).sum()}</div><div class="d">Clusters alta intensidad</div></div>
             </div>
         """), unsafe_allow_html=True)
 
-        st.markdown('<div class="net-mini-title">Map Enhancers</div>', unsafe_allow_html=True)
+        st.markdown('<div class="net-mini-title">Mejoras de Mapa</div>', unsafe_allow_html=True)
         enh_col1, enh_col2, enh_col3, enh_col4 = st.columns([1.25, 1.25, 1.25, 1.4])
         with enh_col1:
-            enh_demand = st.checkbox("Demand Footprint", value=True, key="net_map_enh_demand")
-            enh_enterprise = st.checkbox("Enterprise Sites", value=True, key="net_map_enh_enterprise")
+            enh_demand = st.checkbox("Footprint Demanda", value=True, key="net_map_enh_demand")
+            enh_enterprise = st.checkbox("Sitios Empresariales", value=True, key="net_map_enh_enterprise")
         with enh_col2:
-            enh_weather = st.checkbox("Weather Risk", value=True, key="net_map_enh_weather")
-            enh_build = st.checkbox("Planned Build Corridors", value=True, key="net_map_enh_build")
+            enh_weather = st.checkbox("Riesgo Clima", value=True, key="net_map_enh_weather")
+            enh_build = st.checkbox("Corredores Planificados", value=True, key="net_map_enh_build")
         with enh_col3:
-            enh_labels = st.checkbox("Node Labels", value=True, key="net_map_enh_labels")
-            enh_hotspots = st.checkbox("Dense Hotspots", value=True, key="net_map_enh_hotspots")
+            enh_labels = st.checkbox("Etiquetas Nodos", value=True, key="net_map_enh_labels")
+            enh_hotspots = st.checkbox("Hotspots Densos", value=True, key="net_map_enh_hotspots")
         with enh_col4:
             lens = st.selectbox(
-                "Geography Lens",
-                ["National Chile", "Metropolitana", "Northern Corridor", "Southern Corridor"],
+                "Lente Geográfico",
+                ["Nacional Chile", "Metropolitana", "Corredor Norte", "Corredor Sur"],
                 index=0,
                 key="net_map_geo_lens",
             )
 
         lens_view = {
-            "National Chile": {"lat": -11.7, "lon": -76.9, "zoom": 5.35, "pitch": 33},
-            "Metropolitana": {"lat": -12.06, "lon": -77.02, "zoom": 9.2, "pitch": 38},
-            "Northern Corridor": {"lat": -8.2, "lon": -79.5, "zoom": 6.25, "pitch": 34},
-            "Southern Corridor": {"lat": -15.0, "lon": -72.2, "zoom": 5.95, "pitch": 34},
+            "Nacional Chile": {"lat": -35.0, "lon": -71.5, "zoom": 5.35, "pitch": 33},
+            "Metropolitana": {"lat": -33.45, "lon": -70.65, "zoom": 9.2, "pitch": 38},
+            "Corredor Norte": {"lat": -23.0, "lon": -70.0, "zoom": 6.25, "pitch": 34},
+            "Corredor Sur": {"lat": -40.0, "lon": -73.0, "zoom": 5.95, "pitch": 34},
         }[lens]
 
         st.markdown(dedent("""
@@ -5513,7 +5682,7 @@ elif selected_menu == "Network Status":
 
         map_col1, map_col2 = st.columns(2)
         with map_col1:
-            st.markdown('<div class="net-mini-title">Live Node Health Map</div>', unsafe_allow_html=True)
+            st.markdown('<div class="net-mini-title">Mapa Salud Nodos WOM en Vivo</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 pulse_factor = 1.0 + (0.25 * (0.5 + 0.5 * math.sin(time.time() * 2.4)))
                 pulse_wave = 0.5 + 0.5 * math.sin(time.time() * 3.2)
@@ -5682,7 +5851,7 @@ elif selected_menu == "Network Status":
                 )
 
         with map_col2:
-            st.markdown('<div class="net-mini-title">Incident Hotspot Heatmap</div>', unsafe_allow_html=True)
+            st.markdown('<div class="net-mini-title">Heatmap Hotspots Incidentes</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 heat_layer = pdk.Layer(
                     "HeatmapLayer",
@@ -5730,7 +5899,7 @@ elif selected_menu == "Network Status":
                     level="critical" if top_hotspot_type["weight"] >= 13 else "warning",
                 )
 
-        st.markdown('<div class="net-mini-title">Executive Network Command Center (Layer Toggles)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="net-mini-title">Centro Comando Red WOM (Toggles Capas)</div>', unsafe_allow_html=True)
         st.markdown(dedent("""
             <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin:0.1rem 0 0.5rem 0;">
                 <span style="background:#DBEAFE; border:1px solid #93C5FD; color:#1E3A8A; border-radius:999px; padding:0.18rem 0.52rem; font-size:0.72rem; font-weight:700;">Node Health</span>
@@ -5742,13 +5911,13 @@ elif selected_menu == "Network Status":
         """), unsafe_allow_html=True)
         ctl_col1, ctl_col2, ctl_col3 = st.columns([1.6, 1.6, 1.2])
         with ctl_col1:
-            show_nodes = st.checkbox("Node Health", value=True, key="net_map_toggle_nodes")
-            show_hotspots = st.checkbox("Incident Hotspots", value=True, key="net_map_toggle_hotspots")
+            show_nodes = st.checkbox("Salud Nodos", value=True, key="net_map_toggle_nodes")
+            show_hotspots = st.checkbox("Hotspots Incidentes", value=True, key="net_map_toggle_hotspots")
         with ctl_col2:
-            show_fiber_cuts = st.checkbox("Fiber Cut Corridors", value=True, key="net_map_toggle_fiber")
-            show_backbone = st.checkbox("Backbone Load Flows", value=True, key="net_map_toggle_backbone")
+            show_fiber_cuts = st.checkbox("Corredores Cortes Fibra", value=True, key="net_map_toggle_fiber")
+            show_backbone = st.checkbox("Flujos Carga Backbone", value=True, key="net_map_toggle_backbone")
         with ctl_col3:
-            show_sla = st.checkbox("SLA Risk Towers", value=True, key="net_map_toggle_sla")
+            show_sla = st.checkbox("Torres Riesgo SLA", value=True, key="net_map_toggle_sla")
             basemap_choice = st.selectbox(
                 "Basemap",
                 ["CARTO Voyager", "CARTO Dark Matter", "CARTO Positron"],
@@ -5857,7 +6026,7 @@ elif selected_menu == "Network Status":
 
             command_center = pdk.Deck(
                 layers=big_layers,
-                initial_view_state=pdk.ViewState(latitude=-11.8, longitude=-76.8, zoom=4.6, pitch=38),
+                initial_view_state=pdk.ViewState(latitude=-35.0, longitude=-71.5, zoom=4.6, pitch=38),
                 map_style=basemap_url,
                 tooltip={
                     "html": "<b>{Node}{City}</b><br/>Status: {Status}<br/>Availability: {Availability %}%<br/>Incidents: {Open Incidents}<br/>SLA Risk: {SLA Risk}<br/>Flow Utilization: {Utilization %}%<br/>Cuts: {Cuts}<br/>Type: {Type}"
@@ -5874,7 +6043,7 @@ elif selected_menu == "Network Status":
                 level="critical" if highest_sla_city["SLA Risk"] >= 45 else "warning",
             )
 
-        st.markdown('<div class="net-mini-title">Strategic Expansion Opportunity Atlas</div>', unsafe_allow_html=True)
+        st.markdown('<div class="net-mini-title">Atlas Oportunidad Expansión Estratégica WOM</div>', unsafe_allow_html=True)
         st.markdown(dedent("""
             <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin:0.1rem 0 0.5rem 0;">
                 <span style="background:#FEF3C7; border:1px solid #FCD34D; color:#92400E; border-radius:999px; padding:0.18rem 0.52rem; font-size:0.72rem; font-weight:700;">Coverage Gap Grid</span>
@@ -5889,14 +6058,14 @@ elif selected_menu == "Network Status":
         """), unsafe_allow_html=True)
         exp_col1, exp_col2, exp_col3 = st.columns([1.35, 1.35, 1.3])
         with exp_col1:
-            show_cov_gap = st.checkbox("Coverage Gap Grid", value=True, key="net_exp_toggle_gap")
-            show_arr_risk = st.checkbox("Revenue-at-Risk Bubbles", value=True, key="net_exp_toggle_arr")
+            show_cov_gap = st.checkbox("Grid Gaps Cobertura", value=True, key="net_exp_toggle_gap")
+            show_arr_risk = st.checkbox("Burbujas Revenue en Riesgo", value=True, key="net_exp_toggle_arr")
         with exp_col2:
-            show_exp_towers = st.checkbox("Expansion Priority Towers", value=True, key="net_exp_toggle_towers")
-            show_corridors = st.checkbox("Top Expansion Corridors", value=True, key="net_exp_toggle_corridors")
+            show_exp_towers = st.checkbox("Torres Prioridad Expansión", value=True, key="net_exp_toggle_towers")
+            show_corridors = st.checkbox("Top Corredores Expansión", value=True, key="net_exp_toggle_corridors")
         with exp_col3:
-            show_targets = st.checkbox("Where to Invest (Ranked)", value=True, key="net_exp_toggle_targets")
-            horizon = st.selectbox("Planning Horizon", ["6M", "12M", "18M"], index=1, key="net_exp_horizon")
+            show_targets = st.checkbox("Dónde Invertir (Ranking)", value=True, key="net_exp_toggle_targets")
+            horizon = st.selectbox("Horizonte Planificación", ["6M", "12M", "18M"], index=1, key="net_exp_horizon")
 
         horizon_profile = {
             "6M": {"priority": 0.93, "gap": 0.88, "arr": 0.78, "capex": 0.82, "tower": 0.86, "corr": 0.84, "target_radius": 0.80, "cell_size": 22000, "payback": 1.08},
@@ -5945,8 +6114,8 @@ elif selected_menu == "Network Status":
         opp_df["Invest Label"] = opp_df["Rank"].apply(lambda r: f"{horizon} INVEST #{r}") + " - " + opp_df["Zone"]
         top3 = opp_df.head(3).copy()
         top5 = opp_df.head(5).copy()
-        top5["hub_lon"] = -77.0428
-        top5["hub_lat"] = -12.0464
+        top5["hub_lon"] = -70.65
+        top5["hub_lat"] = -33.45
         top5["Corridor Width"] = (2.6 + (top5["Priority Adj"] - 70) / 14).clip(lower=2.2, upper=6.0) * horizon_profile["corr"]
         top5["Target Radius"] = (42000 * horizon_profile["target_radius"] * (top5["Priority Adj"] / 90)).round(0)
         city_map_df = net_major_cities_geo.copy()
@@ -6070,7 +6239,7 @@ elif selected_menu == "Network Status":
 
             atlas_deck = pdk.Deck(
                 layers=atlas_layers,
-                initial_view_state=pdk.ViewState(latitude=-11.6, longitude=-76.8, zoom=5.0, pitch=40),
+                initial_view_state=pdk.ViewState(latitude=-35.0, longitude=-71.5, zoom=5.0, pitch=40),
                 map_style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
                 tooltip={
                     "html": "<b>{Zone}{City}</b><br/>Tier: {City Tier}<br/>Signal: {Investment Signal}<br/>Invest Rank: #{Rank}<br/>Demand: {Demand Index}<br/>Coverage Gap ({horizon}): {Coverage Gap Horizon %}%<br/>ARR Risk ({horizon}): CLP {ARR Horizon M}M<br/>Capex ({horizon}): CLP {Capex Horizon M}M<br/>Payback ({horizon}): {Payback Horizon Mo} mo<br/>Priority: {Priority Adj}"
@@ -6832,23 +7001,25 @@ elif selected_menu == "Marketing":
         "Revenue M": [0.58, 0.63, 0.69, 0.76, 0.84, 0.92],
     })
     mkt_channels = pd.DataFrame({
-        "Channel": ["WOM Search", "WOM Social", "WOM SEO", "WOM Afiliados", "WOM Partners", "WOM CRM"],
-        "Spend M": [0.62, 0.44, 0.39, 0.33, 0.47, 0.37],
-        "Leads K": [8.2, 6.9, 4.5, 3.8, 4.1, 2.7],
-        "New Subs K": [0.52, 0.41, 0.33, 0.29, 0.35, 0.23],
-        "Revenue M": [1.36, 0.91, 0.78, 0.65, 1.01, 0.62],
+        "Channel": ["WOM Google Ads", "WOM Meta/Social", "WOM SEO Orgánico", "WOM Afiliados", "WOM Tiendas", "WOM CRM/Email"],
+        "Spend M": [0.72, 0.52, 0.42, 0.38, 0.56, 0.42],
+        "Leads K": [9.4, 7.8, 5.2, 4.4, 4.8, 3.2],
+        "New Subs K": [0.62, 0.48, 0.38, 0.34, 0.42, 0.28],
+        "Revenue M": [1.58, 1.12, 0.92, 0.78, 1.24, 0.74],
+        "Product Focus": ["Móvil+Fibra", "Móvil", "Fibra Hogar", "Móvil", "Todos", "Retención"],
     })
     mkt_channels["CAC"] = (mkt_channels["Spend M"] * 1_000_000 / (mkt_channels["New Subs K"] * 1_000)).round(0)
     mkt_channels["CVR %"] = (mkt_channels["New Subs K"] / mkt_channels["Leads K"] * 100).round(1)
     mkt_channels["ROAS"] = (mkt_channels["Revenue M"] / mkt_channels["Spend M"]).round(2)
 
     mkt_campaigns = pd.DataFrame({
-        "Campaign": ["WOM Hogar Upgrade 600", "WOM Vuelta a Clases", "WOM Empresas Fast Lane", "WOM Referidos Plus", "WOM Winback Sprint", "WOM Retention Upgrade"],
-        "Stage": ["Acquisition", "Acquisition", "Acquisition", "Referral", "Retention", "Retention"],
-        "Spend M": [0.36, 0.34, 0.39, 0.28, 0.23, 0.21],
-        "Clicks K": [82, 76, 69, 54, 47, 42],
-        "Leads K": [5.2, 4.8, 4.4, 3.8, 3.0, 2.6],
-        "Revenue M": [0.92, 0.84, 0.98, 0.71, 0.55, 0.49],
+        "Campaign": ["WOM Fibra 600 Mbps", "WOM Vuelta a Clases", "WOM Empresas 5G", "WOM Referidos Móvil", "WOM Winback Fibra", "WOM Upgrade Plan"],
+        "Stage": ["Adquisición Fibra", "Adquisición Móvil", "B2B", "Referidos", "Retención", "Upsell"],
+        "Spend M": [0.42, 0.38, 0.44, 0.32, 0.26, 0.24],
+        "Clicks K": [92, 84, 76, 62, 54, 48],
+        "Leads K": [5.8, 5.4, 4.8, 4.2, 3.4, 3.0],
+        "Revenue M": [1.12, 0.98, 1.14, 0.82, 0.64, 0.58],
+        "Product": ["Fibra Hogar", "Móvil Prepago", "Móvil Empresa", "Móvil", "Fibra", "Móvil+Fibra"],
     })
     mkt_campaigns["CTR %"] = (mkt_campaigns["Clicks K"] / 4_600 * 100).round(2)
     mkt_campaigns["CVR %"] = (mkt_campaigns["Leads K"] / mkt_campaigns["Clicks K"] * 100).round(2)
@@ -6856,16 +7027,16 @@ elif selected_menu == "Marketing":
     mkt_campaigns["ROI %"] = ((mkt_campaigns["Revenue M"] - mkt_campaigns["Spend M"]) / mkt_campaigns["Spend M"] * 100).round(1)
 
     mkt_funnel = pd.DataFrame({
-        "Stage": ["Visits", "Leads", "MQL", "SQL", "Wins"],
-        "Volume K": [310, mkt_monthly.iloc[-1]["Leads K"], mkt_monthly.iloc[-1]["MQL K"], mkt_monthly.iloc[-1]["SQL K"], mkt_monthly.iloc[-1]["New Subs K"]],
+        "Stage": ["Visitas Web", "Leads", "MQL", "SQL", "Wins"],
+        "Volume K": [340, mkt_monthly.iloc[-1]["Leads K"], mkt_monthly.iloc[-1]["MQL K"], mkt_monthly.iloc[-1]["SQL K"], mkt_monthly.iloc[-1]["New Subs K"]],
     })
     mkt_funnel["Conversion %"] = (mkt_funnel["Volume K"] / mkt_funnel["Volume K"].shift(1) * 100).round(1)
     mkt_funnel.loc[0, "Conversion %"] = 100.0
 
     mkt_risk = pd.DataFrame({
-        "Risk Driver": ["Channel CAC Inflation", "Attribution Blind Spots", "Partner Lead Volatility", "Creative Fatigue", "Compliance Delay"],
-        "Exposure M": [1.42, 1.15, 0.96, 0.82, 0.58],
-        "Likelihood": [3.9, 3.4, 3.2, 3.1, 2.6],
+        "Risk Driver": ["Inflación CAC Canales", "Puntos Ciegos Atribución", "Volatilidad Leads Partners", "Fatiga Creativa", "Delay Compliance"],
+        "Exposure M": [1.52, 1.24, 1.08, 0.92, 0.64],
+        "Likelihood": [4.0, 3.5, 3.3, 3.2, 2.7],
     })
     mkt_scenario = pd.DataFrame({
         "Scenario": ["Downside", "Base", "Upside"],
@@ -6885,40 +7056,41 @@ elif selected_menu == "Marketing":
     revenue_growth = (mkt_monthly.iloc[-1]["Revenue M"] / mkt_monthly.iloc[0]["Revenue M"] - 1) * 100
     top_risk_mkt = mkt_risk.loc[mkt_risk["Exposure M"].idxmax()]
 
-    st.markdown('<div class="mkt-title">Marketing Pulse</div>', unsafe_allow_html=True)
+    st.markdown('<div class="mkt-title">WOM Marketing Pulse - Rendimiento Campañas</div>', unsafe_allow_html=True)
     st.markdown(dedent(f"""
         <div class="mkt-pulse">
             <div class="mkt-pulse-grid">
-                <div class="mkt-pulse-card"><div class="k">Revenue Influenced</div><div class="v">CLP {total_revenue_m:.2f}M</div><div class="d">Six-month attributable revenue</div></div>
-                <div class="mkt-pulse-card"><div class="k">Pipeline</div><div class="v">CLP {pipeline_latest:.2f}M</div><div class="d">Latest month pipeline</div></div>
-                <div class="mkt-pulse-card"><div class="k">Blended ROAS</div><div class="v">{blended_roas:.2f}x</div><div class="d">Revenue per CLP  invested</div></div>
-                <div class="mkt-pulse-card"><div class="k">Blended CAC</div><div class="v">CLP {blended_cac:,.0f}</div><div class="d">Acquisition efficiency</div></div>
-                <div class="mkt-pulse-card"><div class="k">Lead → MQL</div><div class="v">{lead_to_mql:.1%}</div><div class="d">Qualification quality</div></div>
-                <div class="mkt-pulse-card"><div class="k">Revenue Growth</div><div class="v">{revenue_growth:+.1f}%</div><div class="d">Six-month trajectory</div></div>
+                <div class="mkt-pulse-card"><div class="k">Revenue Influenciado</div><div class="v">CLP {total_revenue_m:.2f}M</div><div class="d">Revenue atribuible 6 meses</div></div>
+                <div class="mkt-pulse-card"><div class="k">Pipeline</div><div class="v">CLP {pipeline_latest:.2f}M</div><div class="d">Pipeline último mes</div></div>
+                <div class="mkt-pulse-card"><div class="k">ROAS Blended</div><div class="v">{blended_roas:.2f}x</div><div class="d">Revenue por CLP invertido</div></div>
+                <div class="mkt-pulse-card"><div class="k">CAC Blended</div><div class="v">CLP {blended_cac:,.0f}</div><div class="d">Eficiencia adquisición</div></div>
+                <div class="mkt-pulse-card"><div class="k">Lead → MQL</div><div class="v">{lead_to_mql:.1%}</div><div class="d">Calidad calificación</div></div>
+                <div class="mkt-pulse-card"><div class="k">Crecimiento Revenue</div><div class="v">{revenue_growth:+.1f}%</div><div class="d">Trayectoria 6 meses</div></div>
             </div>
         </div>
     """), unsafe_allow_html=True)
 
-    mkt_tab_overview, mkt_tab_ops, mkt_tab_risk = st.tabs([
-        "📈 Marketing Overview",
-        "🧭 Marketing Operations",
-        "⚠️ Risk & Strategy",
+    mkt_tab_overview, mkt_tab_ops, mkt_tab_channels, mkt_tab_risk = st.tabs([
+        "📈 Vista General Marketing",
+        "🧭 Operaciones & Funnel",
+        "📱 Canales & Productos",
+        "⚠️ Riesgo & Estrategia",
     ])
 
     with mkt_tab_overview:
-        st.markdown('<div class="mkt-title">Marketing Performance Overview</div>', unsafe_allow_html=True)
+        st.markdown('<div class="mkt-title">Rendimiento Marketing WOM</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="mkt-kpi-grid">
-                <div class="mkt-kpi-card"><div class="k">Total Spend</div><div class="v">CLP {total_spend_m:.2f}M</div><div class="d">Six-month investment</div></div>
-                <div class="mkt-kpi-card"><div class="k">New Subscribers</div><div class="v">{total_new_subs_k:.1f}K</div><div class="d">Marketing-driven wins</div></div>
-                <div class="mkt-kpi-card {'warn' if blended_cac > 140 else ''}"><div class="k">Blended CAC</div><div class="v">CLP {blended_cac:,.0f}</div><div class="d">Efficiency benchmark</div></div>
-                <div class="mkt-kpi-card"><div class="k">SQL to Win</div><div class="v">{sql_to_win:.1%}</div><div class="d">Sales conversion quality</div></div>
+                <div class="mkt-kpi-card"><div class="k">Inversión Total</div><div class="v">CLP {total_spend_m:.2f}M</div><div class="d">Inversión 6 meses</div></div>
+                <div class="mkt-kpi-card"><div class="k">Nuevos Suscriptores</div><div class="v">{total_new_subs_k:.1f}K</div><div class="d">Wins driven by marketing</div></div>
+                <div class="mkt-kpi-card {'warn' if blended_cac > 140 else ''}"><div class="k">CAC Blended</div><div class="v">CLP {blended_cac:,.0f}</div><div class="d">Benchmark eficiencia</div></div>
+                <div class="mkt-kpi-card"><div class="k">SQL a Win</div><div class="v">{sql_to_win:.1%}</div><div class="d">Calidad conversión ventas</div></div>
             </div>
         """), unsafe_allow_html=True)
 
         ov_col1, ov_col2 = st.columns(2)
         with ov_col1:
-            st.markdown('<div class="mkt-mini-title">Spend and Revenue Trend</div>', unsafe_allow_html=True)
+            st.markdown('<div class="mkt-mini-title">Tendencia Inversión y Revenue</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 spend_bar = alt.Chart(mkt_monthly).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=34, color="#93C5FD").encode(
                     x=alt.X("Month:N", title=None),
@@ -6938,7 +7110,7 @@ elif selected_menu == "Marketing":
                 )
 
         with ov_col2:
-            st.markdown('<div class="mkt-mini-title">Channel Efficiency Matrix</div>', unsafe_allow_html=True)
+            st.markdown('<div class="mkt-mini-title">Matriz Eficiencia Canales</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 ch_scatter = alt.Chart(mkt_channels).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
                     x=alt.X("CAC:Q", title="CAC (CLP )"),
@@ -6961,7 +7133,7 @@ elif selected_menu == "Marketing":
 
         ov_col3, ov_col4 = st.columns(2)
         with ov_col3:
-            st.markdown('<div class="mkt-mini-title">Lead and Pipeline Momentum</div>', unsafe_allow_html=True)
+            st.markdown('<div class="mkt-mini-title">Momentum Leads y Pipeline</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 lead_line = alt.Chart(mkt_monthly).mark_line(point=True, strokeWidth=3, color="#3B82F6").encode(
                     x=alt.X("Month:N", title=None),
@@ -6982,7 +7154,7 @@ elif selected_menu == "Marketing":
                 )
 
         with ov_col4:
-            st.markdown('<div class="mkt-mini-title">ROAS by Channel</div>', unsafe_allow_html=True)
+            st.markdown('<div class="mkt-mini-title">ROAS por Canal</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 roas_bar = alt.Chart(mkt_channels).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=26).encode(
                     x=alt.X("Channel:N", sort="-y", title=None),
@@ -7007,28 +7179,28 @@ elif selected_menu == "Marketing":
                 )
 
     with mkt_tab_ops:
-        st.markdown('<div class="mkt-title">Marketing Operations and Journey</div>', unsafe_allow_html=True)
+        st.markdown('<div class="mkt-title">Operaciones Marketing y Journey Cliente</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="mkt-kpi-grid">
-                <div class="mkt-kpi-card"><div class="k">Current Funnel Lead Base</div><div class="v">{mkt_funnel.loc[mkt_funnel['Stage']=='Leads', 'Volume K'].iloc[0]:.0f}K</div><div class="d">Latest month demand</div></div>
-                <div class="mkt-kpi-card {'warn' if mkt_funnel.loc[mkt_funnel['Stage']=='SQL', 'Conversion %'].iloc[0] < 55 else ''}"><div class="k">MQL → SQL</div><div class="v">{mkt_funnel.loc[mkt_funnel['Stage']=='SQL', 'Conversion %'].iloc[0]:.1f}%</div><div class="d">Mid-funnel conversion</div></div>
-                <div class="mkt-kpi-card"><div class="k">Best Campaign ROI</div><div class="v">{mkt_campaigns['ROI %'].max():.0f}%</div><div class="d">Top portfolio performer</div></div>
-                <div class="mkt-kpi-card"><div class="k">Campaign Mix</div><div class="v">{mkt_campaigns['Campaign'].nunique()}</div><div class="d">Active initiatives</div></div>
+                <div class="mkt-kpi-card"><div class="k">Base Leads Funnel Actual</div><div class="v">{mkt_funnel.loc[mkt_funnel['Stage']=='Leads', 'Volume K'].iloc[0]:.0f}K</div><div class="d">Demanda último mes</div></div>
+                <div class="mkt-kpi-card {'warn' if mkt_funnel.loc[mkt_funnel['Stage']=='SQL', 'Conversion %'].iloc[0] < 55 else ''}"><div class="k">MQL → SQL</div><div class="v">{mkt_funnel.loc[mkt_funnel['Stage']=='SQL', 'Conversion %'].iloc[0]:.1f}%</div><div class="d">Conversión mid-funnel</div></div>
+                <div class="mkt-kpi-card"><div class="k">Mejor ROI Campaña</div><div class="v">{mkt_campaigns['ROI %'].max():.0f}%</div><div class="d">Top performer portafolio</div></div>
+                <div class="mkt-kpi-card"><div class="k">Mix Campañas</div><div class="v">{mkt_campaigns['Campaign'].nunique()}</div><div class="d">Iniciativas activas</div></div>
             </div>
         """), unsafe_allow_html=True)
 
         op_col1, op_col2 = st.columns(2)
         with op_col1:
-            st.markdown('<div class="mkt-mini-title">Funnel Conversion by Stage</div>', unsafe_allow_html=True)
+            st.markdown('<div class="mkt-mini-title">Conversión Funnel por Etapa</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 funnel_bar = alt.Chart(mkt_funnel).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=24).encode(
-                    x=alt.X("Volume K:Q", title="Volume (K)"),
-                    y=alt.Y("Stage:N", sort=["Visits", "Leads", "MQL", "SQL", "Wins"], title=None),
+                    x=alt.X("Volume K:Q", title="Volumen (K)"),
+                    y=alt.Y("Stage:N", sort=["Visitas Web", "Leads", "MQL", "SQL", "Wins"], title=None),
                     color=alt.Color("Conversion %:Q", scale=alt.Scale(scheme="blues"), legend=None),
                     tooltip=["Stage:N", alt.Tooltip("Volume K:Q", format=".1f"), alt.Tooltip("Conversion %:Q", format=".1f")],
                 )
                 funnel_label = alt.Chart(mkt_funnel).mark_text(align="left", dx=6, fontSize=10, color="#0F172A").encode(
-                    x="Volume K:Q", y=alt.Y("Stage:N", sort=["Visits", "Leads", "MQL", "SQL", "Wins"]), text=alt.Text("Conversion %:Q", format=".1f")
+                    x="Volume K:Q", y=alt.Y("Stage:N", sort=["Visitas Web", "Leads", "MQL", "SQL", "Wins"]), text=alt.Text("Conversion %:Q", format=".1f")
                 )
                 st.altair_chart(style_mkt_chart(funnel_bar + funnel_label, height=235), use_container_width=True)
                 render_mkt_ai_reco(
@@ -7040,7 +7212,7 @@ elif selected_menu == "Marketing":
                 )
 
         with op_col2:
-            st.markdown('<div class="mkt-mini-title">Campaign ROI Portfolio</div>', unsafe_allow_html=True)
+            st.markdown('<div class="mkt-mini-title">Portafolio ROI Campañas</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 camp_bar = alt.Chart(mkt_campaigns).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=24, color="#60A5FA").encode(
                     x=alt.X("Campaign:N", sort="-y", title=None),
@@ -7057,7 +7229,7 @@ elif selected_menu == "Marketing":
                     "Improves campaign-level return while keeping execution risk low.",
                 )
 
-        st.markdown('<div class="mkt-mini-title">Attribution Mix by Channel Revenue</div>', unsafe_allow_html=True)
+        st.markdown('<div class="mkt-mini-title">Mix Atribución por Revenue Canal</div>', unsafe_allow_html=True)
         with st.container(border=True):
             mix_df = mkt_channels.copy()
             mix_df["Revenue Share %"] = (mix_df["Revenue M"] / mix_df["Revenue M"].sum() * 100).round(1)
@@ -7078,7 +7250,7 @@ elif selected_menu == "Marketing":
                 level="warning",
             )
 
-        st.markdown('<div class="mkt-mini-title">Campaign Quality Matrix (CTR vs CVR)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="mkt-mini-title">Matriz Calidad Campañas (CTR vs CVR)</div>', unsafe_allow_html=True)
         with st.container(border=True):
             camp_matrix = alt.Chart(mkt_campaigns).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
                 x=alt.X("CTR %:Q", title="CTR (%)"),
@@ -7100,20 +7272,147 @@ elif selected_menu == "Marketing":
                 level="warning",
             )
 
-    with mkt_tab_risk:
-        st.markdown('<div class="mkt-title">Marketing Risk and Strategy</div>', unsafe_allow_html=True)
+    with mkt_tab_channels:
+        st.markdown('<div class="mkt-title">Canales & Productos WOM</div>', unsafe_allow_html=True)
+        
+        mkt_products = pd.DataFrame({
+            "Producto": ["Móvil Prepago", "Móvil Postpago", "Fibra Hogar 300", "Fibra Hogar 600", "Combo Móvil+Fibra", "WOM Empresas"],
+            "Leads K": [4.2, 3.8, 2.4, 2.8, 1.8, 1.6],
+            "Conversión %": [8.2, 12.4, 18.6, 22.4, 28.2, 15.8],
+            "Revenue M": [0.86, 1.24, 0.78, 1.12, 1.48, 0.92],
+            "ARPU CLP": [8500, 18500, 22000, 32000, 42000, 68000],
+        })
+        mkt_products["CAC"] = ((mkt_products["Leads K"] * 1000 * 0.12) / (mkt_products["Leads K"] * mkt_products["Conversión %"] / 100)).round(0)
+        
+        mkt_regions_mkt = pd.DataFrame({
+            "Región": ["Metropolitana", "Valparaíso", "Biobío", "Araucanía", "O'Higgins", "Antofagasta"],
+            "Leads K": [12.4, 4.2, 3.6, 2.4, 1.8, 1.6],
+            "Conversión %": [14.2, 12.8, 11.6, 10.4, 11.2, 9.8],
+            "Top Producto": ["Móvil Postpago", "Fibra 600", "Móvil Prepago", "Combo", "Fibra 300", "Móvil Prepago"],
+            "Revenue M": [3.24, 1.12, 0.94, 0.68, 0.52, 0.48],
+        })
+        
+        total_product_rev = mkt_products["Revenue M"].sum()
+        top_product = mkt_products.loc[mkt_products["Revenue M"].idxmax()]
+        avg_conversion = mkt_products["Conversión %"].mean()
+        
         st.markdown(dedent(f"""
             <div class="mkt-kpi-grid">
-                <div class="mkt-kpi-card crit"><div class="k">Top Risk Driver</div><div class="v">{top_risk_mkt['Risk Driver']}</div><div class="d">Highest exposure line</div></div>
-                <div class="mkt-kpi-card warn"><div class="k">Total Exposure</div><div class="v">CLP {mkt_risk['Exposure M'].sum():.2f}M</div><div class="d">Mapped downside</div></div>
-                <div class="mkt-kpi-card"><div class="k">Base Quarter Revenue</div><div class="v">CLP {mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0]:.1f}M</div><div class="d">Most probable scenario</div></div>
-                <div class="mkt-kpi-card {'warn' if (mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0] - mkt_scenario.loc[mkt_scenario['Scenario']=='Downside', 'Quarter Revenue M'].iloc[0]) > 0.6 else ''}"><div class="k">Downside Gap</div><div class="v">CLP {(mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0] - mkt_scenario.loc[mkt_scenario['Scenario']=='Downside', 'Quarter Revenue M'].iloc[0]):.1f}M</div><div class="d">vs base case</div></div>
+                <div class="mkt-kpi-card"><div class="k">Revenue Productos</div><div class="v">CLP {total_product_rev:.2f}M</div><div class="d">Total mix productos</div></div>
+                <div class="mkt-kpi-card"><div class="k">Top Producto</div><div class="v">{top_product['Producto']}</div><div class="d">CLP {top_product['Revenue M']:.2f}M revenue</div></div>
+                <div class="mkt-kpi-card"><div class="k">Conversión Promedio</div><div class="v">{avg_conversion:.1f}%</div><div class="d">Across all products</div></div>
+                <div class="mkt-kpi-card"><div class="k">Mejor ARPU</div><div class="v">CLP {mkt_products['ARPU CLP'].max():,.0f}</div><div class="d">{mkt_products.loc[mkt_products['ARPU CLP'].idxmax(), 'Producto']}</div></div>
+            </div>
+        """), unsafe_allow_html=True)
+        
+        ch_col1, ch_col2 = st.columns(2)
+        with ch_col1:
+            st.markdown('<div class="mkt-mini-title">Performance por Producto WOM</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                prod_bar = alt.Chart(mkt_products).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=22).encode(
+                    x=alt.X("Producto:N", sort="-y", title=None),
+                    y=alt.Y("Revenue M:Q", title="Revenue (CLP M)"),
+                    color=alt.Color("Conversión %:Q", scale=alt.Scale(scheme="blues"), legend=None),
+                    tooltip=["Producto:N", alt.Tooltip("Revenue M:Q", format=".2f"), alt.Tooltip("Conversión %:Q", format=".1f"), alt.Tooltip("ARPU CLP:Q", format=",.0f")],
+                )
+                prod_txt = alt.Chart(mkt_products).mark_text(dy=-8, fontSize=9, color="#0F172A").encode(
+                    x=alt.X("Producto:N", sort="-y"),
+                    y="Revenue M:Q",
+                    text=alt.Text("Revenue M:Q", format=".2f"),
+                )
+                st.altair_chart(style_mkt_chart(prod_bar + prod_txt, height=235), use_container_width=True)
+                render_mkt_ai_reco(
+                    "Mix Productos",
+                    f"{top_product['Producto']} lidera revenue con CLP {top_product['Revenue M']:.2f}M y conversión {top_product['Conversión %']:.1f}%.",
+                    "Escalar inversión en productos de alta conversión, optimizar funnel en productos bajo rendimiento.",
+                    "Mejora mix de revenue y lifetime value del portafolio.",
+                )
+        
+        with ch_col2:
+            st.markdown('<div class="mkt-mini-title">Conversión vs CAC por Producto</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                prod_scatter = alt.Chart(mkt_products).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
+                    x=alt.X("CAC:Q", title="CAC (CLP)"),
+                    y=alt.Y("Conversión %:Q", title="Conversión (%)"),
+                    size=alt.Size("Revenue M:Q", scale=alt.Scale(range=[200, 1200]), legend=None),
+                    color=alt.Color("ARPU CLP:Q", scale=alt.Scale(scheme="greens"), legend=alt.Legend(title="ARPU")),
+                    tooltip=["Producto:N", alt.Tooltip("CAC:Q", format=",.0f"), alt.Tooltip("Conversión %:Q", format=".1f"), alt.Tooltip("ARPU CLP:Q", format=",.0f")],
+                )
+                prod_lbl = alt.Chart(mkt_products).mark_text(dy=-12, fontSize=9, color="#1E293B").encode(
+                    x="CAC:Q", y="Conversión %:Q", text="Producto:N"
+                )
+                st.altair_chart(style_mkt_chart(prod_scatter + prod_lbl, height=235), use_container_width=True)
+                best_efficiency = mkt_products.sort_values(["Conversión %"], ascending=False).iloc[0]
+                render_mkt_ai_reco(
+                    "Eficiencia Adquisición",
+                    f"{best_efficiency['Producto']} tiene mejor ratio conversión/CAC con {best_efficiency['Conversión %']:.1f}% CVR.",
+                    "Replicar estrategia de adquisición de productos eficientes en categorías similares.",
+                    "Reduce CAC blended manteniendo volumen de leads.",
+                )
+        
+        st.markdown('<div class="mkt-mini-title">Performance Marketing por Región Chile</div>', unsafe_allow_html=True)
+        with st.container(border=True):
+            region_bar = alt.Chart(mkt_regions_mkt).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=32).encode(
+                x=alt.X("Región:N", sort="-y", title=None),
+                y=alt.Y("Revenue M:Q", title="Revenue (CLP M)"),
+                color=alt.Color("Conversión %:Q", scale=alt.Scale(scheme="blues"), legend=alt.Legend(title="CVR %")),
+                tooltip=["Región:N", alt.Tooltip("Revenue M:Q", format=".2f"), alt.Tooltip("Leads K:Q", format=".1f"), alt.Tooltip("Conversión %:Q", format=".1f"), "Top Producto:N"],
+            )
+            region_txt = alt.Chart(mkt_regions_mkt).mark_text(dy=-8, fontSize=10, color="#0F172A").encode(
+                x=alt.X("Región:N", sort="-y"),
+                y="Revenue M:Q",
+                text=alt.Text("Revenue M:Q", format=".2f"),
+            )
+            st.altair_chart(style_mkt_chart(region_bar + region_txt, height=220), use_container_width=True)
+            top_region = mkt_regions_mkt.loc[mkt_regions_mkt["Revenue M"].idxmax()]
+            render_mkt_ai_reco(
+                "Concentración Regional",
+                f"Región {top_region['Región']} genera CLP {top_region['Revenue M']:.2f}M con {top_region['Conversión %']:.1f}% conversión.",
+                "Expandir campañas localizadas en regiones de alto potencial con bajo share actual.",
+                "Diversifica revenue geográfico y reduce dependencia de RM.",
+            )
+        
+        ch_col3, ch_col4 = st.columns(2)
+        with ch_col3:
+            st.markdown('<div class="mkt-mini-title">ARPU por Producto</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                arpu_bar = alt.Chart(mkt_products).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=20).encode(
+                    x=alt.X("ARPU CLP:Q", title="ARPU (CLP)"),
+                    y=alt.Y("Producto:N", sort="-x", title=None),
+                    color=alt.Color("ARPU CLP:Q", scale=alt.Scale(scheme="greens"), legend=None),
+                    tooltip=["Producto:N", alt.Tooltip("ARPU CLP:Q", format=",.0f"), alt.Tooltip("Revenue M:Q", format=".2f")],
+                )
+                arpu_txt = alt.Chart(mkt_products).mark_text(align="left", dx=6, fontSize=9, color="#0F172A").encode(
+                    x="ARPU CLP:Q", y=alt.Y("Producto:N", sort="-x"), text=alt.Text("ARPU CLP:Q", format=",.0f")
+                )
+                st.altair_chart(style_mkt_chart(arpu_bar + arpu_txt, height=220), use_container_width=True)
+        
+        with ch_col4:
+            st.markdown('<div class="mkt-mini-title">Share Revenue por Canal</div>', unsafe_allow_html=True)
+            with st.container(border=True):
+                channel_share = mkt_channels.copy()
+                channel_share["Share %"] = (channel_share["Revenue M"] / channel_share["Revenue M"].sum() * 100).round(1)
+                ch_arc = alt.Chart(channel_share).mark_arc(innerRadius=58, outerRadius=95).encode(
+                    theta=alt.Theta("Revenue M:Q"),
+                    color=alt.Color("Channel:N", legend=alt.Legend(title=None), scale=alt.Scale(range=["#3B82F6", "#10B981", "#F59E0B", "#EF4444", "#6366F1", "#14B8A6"])),
+                    tooltip=["Channel:N", alt.Tooltip("Revenue M:Q", format=".2f"), alt.Tooltip("Share %:Q", format=".1f")],
+                )
+                st.altair_chart(style_mkt_chart(ch_arc, height=220), use_container_width=True)
+
+    with mkt_tab_risk:
+        st.markdown('<div class="mkt-title">Riesgo Marketing y Estrategia</div>', unsafe_allow_html=True)
+        st.markdown(dedent(f"""
+            <div class="mkt-kpi-grid">
+                <div class="mkt-kpi-card crit"><div class="k">Top Driver Riesgo</div><div class="v">{top_risk_mkt['Risk Driver']}</div><div class="d">Mayor línea exposición</div></div>
+                <div class="mkt-kpi-card warn"><div class="k">Exposición Total</div><div class="v">CLP {mkt_risk['Exposure M'].sum():.2f}M</div><div class="d">Downside mapeado</div></div>
+                <div class="mkt-kpi-card"><div class="k">Revenue Q Base</div><div class="v">CLP {mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0]:.1f}M</div><div class="d">Escenario más probable</div></div>
+                <div class="mkt-kpi-card {'warn' if (mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0] - mkt_scenario.loc[mkt_scenario['Scenario']=='Downside', 'Quarter Revenue M'].iloc[0]) > 0.6 else ''}"><div class="k">Gap Downside</div><div class="v">CLP {(mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0] - mkt_scenario.loc[mkt_scenario['Scenario']=='Downside', 'Quarter Revenue M'].iloc[0]):.1f}M</div><div class="d">vs caso base</div></div>
             </div>
         """), unsafe_allow_html=True)
 
         rk_col1, rk_col2 = st.columns(2)
         with rk_col1:
-            st.markdown('<div class="mkt-mini-title">Marketing Risk Exposure by Driver</div>', unsafe_allow_html=True)
+            st.markdown('<div class="mkt-mini-title">Exposición Riesgo Marketing por Driver</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 risk_bar = alt.Chart(mkt_risk).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=20).encode(
                     x=alt.X("Exposure M:Q", title="Exposure (CLP  M)"),
@@ -7134,7 +7433,7 @@ elif selected_menu == "Marketing":
                 )
 
         with rk_col2:
-            st.markdown('<div class="mkt-mini-title">Quarter Marketing Scenarios</div>', unsafe_allow_html=True)
+            st.markdown('<div class="mkt-mini-title">Escenarios Marketing Trimestre</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 sc_bar = alt.Chart(mkt_scenario).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=56).encode(
                     x=alt.X("Scenario:N", title=None),
@@ -7156,7 +7455,7 @@ elif selected_menu == "Marketing":
 
         rk_col3, rk_col4 = st.columns(2)
         with rk_col3:
-            st.markdown('<div class="mkt-mini-title">Risk Heat Matrix</div>', unsafe_allow_html=True)
+            st.markdown('<div class="mkt-mini-title">Matriz Heat Riesgo</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 risk_matrix = alt.Chart(mkt_risk).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
                     x=alt.X("Likelihood:Q", title="Likelihood"),
@@ -7179,7 +7478,7 @@ elif selected_menu == "Marketing":
                 )
 
         with rk_col4:
-            st.markdown('<div class="mkt-mini-title">Risk-Adjusted Channel Return</div>', unsafe_allow_html=True)
+            st.markdown('<div class="mkt-mini-title">Retorno Canal Ajustado por Riesgo</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 risk_adj = mkt_channels.copy()
                 risk_adj["Risk Factor"] = (risk_adj["CAC"] / risk_adj["CAC"].max() * 0.7 + (1 - risk_adj["CVR %"] / risk_adj["CVR %"].max()) * 0.3)
@@ -7356,39 +7655,39 @@ elif selected_menu == "HR & Workforce":
 
     hr_monthly = pd.DataFrame({
         "Month": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"],
-        "Headcount": [612, 619, 624, 632, 638, 645],
-        "Hiring": [18, 16, 17, 19, 20, 18],
-        "Attrition": [11, 10, 12, 11, 13, 12],
-        "Absenteeism %": [3.2, 3.1, 3.4, 3.3, 3.6, 3.5],
-        "Engagement": [74, 75, 76, 76, 77, 78],
-        "Productivity Index": [100, 101, 102, 104, 105, 106],
+        "Headcount": [680, 692, 698, 708, 716, 724],
+        "Hiring": [22, 20, 18, 24, 22, 20],
+        "Attrition": [12, 11, 14, 13, 15, 14],
+        "Absenteeism %": [3.0, 2.9, 3.2, 3.1, 3.4, 3.3],
+        "Engagement": [76, 77, 78, 78, 79, 80],
+        "Productivity Index": [100, 102, 104, 106, 108, 110],
     })
     hr_dept = pd.DataFrame({
-        "Department": ["Network Ops", "Customer Care", "Sales", "Marketing", "Tech & Data", "Corporate"],
-        "Headcount": [154, 132, 116, 58, 101, 84],
-        "Turnover %": [8.9, 11.6, 10.8, 9.1, 7.6, 6.8],
-        "eNPS": [35, 24, 28, 33, 39, 36],
-        "Time to Fill": [47, 39, 35, 32, 54, 41],
-        "Training Hrs": [18, 14, 12, 11, 22, 15],
-        "Quality of Hire": [78, 72, 75, 77, 81, 79],
+        "Department": ["Operaciones Red", "Atención Cliente", "Ventas", "Marketing", "Tech & Data", "Corporativo"],
+        "Headcount": [168, 142, 128, 62, 108, 92],
+        "Turnover %": [8.4, 12.2, 11.4, 8.8, 7.2, 6.4],
+        "eNPS": [38, 26, 30, 35, 42, 38],
+        "Time to Fill": [44, 36, 32, 30, 52, 38],
+        "Training Hrs": [20, 16, 14, 12, 24, 16],
+        "Quality of Hire": [80, 74, 76, 78, 84, 80],
     })
     hr_recruit = pd.DataFrame({
-        "Stage": ["Applicants", "Screened", "Interviewed", "Offers", "Hired"],
-        "Volume": [1420, 486, 214, 91, 31],
+        "Stage": ["Postulantes", "Filtrados", "Entrevistados", "Ofertas", "Contratados"],
+        "Volume": [1580, 524, 238, 98, 36],
     })
     hr_recruit["Conversion %"] = (hr_recruit["Volume"] / hr_recruit["Volume"].shift(1) * 100).round(1)
     hr_recruit.loc[0, "Conversion %"] = 100.0
 
     hr_training = pd.DataFrame({
-        "Program": ["Leadership", "Tech Certification", "Sales Enablement", "Customer Excellence", "Data Literacy"],
-        "Participants": [46, 64, 71, 83, 58],
-        "Hours": [18, 24, 14, 12, 16],
-        "Post Performance Lift %": [8.2, 11.4, 9.1, 7.6, 10.3],
+        "Program": ["Liderazgo WOM", "Certificación 5G/Fibra", "Ventas Consultivas", "Excelencia Cliente", "Data & Analytics"],
+        "Participants": [52, 72, 78, 92, 64],
+        "Hours": [20, 28, 16, 14, 18],
+        "Post Performance Lift %": [9.2, 12.6, 10.4, 8.8, 11.6],
     })
     hr_risk = pd.DataFrame({
-        "Risk Driver": ["Critical Skill Attrition", "Hiring Delay", "Low Engagement Cohorts", "Absenteeism Spike", "Leadership Gap"],
-        "Exposure Score": [88, 77, 71, 66, 58],
-        "Likelihood": [3.9, 3.5, 3.3, 3.1, 2.8],
+        "Risk Driver": ["Fuga Talento Crítico", "Demora Contratación", "Cohortes Bajo Engagement", "Pico Ausentismo", "Brecha Liderazgo"],
+        "Exposure Score": [92, 82, 74, 68, 62],
+        "Likelihood": [4.0, 3.6, 3.4, 3.2, 2.9],
     })
     hr_scenario = pd.DataFrame({
         "Scenario": ["Downside", "Base", "Upside"],
@@ -7406,40 +7705,40 @@ elif selected_menu == "HR & Workforce":
     productivity_gain = hr_monthly.iloc[-1]["Productivity Index"] - hr_monthly.iloc[0]["Productivity Index"]
     top_hr_risk = hr_risk.loc[hr_risk["Exposure Score"].idxmax()]
 
-    st.markdown('<div class="hr-title">Workforce Pulse</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hr-title">WOM Workforce Pulse - Capital Humano</div>', unsafe_allow_html=True)
     st.markdown(dedent(f"""
         <div class="hr-pulse">
             <div class="hr-pulse-grid">
-                <div class="hr-pulse-card"><div class="k">Current Headcount</div><div class="v">{current_headcount:.0f}</div><div class="d">Total active workforce</div></div>
-                <div class="hr-pulse-card"><div class="k">Net Hiring</div><div class="v">{net_hiring:+.0f}</div><div class="d">Six-month net movement</div></div>
-                <div class="hr-pulse-card"><div class="k">Attrition Rate</div><div class="v">{attrition_rate:.1f}%</div><div class="d">Period attrition pressure</div></div>
-                <div class="hr-pulse-card"><div class="k">Engagement</div><div class="v">{avg_engagement:.1f}</div><div class="d">Average monthly score</div></div>
-                <div class="hr-pulse-card"><div class="k">Absenteeism</div><div class="v">{avg_absent:.2f}%</div><div class="d">Attendance reliability</div></div>
-                <div class="hr-pulse-card"><div class="k">Productivity Lift</div><div class="v">{productivity_gain:+.0f}</div><div class="d">Index points vs period start</div></div>
+                <div class="hr-pulse-card"><div class="k">Dotación Actual</div><div class="v">{current_headcount:.0f}</div><div class="d">Total fuerza laboral activa</div></div>
+                <div class="hr-pulse-card"><div class="k">Contratación Neta</div><div class="v">{net_hiring:+.0f}</div><div class="d">Movimiento neto 6 meses</div></div>
+                <div class="hr-pulse-card"><div class="k">Tasa Rotación</div><div class="v">{attrition_rate:.1f}%</div><div class="d">Presión de rotación</div></div>
+                <div class="hr-pulse-card"><div class="k">Engagement</div><div class="v">{avg_engagement:.1f}</div><div class="d">Score promedio mensual</div></div>
+                <div class="hr-pulse-card"><div class="k">Ausentismo</div><div class="v">{avg_absent:.2f}%</div><div class="d">Confiabilidad asistencia</div></div>
+                <div class="hr-pulse-card"><div class="k">Lift Productividad</div><div class="v">{productivity_gain:+.0f}</div><div class="d">Puntos índice vs inicio</div></div>
             </div>
         </div>
     """), unsafe_allow_html=True)
 
     hr_tab_overview, hr_tab_ops, hr_tab_risk = st.tabs([
-        "📈 Workforce Overview",
-        "🧭 Workforce Operations",
-        "⚠️ Risk & Strategy",
+        "📈 Vista General Dotación",
+        "🧭 Operaciones & Talento",
+        "⚠️ Riesgo & Estrategia",
     ])
 
     with hr_tab_overview:
-        st.markdown('<div class="hr-title">Workforce Performance Overview</div>', unsafe_allow_html=True)
+        st.markdown('<div class="hr-title">Rendimiento Dotación WOM</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="hr-kpi-grid">
-                <div class="hr-kpi-card"><div class="k">Headcount</div><div class="v">{current_headcount:.0f}</div><div class="d">Current period close</div></div>
-                <div class="hr-kpi-card {'warn' if attrition_rate > 10.5 else ''}"><div class="k">Attrition</div><div class="v">{attrition_rate:.1f}%</div><div class="d">Rolling period rate</div></div>
-                <div class="hr-kpi-card"><div class="k">Engagement Score</div><div class="v">{avg_engagement:.1f}</div><div class="d">Employee sentiment</div></div>
-                <div class="hr-kpi-card {'warn' if avg_absent > 3.4 else ''}"><div class="k">Absenteeism</div><div class="v">{avg_absent:.2f}%</div><div class="d">Attendance trend</div></div>
+                <div class="hr-kpi-card"><div class="k">Dotación</div><div class="v">{current_headcount:.0f}</div><div class="d">Cierre período actual</div></div>
+                <div class="hr-kpi-card {'warn' if attrition_rate > 10.5 else ''}"><div class="k">Rotación</div><div class="v">{attrition_rate:.1f}%</div><div class="d">Tasa período rolling</div></div>
+                <div class="hr-kpi-card"><div class="k">Score Engagement</div><div class="v">{avg_engagement:.1f}</div><div class="d">Sentimiento empleados</div></div>
+                <div class="hr-kpi-card {'warn' if avg_absent > 3.4 else ''}"><div class="k">Ausentismo</div><div class="v">{avg_absent:.2f}%</div><div class="d">Tendencia asistencia</div></div>
             </div>
         """), unsafe_allow_html=True)
 
         ov_col1, ov_col2 = st.columns(2)
         with ov_col1:
-            st.markdown('<div class="hr-mini-title">Headcount vs Hiring and Attrition</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Dotación vs Contratación y Rotación</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 hc_line = alt.Chart(hr_monthly).mark_line(point=True, strokeWidth=3, color="#3B82F6").encode(
                     x=alt.X("Month:N", title=None),
@@ -7461,7 +7760,7 @@ elif selected_menu == "HR & Workforce":
                 )
 
         with ov_col2:
-            st.markdown('<div class="hr-mini-title">Department Health Matrix</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Matriz Salud Departamentos</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 dep_scatter = alt.Chart(hr_dept).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
                     x=alt.X("Turnover %:Q", title="Turnover (%)"),
@@ -7483,7 +7782,7 @@ elif selected_menu == "HR & Workforce":
 
         ov_col3, ov_col4 = st.columns(2)
         with ov_col3:
-            st.markdown('<div class="hr-mini-title">Engagement and Absenteeism Trend</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Tendencia Engagement y Ausentismo</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 eng_line = alt.Chart(hr_monthly).mark_line(point=True, strokeWidth=3, color="#3B82F6").encode(
                     x=alt.X("Month:N", title=None),
@@ -7504,7 +7803,7 @@ elif selected_menu == "HR & Workforce":
                 )
 
         with ov_col4:
-            st.markdown('<div class="hr-mini-title">Department Capability Index</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Índice Capacidad Departamentos</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 capability_df = hr_dept.copy()
                 capability_df["Capability Index"] = (
@@ -7533,39 +7832,39 @@ elif selected_menu == "HR & Workforce":
                 )
 
     with hr_tab_ops:
-        st.markdown('<div class="hr-title">Workforce Operations and Journey</div>', unsafe_allow_html=True)
+        st.markdown('<div class="hr-title">Operaciones Workforce y Journey Talento</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="hr-kpi-grid">
-                <div class="hr-kpi-card"><div class="k">Applicants</div><div class="v">{hr_recruit.loc[hr_recruit['Stage']=='Applicants', 'Volume'].iloc[0]:,.0f}</div><div class="d">Current hiring funnel volume</div></div>
-                <div class="hr-kpi-card"><div class="k">Offers</div><div class="v">{hr_recruit.loc[hr_recruit['Stage']=='Offers', 'Volume'].iloc[0]:.0f}</div><div class="d">Offer-stage candidates</div></div>
-                <div class="hr-kpi-card {'warn' if hr_dept['Time to Fill'].mean() > 42 else ''}"><div class="k">Avg Time to Fill</div><div class="v">{hr_dept['Time to Fill'].mean():.1f} d</div><div class="d">Hiring cycle efficiency</div></div>
-                <div class="hr-kpi-card"><div class="k">Training Lift</div><div class="v">{hr_training['Post Performance Lift %'].mean():.1f}%</div><div class="d">Post-training performance impact</div></div>
+                <div class="hr-kpi-card"><div class="k">Postulantes</div><div class="v">{hr_recruit.loc[hr_recruit['Stage']=='Postulantes', 'Volume'].iloc[0]:,.0f}</div><div class="d">Volumen funnel contratación</div></div>
+                <div class="hr-kpi-card"><div class="k">Ofertas</div><div class="v">{hr_recruit.loc[hr_recruit['Stage']=='Ofertas', 'Volume'].iloc[0]:.0f}</div><div class="d">Candidatos etapa oferta</div></div>
+                <div class="hr-kpi-card {'warn' if hr_dept['Time to Fill'].mean() > 42 else ''}"><div class="k">Tiempo Promedio Llenado</div><div class="v">{hr_dept['Time to Fill'].mean():.1f} d</div><div class="d">Eficiencia ciclo contratación</div></div>
+                <div class="hr-kpi-card"><div class="k">Lift Capacitación</div><div class="v">{hr_training['Post Performance Lift %'].mean():.1f}%</div><div class="d">Impacto post-training</div></div>
             </div>
         """), unsafe_allow_html=True)
 
         op_col1, op_col2 = st.columns(2)
         with op_col1:
-            st.markdown('<div class="hr-mini-title">Recruitment Funnel Conversion</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Conversión Funnel Reclutamiento</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 rec_bar = alt.Chart(hr_recruit).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=24).encode(
-                    x=alt.X("Volume:Q", title="Candidates"),
-                    y=alt.Y("Stage:N", sort=["Applicants", "Screened", "Interviewed", "Offers", "Hired"], title=None),
+                    x=alt.X("Volume:Q", title="Candidatos"),
+                    y=alt.Y("Stage:N", sort=["Postulantes", "Filtrados", "Entrevistados", "Ofertas", "Contratados"], title=None),
                     color=alt.Color("Conversion %:Q", scale=alt.Scale(scheme="blues"), legend=None),
                     tooltip=["Stage:N", alt.Tooltip("Volume:Q", format=".0f"), alt.Tooltip("Conversion %:Q", format=".1f")],
                 )
                 rec_txt = alt.Chart(hr_recruit).mark_text(align="left", dx=6, fontSize=10, color="#0F172A").encode(
-                    x="Volume:Q", y=alt.Y("Stage:N", sort=["Applicants", "Screened", "Interviewed", "Offers", "Hired"]), text=alt.Text("Conversion %:Q", format=".1f")
+                    x="Volume:Q", y=alt.Y("Stage:N", sort=["Postulantes", "Filtrados", "Entrevistados", "Ofertas", "Contratados"]), text=alt.Text("Conversion %:Q", format=".1f")
                 )
                 st.altair_chart(style_hr_chart(rec_bar + rec_txt, height=235), use_container_width=True)
                 render_hr_ai_reco(
                     "Talent Funnel Quality",
-                    f"Interview-to-offer conversion is {hr_recruit.loc[hr_recruit['Stage']=='Offers', 'Conversion %'].iloc[0]:.1f}%, indicating mid-funnel selectivity.",
+                    f"Interview-to-offer conversion is {hr_recruit.loc[hr_recruit['Stage']=='Ofertas', 'Conversion %'].iloc[0]:.1f}%, indicating mid-funnel selectivity.",
                     "Improve sourcing fit and screening quality to increase interview efficiency.",
                     "Shortens hiring cycle and lowers hiring cost per role.",
                 )
 
         with op_col2:
-            st.markdown('<div class="hr-mini-title">Time to Fill vs Quality of Hire</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Tiempo Llenado vs Calidad Contratación</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 fill_scatter = alt.Chart(hr_dept).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
                     x=alt.X("Time to Fill:Q", title="Time to Fill (days)"),
@@ -7585,7 +7884,7 @@ elif selected_menu == "HR & Workforce":
                     level="warning",
                 )
 
-        st.markdown('<div class="hr-mini-title">Training Programs vs Performance Lift</div>', unsafe_allow_html=True)
+        st.markdown('<div class="hr-mini-title">Programas Capacitación vs Lift Performance</div>', unsafe_allow_html=True)
         with st.container(border=True):
             train_bar = alt.Chart(hr_training).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=24, color="#60A5FA").encode(
                 x=alt.X("Program:N", title=None),
@@ -7606,20 +7905,20 @@ elif selected_menu == "HR & Workforce":
 
         op_col3, op_col4 = st.columns(2)
         with op_col3:
-            st.markdown('<div class="hr-mini-title">Recruitment Stage Drop-Off</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Drop-Off por Etapa Reclutamiento</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 drop_df = hr_recruit.copy()
                 drop_df["Drop-Off"] = (drop_df["Volume"].shift(1) - drop_df["Volume"]).fillna(0)
-                drop_chart = alt.Chart(drop_df[drop_df["Stage"] != "Applicants"]).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=30, color="#EF4444").encode(
+                drop_chart = alt.Chart(drop_df[drop_df["Stage"] != "Postulantes"]).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=30, color="#EF4444").encode(
                     x=alt.X("Stage:N", title=None),
                     y=alt.Y("Drop-Off:Q", title="Drop-Off Volume"),
                     tooltip=["Stage:N", alt.Tooltip("Drop-Off:Q", format=".0f"), alt.Tooltip("Conversion %:Q", format=".1f")],
                 )
-                drop_text = alt.Chart(drop_df[drop_df["Stage"] != "Applicants"]).mark_text(dy=-8, fontSize=9, color="#0F172A").encode(
+                drop_text = alt.Chart(drop_df[drop_df["Stage"] != "Postulantes"]).mark_text(dy=-8, fontSize=9, color="#0F172A").encode(
                     x="Stage:N", y="Drop-Off:Q", text=alt.Text("Drop-Off:Q", format=".0f")
                 )
                 st.altair_chart(style_hr_chart(drop_chart + drop_text, height=235), use_container_width=True)
-                top_drop = drop_df[drop_df["Stage"] != "Applicants"].sort_values("Drop-Off", ascending=False).iloc[0]
+                top_drop = drop_df[drop_df["Stage"] != "Postulantes"].sort_values("Drop-Off", ascending=False).iloc[0]
                 render_hr_ai_reco(
                     "Funnel Leakage",
                     f"Largest drop-off occurs at {top_drop['Stage']} stage ({top_drop['Drop-Off']:.0f} candidates).",
@@ -7629,7 +7928,7 @@ elif selected_menu == "HR & Workforce":
                 )
 
         with op_col4:
-            st.markdown('<div class="hr-mini-title">Training Hours vs Quality of Hire</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Horas Capacitación vs Calidad Contratación</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 train_scatter = alt.Chart(hr_dept).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
                     x=alt.X("Training Hrs:Q", title="Training Hours"),
@@ -7652,19 +7951,19 @@ elif selected_menu == "HR & Workforce":
                 )
 
     with hr_tab_risk:
-        st.markdown('<div class="hr-title">Workforce Risk and Strategy</div>', unsafe_allow_html=True)
+        st.markdown('<div class="hr-title">Riesgo Workforce y Estrategia</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="hr-kpi-grid">
-                <div class="hr-kpi-card crit"><div class="k">Top Risk Driver</div><div class="v">{top_hr_risk['Risk Driver']}</div><div class="d">Highest exposure risk</div></div>
-                <div class="hr-kpi-card warn"><div class="k">Risk Exposure</div><div class="v">{hr_risk['Exposure Score'].sum():.0f}</div><div class="d">Portfolio risk index</div></div>
-                <div class="hr-kpi-card"><div class="k">Base Headcount EoQ</div><div class="v">{hr_scenario.loc[hr_scenario['Scenario']=='Base', 'Headcount EoQ'].iloc[0]:.0f}</div><div class="d">Most probable scenario</div></div>
-                <div class="hr-kpi-card {'warn' if hr_scenario.loc[hr_scenario['Scenario']=='Downside', 'Voluntary Attrition %'].iloc[0] > 11 else ''}"><div class="k">Downside Attrition</div><div class="v">{hr_scenario.loc[hr_scenario['Scenario']=='Downside', 'Voluntary Attrition %'].iloc[0]:.1f}%</div><div class="d">Stress case signal</div></div>
+                <div class="hr-kpi-card crit"><div class="k">Top Driver Riesgo</div><div class="v">{top_hr_risk['Risk Driver']}</div><div class="d">Mayor riesgo exposición</div></div>
+                <div class="hr-kpi-card warn"><div class="k">Exposición Riesgo</div><div class="v">{hr_risk['Exposure Score'].sum():.0f}</div><div class="d">Índice riesgo portafolio</div></div>
+                <div class="hr-kpi-card"><div class="k">Dotación Base EoQ</div><div class="v">{hr_scenario.loc[hr_scenario['Scenario']=='Base', 'Headcount EoQ'].iloc[0]:.0f}</div><div class="d">Escenario más probable</div></div>
+                <div class="hr-kpi-card {'warn' if hr_scenario.loc[hr_scenario['Scenario']=='Downside', 'Voluntary Attrition %'].iloc[0] > 11 else ''}"><div class="k">Rotación Downside</div><div class="v">{hr_scenario.loc[hr_scenario['Scenario']=='Downside', 'Voluntary Attrition %'].iloc[0]:.1f}%</div><div class="d">Señal caso stress</div></div>
             </div>
         """), unsafe_allow_html=True)
 
         rk_col1, rk_col2 = st.columns(2)
         with rk_col1:
-            st.markdown('<div class="hr-mini-title">Risk Exposure by Driver</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Exposición Riesgo por Driver</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 hr_risk_bar = alt.Chart(hr_risk).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=20).encode(
                     x=alt.X("Exposure Score:Q", title="Exposure Score"),
@@ -7685,7 +7984,7 @@ elif selected_menu == "HR & Workforce":
                 )
 
         with rk_col2:
-            st.markdown('<div class="hr-mini-title">Workforce Scenario Outlook</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Escenarios Workforce Outlook</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 hr_sc_bar = alt.Chart(hr_scenario).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=56).encode(
                     x=alt.X("Scenario:N", title=None),
@@ -7707,7 +8006,7 @@ elif selected_menu == "HR & Workforce":
 
         rk_col3, rk_col4 = st.columns(2)
         with rk_col3:
-            st.markdown('<div class="hr-mini-title">Risk Heat Matrix</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Matriz Heat Riesgo</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 risk_heat = alt.Chart(hr_risk).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
                     x=alt.X("Likelihood:Q", title="Likelihood"),
@@ -7730,7 +8029,7 @@ elif selected_menu == "HR & Workforce":
                 )
 
         with rk_col4:
-            st.markdown('<div class="hr-mini-title">Scenario Attrition vs Productivity Trade-off</div>', unsafe_allow_html=True)
+            st.markdown('<div class="hr-mini-title">Trade-off Rotación vs Productividad</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 trade_scatter = alt.Chart(hr_scenario).mark_circle(opacity=0.9, stroke="#FFFFFF", strokeWidth=1.3).encode(
                     x=alt.X("Voluntary Attrition %:Q", title="Voluntary Attrition (%)"),
@@ -7774,7 +8073,7 @@ elif selected_menu == "Conclusion":
 # ---------------------------------------------------------------------------
 st.markdown(dedent(f"""
     <div class="mf-footer">
-        <div class="mf-footer-brand">Mi<span>Fibra</span></div>
+        <div class="mf-footer-brand">WOM <span>Chile</span></div>
         <div style="max-width:760px; margin:16px auto 0; padding:14px 16px; border-radius:12px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.18); color:#E2E8F0;">
             <div style="font-size:0.9rem; font-weight:800; letter-spacing:0.2px;">WOM + Snowflake: partnership for scalable telecom growth</div>
             <div style="font-size:0.82rem; line-height:1.45; margin-top:6px; color:rgba(255,255,255,0.82);">
