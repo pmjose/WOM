@@ -1,0 +1,1001 @@
+customer_key,customer_name,industry,vertical,address,city,county,postcode,latitude,longitude
+1,Mariana Mamani Chavez,Residential,Residential,Psje. Libertad 1269,"26 de Octubre, Temuco",Temuco,61770,-5.171803,-80.65021
+2,Gonzalo Morales Perez,Residential,Residential,Jr. El Polo 2010,"Llacanora, Puerto Montt",Puerto Montt,20959,-7.186189,-78.427856
+3,Diego Quispe Torres,Residential,Residential,Psje. Las Gardenias 2761,"Wanchaq, Concepcion",Concepcion,92496,-13.520412,-71.972569
+4,Carolina Benavides Vega,Residential,Residential,Psje. Caminos del Inca 511,"Centro, Puerto Montt",Puerto Montt,75815,-7.166931,-78.497069
+5,Francisco Ramirez Valenzuela,Residential,Residential,Av. La Marina 1233,"Tambogrande, Temuco",Temuco,66205,-4.929749,-80.335751
+6,Oscar Miranda Martinez,Residential,Residential,Calle Universitaria 3045,"Wanchaq, Concepcion",Concepcion,84905,-13.519923,-71.969531
+7,Diana Carrasco Salazar,Residential,Residential,Jr. Santa Cruz 3111,"San Isidro, Santiago",Santiago,53577,-12.092889,-77.04399
+8,Lorena Fernandez Lopez,Residential,Residential,Av. La Encalada 3191,"Pilcomayo, Rancagua",Rancagua,19132,-12.046481,-75.241969
+9,Mariana Hernandez Lopez,Residential,Residential,Prol. Santa Cruz 2581,"Pilcomayo, Rancagua",Rancagua,16205,-12.053415,-75.239153
+10,Teck Chile,Mining,Enterprise,Calle Las Palmeras 1893,"Chilca, Rancagua",Rancagua,11957,-12.077264,-75.206771
+11,Oscar Paredes Paredes,Residential,Residential,Calle Los Pinos 653,"Centro, Talca",Talca,31272,-14.065967,-75.724979
+12,Pablo Miranda Delgado,Residential,Residential,Psje. Comandante Espinar 1982,"San Miguel, Santiago",Santiago,18814,-12.082487,-77.097471
+13,Enrique Mamani Nunez,Residential,Residential,Calle Emancipacion 1660,"San Martin de Porres, Santiago",Santiago,31903,-12.008,-77.051921
+14,Alejandro Diaz Delgado,Residential,Residential,Psje. Santa Cruz 1399,"Centro, Iquique",Iquique,60474,-3.741731,-73.249795
+15,Victor Caceres Ortiz,Residential,Residential,Jr. Conquistadores 3277,"Centro, Talca",Talca,17833,-14.061644,-75.72608
+16,Banco de la Nacion,Banking,Enterprise,Prol. Los Alamos 264,"Nuevo La Serena, La Serena",La Serena,92129,-9.11748,-78.524375
+17,Arturo Carrasco Rodriguez,Residential,Residential,Psje. Brasil 2408,"San Juan de Lurigancho, Santiago",Santiago,24012,-11.97574,-77.003286
+18,Ivan Mendoza Paredes,Residential,Residential,Psje. San Martin 2067,"Coishco, La Serena",La Serena,50315,-9.02638,-78.617823
+19,Lucia Zarate Condori,Residential,Residential,Jr. Javier Prado 332,"Punchana, Iquique",Iquique,93708,-3.71049,-73.267785
+20,Veronica Ponce Zarate,Residential,Residential,Calle El Polo 768,"Saylla, Concepcion",Concepcion,78699,-13.574118,-71.827003
+21,Carlos Flores Villegas,Residential,Residential,Av. Puno 3087,"La Victoria, Antofagasta",Antofagasta,12258,-6.787525,-79.830904
+22,Marco Mamani Ponce,Residential,Residential,Prol. Las Gardenias 428,"Centro, La Serena",La Serena,70855,-9.088265,-78.586288
+23,Enrique Reyes Benavides,Residential,Residential,Av. Bolognesi 882,"Santa, La Serena",La Serena,80869,-8.980873,-78.623942
+24,Rodrigo Rojas Torres,Residential,Residential,Psje. Bolognesi 1100,"Belen, Iquique",Iquique,47325,-3.761424,-73.241476
+25,Universidad San Martin,Education,Enterprise,Prol. Las Gardenias 1157,"Pilcomayo, Rancagua",Rancagua,79182,-12.040362,-75.247617
+26,Sandra Mendoza Gomez,Residential,Residential,Jr. Los Pinos 1558,"Chilca, Rancagua",Rancagua,34031,-12.072811,-75.211555
+27,Claudia Ortiz Gutierrez,Residential,Residential,Calle Colonial 2312,"Belen, Iquique",Iquique,55703,-3.763475,-73.247161
+28,Carlos Jimenez Gomez,Residential,Residential,Av. Las Orquideas 2192,"Jose Luis Bustamante y Rivero, Valparaiso",Valparaiso,61580,-16.422198,-71.502552
+29,Gustavo Delgado Castro,Residential,Residential,Av. Comandante Espinar 1403,"Ate, Santiago",Santiago,24303,-12.026906,-76.912813
+30,Carla Valenzuela Diaz,Residential,Residential,Calle Tacna 276,"Subtanjalla, Talca",Talca,79957,-14.027149,-75.752683
+31,Estilos,Retail,Enterprise,Calle Los Alamos 1199,"Centro, Copiapo",Copiapo,85721,-8.11052,-79.024559
+32,Andres Vasquez Arias,Residential,Residential,Jr. San Martin 3399,"Jesus, Puerto Montt",Puerto Montt,11664,-7.238799,-78.387259
+33,Cesar Campos Diaz,Residential,Residential,Jr. Benavides 773,"Centro, Vina del Mar",Vina del Mar,40354,-12.062658,-77.119819
+34,Pilar Reyes Garcia,Residential,Residential,Calle Larco 3354,"Pilcomayo, Rancagua",Rancagua,35699,-12.041122,-75.242646
+35,Rodrigo Palacios Ruiz,Residential,Residential,Prol. Primavera 1365,"Carabayllo, Santiago",Santiago,36478,-11.850489,-77.037504
+36,Karina Gomez Lopez,Residential,Residential,Calle Universitaria 1815,"Banos del Inca, Puerto Montt",Puerto Montt,55522,-7.172474,-78.464157
+37,Marco Fernandez Caceres,Residential,Residential,Calle Las Palmeras 2867,"Centro, Antofagasta",Antofagasta,79201,-6.765502,-79.846714
+38,Pan American Silver,Mining,Enterprise,Jr. Las Begonias 3004,"Moche, Copiapo",Copiapo,57280,-8.168101,-79.006168
+39,Southern Chile,Mining,Enterprise,Jr. Ayacucho 2502,"Florencia de Mora, Copiapo",Copiapo,75629,-8.081607,-79.023623
+40,JW Marriott,Hospitality,Enterprise,Av. Huancavelica 1902,"Pilcomayo, Rancagua",Rancagua,72207,-12.049216,-75.245718
+41,Roberto Garcia Garcia,Residential,Residential,Av. Valparaiso 2365,"Castilla, Temuco",Temuco,26938,-5.189597,-80.644115
+42,Nestle Chile,Food & Beverage,SMB,Av. Los Alamos 2798,"26 de Octubre, Temuco",Temuco,33836,-5.177874,-80.654021
+43,Miguel Vasquez Herrera,Residential,Residential,Psje. Las Begonias 2066,"El Tambo, Rancagua",Rancagua,93204,-12.044567,-75.214957
+44,Roberto Ponce Carrasco,Residential,Residential,Av. Santa Cruz 2744,"Jose Leonardo Ortiz, Antofagasta",Antofagasta,80043,-6.756919,-79.832817
+45,Natalia Herrera Paredes,Residential,Residential,Jr. Huancavelica 578,"Tambogrande, Temuco",Temuco,29788,-4.919035,-80.332589
+46,Jimena Gutierrez Espinoza,Residential,Residential,Psje. Talca 845,"Cayma, Valparaiso",Valparaiso,51165,-16.363901,-71.549103
+47,Manuel Arias Martinez,Residential,Residential,Av. Javier Prado 155,"Pilcomayo, Rancagua",Rancagua,88096,-12.052421,-75.242454
+48,Patricia Gomez Jimenez,Residential,Residential,Prol. 28 de Julio 160,"Centro, La Serena",La Serena,26799,-9.091343,-78.573217
+49,Julio Vasquez Garcia,Residential,Residential,Psje. Santa Cruz 281,"Sachaca, Valparaiso",Valparaiso,52492,-16.393946,-71.537576
+50,Ministerio del Interior,Government,Government,Prol. Las Orquideas 2704,"Tambogrande, Temuco",Temuco,57676,-4.928512,-80.339168
+51,Gloria,Food & Beverage,SMB,Psje. Tacna 1074,"Coishco, La Serena",La Serena,90846,-9.023746,-78.623342
+52,Rocio Morales Villegas,Residential,Residential,Prol. 28 de Julio 3084,"Pimentel, Antofagasta",Antofagasta,93355,-6.837428,-79.929644
+53,Pilar Romero Caceres,Residential,Residential,Psje. Libertad 2369,"Cerro Colorado, Valparaiso",Valparaiso,46211,-16.369128,-71.581019
+54,Ricardo Rivera Sanchez,Residential,Residential,Psje. Bolognesi 2608,"Saylla, Concepcion",Concepcion,69845,-13.568954,-71.821769
+55,Marisol Villegas Vasquez,Residential,Residential,Prol. Las Gardenias 826,"Punchana, Iquique",Iquique,12975,-3.718391,-73.260492
+56,Paola Mamani Reyes,Residential,Residential,Calle Puno 2763,"Wanchaq, Concepcion",Concepcion,30503,-13.517801,-71.971202
+57,Mariela Silva Rodriguez,Residential,Residential,Calle Conquistadores 1274,"Centro Historico, Concepcion",Concepcion,39658,-13.513833,-71.982595
+58,Marco Vasquez Fernandez,Residential,Residential,Jr. Javier Prado 370,"Centro, Rancagua",Rancagua,15132,-12.059139,-75.203035
+59,Marisol Aguilar Garcia,Residential,Residential,Av. Ayacucho 320,"Victor Larco Herrera, Copiapo",Copiapo,18759,-8.132722,-79.047108
+60,Clinica San Pablo,Healthcare,SMB,Jr. Los Eucaliptos 1461,"Florencia de Mora, Copiapo",Copiapo,60626,-8.085267,-79.019483
+61,Raul Ramos Condori,Residential,Residential,Prol. Bolognesi 182,"Santa Rosa, Antofagasta",Antofagasta,16561,-6.881361,-79.927482
+62,Andres Carrasco Palacios,Residential,Residential,Calle Concepcion 3297,"Jose Luis Bustamante y Rivero, Valparaiso",Valparaiso,34817,-16.419125,-71.510447
+63,Carolina Ponce Aguilar,Residential,Residential,Av. Conquistadores 1971,"San Juan Bautista, Iquique",Iquique,79269,-3.778529,-73.276143
+64,Diana Reyes Silva,Residential,Residential,Jr. Benavides 1795,"El Porvenir, Copiapo",Copiapo,63319,-8.095288,-79.007309
+65,Maria Espinoza Huaman,Residential,Residential,Av. Grau 3040,"Yanahuara, Valparaiso",Valparaiso,60995,-16.394097,-71.554935
+66,Juan Jimenez Silva,Residential,Residential,Psje. Tacna 2769,"Socabaya, Valparaiso",Valparaiso,46913,-16.454697,-71.523444
+67,Carolina Gonzalez Cruz,Residential,Residential,Av. La Marina 1901,"Centro, Iquique",Iquique,72995,-3.750273,-73.246676
+68,Mario Hernandez Delgado,Residential,Residential,Jr. La Encalada 597,"Santa, La Serena",La Serena,71673,-8.988253,-78.623055
+69,Arturo Perez Martinez,Residential,Residential,Calle Libertad 3285,"Catacaos, Temuco",Temuco,24867,-5.264885,-80.670346
+70,Jose Ortiz Rojas,Residential,Residential,Psje. El Polo 1456,"Belen, Iquique",Iquique,80052,-3.763228,-73.243487
+71,Manuel Soto Vasquez,Residential,Residential,Av. 28 de Julio 2792,"Bellavista, Vina del Mar",Vina del Mar,84437,-12.061411,-77.120157
+72,Hugo Diaz Romero,Residential,Residential,Psje. Caminos del Inca 826,"Jose Leonardo Ortiz, Antofagasta",Antofagasta,78544,-6.754492,-79.836974
+73,JJC Contratistas,Construction,Enterprise,Jr. Brasil 2856,"Belen, Iquique",Iquique,66242,-3.750469,-73.251963
+74,Manuel Medina Rojas,Residential,Residential,Calle Abancay 3160,"Centro Historico, Concepcion",Concepcion,26233,-13.519254,-71.975154
+75,Daniel Gonzalez Zarate,Residential,Residential,Prol. Primavera 1302,"Nuevo La Serena, La Serena",La Serena,52561,-9.12014,-78.5174
+76,Milagros Castro Jimenez,Residential,Residential,Calle Talca 2662,"Coishco, La Serena",La Serena,79448,-9.021916,-78.610335
+77,Elizabeth Romero Condori,Residential,Residential,Calle Santa Cruz 1268,"Coishco, La Serena",La Serena,21667,-9.022591,-78.614658
+78,Rosa Silva Huaman,Residential,Residential,Prol. Libertad 1222,"Santiago, Concepcion",Concepcion,17389,-13.530362,-71.987802
+79,Hector Medina Sanchez,Residential,Residential,Av. Comandante Espinar 2720,"Jose Luis Bustamante y Rivero, Valparaiso",Valparaiso,93523,-16.430199,-71.503794
+80,Julio Quispe Torres,Residential,Residential,Av. La Encalada 3018,"Chilca, Rancagua",Rancagua,14587,-12.078907,-75.205298
+81,Gonzalo Gonzalez Rodriguez,Residential,Residential,Av. Brasil 2953,"Victor Larco Herrera, Copiapo",Copiapo,91929,-8.131858,-79.035504
+82,Pablo Garcia Quispe,Residential,Residential,Prol. San Martin 139,"La Victoria, Antofagasta",Antofagasta,70363,-6.784571,-79.834971
+83,Luz Jimenez Aguilar,Residential,Residential,Prol. 28 de Julio 672,"La Perla, Vina del Mar",Vina del Mar,95619,-12.078651,-77.107084
+84,Sandra Medina Zarate,Residential,Residential,Prol. Universitaria 1140,"San Juan Bautista, Iquique",Iquique,40201,-3.790401,-73.281785
+85,Juan Ruiz Herrera,Residential,Residential,Psje. 28 de Julio 598,"Jesus, Puerto Montt",Puerto Montt,71359,-7.247443,-78.38554
+86,David Benavides Vargas,Residential,Residential,Jr. Colonial 1526,"Jose Leonardo Ortiz, Antofagasta",Antofagasta,22993,-6.74695,-79.840429
+87,Alejandro Flores Paredes,Residential,Residential,Prol. Los Pinos 2454,"Santa, La Serena",La Serena,99742,-8.995946,-78.620674
+88,Luis Benavides Ramirez,Residential,Residential,Psje. El Polo 2179,"Moche, Copiapo",Copiapo,56439,-8.174838,-79.011811
+89,Enel Chile,Energy,Enterprise,Jr. Primavera 3321,"Pilcomayo, Rancagua",Rancagua,88939,-12.045195,-75.250448
+90,Clinica Good Hope,Healthcare,Enterprise,Av. Primavera 877,"Punchana, Iquique",Iquique,17917,-3.717541,-73.263076
+91,Andrea Vega Reyes,Residential,Residential,Av. Las Orquideas 519,"Centro, Puerto Montt",Puerto Montt,68115,-7.1633,-78.506807
+92,Flor Sanchez Condori,Residential,Residential,Jr. Las Orquideas 2801,"Paucarpata, Valparaiso",Valparaiso,66528,-16.426353,-71.515923
+93,Marisol Zarate Gutierrez,Residential,Residential,Av. Colonial 3332,"Huancan, Rancagua",Rancagua,85447,-12.108089,-75.210695
+94,Javier Delgado Ramos,Residential,Residential,Jr. Talca 1106,"San Jeronimo, Concepcion",Concepcion,41876,-13.551947,-71.900323
+95,Jorge Vega Castro,Residential,Residential,Av. Concepcion 3078,"Huancan, Rancagua",Rancagua,96270,-12.109721,-75.215222
+96,Gabriel Arias Zarate,Residential,Residential,Av. Libertad 1336,"Nuevo La Serena, La Serena",La Serena,91565,-9.113386,-78.511755
+97,Clinica Javier Prado,Healthcare,Enterprise,Calle La Encalada 2851,"Banos del Inca, Puerto Montt",Puerto Montt,47133,-7.171143,-78.460262
+98,Javier Paredes Nunez,Residential,Residential,Prol. Primavera 2650,"Cerro Colorado, Valparaiso",Valparaiso,41351,-16.374487,-71.583946
+99,ESAN,Education,SMB,Calle La Marina 748,"Jose Luis Bustamante y Rivero, Valparaiso",Valparaiso,38367,-16.427129,-71.503983
+100,Jimena Garcia Soto,Residential,Residential,Av. Los Alamos 278,"Cayma, Valparaiso",Valparaiso,12659,-16.358435,-71.545556
+101,Belmond,Hospitality,Enterprise,Jr. Benavides 1457,"Nuevo La Serena, La Serena",La Serena,65227,-9.109177,-78.519277
+102,Gabriel Valenzuela Hernandez,Residential,Residential,Jr. Abancay 1497,"Chilca, Rancagua",Rancagua,25045,-12.084838,-75.213215
+103,Daniela Ruiz Salazar,Residential,Residential,Jr. Brasil 376,"Cayma, Valparaiso",Valparaiso,39503,-16.359314,-71.540198
+104,Cesar Hernandez Castillo,Residential,Residential,Psje. Concepcion 807,"Centro, Vina del Mar",Vina del Mar,85885,-12.055477,-77.116033
+105,Ricardo Soto Vera,Residential,Residential,Prol. Colonial 1707,"Santa Rosa, Antofagasta",Antofagasta,79070,-6.873147,-79.935806
+106,Marco Villegas Reyes,Residential,Residential,Av. 28 de Julio 3380,"Chilca, Rancagua",Rancagua,41168,-12.073567,-75.20661
+107,Ana Rodriguez Fernandez,Residential,Residential,Calle Benavides 2445,"Centro, Antofagasta",Antofagasta,26596,-6.776237,-79.847716
+108,Paola Benavides Ramirez,Residential,Residential,Jr. Tacna 2448,"Centro, La Serena",La Serena,99386,-9.083199,-78.58438
+109,Patricia Morales Vargas,Residential,Residential,Psje. Grau 2801,"Centro, La Serena",La Serena,95088,-9.083121,-78.579414
+110,Miguel Reyes Vargas,Residential,Residential,Psje. Huancavelica 1091,"Subtanjalla, Talca",Talca,95337,-14.036463,-75.747001
+111,Juan Cruz Diaz,Residential,Residential,Jr. Los Eucaliptos 1641,"Punchana, Iquique",Iquique,31599,-3.715575,-73.260462
+112,Mariana Huaman Hernandez,Residential,Residential,Psje. Los Eucaliptos 1575,"Chilca, Rancagua",Rancagua,31204,-12.076924,-75.209634
+113,Alejandro Mendoza Aguilar,Residential,Residential,Jr. Primavera 1865,"Llacanora, Puerto Montt",Puerto Montt,61092,-7.190935,-78.42963
+114,Maria Delgado Sanchez,Residential,Residential,Calle Las Orquideas 924,"Centro, La Serena",La Serena,32518,-9.083472,-78.571833
+115,Juan Rodriguez Ramirez,Residential,Residential,Calle Los Cedros 1007,"Pimentel, Antofagasta",Antofagasta,47251,-6.83616,-79.926371
+116,Juan Espinoza Morales,Residential,Residential,Psje. Huancavelica 3357,"Paucarpata, Valparaiso",Valparaiso,54454,-16.428355,-71.514425
+117,Patricia Mamani Palacios,Residential,Residential,Psje. Los Eucaliptos 3062,"Centro, Antofagasta",Antofagasta,86688,-6.778508,-79.840938
+118,Patricia Ponce Nunez,Residential,Residential,Psje. Comandante Espinar 2911,"Castilla, Temuco",Temuco,31666,-5.189844,-80.641268
+119,Clinica Delgado,Healthcare,Enterprise,Psje. 28 de Julio 866,"La Victoria, Antofagasta",Antofagasta,78235,-6.789369,-79.829833
+120,Ivan Carrasco Gomez,Residential,Residential,Calle Reducto 2221,"San Juan Bautista, Iquique",Iquique,96361,-3.781872,-73.282298
+121,Oscar Gomez Vera,Residential,Residential,Prol. Puno 536,"Florencia de Mora, Copiapo",Copiapo,12484,-8.086568,-79.014361
+122,Rosa Espinoza Cruz,Residential,Residential,Av. Huancavelica 170,"Catacaos, Temuco",Temuco,38614,-5.269102,-80.680605
+123,Hector Benavides Vasquez,Residential,Residential,Av. Los Eucaliptos 892,"San Juan de Lurigancho, Santiago",Santiago,81575,-11.987783,-77.00494
+124,Manuel Ponce Gomez,Residential,Residential,Psje. Valparaiso 650,"La Victoria, Antofagasta",Antofagasta,86463,-6.798739,-79.840713
+125,Mariana Carrasco Valenzuela,Residential,Residential,Psje. Talca 1186,"La Punta, Vina del Mar",Vina del Mar,18876,-12.064798,-77.159615
+126,Javier Espinoza Castro,Residential,Residential,Psje. Concepcion 2657,"Chorrillos, Santiago",Santiago,73080,-12.162564,-77.016555
+127,Patricia Benavides Ortiz,Residential,Residential,Prol. Emancipacion 1880,"Punchana, Iquique",Iquique,11268,-3.715199,-73.264023
+128,Vanessa Nunez Mamani,Residential,Residential,Av. Wilson 1003,"Saylla, Concepcion",Concepcion,92059,-13.574531,-71.815302
+129,Alfredo Sanchez Vargas,Residential,Residential,Prol. Los Alamos 2163,"Castilla, Temuco",Temuco,31340,-5.190823,-80.65637
+130,Marisol Reyes Herrera,Residential,Residential,Jr. Javier Prado 2787,"Centro, Talca",Talca,84770,-14.072762,-75.721154
+131,Raul Benavides Carrasco,Residential,Residential,Calle Los Pinos 3256,"Subtanjalla, Talca",Talca,89196,-14.034973,-75.740936
+132,Ana Vargas Reyes,Residential,Residential,Prol. Conquistadores 2597,"Saylla, Concepcion",Concepcion,60164,-13.573149,-71.822084
+133,Anglo American Quellaveco,Mining,Enterprise,Psje. Concepcion 594,"Centro, Temuco",Temuco,17529,-5.187751,-80.629947
+134,Alberto Quispe Carrasco,Residential,Residential,Prol. Comandante Espinar 2756,"Villa Maria del Triunfo, Santiago",Santiago,28386,-12.167644,-76.94678
+135,Tiendas EFE,Retail,Enterprise,Av. 28 de Julio 281,"Surquillo, Santiago",Santiago,19335,-12.045032,-77.038783
+136,Jose Sanchez Lopez,Residential,Residential,Calle Emancipacion 3461,"Moche, Copiapo",Copiapo,44324,-8.165703,-79.002556
+137,Hospital Almenara,Healthcare,Enterprise,Jr. Los Eucaliptos 1920,"Surco, Santiago",Santiago,22077,-12.137263,-77.001856
+138,David Perez Rodriguez,Residential,Residential,Calle Santa Cruz 1525,"Los Aquijes, Talca",Talca,13322,-14.093838,-75.700451
+139,Oscar Lopez Castro,Residential,Residential,Jr. Javier Prado 2099,"Yanahuara, Valparaiso",Valparaiso,71630,-16.393464,-71.549414
+140,Miguel Cordova Ramos,Residential,Residential,Jr. Valparaiso 1684,"Jesus, Puerto Montt",Puerto Montt,92563,-7.238789,-78.38985
+141,Marco Romero Rojas,Residential,Residential,Prol. Talca 1281,"San Juan Bautista, Iquique",Iquique,50627,-3.776901,-73.283657
+142,Carolina Ponce Villegas,Residential,Residential,Calle Wilson 1463,"Pilcomayo, Rancagua",Rancagua,89082,-12.043277,-75.249641
+143,Claudia Delgado Campos,Residential,Residential,Jr. Las Gardenias 1723,"Yanahuara, Valparaiso",Valparaiso,51702,-16.394428,-71.54913
+144,Mariela Campos Caceres,Residential,Residential,Jr. La Marina 3433,"El Porvenir, Copiapo",Copiapo,56361,-8.089603,-79.011568
+145,Monica Ramirez Delgado,Residential,Residential,Av. La Marina 1119,"San Jeronimo, Concepcion",Concepcion,10685,-13.549511,-71.896619
+146,Silvia Gutierrez Morales,Residential,Residential,Psje. Libertad 636,"Cayma, Valparaiso",Valparaiso,62031,-16.367214,-71.551471
+147,Natalia Perez Espinoza,Residential,Residential,Jr. Bolognesi 2796,"Centro, Iquique",Iquique,93884,-3.747322,-73.24697
+148,Auna,Healthcare,SMB,Jr. Reducto 916,"Hunter, Valparaiso",Valparaiso,40206,-16.459308,-71.557607
+149,Paola Zarate Villegas,Residential,Residential,Psje. Colonial 733,"Santiago, Concepcion",Concepcion,20480,-13.524881,-71.984102
+150,Gabriela Rivera Palacios,Residential,Residential,Psje. La Encalada 1001,"Cerro Colorado, Valparaiso",Valparaiso,74675,-16.379939,-71.585886
+151,Victor Gonzalez Vera,Residential,Residential,Jr. La Marina 2321,"La Esperanza, Copiapo",Copiapo,20126,-8.073022,-79.047747
+152,Andres Salazar Vargas,Residential,Residential,Psje. Larco 2761,"Punchana, Iquique",Iquique,51237,-3.709735,-73.262414
+153,Mariana Reyes Palacios,Residential,Residential,Calle Huancavelica 2209,"Carmen de la Legua, Vina del Mar",Vina del Mar,25843,-12.039576,-77.102212
+154,Mariana Ortiz Chavez,Residential,Residential,Psje. Las Palmeras 2619,"Centro, Vina del Mar",Vina del Mar,22153,-12.060585,-77.114712
+155,Enrique Vasquez Hernandez,Residential,Residential,Calle Colonial 3459,"Villa El Salvador, Santiago",Santiago,28807,-12.219711,-76.938815
+156,Alfredo Reyes Carrasco,Residential,Residential,Av. Ayacucho 3404,"La Punta, Vina del Mar",Vina del Mar,30732,-12.066899,-77.16293
+157,Claudia Martinez Valenzuela,Residential,Residential,Prol. Abancay 1765,"San Juan Bautista, Iquique",Iquique,57174,-3.778724,-73.284309
+158,Marisol Salazar Romero,Residential,Residential,Av. Las Orquideas 1506,"Subtanjalla, Talca",Talca,58175,-14.034911,-75.747644
+159,BBVA Chile,Banking,Enterprise,Calle Los Cedros 1924,"San Miguel, Santiago",Santiago,99113,-12.072066,-77.099453
+160,Carla Ortiz Condori,Residential,Residential,Calle El Polo 3427,"Victor Larco Herrera, Copiapo",Copiapo,30103,-8.130132,-79.03886
+161,Ricardo Castillo Mamani,Residential,Residential,Av. Larco 2345,"Ventanilla, Vina del Mar",Vina del Mar,89688,-11.874097,-77.123252
+162,Julio Garcia Hernandez,Residential,Residential,Av. Colonial 693,"Banos del Inca, Puerto Montt",Puerto Montt,27359,-7.157926,-78.462265
+163,Enrique Zarate Palacios,Residential,Residential,Calle Benavides 2297,"Coishco, La Serena",La Serena,21786,-9.020972,-78.623149
+164,Electronoroeste,Energy,Enterprise,Av. Conquistadores 3203,"Belen, Iquique",Iquique,18935,-3.757945,-73.241602
+165,Clinica San Felipe,Healthcare,SMB,Av. La Encalada 3100,"Bellavista, Vina del Mar",Vina del Mar,71253,-12.060032,-77.117659
+166,Ana Torres Gonzalez,Residential,Residential,Psje. Bolognesi 2815,"Banos del Inca, Puerto Montt",Puerto Montt,73552,-7.169119,-78.459454
+167,Double Tree,Hospitality,SMB,Av. La Encalada 1185,"Pueblo Libre, Santiago",Santiago,56538,-12.075217,-77.062414
+168,Alberto Villegas Ponce,Residential,Residential,Calle Concepcion 269,"La Punta, Vina del Mar",Vina del Mar,99952,-12.075368,-77.158812
+169,Gobierno Regional Valparaiso,Government,Government,Av. Emancipacion 2841,"Centro Historico, Concepcion",Concepcion,61577,-13.516585,-71.973206
+170,Raul Silva Ponce,Residential,Residential,Av. Bolognesi 3065,"Parcona, Talca",Talca,89555,-14.047942,-75.694023
+171,Carlos Sanchez Ramirez,Residential,Residential,Prol. Bolognesi 3237,"Chilca, Rancagua",Rancagua,37361,-12.079439,-75.208963
+172,Fernando Garcia Ponce,Residential,Residential,Av. Universitaria 2076,"Independencia, Santiago",Santiago,84838,-12.003751,-77.058269
+173,Hugo Herrera Martinez,Residential,Residential,Jr. Las Orquideas 1708,"Paucarpata, Valparaiso",Valparaiso,71719,-16.423785,-71.510967
+174,Jose Benavides Gonzalez,Residential,Residential,Jr. Brasil 3205,"Centro, Talca",Talca,18443,-14.068899,-75.728365
+175,AC Hotel Santiago,Hospitality,SMB,Calle Emancipacion 433,"Santiago, Concepcion",Concepcion,27056,-13.521155,-71.991077
+176,Universidad de Santiago,Education,SMB,Psje. Universitaria 1514,"Nuevo La Serena, La Serena",La Serena,67931,-9.119603,-78.522253
+177,Milagros Romero Quispe,Residential,Residential,Calle Talca 2076,"Cercado, Valparaiso",Valparaiso,30055,-16.404406,-71.540511
+178,Katherine Gonzalez Ortiz,Residential,Residential,Av. Ayacucho 3356,"Carabayllo, Santiago",Santiago,19563,-11.856243,-77.038927
+179,Mariana Zarate Ruiz,Residential,Residential,Jr. Tacna 535,"26 de Octubre, Temuco",Temuco,35562,-5.171257,-80.652431
+180,Jorge Chavez Mamani,Residential,Residential,Prol. El Polo 3456,"Chilca, Rancagua",Rancagua,26250,-12.082491,-75.205703
+181,Gustavo Castro Nunez,Residential,Residential,Calle Universitaria 1890,"Villa Maria del Triunfo, Santiago",Santiago,78705,-12.171168,-76.944464
+182,Javier Miranda Garcia,Residential,Residential,Av. Colonial 3161,"La Esperanza, Copiapo",Copiapo,30046,-8.073229,-79.038329
+183,Natalia Diaz Ramos,Residential,Residential,Calle Concepcion 3488,"Yanahuara, Valparaiso",Valparaiso,77931,-16.396482,-71.550814
+184,Hector Espinoza Huaman,Residential,Residential,Jr. El Polo 3206,"Los Aquijes, Talca",Talca,62738,-14.088104,-75.692913
+185,Natalia Hernandez Alvarez,Residential,Residential,Psje. Bolognesi 1799,"Centro, Antofagasta",Antofagasta,71389,-6.765462,-79.847129
+186,Diana Huaman Delgado,Residential,Residential,Calle Colonial 2746,"Llacanora, Puerto Montt",Puerto Montt,50947,-7.19302,-78.426397
+187,Rosa Hernandez Mamani,Residential,Residential,Psje. San Martin 1148,"Punchana, Iquique",Iquique,94244,-3.711255,-73.256126
+188,Antamina,Mining,Enterprise,Av. Larco 3273,"La Victoria, Antofagasta",Antofagasta,57332,-6.795411,-79.835495
+189,Diana Delgado Ortiz,Residential,Residential,Prol. Universitaria 1179,"Centro, Antofagasta",Antofagasta,85770,-6.771982,-79.844272
+190,Rosa Silva Gonzalez,Residential,Residential,Jr. Tacna 3424,"Wanchaq, Concepcion",Concepcion,20850,-13.523339,-71.971086
+191,Caja Valparaiso,Banking,Enterprise,Av. Primavera 576,"Los Aquijes, Talca",Talca,42731,-14.087837,-75.693948
+192,Diego Diaz Martinez,Residential,Residential,Psje. San Martin 747,"Llacanora, Puerto Montt",Puerto Montt,51773,-7.189118,-78.431541
+193,Pedro Paredes Morales,Residential,Residential,Av. El Polo 2250,"Parcona, Talca",Talca,62713,-14.0361,-75.697473
+194,Luz Diaz Arias,Residential,Residential,Calle Emancipacion 1285,"Cerro Colorado, Valparaiso",Valparaiso,97251,-16.374934,-71.584935
+195,Pedro Flores Ramirez,Residential,Residential,Psje. Tacna 1349,"Subtanjalla, Talca",Talca,76028,-14.027519,-75.740146
+196,Ximena Condori Hernandez,Residential,Residential,Av. Las Begonias 3303,"San Borja, Santiago",Santiago,16671,-12.111838,-76.999137
+197,Hector Torres Fernandez,Residential,Residential,Calle Los Alamos 1255,"Centro, Iquique",Iquique,94380,-3.751313,-73.261339
+198,Marisol Valenzuela Aguilar,Residential,Residential,Jr. Reducto 1752,"Centro, Copiapo",Copiapo,49312,-8.105703,-79.036274
+199,Cecilia Romero Medina,Residential,Residential,Av. Brasil 2609,"Saylla, Concepcion",Concepcion,46910,-13.574636,-71.826387
+200,Hector Fernandez Huaman,Residential,Residential,Av. Reducto 364,"Belen, Iquique",Iquique,98651,-3.756435,-73.254171
+201,Daniel Quispe Caceres,Residential,Residential,Av. Brasil 259,"Nuevo La Serena, La Serena",La Serena,86246,-9.122387,-78.517404
+202,Hugo Aguilar Arias,Residential,Residential,Jr. Santa Cruz 2236,"Paucarpata, Valparaiso",Valparaiso,69657,-16.427341,-71.504152
+203,Daniela Palacios Garcia,Residential,Residential,Jr. Brasil 3436,"Centro, Puerto Montt",Puerto Montt,62860,-7.167049,-78.507937
+204,Cecilia Perez Huaman,Residential,Residential,Jr. Las Orquideas 1835,"Santa Rosa, Antofagasta",Antofagasta,91082,-6.875094,-79.934582
+205,Luz del Sur,Energy,Enterprise,Jr. Libertad 1011,"Huancan, Rancagua",Rancagua,41462,-12.117797,-75.205645
+206,Andrea Ramos Ramos,Residential,Residential,Psje. Abancay 1144,"Ventanilla, Vina del Mar",Vina del Mar,28315,-11.871777,-77.127577
+207,Veronica Castro Herrera,Residential,Residential,Jr. Emancipacion 2250,"Pilcomayo, Rancagua",Rancagua,36625,-12.048781,-75.23961
+208,Jimena Campos Delgado,Residential,Residential,Jr. Ayacucho 1063,"Saylla, Concepcion",Concepcion,96653,-13.571556,-71.816182
+209,Gobierno Regional Santiago,Government,Government,Av. Universitaria 752,"Llacanora, Puerto Montt",Puerto Montt,49439,-7.188734,-78.433263
+210,Patricia Aguilar Flores,Residential,Residential,Prol. Universitaria 3328,"Nuevo La Serena, La Serena",La Serena,51255,-9.108813,-78.515653
+211,Veronica Palacios Carrasco,Residential,Residential,Psje. Los Jazmines 530,"Centro, Puerto Montt",Puerto Montt,72912,-7.157596,-78.49452
+212,Fernanda Ruiz Paredes,Residential,Residential,Av. Larco 567,"Banos del Inca, Puerto Montt",Puerto Montt,69514,-7.159774,-78.468059
+213,Francisco Flores Hernandez,Residential,Residential,Psje. Concepcion 366,"Centro, Iquique",Iquique,12052,-3.744807,-73.248528
+214,Clinica Stella Maris,Healthcare,SMB,Av. Wilson 1758,"Victor Larco Herrera, Copiapo",Copiapo,61143,-8.134911,-79.043804
+215,Julio Arias Gonzalez,Residential,Residential,Av. Libertad 873,"Santiago, Concepcion",Concepcion,85378,-13.530072,-71.978119
+216,Desarrolladora,Real Estate,SMB,Jr. La Encalada 267,"Llacanora, Puerto Montt",Puerto Montt,59790,-7.186381,-78.434843
+217,Promart,Retail,Enterprise,Calle Los Jazmines 1934,"Centro, Vina del Mar",Vina del Mar,92611,-12.057084,-77.112233
+218,Elektra,Retail,Enterprise,Prol. Santa Cruz 448,"Jesus, Puerto Montt",Puerto Montt,41488,-7.236252,-78.383944
+219,Backus,Food & Beverage,Enterprise,Prol. Primavera 1711,"Victor Larco Herrera, Copiapo",Copiapo,42743,-8.13958,-79.036336
+220,Mariela Carrasco Paredes,Residential,Residential,Calle Benavides 2276,"Centro, Iquique",Iquique,50080,-3.74133,-73.251862
+221,Katherine Hernandez Medina,Residential,Residential,Prol. Abancay 365,"San Juan Bautista, Iquique",Iquique,78955,-3.782185,-73.278992
+222,Daniel Cruz Medina,Residential,Residential,Jr. Concepcion 2684,"San Sebastian, Concepcion",Concepcion,14857,-13.535771,-71.936277
+223,Mariana Herrera Soto,Residential,Residential,Av. Universitaria 2663,"La Punta, Vina del Mar",Vina del Mar,16733,-12.066023,-77.167145
+224,Rodrigo Arias Caceres,Residential,Residential,Psje. La Encalada 3095,"Magdalena, Santiago",Santiago,98622,-12.088547,-77.075282
+225,Caja Temuco,Banking,Enterprise,Av. Los Eucaliptos 2784,"Subtanjalla, Talca",Talca,33637,-14.027429,-75.745993
+226,Hugo Espinoza Mamani,Residential,Residential,Psje. Abancay 2254,"Centro, Puerto Montt",Puerto Montt,77955,-7.170734,-78.50118
+227,Daniel Hernandez Ortiz,Residential,Residential,Jr. 28 de Julio 818,"El Porvenir, Copiapo",Copiapo,34381,-8.094111,-79.019744
+228,Gisela Rojas Ruiz,Residential,Residential,Prol. Las Palmeras 969,"Santiago, Concepcion",Concepcion,85974,-13.521443,-71.983443
+229,Roberto Aguilar Valenzuela,Residential,Residential,Calle Caminos del Inca 574,"Centro, Temuco",Temuco,73965,-5.188954,-80.639599
+230,Ricardo Vargas Salazar,Residential,Residential,Jr. Grau 2241,"Yanahuara, Valparaiso",Valparaiso,65310,-16.39162,-71.555559
+231,Milagros Vera Aguilar,Residential,Residential,Calle Los Jazmines 1030,"La Victoria, Antofagasta",Antofagasta,85686,-6.784029,-79.833423
+232,Las Bambas,Mining,Enterprise,Calle Tacna 1361,"Bellavista, Vina del Mar",Vina del Mar,22342,-12.061655,-77.118109
+233,Javier Campos Castillo,Residential,Residential,Av. Javier Prado 3459,"Jose Luis Bustamante y Rivero, Valparaiso",Valparaiso,65116,-16.421363,-71.507591
+234,Mariela Delgado Perez,Residential,Residential,Jr. La Encalada 1771,"26 de Octubre, Temuco",Temuco,94139,-5.182603,-80.652285
+235,Pilar Zarate Vera,Residential,Residential,Calle Wilson 950,"Jesus Maria, Santiago",Santiago,80721,-12.074296,-77.047242
+236,Sergio Chavez Delgado,Residential,Residential,Calle Larco 105,"Centro, Iquique",Iquique,14603,-3.755042,-73.257861
+237,Karina Vera Sanchez,Residential,Residential,Av. Benavides 2362,"San Sebastian, Concepcion",Concepcion,77994,-13.539187,-71.945512
+238,Arturo Gutierrez Mamani,Residential,Residential,Jr. Santa Cruz 3123,"Ventanilla, Vina del Mar",Vina del Mar,87071,-11.870427,-77.12523
+239,Cable Magico,Telecommunications,Enterprise,Calle La Marina 527,"Santa Rosa, Antofagasta",Antofagasta,33700,-6.876171,-79.929753
+240,Gustavo Romero Vargas,Residential,Residential,Prol. Bolognesi 441,"Santa Rosa, Antofagasta",Antofagasta,35319,-6.869314,-79.940272
+241,San Fernando,Food & Beverage,SMB,Psje. Conquistadores 2386,"San Sebastian, Concepcion",Concepcion,47848,-13.536193,-71.940624
+242,Jorge Mamani Perez,Residential,Residential,Av. Abancay 795,"Carmen de la Legua, Vina del Mar",Vina del Mar,24222,-12.038755,-77.096604
+243,CrediScotia,Banking,Enterprise,Jr. El Polo 1892,"Castilla, Temuco",Temuco,68417,-5.191924,-80.647627
+244,Lorena Caceres Vega,Residential,Residential,Prol. Huancavelica 972,"Centro, Temuco",Temuco,70598,-5.200819,-80.639109
+245,Senati,Education,SMB,Psje. El Polo 1251,"Pimentel, Antofagasta",Antofagasta,32750,-6.829584,-79.933419
+246,UTEC,Education,SMB,Av. Brasil 1591,"Llacanora, Puerto Montt",Puerto Montt,70069,-7.187339,-78.429995
+247,Julio Rojas Rivera,Residential,Residential,Prol. Huancavelica 2720,"La Punta, Vina del Mar",Vina del Mar,75173,-12.074358,-77.168152
+248,Claudia Mendoza Quispe,Residential,Residential,Calle Ayacucho 214,"Moche, Copiapo",Copiapo,91287,-8.164485,-79.013691
+249,Silvia Cordova Villegas,Residential,Residential,Av. Las Orquideas 704,"La Victoria, Antofagasta",Antofagasta,59522,-6.795796,-79.829268
+250,Gonzalo Silva Mamani,Residential,Residential,Av. Larco 2287,"Mariano Melgar, Valparaiso",Valparaiso,52113,-16.413616,-71.495295
+251,Katherine Villegas Soto,Residential,Residential,Jr. Benavides 1344,"San Jeronimo, Concepcion",Concepcion,53965,-13.557744,-71.900989
+252,Sergio Alvarez Fernandez,Residential,Residential,Prol. Brasil 2132,"La Esperanza, Copiapo",Copiapo,58960,-8.07314,-79.047315
+253,Daniel Medina Valenzuela,Residential,Residential,Calle San Martin 3010,"Parcona, Talca",Talca,54397,-14.048426,-75.704023
+254,UNT Copiapo,Education,SMB,Jr. Comandante Espinar 1437,"Carmen de la Legua, Vina del Mar",Vina del Mar,73964,-12.047204,-77.088206
+255,Alejandro Ramos Paredes,Residential,Residential,Av. Bolognesi 3061,"26 de Octubre, Temuco",Temuco,88858,-5.175234,-80.647434
+256,Veronica Morales Aguilar,Residential,Residential,Jr. Comandante Espinar 1529,"Barranco, Santiago",Santiago,40013,-12.143111,-77.029119
+257,Fernando Cruz Palacios,Residential,Residential,Prol. Los Cedros 2274,"San Martin de Porres, Santiago",Santiago,87604,-12.01612,-77.042781
+258,Mariela Vera Torres,Residential,Residential,Av. Libertad 2809,"Centro, Rancagua",Rancagua,73620,-12.066149,-75.19874
+259,Redondos,Food & Beverage,Enterprise,Calle Brasil 2410,"La Esperanza, Copiapo",Copiapo,32692,-8.06562,-79.050619
+260,Mariela Huaman Romero,Residential,Residential,Av. Benavides 457,"Socabaya, Valparaiso",Valparaiso,99598,-16.46877,-71.53148
+261,Fernando Alvarez Alvarez,Residential,Residential,Psje. Wilson 159,"Carmen de la Legua, Vina del Mar",Vina del Mar,68572,-12.039807,-77.092578
+262,Ricardo Romero Ramos,Residential,Residential,Jr. Comandante Espinar 729,"Florencia de Mora, Copiapo",Copiapo,81137,-8.087836,-79.023431
+263,Oscar Paredes Torres,Residential,Residential,Av. La Marina 1378,"Tambogrande, Temuco",Temuco,35192,-4.925339,-80.334163
+264,Rosario Flores Zarate,Residential,Residential,Av. Colonial 1926,"Banos del Inca, Puerto Montt",Puerto Montt,55053,-7.16401,-78.47332
+265,Sergio Morales Vasquez,Residential,Residential,Av. Los Alamos 2334,"Centro, Copiapo",Copiapo,35517,-8.103996,-79.028343
+266,Carmen Perez Perez,Residential,Residential,Prol. Las Gardenias 292,"Cayma, Valparaiso",Valparaiso,35592,-16.364899,-71.54936
+267,Vanessa Torres Perez,Residential,Residential,Calle Talca 2985,"Bellavista, Vina del Mar",Vina del Mar,14735,-12.0694,-77.132502
+268,Jose Ramos Aguilar,Residential,Residential,Prol. Talca 2869,"Carmen de la Legua, Vina del Mar",Vina del Mar,49228,-12.037258,-77.095875
+269,Vivanda,Retail,Enterprise,Psje. Caminos del Inca 719,"Jose Luis Bustamante y Rivero, Valparaiso",Valparaiso,40712,-16.415286,-71.51135
+270,Jorge Diaz Gutierrez,Residential,Residential,Calle El Polo 1038,"Nuevo La Serena, La Serena",La Serena,79424,-9.115712,-78.519967
+271,Wong,Retail,Enterprise,Prol. Concepcion 2024,"Comas, Santiago",Santiago,57491,-11.941604,-77.047178
+272,Manuel Jimenez Cordova,Residential,Residential,Psje. Universitaria 2085,"Santa, La Serena",La Serena,56111,-8.987038,-78.626493
+273,Eduardo Garcia Garcia,Residential,Residential,Psje. Brasil 1328,"Centro, La Serena",La Serena,40162,-9.090419,-78.570405
+274,Francisco Flores Miranda,Residential,Residential,Psje. 28 de Julio 817,"La Victoria, Antofagasta",Antofagasta,20740,-6.784314,-79.8299
+275,Rosario Salazar Ramirez,Residential,Residential,Psje. Valparaiso 1914,"Magdalena, Santiago",Santiago,39122,-12.090294,-77.07172
+276,Carla Rodriguez Huaman,Residential,Residential,Psje. Ayacucho 2163,"El Porvenir, Copiapo",Copiapo,15660,-8.087323,-79.006709
+277,Maria Diaz Condori,Residential,Residential,Av. Emancipacion 897,"Ventanilla, Vina del Mar",Vina del Mar,96104,-11.874039,-77.13554
+278,Cerro Verde,Mining,Enterprise,Calle Universitaria 2994,"Banos del Inca, Puerto Montt",Puerto Montt,34725,-7.171667,-78.459241
+279,ICCGSA,Construction,Enterprise,Av. Primavera 2834,"Nuevo La Serena, La Serena",La Serena,27816,-9.114628,-78.524716
+280,Jorge Gutierrez Gomez,Residential,Residential,Prol. Wilson 913,"Parcona, Talca",Talca,96144,-14.035863,-75.702244
+281,Libertador Hotels,Hospitality,SMB,Av. Los Alamos 2789,"Banos del Inca, Puerto Montt",Puerto Montt,48575,-7.17215,-78.461154
+282,Francisco Vasquez Medina,Residential,Residential,Jr. Las Begonias 3251,"Centro, Puerto Montt",Puerto Montt,45945,-7.156995,-78.497722
+283,Antonio Soto Ortiz,Residential,Residential,Calle Conquistadores 3307,"San Jeronimo, Concepcion",Concepcion,46089,-13.546673,-71.894875
+284,Jimena Silva Romero,Residential,Residential,Jr. 28 de Julio 1327,"Pueblo Libre, Santiago",Santiago,22764,-12.075849,-77.065654
+285,Rosario Soto Reyes,Residential,Residential,Psje. Libertad 955,"Huanchaco, Copiapo",Copiapo,44615,-8.083278,-79.116617
+286,Eduardo Campos Carrasco,Residential,Residential,Jr. Reducto 1515,"Centro, Puerto Montt",Puerto Montt,31869,-7.156593,-78.49665
+287,Ministerio de Educacion,Government,Government,Prol. Independencia 878,"Los Aquijes, Talca",Talca,58149,-14.098644,-75.689127
+288,David Lopez Huaman,Residential,Residential,Prol. Huancavelica 2616,"Centro, Puerto Montt",Puerto Montt,68596,-7.164891,-78.501168
+289,Eduardo Garcia Miranda,Residential,Residential,Jr. Las Palmeras 138,"Parcona, Talca",Talca,47954,-14.040966,-75.70124
+290,Casa Andina,Hospitality,Enterprise,Prol. Primavera 1052,"Banos del Inca, Puerto Montt",Puerto Montt,22160,-7.17078,-78.461935
+291,Jorge Sanchez Jimenez,Residential,Residential,Psje. 28 de Julio 2440,"Florencia de Mora, Copiapo",Copiapo,33735,-8.090264,-79.020069
+292,Pablo Mamani Ruiz,Residential,Residential,Psje. San Martin 588,"Cercado, Valparaiso",Valparaiso,89456,-16.4026,-71.53378
+293,Katherine Paredes Silva,Residential,Residential,Psje. Talca 1445,"San Martin de Porres, Santiago",Santiago,65138,-12.009462,-77.051125
+294,Cardif,Insurance,SMB,Psje. Primavera 2600,"Jesus, Puerto Montt",Puerto Montt,47660,-7.249225,-78.395386
+295,Vanessa Benavides Morales,Residential,Residential,Av. Independencia 1131,"Santa, La Serena",La Serena,58748,-8.982139,-78.610969
+296,Diana Valenzuela Zarate,Residential,Residential,Calle 28 de Julio 2578,"La Tinguina, Talca",Talca,66492,-14.037962,-75.718569
+297,Pedro Vera Benavides,Residential,Residential,Psje. Puno 3359,"El Tambo, Rancagua",Rancagua,65677,-12.04489,-75.216272
+298,Ana Castro Ponce,Residential,Residential,Prol. Santa Cruz 924,"La Victoria, Antofagasta",Antofagasta,69370,-6.794645,-79.838366
+299,Lindley,Food & Beverage,Enterprise,Prol. Bolognesi 2179,"Pimentel, Antofagasta",Antofagasta,45697,-6.828665,-79.938855
+300,Pablo Rodriguez Morales,Residential,Residential,Jr. Los Cedros 2989,"Castilla, Temuco",Temuco,22806,-5.187299,-80.654703
+301,Mariela Palacios Espinoza,Residential,Residential,Av. Universitaria 395,"Subtanjalla, Talca",Talca,24082,-14.028011,-75.741959
+302,Ana Jimenez Campos,Residential,Residential,Jr. 28 de Julio 2730,"Centro, Vina del Mar",Vina del Mar,67559,-12.049597,-77.120163
+303,Elizabeth Nunez Ramos,Residential,Residential,Psje. Los Cedros 908,"Centro, Copiapo",Copiapo,87344,-8.108241,-79.02981
+304,BNP Paribas Cardif,Insurance,SMB,Jr. Bolognesi 2952,"Huanchaco, Copiapo",Copiapo,69308,-8.094123,-79.116615
+305,Gabriela Valenzuela Perez,Residential,Residential,Av. Larco 155,"Chilca, Rancagua",Rancagua,71638,-12.073791,-75.215153
+306,Fernanda Fernandez Reyes,Residential,Residential,Calle Los Pinos 1544,"Huanchaco, Copiapo",Copiapo,28945,-8.09283,-79.127654
+307,Entel Chile,Telecommunications,Enterprise,Psje. La Encalada 3483,"Los Aquijes, Talca",Talca,17086,-14.093585,-75.694007
+308,Lorena Herrera Valenzuela,Residential,Residential,Psje. Comandante Espinar 586,"La Victoria, Antofagasta",Antofagasta,96140,-6.796293,-79.829952
+309,Caja Rancagua,Banking,Enterprise,Av. Santa Cruz 1054,"Huancan, Rancagua",Rancagua,74066,-12.106348,-75.208867
+310,Jimena Medina Castro,Residential,Residential,Prol. Caminos del Inca 879,"Socabaya, Valparaiso",Valparaiso,30127,-16.456126,-71.53173
+311,Antonio Mamani Zarate,Residential,Residential,Psje. El Polo 1644,"Banos del Inca, Puerto Montt",Puerto Montt,56986,-7.158612,-78.468039
+312,Ivan Herrera Vargas,Residential,Residential,Prol. El Polo 2974,"Centro, La Serena",La Serena,94094,-9.081494,-78.577441
+313,Paz Centenario,Real Estate,SMB,Prol. Las Palmeras 1513,"Pimentel, Antofagasta",Antofagasta,20538,-6.843142,-79.939023
+314,Mario Reyes Huaman,Residential,Residential,Av. Tacna 1318,"Centro, Vina del Mar",Vina del Mar,33602,-12.059494,-77.115344
+315,Gabriel Salazar Garcia,Residential,Residential,Psje. Grau 2865,"Carabayllo, Santiago",Santiago,59766,-11.860472,-77.03179
+316,Cayetano Heredia,Education,Enterprise,Psje. Los Alamos 768,"Centro, Antofagasta",Antofagasta,23867,-6.766154,-79.835532
+317,Maria Benavides Vega,Residential,Residential,Psje. La Encalada 1296,"Pilcomayo, Rancagua",Rancagua,17246,-12.049593,-75.24142
+318,Natalia Vera Gonzalez,Residential,Residential,Jr. Santa Cruz 710,"Pimentel, Antofagasta",Antofagasta,40374,-6.830975,-79.933835
+319,Rosa Vega Castro,Residential,Residential,Prol. Conquistadores 2402,"Barranco, Santiago",Santiago,57135,-12.14755,-77.01396
+320,Juan Valenzuela Gonzalez,Residential,Residential,Calle Ayacucho 1565,"El Porvenir, Copiapo",Copiapo,93678,-8.09058,-79.01191
+321,Lorena Ponce Villegas,Residential,Residential,Calle Independencia 2144,"La Tinguina, Talca",Talca,39233,-14.029108,-75.715349
+322,Banco de Credito del Chile,Banking,Enterprise,Prol. Los Jazmines 216,"26 de Octubre, Temuco",Temuco,21129,-5.168634,-80.646413
+323,Lucia Fernandez Mamani,Residential,Residential,Calle Independencia 2970,"Victor Larco Herrera, Copiapo",Copiapo,62415,-8.132829,-79.042568
+324,Carmen Castillo Herrera,Residential,Residential,Psje. Wilson 3486,"San Juan Bautista, Iquique",Iquique,82665,-3.778618,-73.271044
+325,SEAL Valparaiso,Energy,Enterprise,Jr. Javier Prado 1541,"Castilla, Temuco",Temuco,13611,-5.193991,-80.64679
+326,Sergio Medina Castillo,Residential,Residential,Psje. Grau 3427,"Centro, Antofagasta",Antofagasta,36145,-6.763632,-79.842923
+327,Paola Vera Salazar,Residential,Residential,Psje. Benavides 3048,"Centro, Puerto Montt",Puerto Montt,80796,-7.156874,-78.501531
+328,Valeria Zarate Gonzalez,Residential,Residential,Av. Talca 2984,"San Borja, Santiago",Santiago,31196,-12.105838,-77.001809
+329,Paola Vasquez Cruz,Residential,Residential,Prol. Las Gardenias 151,"Coishco, La Serena",La Serena,31278,-9.022883,-78.608032
+330,Carolina Herrera Cruz,Residential,Residential,Jr. Los Alamos 979,"San Juan Bautista, Iquique",Iquique,10118,-3.782098,-73.273927
+331,Carlos Ramirez Ramirez,Residential,Residential,Calle Los Eucaliptos 2620,"Centro, Rancagua",Rancagua,66073,-12.070366,-75.200122
+332,Diana Gomez Lopez,Residential,Residential,Av. Las Orquideas 1537,"La Tinguina, Talca",Talca,42428,-14.029783,-75.722008
+333,Eduardo Benavides Ponce,Residential,Residential,Av. Independencia 1286,"Castilla, Temuco",Temuco,69669,-5.186637,-80.652564
+334,Clinica Ricardo Palma,Healthcare,Enterprise,Calle Independencia 2231,"Centro, Iquique",Iquique,42928,-3.741207,-73.260635
+335,Petroperu,Energy,Enterprise,Calle Brasil 2426,"Ventanilla, Vina del Mar",Vina del Mar,81701,-11.870052,-77.123952
+336,Gabriela Aguilar Nunez,Residential,Residential,Jr. La Encalada 2161,"Centro, Iquique",Iquique,81196,-3.744832,-73.260873
+337,Rosa Silva Vega,Residential,Residential,Calle Brasil 3004,"La Victoria, Antofagasta",Antofagasta,78803,-6.784344,-79.827625
+338,UNI,Education,Enterprise,Prol. Grau 2846,"San Juan Bautista, Iquique",Iquique,57166,-3.783402,-73.281853
+339,Francisco Jimenez Soto,Residential,Residential,Av. Ayacucho 177,"La Tinguina, Talca",Talca,40685,-14.024393,-75.717902
+340,Sergio Ponce Caceres,Residential,Residential,Av. Libertad 286,"Parcona, Talca",Talca,68486,-14.049634,-75.699737
+341,P&G Chile,Food & Beverage,Enterprise,Av. Tacna 461,"La Esperanza, Copiapo",Copiapo,37645,-8.066751,-79.040648
+342,Jimena Nunez Fernandez,Residential,Residential,Calle Los Alamos 1358,"El Porvenir, Copiapo",Copiapo,54593,-8.088024,-79.014803
+343,Victor Ruiz Cruz,Residential,Residential,Psje. Los Cedros 3261,"San Jeronimo, Concepcion",Concepcion,59586,-13.557574,-71.907935
+344,Javier Perez Martinez,Residential,Residential,Prol. Puno 2077,"Centro, Iquique",Iquique,80993,-3.748058,-73.252194
+345,Claudia Carrasco Vargas,Residential,Residential,Calle Talca 1171,"El Porvenir, Copiapo",Copiapo,97958,-8.096321,-79.017335
+346,Sergio Ramos Quispe,Residential,Residential,Av. Caminos del Inca 2082,"Centro Historico, Concepcion",Concepcion,51612,-13.512873,-71.985482
+347,Lucia Paredes Gomez,Residential,Residential,Calle Conquistadores 3088,"Huancan, Rancagua",Rancagua,84876,-12.107827,-75.21453
+348,Elizabeth Rivera Rojas,Residential,Residential,Jr. Los Alamos 2802,"Centro, Antofagasta",Antofagasta,71379,-6.767946,-79.836557
+349,Roberto Alvarez Zarate,Residential,Residential,Jr. Larco 998,"Villa El Salvador, Santiago",Santiago,41747,-12.218657,-76.943326
+350,Novotel,Hospitality,Enterprise,Prol. Universitaria 2019,"Pueblo Libre, Santiago",Santiago,93364,-12.069136,-77.070553
+351,Abril Grupo,Real Estate,Enterprise,Prol. Los Cedros 2465,"Centro, Talca",Talca,46292,-14.065315,-75.721791
+352,Paola Salazar Jimenez,Residential,Residential,Jr. Independencia 303,"Llacanora, Puerto Montt",Puerto Montt,30164,-7.190841,-78.426619
+353,OHL Chile,Construction,SMB,Prol. Brasil 2116,"El Porvenir, Copiapo",Copiapo,71115,-8.089647,-79.010539
+354,Carla Jimenez Hernandez,Residential,Residential,Prol. Brasil 2526,"26 de Octubre, Temuco",Temuco,84249,-5.172825,-80.657562
+355,Grana y Montero,Construction,SMB,Jr. La Encalada 579,"Centro, Puerto Montt",Puerto Montt,15385,-7.171558,-78.507901
+356,Milagros Herrera Medina,Residential,Residential,Jr. Emancipacion 1296,"Los Aquijes, Talca",Talca,69689,-14.088967,-75.698631
+357,Hilton Santiago,Hospitality,Enterprise,Prol. Las Palmeras 2962,"Centro, La Serena",La Serena,55986,-9.085992,-78.580491
+358,Carla Gomez Flores,Residential,Residential,Calle Grau 326,"La Punta, Vina del Mar",Vina del Mar,95197,-12.065254,-77.173382
+359,Viva GyM,Real Estate,Enterprise,Psje. Los Pinos 565,"Nuevo La Serena, La Serena",La Serena,19516,-9.123792,-78.518924
+360,ISIL,Education,Enterprise,Prol. Conquistadores 1485,"Chilca, Rancagua",Rancagua,29386,-12.080583,-75.216768
+361,Hector Gutierrez Castro,Residential,Residential,Psje. Los Jazmines 1320,"Santa, La Serena",La Serena,32733,-8.981788,-78.62126
+362,Diana Palacios Vargas,Residential,Residential,Jr. Las Orquideas 698,"Pueblo Libre, Santiago",Santiago,11423,-12.069115,-77.06445
+363,Oscar Arias Caceres,Residential,Residential,Psje. Javier Prado 1014,"Hunter, Valparaiso",Valparaiso,89696,-16.459134,-71.547048
+364,Carmen Rivera Martinez,Residential,Residential,Av. Larco 932,"La Molina, Santiago",Santiago,59690,-12.090883,-76.930511
+365,Fernanda Fernandez Espinoza,Residential,Residential,Av. La Marina 1653,"El Tambo, Rancagua",Rancagua,84598,-12.04797,-75.210468
+366,Fernanda Aguilar Rodriguez,Residential,Residential,Jr. Emancipacion 2345,"Santa Rosa, Antofagasta",Antofagasta,59067,-6.880043,-79.926263
+367,Ivan Caceres Sanchez,Residential,Residential,Prol. Primavera 3269,"Carabayllo, Santiago",Santiago,15108,-11.847003,-77.034221
+368,Silvia Gomez Salazar,Residential,Residential,Prol. Los Alamos 1906,"Santa, La Serena",La Serena,47759,-8.984437,-78.621951
+369,Miguel Aguilar Villegas,Residential,Residential,Calle Las Begonias 532,"Chilca, Rancagua",Rancagua,35030,-12.077168,-75.206432
+370,Ivan Flores Quispe,Residential,Residential,Jr. Reducto 2923,"Huancan, Rancagua",Rancagua,70125,-12.114757,-75.210428
+371,Juan Ortiz Castro,Residential,Residential,Calle Bolognesi 1872,"Chilca, Rancagua",Rancagua,54188,-12.085395,-75.214719
+372,Diana Ponce Caceres,Residential,Residential,Calle Caminos del Inca 1800,"Santa, La Serena",La Serena,20959,-8.995257,-78.614779
+373,Patricia Gomez Herrera,Residential,Residential,Psje. La Encalada 3039,"Belen, Iquique",Iquique,91890,-3.760644,-73.247876
+374,Pilar Chavez Castillo,Residential,Residential,Psje. Santa Cruz 3071,"Carmen de la Legua, Vina del Mar",Vina del Mar,72307,-12.040546,-77.099223
+375,Oscar Perez Vera,Residential,Residential,Av. 28 de Julio 1915,"Llacanora, Puerto Montt",Puerto Montt,21280,-7.19634,-78.439333
+376,Elizabeth Cordova Sanchez,Residential,Residential,Prol. Valparaiso 1121,"Centro, Rancagua",Rancagua,98192,-12.067447,-75.212433
+377,Ana Soto Silva,Residential,Residential,Calle Independencia 1683,"Los Aquijes, Talca",Talca,30144,-14.092465,-75.692844
+378,Andrea Salazar Herrera,Residential,Residential,Calle Los Alamos 877,"Parcona, Talca",Talca,70619,-14.044699,-75.699329
+379,Arturo Gutierrez Valenzuela,Residential,Residential,Jr. Benavides 2367,"Centro, Temuco",Temuco,60916,-5.197231,-80.638196
+380,Hugo Rodriguez Ortiz,Residential,Residential,Calle Libertad 2869,"Parcona, Talca",Talca,24708,-14.047554,-75.701225
+381,Luis Ortiz Flores,Residential,Residential,Prol. Libertad 1390,"Jesus Maria, Santiago",Santiago,89346,-12.06626,-77.049061
+382,Marisol Torres Arias,Residential,Residential,Calle La Encalada 442,"San Juan Bautista, Iquique",Iquique,98324,-3.777654,-73.275334
+383,Pablo Cordova Cruz,Residential,Residential,Calle Los Cedros 2947,"Centro, Talca",Talca,84287,-14.06722,-75.733533
+384,Vanessa Gutierrez Condori,Residential,Residential,Av. Primavera 1398,"Cercado, Valparaiso",Valparaiso,85337,-16.409818,-71.532733
+385,Ximena Vasquez Lopez,Residential,Residential,Calle Libertad 1471,"Castilla, Temuco",Temuco,26567,-5.196214,-80.644542
+386,Hugo Ortiz Caceres,Residential,Residential,Calle 28 de Julio 281,"Independencia, Santiago",Santiago,75791,-12.004475,-77.053033
+387,Banco Ripley,Banking,Enterprise,Jr. Las Begonias 1514,"Cayma, Valparaiso",Valparaiso,29239,-16.357958,-71.541521
+388,Rosario Ortiz Miranda,Residential,Residential,Av. Colonial 3142,"Castilla, Temuco",Temuco,50736,-5.194983,-80.648297
+389,Victor Silva Diaz,Residential,Residential,Av. Brasil 842,"Santa Rosa, Antofagasta",Antofagasta,29070,-6.870248,-79.929955
+390,Andres Jimenez Arias,Residential,Residential,Jr. Ayacucho 318,"Santiago, Concepcion",Concepcion,48596,-13.534661,-71.986992
+391,Vanessa Salazar Benavides,Residential,Residential,Calle Santa Cruz 2163,"El Tambo, Rancagua",Rancagua,62027,-12.05655,-75.221966
+392,Rosario Zarate Gomez,Residential,Residential,Calle Las Gardenias 975,"Comas, Santiago",Santiago,63610,-11.949911,-77.051599
+393,Scotiabank Chile,Banking,Enterprise,Jr. 28 de Julio 2334,"Centro, Rancagua",Rancagua,82261,-12.068814,-75.21177
+394,Roberto Castro Flores,Residential,Residential,Av. San Martin 1240,"Yanahuara, Valparaiso",Valparaiso,32597,-16.393842,-71.551383
+395,Ivan Vasquez Lopez,Residential,Residential,Prol. Las Palmeras 3165,"Nuevo La Serena, La Serena",La Serena,71332,-9.109058,-78.5127
+396,Pedro Gutierrez Cruz,Residential,Residential,Jr. Larco 2063,"Santa, La Serena",La Serena,25134,-8.987678,-78.61617
+397,Fernando Caceres Rojas,Residential,Residential,Psje. Las Gardenias 322,"Centro Historico, Concepcion",Concepcion,73290,-13.522935,-71.980547
+398,Patricia Salazar Reyes,Residential,Residential,Prol. Ayacucho 1444,"Parcona, Talca",Talca,17841,-14.034846,-75.702933
+399,San Martin Contratistas,Construction,Enterprise,Psje. Primavera 477,"Paucarpata, Valparaiso",Valparaiso,38604,-16.425743,-71.503227
+400,Carolina Perez Soto,Residential,Residential,Jr. Los Cedros 2857,"Villa El Salvador, Santiago",Santiago,69693,-12.219229,-76.932471
+401,Raul Gonzalez Silva,Residential,Residential,Prol. Talca 1224,"Ventanilla, Vina del Mar",Vina del Mar,67229,-11.875967,-77.135385
+402,Jose Rojas Rojas,Residential,Residential,Calle Talca 1155,"Pilcomayo, Rancagua",Rancagua,16362,-12.045574,-75.239345
+403,Sergio Paredes Vasquez,Residential,Residential,Calle La Encalada 2937,"Hunter, Valparaiso",Valparaiso,48478,-16.45136,-71.552069
+404,Ricardo Paredes Gutierrez,Residential,Residential,Calle Tacna 2123,"Wanchaq, Concepcion",Concepcion,83367,-13.517033,-71.958013
+405,Sheraton Santiago,Hospitality,SMB,Av. Javier Prado 2409,"Ventanilla, Vina del Mar",Vina del Mar,99333,-11.867824,-77.134083
+406,Cesar Martinez Rojas,Residential,Residential,Calle Huancavelica 3313,"Wanchaq, Concepcion",Concepcion,83082,-13.519705,-71.96208
+407,Pilar Fernandez Reyes,Residential,Residential,Jr. Las Palmeras 303,"San Miguel, Santiago",Santiago,27677,-12.079866,-77.093209
+408,Carlos Huaman Fernandez,Residential,Residential,Jr. Comandante Espinar 1270,"Castilla, Temuco",Temuco,59469,-5.188193,-80.65017
+409,Andrea Rodriguez Gutierrez,Residential,Residential,Av. Las Gardenias 2234,"Hunter, Valparaiso",Valparaiso,24125,-16.457372,-71.55246
+410,Gold Fields,Mining,Enterprise,Av. Javier Prado 1359,"Los Aquijes, Talca",Talca,25069,-14.10343,-75.70134
+411,Hugo Garcia Vargas,Residential,Residential,Calle Los Cedros 2741,"Jose Leonardo Ortiz, Antofagasta",Antofagasta,41832,-6.743325,-79.832872
+412,Karina Cordova Mendoza,Residential,Residential,Av. Bolognesi 3112,"Chilca, Rancagua",Rancagua,71607,-12.071938,-75.210397
+413,Javier Ortiz Alvarez,Residential,Residential,Prol. Emancipacion 3422,"Santa, La Serena",La Serena,62515,-8.984573,-78.616042
+414,Gabriel Fernandez Rivera,Residential,Residential,Av. La Marina 1576,"Paucarpata, Valparaiso",Valparaiso,45545,-16.423404,-71.50736
+415,Aje Group,Food & Beverage,SMB,Calle Libertad 2886,"Socabaya, Valparaiso",Valparaiso,12745,-16.454607,-71.522226
+416,Gabriel Ponce Ortiz,Residential,Residential,Calle Los Jazmines 979,"Centro, Copiapo",Copiapo,64294,-8.118042,-79.028085
+417,Ana Delgado Quispe,Residential,Residential,Av. Ayacucho 1540,"Chorrillos, Santiago",Santiago,85119,-12.172977,-77.015749
+418,David Aguilar Rivera,Residential,Residential,Psje. Caminos del Inca 1466,"Mariano Melgar, Valparaiso",Valparaiso,39188,-16.412112,-71.493393
+419,Eduardo Ramirez Cruz,Residential,Residential,Psje. Brasil 3122,"Parcona, Talca",Talca,73000,-14.041024,-75.698635
+420,UPC,Education,Enterprise,Calle Los Pinos 1398,"Bellavista, Vina del Mar",Vina del Mar,90590,-12.066564,-77.117874
+421,Coca Cola Chile,Food & Beverage,Enterprise,Prol. Huancavelica 2795,"Llacanora, Puerto Montt",Puerto Montt,91462,-7.190768,-78.439698
+422,Carla Ramirez Vargas,Residential,Residential,Calle Valparaiso 371,"La Victoria, Antofagasta",Antofagasta,89128,-6.785968,-79.841322
+423,Jessica Ruiz Romero,Residential,Residential,Av. 28 de Julio 2312,"Belen, Iquique",Iquique,49079,-3.766279,-73.250887
+424,Monica Carrasco Garcia,Residential,Residential,Jr. Reducto 1476,"Moche, Copiapo",Copiapo,35389,-8.170257,-79.013719
+425,Pacifico Seguros,Insurance,Enterprise,Jr. Tacna 764,"Santa Rosa, Antofagasta",Antofagasta,16088,-6.881459,-79.934541
+426,Rosario Martinez Torres,Residential,Residential,Psje. Huancavelica 465,"Centro, La Serena",La Serena,12327,-9.090098,-78.582203
+427,Monica Condori Castillo,Residential,Residential,Calle Concepcion 2436,"Los Olivos, Santiago",Santiago,74452,-11.983952,-77.070478
+428,Mario Gutierrez Caceres,Residential,Residential,Av. Comandante Espinar 1774,"Llacanora, Puerto Montt",Puerto Montt,74883,-7.185747,-78.425681
+429,Gisela Vasquez Ortiz,Residential,Residential,Prol. Ayacucho 2428,"San Jeronimo, Concepcion",Concepcion,97411,-13.555861,-71.901499
+430,Oscar Garcia Cordova,Residential,Residential,Psje. Javier Prado 3121,"Punchana, Iquique",Iquique,96072,-3.722257,-73.260341
+431,Gisela Morales Mendoza,Residential,Residential,Psje. Universitaria 3249,"Pilcomayo, Rancagua",Rancagua,76136,-12.043969,-75.238406
+432,Daniela Romero Chavez,Residential,Residential,Psje. Universitaria 2375,"Belen, Iquique",Iquique,87117,-3.757862,-73.246227
+433,Victor Salazar Delgado,Residential,Residential,Prol. Javier Prado 1400,"El Tambo, Rancagua",Rancagua,94334,-12.045518,-75.212911
+434,Carlos Garcia Carrasco,Residential,Residential,Psje. Puno 3475,"Centro, Rancagua",Rancagua,16637,-12.07152,-75.199516
+435,DirectTV Chile,Telecommunications,Enterprise,Psje. Santa Cruz 588,"La Tinguina, Talca",Talca,66020,-14.0377,-75.728051
+436,Carmen Villegas Huaman,Residential,Residential,Calle Grau 998,"Subtanjalla, Talca",Talca,69021,-14.034073,-75.742467
+437,Rimac Seguros,Insurance,Enterprise,Jr. Comandante Espinar 444,"Jesus Maria, Santiago",Santiago,65132,-12.071215,-77.038192
+438,Rosario Gomez Flores,Residential,Residential,Calle Brasil 3399,"Moche, Copiapo",Copiapo,60147,-8.169405,-79.009302
+439,Ximena Soto Hernandez,Residential,Residential,Prol. Las Palmeras 2894,"Comas, Santiago",Santiago,21267,-11.938775,-77.044006
+440,Valeria Martinez Perez,Residential,Residential,Av. Abancay 3064,"Subtanjalla, Talca",Talca,60277,-14.026401,-75.744867
+441,Caja Copiapo,Banking,Enterprise,Prol. Abancay 3343,"Carmen de la Legua, Vina del Mar",Vina del Mar,23477,-12.047306,-77.094401
+442,Miguel Rojas Gomez,Residential,Residential,Prol. Primavera 598,"Coishco, La Serena",La Serena,94903,-9.019672,-78.622358
+443,SUNAT,Government,Government,Prol. Las Orquideas 2257,"Yanahuara, Valparaiso",Valparaiso,55691,-16.390426,-71.55206
+444,Sandra Castillo Chavez,Residential,Residential,Calle Brasil 611,"Cercado, Valparaiso",Valparaiso,40010,-16.402026,-71.541148
+445,Carmen Paredes Caceres,Residential,Residential,Calle San Martin 2588,"Centro, Temuco",Temuco,82003,-5.19788,-80.63429
+446,Buenaventura,Mining,Enterprise,Prol. Universitaria 2544,"Carmen de la Legua, Vina del Mar",Vina del Mar,93360,-12.037605,-77.096575
+447,Flor Hernandez Castillo,Residential,Residential,Calle Puno 3486,"Yanahuara, Valparaiso",Valparaiso,84632,-16.391507,-71.549416
+448,Pecsa,Energy,Enterprise,Jr. Benavides 2040,"Centro, La Serena",La Serena,22141,-9.078447,-78.573594
+449,Fernanda Lopez Rojas,Residential,Residential,Calle Primavera 791,"Centro, Talca",Talca,66296,-14.065437,-75.721169
+450,America Movil,Telecommunications,Enterprise,Psje. Caminos del Inca 161,"Santiago, Concepcion",Concepcion,62035,-13.534544,-71.979201
+451,Katherine Ortiz Romero,Residential,Residential,Jr. Primavera 633,"Nuevo La Serena, La Serena",La Serena,75452,-9.118383,-78.515861
+452,Daniela Benavides Ramirez,Residential,Residential,Av. Las Palmeras 2642,"Ate, Santiago",Santiago,33916,-12.027427,-76.913266
+453,Milagros Quispe Morales,Residential,Residential,Jr. Concepcion 433,"La Punta, Vina del Mar",Vina del Mar,69688,-12.064058,-77.159828
+454,Miguel Cruz Carrasco,Residential,Residential,Jr. Larco 1474,"San Sebastian, Concepcion",Concepcion,93648,-13.540866,-71.944706
+455,Municipalidad de Santiago,Government,Government,Prol. Universitaria 2945,"La Victoria, Antofagasta",Antofagasta,95279,-6.787096,-79.842451
+456,Laive,Food & Beverage,Enterprise,Jr. Javier Prado 1428,"Chilca, Rancagua",Rancagua,54372,-12.085592,-75.214966
+457,Carmen Alvarez Fernandez,Residential,Residential,Psje. Primavera 2184,"Centro, Copiapo",Copiapo,75723,-8.11419,-79.024686
+458,Victor Gutierrez Rivera,Residential,Residential,Prol. Colonial 2814,"Independencia, Santiago",Santiago,80180,-11.998483,-77.05779
+459,Gisela Ramirez Romero,Residential,Residential,Jr. Benavides 1168,"Castilla, Temuco",Temuco,16678,-5.198315,-80.652225
+460,Ripley,Retail,SMB,Prol. Larco 3181,"Centro, Talca",Talca,93376,-14.070912,-75.736115
+461,Gustavo Soto Miranda,Residential,Residential,Calle Conquistadores 3167,"San Juan Bautista, Iquique",Iquique,51309,-3.778427,-73.28427
+462,Vanessa Palacios Palacios,Residential,Residential,Prol. Las Gardenias 1602,"Paucarpata, Valparaiso",Valparaiso,43585,-16.430427,-71.509992
+463,Pablo Mamani Mamani,Residential,Residential,Av. Los Cedros 3003,"Centro, Iquique",Iquique,21915,-3.741699,-73.255447
+464,Francisco Aguilar Vargas,Residential,Residential,Psje. Libertad 2368,"Mariano Melgar, Valparaiso",Valparaiso,37876,-16.413765,-71.504247
+465,Roberto Alvarez Mamani,Residential,Residential,Calle Abancay 513,"Yanahuara, Valparaiso",Valparaiso,35199,-16.395423,-71.549979
+466,Diego Martinez Torres,Residential,Residential,Av. Concepcion 1884,"Belen, Iquique",Iquique,66735,-3.756011,-73.248009
+467,Antonio Morales Arias,Residential,Residential,Prol. Javier Prado 1822,"Centro, Puerto Montt",Puerto Montt,37205,-7.163991,-78.504379
+468,Carmen Delgado Cordova,Residential,Residential,Av. Emancipacion 2848,"Breña, Santiago",Santiago,80162,-12.060259,-77.046923
+469,Mariana Gonzalez Rivera,Residential,Residential,Jr. Concepcion 306,"Wanchaq, Concepcion",Concepcion,52664,-13.519841,-71.963647
+470,Sergio Torres Paredes,Residential,Residential,Jr. Huancavelica 3431,"Centro, Talca",Talca,96005,-14.06109,-75.726884
+471,Carmen Ramirez Ramirez,Residential,Residential,Psje. Talca 1977,"Banos del Inca, Puerto Montt",Puerto Montt,70252,-7.166209,-78.47264
+472,Alberto Garcia Gutierrez,Residential,Residential,Prol. La Encalada 116,"La Victoria, Antofagasta",Antofagasta,18139,-6.790511,-79.829679
+473,Vanessa Campos Lopez,Residential,Residential,Jr. Los Alamos 2526,"Centro Historico, Concepcion",Concepcion,50892,-13.519646,-71.974288
+474,Ricardo Flores Vasquez,Residential,Residential,Psje. Emancipacion 1596,"San Juan de Lurigancho, Santiago",Santiago,31962,-11.987083,-77.006439
+475,Veronica Ponce Salazar,Residential,Residential,Psje. Comandante Espinar 1996,"Centro, Antofagasta",Antofagasta,15960,-6.771414,-79.836964
+476,Carla Sanchez Aguilar,Residential,Residential,Prol. Emancipacion 3312,"Pimentel, Antofagasta",Antofagasta,33928,-6.837461,-79.929642
+477,Fernanda Campos Castillo,Residential,Residential,Prol. Brasil 2649,"La Victoria, Antofagasta",Antofagasta,81043,-6.788155,-79.832251
+478,Veronica Torres Fernandez,Residential,Residential,Jr. 28 de Julio 2492,"Victor Larco Herrera, Copiapo",Copiapo,89328,-8.133613,-79.035041
+479,Ximena Mendoza Delgado,Residential,Residential,Prol. Las Begonias 258,"San Jeronimo, Concepcion",Concepcion,73334,-13.551805,-71.898206
+480,Roberto Jimenez Flores,Residential,Residential,Calle La Encalada 935,"Miraflores, Santiago",Santiago,79711,-12.117706,-77.029123
+481,Flor Silva Hernandez,Residential,Residential,Av. Los Jazmines 3423,"Llacanora, Puerto Montt",Puerto Montt,92031,-7.19508,-78.427153
+482,Flor Vasquez Nunez,Residential,Residential,Jr. Comandante Espinar 3112,"Pimentel, Antofagasta",Antofagasta,38798,-6.838169,-79.930744
+483,Marco Vega Salazar,Residential,Residential,Calle Las Begonias 2966,"Centro, Antofagasta",Antofagasta,48439,-6.775155,-79.846684
+484,Mariela Carrasco Paredes,Residential,Residential,Jr. Puno 934,"Punchana, Iquique",Iquique,19552,-3.709537,-73.26069
+485,Costa del Sol,Hospitality,Enterprise,Prol. Ayacucho 1183,"Centro, Puerto Montt",Puerto Montt,11542,-7.166866,-78.505561
+486,Vanessa Soto Rodriguez,Residential,Residential,Av. Los Alamos 138,"Centro, Talca",Talca,27200,-14.072984,-75.733888
+487,Sandra Zarate Rivera,Residential,Residential,Jr. Benavides 1806,"Parcona, Talca",Talca,11574,-14.046333,-75.692042
+488,Andrea Paredes Quispe,Residential,Residential,Psje. Los Pinos 386,"Barranco, Santiago",Santiago,23905,-12.153565,-77.025533
+489,Gabriel Quispe Rodriguez,Residential,Residential,Av. Javier Prado 490,"Huanchaco, Copiapo",Copiapo,41558,-8.08906,-79.117408
+490,Francisco Reyes Gonzalez,Residential,Residential,Calle 28 de Julio 994,"26 de Octubre, Temuco",Temuco,95425,-5.1763,-80.657349
+491,Julio Nunez Cruz,Residential,Residential,Psje. Tacna 767,"Nuevo La Serena, La Serena",La Serena,76098,-9.123587,-78.525314
+492,Monica Perez Salazar,Residential,Residential,Jr. Las Orquideas 2805,"Centro Historico, Concepcion",Concepcion,57125,-13.511123,-71.981968
+493,Paola Zarate Paredes,Residential,Residential,Jr. San Martin 647,"Belen, Iquique",Iquique,60626,-3.765532,-73.246347
+494,Juan Carrasco Vera,Residential,Residential,Prol. Los Jazmines 525,"Banos del Inca, Puerto Montt",Puerto Montt,64001,-7.159325,-78.469486
+495,Paola Ponce Campos,Residential,Residential,Jr. La Encalada 228,"Jose Luis Bustamante y Rivero, Valparaiso",Valparaiso,67011,-16.423341,-71.504829
+496,Gonzalo Fernandez Mendoza,Residential,Residential,Av. Las Gardenias 905,"Belen, Iquique",Iquique,86535,-3.765728,-73.242784
+497,Ana Flores Carrasco,Residential,Residential,Psje. Los Alamos 2091,"San Isidro, Santiago",Santiago,86934,-12.101342,-77.031984
+498,Pedro Nunez Benavides,Residential,Residential,Av. Grau 1701,"Cayma, Valparaiso",Valparaiso,57967,-16.356171,-71.545727
+499,Silvia Rodriguez Sanchez,Residential,Residential,Calle Independencia 3001,"Centro, Antofagasta",Antofagasta,26494,-6.765057,-79.83635
+500,Marco Caceres Flores,Residential,Residential,Calle San Martin 3472,"Pimentel, Antofagasta",Antofagasta,85110,-6.829497,-79.937009
+501,Eduardo Paredes Delgado,Residential,Residential,Jr. 28 de Julio 1399,"Centro, Puerto Montt",Puerto Montt,20203,-7.167725,-78.497862
+502,Stracon,Construction,SMB,Psje. Los Jazmines 1663,"Parcona, Talca",Talca,76115,-14.035677,-75.701636
+503,Silvia Miranda Castro,Residential,Residential,Psje. Wilson 284,"Carmen de la Legua, Vina del Mar",Vina del Mar,40674,-12.042826,-77.090188
+504,Roberto Gonzalez Sanchez,Residential,Residential,Av. Javier Prado 413,"Belen, Iquique",Iquique,82779,-3.766249,-73.247358
+505,Ximena Lopez Quispe,Residential,Residential,Psje. Abancay 1026,"Jesus Maria, Santiago",Santiago,52092,-12.071827,-77.037625
+506,Inca Kola,Food & Beverage,SMB,Av. Las Orquideas 3108,"La Punta, Vina del Mar",Vina del Mar,60535,-12.070631,-77.16552
+507,Mariela Hernandez Ortiz,Residential,Residential,Psje. San Martin 1309,"Centro, La Serena",La Serena,79252,-9.07924,-78.577833
+508,Oscar Ramos Gutierrez,Residential,Residential,Calle San Martin 2687,"El Tambo, Rancagua",Rancagua,54758,-12.048875,-75.20988
+509,Carmen Diaz Gutierrez,Residential,Residential,Av. Bolognesi 2139,"Hunter, Valparaiso",Valparaiso,39501,-16.457178,-71.554204
+510,Rodrigo Morales Sanchez,Residential,Residential,Jr. Bolognesi 3196,"La Victoria, Antofagasta",Antofagasta,56618,-6.796166,-79.8309
+511,Gisela Torres Gonzalez,Residential,Residential,Calle Emancipacion 1177,"Santiago, Concepcion",Concepcion,18371,-13.523359,-71.988812
+512,Lucia Fernandez Mendoza,Residential,Residential,Calle Las Begonias 2929,"Wanchaq, Concepcion",Concepcion,89251,-13.525207,-71.970233
+513,Natalia Paredes Cordova,Residential,Residential,Av. Conquistadores 3445,"Barranco, Santiago",Santiago,13843,-12.145247,-77.020511
+514,Rocio Gomez Soto,Residential,Residential,Jr. Emancipacion 1088,"Jose Luis Bustamante y Rivero, Valparaiso",Valparaiso,82283,-16.427374,-71.504785
+515,Milagros Rojas Perez,Residential,Residential,Jr. Emancipacion 188,"Nuevo La Serena, La Serena",La Serena,40069,-9.119594,-78.518295
+516,Daniel Herrera Romero,Residential,Residential,Av. Libertad 3129,"El Tambo, Rancagua",Rancagua,64386,-12.049315,-75.214917
+517,Carolina Mamani Romero,Residential,Residential,Prol. La Marina 2091,"Moche, Copiapo",Copiapo,68442,-8.165885,-79.00545
+518,Elizabeth Delgado Salazar,Residential,Residential,Av. Bolognesi 2715,"Los Olivos, Santiago",Santiago,50829,-11.98302,-77.068882
+519,Marco Delgado Gonzalez,Residential,Residential,Calle Las Gardenias 2987,"Magdalena, Santiago",Santiago,27250,-12.087518,-77.074375
+520,Julio Aguilar Silva,Residential,Residential,Jr. Puno 2510,"Centro, Antofagasta",Antofagasta,81828,-6.770676,-79.83328
+521,Luz Villegas Rodriguez,Residential,Residential,Prol. Talca 2378,"Cerro Colorado, Valparaiso",Valparaiso,66839,-16.383035,-71.576038
+522,Carmen Ramos Garcia,Residential,Residential,Calle La Encalada 1749,"Saylla, Concepcion",Concepcion,97778,-13.566791,-71.819344
+523,Carolina Jimenez Quispe,Residential,Residential,Prol. La Encalada 709,"La Esperanza, Copiapo",Copiapo,18549,-8.06386,-79.0474
+524,Mapfre Chile,Insurance,SMB,Prol. Santa Cruz 2291,"San Sebastian, Concepcion",Concepcion,79593,-13.53961,-71.940221
+525,Antonio Nunez Flores,Residential,Residential,Prol. Los Jazmines 3228,"Subtanjalla, Talca",Talca,97801,-14.023836,-75.739703
+526,Pablo Castillo Cordova,Residential,Residential,Jr. Puno 1117,"Castilla, Temuco",Temuco,70503,-5.188796,-80.655378
+527,Elizabeth Delgado Diaz,Residential,Residential,Psje. Los Pinos 1772,"Comas, Santiago",Santiago,34897,-11.94028,-77.048057
+528,Alejandro Vasquez Perez,Residential,Residential,Psje. Reducto 1481,"San Juan Bautista, Iquique",Iquique,51585,-3.784376,-73.277107
+529,Rocio Garcia Huaman,Residential,Residential,Av. Emancipacion 3236,"La Perla, Vina del Mar",Vina del Mar,74152,-12.078919,-77.111615
+530,Manuel Fernandez Palacios,Residential,Residential,Jr. La Marina 957,"Belen, Iquique",Iquique,81862,-3.753546,-73.254512
+531,Gisela Nunez Ponce,Residential,Residential,Prol. Santa Cruz 2197,"Nuevo La Serena, La Serena",La Serena,71553,-9.121728,-78.512541
+532,Unilever Chile,Food & Beverage,SMB,Prol. Los Eucaliptos 1122,"Miraflores, Santiago",Santiago,17739,-12.124957,-77.02619
+533,Hector Martinez Arias,Residential,Residential,Prol. Colonial 1510,"Los Aquijes, Talca",Talca,98415,-14.101069,-75.699924
+534,Marco Quispe Alvarez,Residential,Residential,Calle Conquistadores 2218,"Paucarpata, Valparaiso",Valparaiso,67877,-16.423064,-71.512968
+535,Cesar Hernandez Alvarez,Residential,Residential,Av. Emancipacion 1939,"La Perla, Vina del Mar",Vina del Mar,94733,-12.071205,-77.106114
+536,Patricia Quispe Palacios,Residential,Residential,Psje. Independencia 261,"Ventanilla, Vina del Mar",Vina del Mar,63654,-11.877759,-77.121509
+537,Sandra Gutierrez Vera,Residential,Residential,Prol. Valparaiso 2769,"Subtanjalla, Talca",Talca,98124,-14.032743,-75.751475
+538,Karina Zarate Jimenez,Residential,Residential,Jr. La Marina 2459,"Santa Rosa, Antofagasta",Antofagasta,80796,-6.881012,-79.926284
+539,Hidrandina,Energy,Enterprise,Jr. Valparaiso 706,"Santa Rosa, Antofagasta",Antofagasta,27040,-6.874573,-79.928011
+540,Milagros Vega Silva,Residential,Residential,Av. Reducto 2652,"Surco, Santiago",Santiago,36244,-12.142247,-77.001158
+541,Raul Perez Gomez,Residential,Residential,Psje. Los Cedros 2174,"San Miguel, Santiago",Santiago,51963,-12.082714,-77.100131
+542,Ricardo Rojas Sanchez,Residential,Residential,Av. Universitaria 3302,"Centro, Temuco",Temuco,43488,-5.193908,-80.636206
+543,Mario Benavides Gutierrez,Residential,Residential,Av. San Martin 2368,"Jesus, Puerto Montt",Puerto Montt,35956,-7.235694,-78.390571
+544,Oscar Torres Vega,Residential,Residential,Jr. Brasil 1365,"Coishco, La Serena",La Serena,17277,-9.022258,-78.613382
+545,Manuel Romero Chavez,Residential,Residential,Psje. Reducto 1799,"San Sebastian, Concepcion",Concepcion,12825,-13.540253,-71.942655
+546,Julio Paredes Ruiz,Residential,Residential,Jr. Caminos del Inca 1910,"La Molina, Santiago",Santiago,11542,-12.082259,-76.937454
+547,Sandra Torres Jimenez,Residential,Residential,Av. Reducto 384,"Coishco, La Serena",La Serena,65297,-9.029259,-78.610029
+548,Jose Gomez Alvarez,Residential,Residential,Prol. Javier Prado 734,"Coishco, La Serena",La Serena,85800,-9.026368,-78.620553
+549,Plaza Vea,Retail,Enterprise,Av. Las Orquideas 1497,"La Punta, Vina del Mar",Vina del Mar,59127,-12.068758,-77.173126
+550,Movistar Chile,Telecommunications,Enterprise,Av. Independencia 1682,"Castilla, Temuco",Temuco,98414,-5.187387,-80.642399
+551,Valeria Rodriguez Nunez,Residential,Residential,Jr. Independencia 1644,"Centro, Puerto Montt",Puerto Montt,41331,-7.164899,-78.494945
+552,Katherine Vega Ramirez,Residential,Residential,Prol. Valparaiso 736,"Parcona, Talca",Talca,32918,-14.041818,-75.704695
+553,Diego Fernandez Vera,Residential,Residential,Av. Colonial 871,"San Sebastian, Concepcion",Concepcion,40494,-13.533485,-71.951226
+554,Ricardo Lopez Gutierrez,Residential,Residential,Psje. Colonial 2649,"Pimentel, Antofagasta",Antofagasta,16057,-6.833443,-79.927191
+555,PUCP,Education,SMB,Av. Libertad 2151,"Jose Leonardo Ortiz, Antofagasta",Antofagasta,20925,-6.751583,-79.838994
+556,Carmen Huaman Vega,Residential,Residential,Av. San Martin 3166,"Chilca, Rancagua",Rancagua,24532,-12.07924,-75.211625
+557,Jorge Valenzuela Perez,Residential,Residential,Calle Los Eucaliptos 2120,"Banos del Inca, Puerto Montt",Puerto Montt,63019,-7.166708,-78.461908
+558,Alberto Castro Ortiz,Residential,Residential,Jr. Caminos del Inca 2625,"La Esperanza, Copiapo",Copiapo,12032,-8.060963,-79.042993
+559,Pablo Medina Paredes,Residential,Residential,Av. Ayacucho 2927,"La Victoria, Antofagasta",Antofagasta,88350,-6.793619,-79.837131
+560,Alberto Ruiz Nunez,Residential,Residential,Av. Universitaria 3365,"Santiago, Concepcion",Concepcion,75409,-13.530367,-71.977274
+561,Fernando Alvarez Nunez,Residential,Residential,Jr. Concepcion 416,"Hunter, Valparaiso",Valparaiso,32635,-16.450218,-71.545568
+562,Andres Vargas Mendoza,Residential,Residential,Prol. Emancipacion 2314,"Moche, Copiapo",Copiapo,40282,-8.171457,-79.009464
+563,Municipalidad de San Isidro,Government,Government,Av. San Martin 369,"Parcona, Talca",Talca,56073,-14.037742,-75.691644
+564,Manuel Reyes Carrasco,Residential,Residential,Calle Primavera 1533,"Centro, Iquique",Iquique,22933,-3.751279,-73.258287
+565,Luis Jimenez Vargas,Residential,Residential,Av. Los Eucaliptos 853,"Centro Historico, Concepcion",Concepcion,10863,-13.511918,-71.972791
+566,Fernanda Rivera Paredes,Residential,Residential,Calle San Martin 1398,"La Esperanza, Copiapo",Copiapo,69442,-8.059789,-79.050273
+567,Gabriela Torres Vera,Residential,Residential,Jr. Libertad 3309,"Huanchaco, Copiapo",Copiapo,60686,-8.083736,-79.127914
+568,Mario Lopez Romero,Residential,Residential,Av. Las Begonias 872,"La Victoria, Antofagasta",Antofagasta,99390,-6.787557,-79.839606
+569,Diego Huaman Rivera,Residential,Residential,Calle Primavera 1500,"Subtanjalla, Talca",Talca,81259,-14.03341,-75.753067
+570,Interbank,Banking,Enterprise,Av. Los Jazmines 1890,"Pilcomayo, Rancagua",Rancagua,76515,-12.046845,-75.238528
+571,Pilar Chavez Vargas,Residential,Residential,Prol. Universitaria 195,"Pimentel, Antofagasta",Antofagasta,12322,-6.830214,-79.940403
+572,Hugo Zarate Gutierrez,Residential,Residential,Av. Benavides 2408,"Jesus, Puerto Montt",Puerto Montt,77522,-7.241359,-78.397228
+573,Carla Paredes Vera,Residential,Residential,Calle Comandante Espinar 1699,"Centro, Rancagua",Rancagua,23425,-12.069794,-75.203875
+574,Municipalidad de Valparaiso,Government,Government,Psje. Las Orquideas 549,"El Porvenir, Copiapo",Copiapo,60594,-8.096294,-79.012577
+575,Cesar Morales Cordova,Residential,Residential,Prol. La Marina 1346,"Huanchaco, Copiapo",Copiapo,85021,-8.086906,-79.118368
+576,Veronica Chavez Martinez,Residential,Residential,Prol. Grau 1239,"San Sebastian, Concepcion",Concepcion,43634,-13.538033,-71.940126
+577,Alfredo Huaman Rivera,Residential,Residential,Jr. Conquistadores 2993,"Nuevo La Serena, La Serena",La Serena,29634,-9.111502,-78.522837
+578,Banco Pichincha,Banking,Enterprise,Calle La Encalada 1605,"Banos del Inca, Puerto Montt",Puerto Montt,25894,-7.170827,-78.461978
+579,Daniel Garcia Soto,Residential,Residential,Prol. Libertad 3010,"Centro, Antofagasta",Antofagasta,11764,-6.772626,-79.836081
+580,Enrique Ortiz Vargas,Residential,Residential,Calle Grau 809,"San Juan Bautista, Iquique",Iquique,16617,-3.784543,-73.272265
+581,USIL,Education,Enterprise,Prol. Larco 2072,"Nuevo La Serena, La Serena",La Serena,16614,-9.111004,-78.522466
+582,Roberto Ruiz Campos,Residential,Residential,Psje. Conquistadores 972,"Cercado, Valparaiso",Valparaiso,28585,-16.406186,-71.535117
+583,Natalia Vasquez Ramirez,Residential,Residential,Psje. La Marina 1070,"26 de Octubre, Temuco",Temuco,14703,-5.183077,-80.647325
+584,Carla Rivera Castro,Residential,Residential,Prol. Las Gardenias 3025,"Centro, Antofagasta",Antofagasta,89831,-6.771896,-79.84778
+585,Rosario Rivera Quispe,Residential,Residential,Jr. Comandante Espinar 319,"Centro, Copiapo",Copiapo,20982,-8.104701,-79.032152
+586,Carla Salazar Mendoza,Residential,Residential,Calle Los Pinos 305,"Centro, Iquique",Iquique,70986,-3.74343,-73.249989
+587,Manuel Ramirez Vega,Residential,Residential,Prol. Las Gardenias 531,"Coishco, La Serena",La Serena,20130,-9.023313,-78.610115
+588,Pedro Diaz Zarate,Residential,Residential,Psje. Bolognesi 3375,"Nuevo La Serena, La Serena",La Serena,19724,-9.119146,-78.523906
+589,Elizabeth Vera Perez,Residential,Residential,Psje. San Martin 1172,"Centro Historico, Concepcion",Concepcion,60485,-13.51525,-71.980558
+590,Alejandro Reyes Rojas,Residential,Residential,Av. Colonial 1405,"Los Aquijes, Talca",Talca,54917,-14.094575,-75.700157
+591,Rocio Medina Ruiz,Residential,Residential,Av. Tacna 1831,"Victor Larco Herrera, Copiapo",Copiapo,10307,-8.136276,-79.044153
+592,Patricia Lopez Medina,Residential,Residential,Jr. Los Alamos 302,"Centro, Talca",Talca,43009,-14.073537,-75.730323
+593,Antonio Hernandez Rodriguez,Residential,Residential,Jr. Huancavelica 392,"Jose Leonardo Ortiz, Antofagasta",Antofagasta,90022,-6.75043,-79.83137
+594,Fernanda Hernandez Palacios,Residential,Residential,Jr. Colonial 318,"Socabaya, Valparaiso",Valparaiso,25176,-16.463623,-71.524404
+595,Gisela Mendoza Carrasco,Residential,Residential,Jr. Los Cedros 392,"El Tambo, Rancagua",Rancagua,60496,-12.054192,-75.208027
+596,Rosario Castro Gomez,Residential,Residential,Calle Wilson 2227,"Centro, Talca",Talca,50189,-14.07389,-75.727736
+597,Francisco Zarate Ramirez,Residential,Residential,Psje. Larco 1275,"Jesus, Puerto Montt",Puerto Montt,99532,-7.239456,-78.384964
+598,Andres Ortiz Nunez,Residential,Residential,Jr. Las Orquideas 1111,"Santa Anita, Santiago",Santiago,56947,-12.044347,-76.970193
+599,Alejandro Benavides Soto,Residential,Residential,Av. Independencia 1088,"Centro, Puerto Montt",Puerto Montt,99593,-7.163908,-78.502474
+600,Maria Miranda Gonzalez,Residential,Residential,Calle Comandante Espinar 2824,"Jesus, Puerto Montt",Puerto Montt,16414,-7.237114,-78.386791
+601,Clinica Angloamericana,Healthcare,Enterprise,Av. Libertad 1033,"Carabayllo, Santiago",Santiago,54596,-11.846962,-77.041917
+602,Lorena Zarate Herrera,Residential,Residential,Calle Universitaria 1122,"Centro, Temuco",Temuco,64712,-5.200531,-80.635241
+603,Roberto Arias Espinoza,Residential,Residential,Psje. Talca 587,"Centro, Talca",Talca,30056,-14.066952,-75.72329
+604,Electrocentro,Energy,Enterprise,Calle Libertad 1336,"Belen, Iquique",Iquique,59169,-3.758051,-73.24759
+605,Sonesta,Hospitality,Enterprise,Psje. Las Palmeras 1949,"Villa Maria del Triunfo, Santiago",Santiago,21372,-12.163432,-76.942689
+606,Lorena Garcia Herrera,Residential,Residential,Psje. Larco 2646,"La Esperanza, Copiapo",Copiapo,94319,-8.06046,-79.041183
+607,UCSM Valparaiso,Education,SMB,Jr. Ayacucho 2152,"Santa Rosa, Antofagasta",Antofagasta,17363,-6.870445,-79.92893
+608,Veronica Gomez Ruiz,Residential,Residential,Prol. Talca 2032,"Florencia de Mora, Copiapo",Copiapo,55516,-8.088691,-79.011885
+609,Gustavo Miranda Alvarez,Residential,Residential,Calle San Martin 672,"Florencia de Mora, Copiapo",Copiapo,55340,-8.084088,-79.01148
+610,Javier Morales Sanchez,Residential,Residential,Jr. Concepcion 1538,"La Perla, Vina del Mar",Vina del Mar,17550,-12.064889,-77.110987
+611,Gonzalo Ruiz Sanchez,Residential,Residential,Psje. Independencia 999,"Breña, Santiago",Santiago,48649,-12.053271,-77.058871
+612,Rosario Miranda Diaz,Residential,Residential,Av. Talca 2047,"Ate, Santiago",Santiago,64414,-12.024948,-76.917955
+613,Gabriel Paredes Hernandez,Residential,Residential,Prol. Los Pinos 2014,"Punchana, Iquique",Iquique,50230,-3.716316,-73.263617
+614,Daniela Ruiz Garcia,Residential,Residential,Av. 28 de Julio 2643,"La Esperanza, Copiapo",Copiapo,55666,-8.06471,-79.048401
+615,Veronica Diaz Perez,Residential,Residential,Av. 28 de Julio 2673,"San Sebastian, Concepcion",Concepcion,71224,-13.535885,-71.950257
+616,Jessica Quispe Espinoza,Residential,Residential,Calle Benavides 2122,"Bellavista, Vina del Mar",Vina del Mar,22651,-12.064947,-77.128231
+617,Patricia Rodriguez Gonzalez,Residential,Residential,Av. Grau 424,"La Victoria, Antofagasta",Antofagasta,11850,-6.78826,-79.839576
+618,Alfredo Villegas Condori,Residential,Residential,Av. Los Eucaliptos 1775,"Yanahuara, Valparaiso",Valparaiso,60553,-16.388614,-71.546639
+619,Alfredo Ortiz Cruz,Residential,Residential,Psje. Primavera 2986,"San Borja, Santiago",Santiago,62813,-12.108388,-76.99825
+620,Francisco Gomez Garcia,Residential,Residential,Av. Los Eucaliptos 1023,"Carabayllo, Santiago",Santiago,90086,-11.857013,-77.038046
+621,Gonzalo Zarate Quispe,Residential,Residential,Jr. Wilson 1302,"Moche, Copiapo",Copiapo,85526,-8.165275,-79.013257
+622,Fernando Condori Mendoza,Residential,Residential,Av. Ayacucho 299,"Llacanora, Puerto Montt",Puerto Montt,54329,-7.191689,-78.440672
+623,Ximena Aguilar Campos,Residential,Residential,Calle Tacna 1998,"Nuevo La Serena, La Serena",La Serena,28834,-9.112393,-78.51277
+624,Fernando Salazar Herrera,Residential,Residential,Av. Grau 2671,"Saylla, Concepcion",Concepcion,24482,-13.572755,-71.826708
+625,Banco Falabella,Banking,Enterprise,Psje. Los Cedros 2963,"Jesus, Puerto Montt",Puerto Montt,74471,-7.242919,-78.382936
+626,Cesar Vargas Perez,Residential,Residential,Calle Talca 116,"Bellavista, Vina del Mar",Vina del Mar,75593,-12.055195,-77.130492
+627,Cosapi,Construction,SMB,Av. Valparaiso 3233,"La Esperanza, Copiapo",Copiapo,13779,-8.067565,-79.037226
+628,Marisol Delgado Rivera,Residential,Residential,Av. Reducto 497,"Centro, Puerto Montt",Puerto Montt,74381,-7.165778,-78.493562
+629,Jose Paredes Aguilar,Residential,Residential,Calle Reducto 250,"Llacanora, Puerto Montt",Puerto Montt,33543,-7.189259,-78.436511
+630,UNSA,Education,Enterprise,Av. Huancavelica 3471,"Nuevo La Serena, La Serena",La Serena,65447,-9.109547,-78.51553
+631,Natalia Herrera Vega,Residential,Residential,Jr. Las Begonias 402,"Banos del Inca, Puerto Montt",Puerto Montt,54117,-7.162106,-78.470867
+632,Vanessa Ramos Medina,Residential,Residential,Prol. Santa Cruz 3282,"Banos del Inca, Puerto Montt",Puerto Montt,26850,-7.171021,-78.460457
+633,Alberto Benavides Jimenez,Residential,Residential,Jr. El Polo 309,"Carmen de la Legua, Vina del Mar",Vina del Mar,83602,-12.045484,-77.100201
+634,Primax,Energy,Enterprise,Psje. Los Pinos 2473,"Centro, Talca",Talca,59155,-14.069985,-75.73191
+635,Hugo Carrasco Soto,Residential,Residential,Jr. Primavera 1306,"San Juan de Lurigancho, Santiago",Santiago,79586,-11.986334,-77.003743
+636,Mariana Morales Sanchez,Residential,Residential,Prol. Los Jazmines 2981,"Nuevo La Serena, La Serena",La Serena,32224,-9.112615,-78.515476
+637,Rosa Fernandez Delgado,Residential,Residential,Av. Grau 3155,"Centro, Talca",Talca,95430,-14.067337,-75.723727
+638,Patricia Aguilar Rojas,Residential,Residential,Av. Valparaiso 873,"Victor Larco Herrera, Copiapo",Copiapo,89041,-8.137256,-79.034522
+639,MiBanco,Banking,Enterprise,Psje. Libertad 1979,"El Tambo, Rancagua",Rancagua,57608,-12.044258,-75.223191
+640,La Curacao,Retail,SMB,Calle Libertad 1259,"Ventanilla, Vina del Mar",Vina del Mar,61229,-11.877234,-77.12404
+641,Westin Santiago,Hospitality,Enterprise,Av. San Martin 3290,"San Juan Bautista, Iquique",Iquique,76817,-3.783507,-73.27128
+642,Enrique Sanchez Condori,Residential,Residential,Prol. Huancavelica 2383,"Nuevo La Serena, La Serena",La Serena,48140,-9.119363,-78.520359
+643,Cecilia Arias Reyes,Residential,Residential,Prol. San Martin 2077,"Los Aquijes, Talca",Talca,62425,-14.091718,-75.695157
+644,Oscar Sanchez Vargas,Residential,Residential,Jr. Libertad 2749,"La Tinguina, Talca",Talca,41123,-14.024072,-75.714697
+645,Javier Villegas Flores,Residential,Residential,Jr. Caminos del Inca 1103,"Pimentel, Antofagasta",Antofagasta,59245,-6.842184,-79.932093
+646,Cesar Silva Soto,Residential,Residential,Calle Las Orquideas 2553,"La Perla, Vina del Mar",Vina del Mar,61351,-12.069669,-77.114324
+647,Fernando Morales Reyes,Residential,Residential,Av. Bolognesi 283,"Jesus Maria, Santiago",Santiago,90927,-12.07639,-77.045708
+648,Diego Espinoza Diaz,Residential,Residential,Av. Las Palmeras 903,"La Molina, Santiago",Santiago,78102,-12.083655,-76.938201
+649,Jorge Caceres Garcia,Residential,Residential,Jr. Los Jazmines 1539,"Centro, Puerto Montt",Puerto Montt,65190,-7.16197,-78.502363
+650,Cesar Alvarez Villegas,Residential,Residential,Psje. Independencia 1381,"La Perla, Vina del Mar",Vina del Mar,12164,-12.067989,-77.111313
+651,Katherine Ponce Gonzalez,Residential,Residential,Av. Valparaiso 2457,"Centro, Puerto Montt",Puerto Montt,69591,-7.161658,-78.505101
+652,Jose Salazar Torres,Residential,Residential,Calle Los Jazmines 2593,"Catacaos, Temuco",Temuco,62755,-5.265449,-80.673719
+653,Luz Rodriguez Delgado,Residential,Residential,Jr. El Polo 3370,"Centro, Vina del Mar",Vina del Mar,83969,-12.058258,-77.111594
+654,Rocio Zarate Ruiz,Residential,Residential,Calle 28 de Julio 2130,"Jesus, Puerto Montt",Puerto Montt,96712,-7.246372,-78.388439
+655,Repsol Chile,Energy,Enterprise,Av. Talca 1156,"Socabaya, Valparaiso",Valparaiso,47940,-16.454771,-71.535445
+656,Jose Castro Perez,Residential,Residential,Psje. Las Gardenias 810,"Centro, Copiapo",Copiapo,58228,-8.103817,-79.024193
+657,Lorena Martinez Castillo,Residential,Residential,Av. Colonial 1878,"San Sebastian, Concepcion",Concepcion,35684,-13.537793,-71.947782
+658,Claudia Silva Valenzuela,Residential,Residential,Jr. Los Eucaliptos 491,"Centro, Talca",Talca,19240,-14.071565,-75.731413
+659,Bitel,Telecommunications,Enterprise,Jr. Grau 3150,"San Jeronimo, Concepcion",Concepcion,46680,-13.556144,-71.907437
+660,Arturo Soto Salazar,Residential,Residential,Psje. Ayacucho 1237,"La Victoria, Antofagasta",Antofagasta,99404,-6.793589,-79.836464
+661,Lorena Paredes Mamani,Residential,Residential,Av. Huancavelica 2171,"Bellavista, Vina del Mar",Vina del Mar,30426,-12.06769,-77.122637
+662,Javier Garcia Fernandez,Residential,Residential,Av. Puno 3028,"La Tinguina, Talca",Talca,43708,-14.037839,-75.71784
+663,Andrea Mamani Carrasco,Residential,Residential,Psje. Larco 1228,"Santiago, Concepcion",Concepcion,77001,-13.528163,-71.986527
+664,Gonzalo Gonzalez Valenzuela,Residential,Residential,Calle Valparaiso 1311,"La Perla, Vina del Mar",Vina del Mar,96998,-12.078893,-77.113519
+665,Diego Chavez Reyes,Residential,Residential,Prol. Caminos del Inca 1846,"Huanchaco, Copiapo",Copiapo,51502,-8.085156,-79.120663
+666,Jose Delgado Rivera,Residential,Residential,Calle Tacna 2363,"Castilla, Temuco",Temuco,83816,-5.184623,-80.642088
+667,Silvia Mendoza Cruz,Residential,Residential,Jr. Bolognesi 2633,"Centro, Antofagasta",Antofagasta,33649,-6.764461,-79.836641
+668,Minsur,Mining,Enterprise,Psje. Huancavelica 158,"Llacanora, Puerto Montt",Puerto Montt,72640,-7.184167,-78.434396
+669,Carla Zarate Rojas,Residential,Residential,Jr. Bolognesi 1905,"Jesus Maria, Santiago",Santiago,98563,-12.075493,-77.03747
+670,Gisela Silva Alvarez,Residential,Residential,Prol. Los Cedros 2905,"Moche, Copiapo",Copiapo,59489,-8.176988,-79.013953
+671,Interseguro,Insurance,SMB,Calle Abancay 2756,"La Esperanza, Copiapo",Copiapo,92136,-8.071148,-79.042447
+672,Country Club Santiago Hotel,Hospitality,Enterprise,Calle Larco 2683,"Santa, La Serena",La Serena,55437,-8.984731,-78.616393
+673,Silvia Sanchez Torres,Residential,Residential,Av. Talca 559,"Belen, Iquique",Iquique,47537,-3.750698,-73.246946
+674,Natalia Vasquez Hernandez,Residential,Residential,Psje. 28 de Julio 3488,"El Tambo, Rancagua",Rancagua,75753,-12.047355,-75.208583
+675,Jimena Alvarez Nunez,Residential,Residential,Psje. Las Begonias 1047,"Huanchaco, Copiapo",Copiapo,66444,-8.088233,-79.116993
+676,Diego Vargas Caceres,Residential,Residential,Jr. Emancipacion 2688,"Tambogrande, Temuco",Temuco,81195,-4.925354,-80.344596
+677,Lorena Campos Quispe,Residential,Residential,Jr. Las Begonias 1196,"Paucarpata, Valparaiso",Valparaiso,28191,-16.433547,-71.516823
+678,Gustavo Lopez Perez,Residential,Residential,Psje. Tacna 2812,"Mariano Melgar, Valparaiso",Valparaiso,96221,-16.402991,-71.504273
+679,Sodimac,Retail,Enterprise,Av. Emancipacion 2637,"Saylla, Concepcion",Concepcion,41579,-13.567385,-71.815352
+680,Daniela Rivera Carrasco,Residential,Residential,Jr. Brasil 378,"La Punta, Vina del Mar",Vina del Mar,79251,-12.069618,-77.169679
+681,Universidad del Pacifico,Education,Enterprise,Psje. Valparaiso 3399,"Ventanilla, Vina del Mar",Vina del Mar,96086,-11.877014,-77.123213
+682,Francisco Paredes Diaz,Residential,Residential,Calle Valparaiso 1930,"La Punta, Vina del Mar",Vina del Mar,95015,-12.071777,-77.173473
+683,Pilar Mendoza Rivera,Residential,Residential,Prol. Los Alamos 1615,"Hunter, Valparaiso",Valparaiso,29645,-16.460344,-71.547278
+684,Paris,Retail,SMB,Av. Emancipacion 1019,"Centro, Copiapo",Copiapo,35722,-8.11106,-79.023373
+685,Gustavo Soto Campos,Residential,Residential,Prol. Las Gardenias 486,"Centro Historico, Concepcion",Concepcion,81557,-13.522291,-71.98205
+686,Daniel Vargas Cordova,Residential,Residential,Av. Conquistadores 3058,"Centro, Puerto Montt",Puerto Montt,95904,-7.159526,-78.498647
+687,Marco Ramirez Benavides,Residential,Residential,Av. Puno 283,"Ate, Santiago",Santiago,40944,-12.018739,-76.910376
+688,Ivan Espinoza Rivera,Residential,Residential,Av. Concepcion 628,"Victor Larco Herrera, Copiapo",Copiapo,36559,-8.13148,-79.042238
+689,Mariela Ramos Martinez,Residential,Residential,Calle Concepcion 2175,"Chilca, Rancagua",Rancagua,78226,-12.079767,-75.218952
+690,Patricia Castillo Arias,Residential,Residential,Calle Colonial 1156,"Punchana, Iquique",Iquique,62057,-3.711433,-73.264677
+691,Ricardo Cruz Rivera,Residential,Residential,Jr. Independencia 1299,"Santa, La Serena",La Serena,22849,-8.982833,-78.614869
+692,Volcan,Mining,Enterprise,Av. Ayacucho 1405,"La Punta, Vina del Mar",Vina del Mar,65040,-12.074017,-77.158142
+693,Pedro Torres Castro,Residential,Residential,Av. Las Orquideas 2906,"Moche, Copiapo",Copiapo,32739,-8.167838,-79.016269
+694,Enrique Vasquez Ramirez,Residential,Residential,Av. Comandante Espinar 2875,"Centro, Talca",Talca,42927,-14.066407,-75.732977
+695,Fernando Campos Diaz,Residential,Residential,Av. Las Gardenias 2009,"Belen, Iquique",Iquique,27506,-3.760909,-73.245647
+696,Ibis Santiago,Hospitality,SMB,Av. Los Alamos 1041,"Tambogrande, Temuco",Temuco,20986,-4.921453,-80.341041
+697,Milagros Aguilar Ponce,Residential,Residential,Av. Bolognesi 2824,"Saylla, Concepcion",Concepcion,97269,-13.567599,-71.816906
+698,Vanessa Sanchez Campos,Residential,Residential,Calle El Polo 424,"San Sebastian, Concepcion",Concepcion,44130,-13.539999,-71.948799
+699,Eduardo Rodriguez Silva,Residential,Residential,Prol. El Polo 1783,"Saylla, Concepcion",Concepcion,56291,-13.569065,-71.824468
+700,Juan Sanchez Vasquez,Residential,Residential,Av. Universitaria 820,"Santiago, Concepcion",Concepcion,69857,-13.520014,-71.990493
+701,Gonzalo Alvarez Herrera,Residential,Residential,Calle Brasil 775,"Huancan, Rancagua",Rancagua,40209,-12.116322,-75.211309
+702,Pablo Fernandez Cruz,Residential,Residential,Prol. 28 de Julio 1750,"Belen, Iquique",Iquique,92510,-3.755306,-73.245698
+703,Carlos Mamani Alvarez,Residential,Residential,Jr. Concepcion 999,"La Victoria, Antofagasta",Antofagasta,11872,-6.785146,-79.835961
+704,Gonzalo Morales Herrera,Residential,Residential,Calle Las Gardenias 285,"Victor Larco Herrera, Copiapo",Copiapo,87041,-8.134424,-79.048125
+705,David Morales Castro,Residential,Residential,Psje. Brasil 2189,"Banos del Inca, Puerto Montt",Puerto Montt,53444,-7.161521,-78.470601
+706,Claudia Soto Ponce,Residential,Residential,Prol. Grau 2657,"Jesus, Puerto Montt",Puerto Montt,72544,-7.240874,-78.382645
+707,Hugo Arias Jimenez,Residential,Residential,Prol. Emancipacion 535,"La Victoria, Antofagasta",Antofagasta,46695,-6.794991,-79.830653
+708,Manuel Gonzalez Herrera,Residential,Residential,Jr. Los Alamos 2600,"La Victoria, Antofagasta",Antofagasta,74644,-6.793126,-79.827023
+709,Hector Cordova Palacios,Residential,Residential,Calle Los Alamos 139,"La Punta, Vina del Mar",Vina del Mar,12128,-12.064037,-77.165201
+710,Vanessa Rojas Ponce,Residential,Residential,Jr. 28 de Julio 3412,"Catacaos, Temuco",Temuco,70364,-5.260653,-80.667724
+711,Swissotel Santiago,Hospitality,SMB,Av. Primavera 1608,"Centro, Iquique",Iquique,42243,-3.747601,-73.257887
+712,EsSalud,Healthcare,SMB,Av. Talca 2607,"Centro, Talca",Talca,33148,-14.072464,-75.734245
+713,Ivan Jimenez Zarate,Residential,Residential,Av. Reducto 1806,"Centro, La Serena",La Serena,80861,-9.083002,-78.572933
+714,Francisco Vega Paredes,Residential,Residential,Psje. Las Orquideas 319,"Santa Rosa, Antofagasta",Antofagasta,64225,-6.877497,-79.930875
+715,Andres Garcia Ponce,Residential,Residential,Psje. Larco 3411,"San Miguel, Santiago",Santiago,52272,-12.073486,-77.100566
+716,Rosa Morales Carrasco,Residential,Residential,Psje. Reducto 1252,"Centro, Talca",Talca,21652,-14.070119,-75.72462
+717,UNMSM,Education,SMB,Prol. Talca 1155,"Centro, Puerto Montt",Puerto Montt,61930,-7.171738,-78.494047
+718,Mariela Gonzalez Gomez,Residential,Residential,Av. Los Jazmines 2991,"Bellavista, Vina del Mar",Vina del Mar,46149,-12.062036,-77.125566
+719,Ricardo Cordova Vargas,Residential,Residential,Psje. La Marina 3274,"Punchana, Iquique",Iquique,43952,-3.718033,-73.266087
+720,Vanessa Huaman Torres,Residential,Residential,Prol. Concepcion 692,"La Tinguina, Talca",Talca,72232,-14.032564,-75.729029
+721,Marisol Gonzalez Benavides,Residential,Residential,Calle Los Eucaliptos 927,"Santa Rosa, Antofagasta",Antofagasta,50422,-6.878256,-79.940318
+722,Inkaterra,Hospitality,Enterprise,Psje. Las Orquideas 121,"Llacanora, Puerto Montt",Puerto Montt,57171,-7.196544,-78.440355
+723,Mariana Ruiz Herrera,Residential,Residential,Psje. La Encalada 1514,"Centro, Copiapo",Copiapo,11614,-8.110749,-79.036233
+724,Marco Rivera Mamani,Residential,Residential,Calle La Marina 1674,"Llacanora, Puerto Montt",Puerto Montt,92458,-7.189417,-78.431248
+725,Oncosalud,Healthcare,Enterprise,Jr. Libertad 3418,"San Sebastian, Concepcion",Concepcion,85387,-13.540609,-71.937275
+726,Flor Nunez Palacios,Residential,Residential,Calle Caminos del Inca 2906,"Florencia de Mora, Copiapo",Copiapo,12504,-8.084559,-79.019409
+727,Cecilia Alvarez Gonzalez,Residential,Residential,Prol. Reducto 875,"Centro, Copiapo",Copiapo,31071,-8.104738,-79.034815
+728,Oscar Ponce Ruiz,Residential,Residential,Calle Abancay 1031,"Parcona, Talca",Talca,51645,-14.040111,-75.695077
+729,Carmen Espinoza Ramirez,Residential,Residential,Prol. Abancay 1666,"Victor Larco Herrera, Copiapo",Copiapo,92977,-8.143851,-79.044825
+730,Hiraoka,Retail,SMB,Calle Los Alamos 1068,"Santiago, Concepcion",Concepcion,90349,-13.526695,-71.97718
+731,Andres Campos Flores,Residential,Residential,Psje. La Encalada 3149,"Pimentel, Antofagasta",Antofagasta,30836,-6.833766,-79.938289
+732,Claro Chile,Telecommunications,Enterprise,Calle Concepcion 2977,"Florencia de Mora, Copiapo",Copiapo,36107,-8.08522,-79.026039
+733,David Villegas Rivera,Residential,Residential,Av. Comandante Espinar 685,"Banos del Inca, Puerto Montt",Puerto Montt,20837,-7.165937,-78.465576
+734,RENIEC,Government,Government,Calle Comandante Espinar 1009,"Belen, Iquique",Iquique,42517,-3.761056,-73.251333
+735,Miguel Condori Vera,Residential,Residential,Av. Las Orquideas 1205,"Punchana, Iquique",Iquique,64888,-3.71004,-73.264074
+736,David Diaz Espinoza,Residential,Residential,Av. La Encalada 2527,"Pilcomayo, Rancagua",Rancagua,91791,-12.038764,-75.243684
+737,Ana Reyes Paredes,Residential,Residential,Av. 28 de Julio 360,"Santa, La Serena",La Serena,60962,-8.983689,-78.622001
+738,Ximena Castillo Villegas,Residential,Residential,Jr. Las Orquideas 3366,"La Esperanza, Copiapo",Copiapo,39834,-8.059505,-79.045985
+739,Silvia Carrasco Sanchez,Residential,Residential,Av. Los Eucaliptos 1457,"Banos del Inca, Puerto Montt",Puerto Montt,28606,-7.17319,-78.470667
+740,Jessica Hernandez Palacios,Residential,Residential,Av. Comandante Espinar 2218,"Subtanjalla, Talca",Talca,83032,-14.027905,-75.744914
+741,Hugo Ramos Cruz,Residential,Residential,Psje. Los Jazmines 1888,"Centro, Puerto Montt",Puerto Montt,68889,-7.167913,-78.49512
+742,HV Contratistas,Construction,Enterprise,Calle Wilson 2656,"Jose Leonardo Ortiz, Antofagasta",Antofagasta,85202,-6.75008,-79.843946
+743,Milagros Rojas Vasquez,Residential,Residential,Prol. Las Begonias 2778,"La Tinguina, Talca",Talca,58164,-14.03367,-75.724052
+744,Ivan Reyes Campos,Residential,Residential,Av. Reducto 333,"Subtanjalla, Talca",Talca,92274,-14.037821,-75.74054
+745,Julio Vargas Morales,Residential,Residential,Av. Santa Cruz 881,"Tambogrande, Temuco",Temuco,34487,-4.918021,-80.342855
+746,Saga Falabella,Retail,SMB,Calle Javier Prado 144,"Santa Anita, Santiago",Santiago,75184,-12.04714,-76.971141
+747,Victor Miranda Vargas,Residential,Residential,Jr. Los Alamos 2580,"Coishco, La Serena",La Serena,22091,-9.027206,-78.619402
+748,Mariela Sanchez Rivera,Residential,Residential,Jr. Reducto 3438,"Chorrillos, Santiago",Santiago,37163,-12.175583,-77.014804
+749,Enrique Vega Ruiz,Residential,Residential,Jr. La Marina 1579,"San Miguel, Santiago",Santiago,86260,-12.083522,-77.092777
+750,Andrea Paredes Lopez,Residential,Residential,Av. Abancay 3333,"San Sebastian, Concepcion",Concepcion,99268,-13.528374,-71.946291
+751,Daniel Vargas Ramos,Residential,Residential,Prol. Ayacucho 3068,"San Isidro, Santiago",Santiago,83486,-12.090843,-77.039939
+752,Ana Soto Soto,Residential,Residential,Jr. 28 de Julio 1445,"Florencia de Mora, Copiapo",Copiapo,18763,-8.085994,-79.014141
+753,Alberto Rivera Ponce,Residential,Residential,Prol. Las Orquideas 1776,"Centro, La Serena",La Serena,11384,-9.085266,-78.581539
+754,Rosa Aguilar Vasquez,Residential,Residential,Jr. Bolognesi 1381,"Jesus, Puerto Montt",Puerto Montt,81683,-7.238234,-78.383187
+755,Rocio Gonzalez Ramirez,Residential,Residential,Psje. Brasil 549,"Santa, La Serena",La Serena,75094,-8.98241,-78.622331
+756,Katherine Paredes Chavez,Residential,Residential,Psje. La Marina 1379,"Santa Rosa, Antofagasta",Antofagasta,13209,-6.868994,-79.93129
+757,Gabriela Ramirez Vargas,Residential,Residential,Calle Santa Cruz 1907,"La Perla, Vina del Mar",Vina del Mar,89529,-12.072124,-77.105548
+758,Fernando Mamani Medina,Residential,Residential,Prol. Primavera 2884,"Pilcomayo, Rancagua",Rancagua,52039,-12.052719,-75.238249
+759,Natalia Ramirez Reyes,Residential,Residential,Av. Puno 920,"Breña, Santiago",Santiago,66344,-12.052255,-77.045778
+760,Andrea Chavez Gomez,Residential,Residential,Calle Los Pinos 530,"San Juan Bautista, Iquique",Iquique,42489,-3.788242,-73.271436
+761,Luz Castro Arias,Residential,Residential,Prol. 28 de Julio 119,"Centro, Copiapo",Copiapo,37349,-8.109144,-79.025677
+762,Antonio Jimenez Ramos,Residential,Residential,Psje. Independencia 1175,"Victor Larco Herrera, Copiapo",Copiapo,71592,-8.136092,-79.034219
+763,Eduardo Ortiz Torres,Residential,Residential,Jr. Los Eucaliptos 1517,"Nuevo La Serena, La Serena",La Serena,81194,-9.110734,-78.518666
+764,Gustavo Garcia Vasquez,Residential,Residential,Av. El Polo 1415,"Santa, La Serena",La Serena,77263,-8.990569,-78.61483
+765,Ximena Rivera Cruz,Residential,Residential,Calle San Martin 1901,"Yanahuara, Valparaiso",Valparaiso,69035,-16.382718,-71.548902
+766,David Lopez Herrera,Residential,Residential,Psje. 28 de Julio 1235,"Belen, Iquique",Iquique,84788,-3.752836,-73.239463
+767,Luz Hernandez Campos,Residential,Residential,Calle San Martin 2020,"Los Olivos, Santiago",Santiago,18679,-11.98285,-77.069944
+768,Gisela Soto Vasquez,Residential,Residential,Av. Abancay 1256,"Victor Larco Herrera, Copiapo",Copiapo,85165,-8.133787,-79.047006
+769,Odebrecht Chile,Construction,SMB,Prol. Los Pinos 283,"Florencia de Mora, Copiapo",Copiapo,95003,-8.086692,-79.017004
+770,Katherine Aguilar Lopez,Residential,Residential,Av. Reducto 2570,"Centro, La Serena",La Serena,91756,-9.081764,-78.575229
+771,Roberto Carrasco Espinoza,Residential,Residential,Av. Javier Prado 1814,"Moche, Copiapo",Copiapo,25387,-8.176443,-79.007288
+772,Katherine Espinoza Gutierrez,Residential,Residential,Psje. Colonial 3462,"Belen, Iquique",Iquique,52578,-3.75402,-73.248772
+773,Osinergmin,Energy,Enterprise,Prol. Universitaria 1423,"Banos del Inca, Puerto Montt",Puerto Montt,87340,-7.159638,-78.457924
+774,Los Portales,Real Estate,Enterprise,Prol. Colonial 763,"Los Aquijes, Talca",Talca,25699,-14.09918,-75.693436
+775,Marisol Fernandez Herrera,Residential,Residential,Calle La Marina 170,"Surco, Santiago",Santiago,94475,-12.13843,-77.004618
+776,Diego Cordova Nunez,Residential,Residential,Psje. Brasil 2632,"Santiago, Concepcion",Concepcion,13015,-13.532658,-71.976872
+777,Ricardo Diaz Romero,Residential,Residential,Jr. Primavera 3488,"Moche, Copiapo",Copiapo,50802,-8.179192,-79.002561
+778,Cosapi Inmobiliaria,Real Estate,Enterprise,Psje. Concepcion 2862,"Banos del Inca, Puerto Montt",Puerto Montt,34923,-7.157371,-78.459913
+779,Paola Chavez Salazar,Residential,Residential,Prol. Conquistadores 2330,"Los Olivos, Santiago",Santiago,32427,-11.984539,-77.075919
+780,Manuel Quispe Castillo,Residential,Residential,Calle Universitaria 2745,"Parcona, Talca",Talca,18453,-14.049954,-75.698841
+781,Pedro Mendoza Salazar,Residential,Residential,Av. Talca 2268,"Subtanjalla, Talca",Talca,11886,-14.02704,-75.749886
+782,Carlos Diaz Campos,Residential,Residential,Jr. El Polo 2831,"Tambogrande, Temuco",Temuco,18020,-4.917614,-80.342778
+783,UPN,Education,Enterprise,Calle Los Cedros 311,"Centro, Temuco",Temuco,80110,-5.198447,-80.628648
+784,Pedro Carrasco Vega,Residential,Residential,Av. Los Jazmines 3207,"Belen, Iquique",Iquique,31044,-3.753291,-73.242918
+785,Luz Villegas Chavez,Residential,Residential,Av. Los Alamos 2179,"Centro, La Serena",La Serena,26886,-9.086706,-78.579185
+786,Rosario Mamani Herrera,Residential,Residential,Prol. Los Alamos 1906,"Wanchaq, Concepcion",Concepcion,76522,-13.51557,-71.965105
+787,Alberto Castillo Miranda,Residential,Residential,Av. La Encalada 1729,"Parcona, Talca",Talca,95362,-14.046988,-75.703703
+788,Hugo Aguilar Carrasco,Residential,Residential,Jr. La Marina 3306,"Florencia de Mora, Copiapo",Copiapo,23633,-8.084358,-79.022618
+789,Manuel Chavez Villegas,Residential,Residential,Psje. Javier Prado 2736,"Parcona, Talca",Talca,29562,-14.039684,-75.694477
+790,Javier Gomez Herrera,Residential,Residential,Psje. Las Palmeras 2644,"La Victoria, Antofagasta",Antofagasta,10984,-6.786872,-79.840719
+791,Valeria Aguilar Ruiz,Residential,Residential,Jr. Wilson 1541,"El Porvenir, Copiapo",Copiapo,72083,-8.097049,-79.014915
+792,Jorge Silva Zarate,Residential,Residential,Prol. Colonial 863,"Wanchaq, Concepcion",Concepcion,29112,-13.518301,-71.960273
+793,Luis Arias Miranda,Residential,Residential,Calle Valparaiso 469,"San Juan Bautista, Iquique",Iquique,25363,-3.785184,-73.272437
+794,Victor Alvarez Campos,Residential,Residential,Jr. Abancay 555,"Santiago, Concepcion",Concepcion,35908,-13.534457,-71.991634
+795,Jimena Romero Morales,Residential,Residential,Calle Los Eucaliptos 3271,"Centro, Rancagua",Rancagua,57615,-12.063389,-75.197653
+796,Roberto Jimenez Villegas,Residential,Residential,Psje. Universitaria 375,"Jose Leonardo Ortiz, Antofagasta",Antofagasta,94354,-6.745277,-79.83108
+797,Alfredo Quispe Rivera,Residential,Residential,Jr. Las Begonias 2414,"El Porvenir, Copiapo",Copiapo,55072,-8.088004,-79.006809
+798,Valeria Sanchez Gutierrez,Residential,Residential,Av. Libertad 713,"Nuevo La Serena, La Serena",La Serena,63454,-9.114067,-78.522256
+799,Antonio Zarate Perez,Residential,Residential,Psje. Wilson 2789,"La Tinguina, Talca",Talca,29182,-14.026676,-75.727353
+800,Enrique Villegas Arias,Residential,Residential,Psje. Concepcion 3118,"Victor Larco Herrera, Copiapo",Copiapo,25827,-8.142068,-79.046088
+801,Juan Soto Vargas,Residential,Residential,Av. Ayacucho 308,"Centro, Temuco",Temuco,11208,-5.188121,-80.635819
+802,Enrique Perez Valenzuela,Residential,Residential,Jr. Reducto 1956,"Lince, Santiago",Santiago,49791,-12.088941,-77.039868
+803,Rosa Nunez Gutierrez,Residential,Residential,Prol. Primavera 290,"Catacaos, Temuco",Temuco,72284,-5.268229,-80.680398
+804,Karina Ortiz Gonzalez,Residential,Residential,Jr. Los Cedros 1171,"Centro, Talca",Talca,23849,-14.072925,-75.735895
+805,Hugo Rivera Romero,Residential,Residential,Calle Grau 2301,"Centro, Antofagasta",Antofagasta,27514,-6.773582,-79.833354
+806,Antonio Medina Valenzuela,Residential,Residential,Calle Valparaiso 1503,"Centro, Iquique",Iquique,44410,-3.755418,-73.248315
+807,Curacao,Retail,Enterprise,Jr. La Encalada 3141,"Paucarpata, Valparaiso",Valparaiso,69455,-16.431137,-71.515505
+808,Javier Mendoza Jimenez,Residential,Residential,Psje. Los Pinos 1734,"Centro, Copiapo",Copiapo,79425,-8.106002,-79.025176
+809,Maestro,Retail,SMB,Psje. Los Jazmines 874,"Centro, La Serena",La Serena,58465,-9.092379,-78.585879
+810,Daniela Mendoza Medina,Residential,Residential,Prol. Brasil 1234,"Nuevo La Serena, La Serena",La Serena,85403,-9.110261,-78.520382
+811,Javier Alvarez Huaman,Residential,Residential,Prol. Las Palmeras 3092,"Victor Larco Herrera, Copiapo",Copiapo,17874,-8.130999,-79.033237
+812,Katherine Castro Garcia,Residential,Residential,Jr. Bolognesi 2895,"San Juan Bautista, Iquique",Iquique,64741,-3.779231,-73.276158
+813,Sandra Huaman Ramirez,Residential,Residential,Psje. Caminos del Inca 1590,"Chilca, Rancagua",Rancagua,12784,-12.075369,-75.204755
+814,Ana Zarate Delgado,Residential,Residential,Psje. Independencia 1722,"Saylla, Concepcion",Concepcion,59734,-13.56744,-71.820572
+815,Clinica Internacional,Healthcare,Enterprise,Psje. Grau 2852,"Pilcomayo, Rancagua",Rancagua,90526,-12.049083,-75.248034
+816,Patricia Zarate Ortiz,Residential,Residential,Jr. Emancipacion 124,"Coishco, La Serena",La Serena,41483,-9.020142,-78.614942
+817,Win Chile,Telecommunications,Enterprise,Calle Huancavelica 2860,"San Sebastian, Concepcion",Concepcion,88400,-13.528778,-71.940227
+818,Toulouse Lautrec,Education,Enterprise,Psje. Javier Prado 840,"Pilcomayo, Rancagua",Rancagua,15682,-12.048314,-75.248218
+819,Mario Castro Garcia,Residential,Residential,Prol. Talca 2311,"San Isidro, Santiago",Santiago,38164,-12.101997,-77.034489
+820,Alfredo Reyes Miranda,Residential,Residential,Prol. Conquistadores 3039,"Centro, Iquique",Iquique,51899,-3.744299,-73.256392
+821,Arturo Lopez Flores,Residential,Residential,Av. Comandante Espinar 1925,"Jose Leonardo Ortiz, Antofagasta",Antofagasta,68847,-6.74697,-79.84027
+822,Star Globalcom,Telecommunications,Enterprise,Calle Grau 1179,"Huancan, Rancagua",Rancagua,20240,-12.111478,-75.207219
+823,Cesar Ponce Garcia,Residential,Residential,Jr. Santa Cruz 2119,"Comas, Santiago",Santiago,97060,-11.952875,-77.04687
+824,Monica Castro Espinoza,Residential,Residential,Prol. Las Gardenias 2554,"Centro, Rancagua",Rancagua,75349,-12.06048,-75.205178
+825,Manuel Palacios Garcia,Residential,Residential,Jr. Las Begonias 3009,"Wanchaq, Concepcion",Concepcion,98440,-13.520973,-71.970347
+826,Cecilia Espinoza Quispe,Residential,Residential,Jr. Libertad 420,"Florencia de Mora, Copiapo",Copiapo,99241,-8.083473,-79.019964
+827,Gonzalo Valenzuela Rivera,Residential,Residential,Psje. Las Begonias 918,"Centro, Rancagua",Rancagua,22419,-12.069916,-75.205023
+828,Daniela Benavides Gonzalez,Residential,Residential,Jr. La Encalada 1464,"26 de Octubre, Temuco",Temuco,34306,-5.171401,-80.65362
+829,Karina Cruz Carrasco,Residential,Residential,Av. Los Cedros 2074,"Centro, Vina del Mar",Vina del Mar,73532,-12.054364,-77.111082
+830,Sandra Ramirez Mendoza,Residential,Residential,Av. Huancavelica 957,"El Tambo, Rancagua",Rancagua,13357,-12.058175,-75.21539
+831,Cecilia Castro Garcia,Residential,Residential,Prol. Los Eucaliptos 2146,"Los Aquijes, Talca",Talca,32188,-14.09508,-75.68821
+832,Pedro Nunez Martinez,Residential,Residential,Av. Independencia 1330,"Centro, Antofagasta",Antofagasta,52540,-6.772291,-79.833764
+833,Alejandro Fernandez Fernandez,Residential,Residential,Av. Benavides 1745,"Saylla, Concepcion",Concepcion,12597,-13.563453,-71.818091
+834,Protecta,Insurance,Enterprise,Av. Santa Cruz 1543,"Catacaos, Temuco",Temuco,27286,-5.264983,-80.674678
+835,Natalia Silva Carrasco,Residential,Residential,Av. Los Eucaliptos 651,"Paucarpata, Valparaiso",Valparaiso,56051,-16.425941,-71.515145
+836,Fernando Morales Villegas,Residential,Residential,Prol. Universitaria 2318,"Centro, Vina del Mar",Vina del Mar,61315,-12.059791,-77.114176
+837,Carolina Ramos Caceres,Residential,Residential,Psje. Los Jazmines 3074,"Los Aquijes, Talca",Talca,93028,-14.092293,-75.695648
+838,Flor Ponce Jimenez,Residential,Residential,Prol. Las Begonias 1617,"26 de Octubre, Temuco",Temuco,93701,-5.182657,-80.655022
+839,Arturo Chavez Alvarez,Residential,Residential,Psje. Reducto 196,"Los Aquijes, Talca",Talca,88567,-14.09224,-75.696155
+840,Carolina Garcia Gutierrez,Residential,Residential,Calle Santa Cruz 2130,"Villa El Salvador, Santiago",Santiago,84130,-12.220234,-76.929299
+841,Eduardo Morales Jimenez,Residential,Residential,Jr. Reducto 983,"Subtanjalla, Talca",Talca,98400,-14.030546,-75.747496
+842,Andrea Castillo Alvarez,Residential,Residential,Calle Caminos del Inca 2055,"El Porvenir, Copiapo",Copiapo,99560,-8.096909,-79.014995
+843,Pilar Ruiz Caceres,Residential,Residential,Av. Colonial 696,"Nuevo La Serena, La Serena",La Serena,70754,-9.122932,-78.521673
+844,Rosario Gonzalez Ruiz,Residential,Residential,Av. 28 de Julio 1728,"Centro, Temuco",Temuco,71882,-5.20174,-80.631225
+845,Juan Carrasco Rojas,Residential,Residential,Calle Talca 1371,"26 de Octubre, Temuco",Temuco,55348,-5.175307,-80.657728
+846,Jessica Gutierrez Quispe,Residential,Residential,Av. Los Eucaliptos 3084,"Centro, Vina del Mar",Vina del Mar,40701,-12.048786,-77.120838
+847,Rosario Chavez Huaman,Residential,Residential,Av. Wilson 1994,"La Esperanza, Copiapo",Copiapo,51974,-8.062326,-79.050609
+848,Milagros Zarate Vera,Residential,Residential,Av. Abancay 2934,"Llacanora, Puerto Montt",Puerto Montt,39595,-7.1827,-78.428145
+849,Enrique Gutierrez Gonzalez,Residential,Residential,Prol. Las Palmeras 551,"Centro, Rancagua",Rancagua,44198,-12.05889,-75.208589
+850,Raul Condori Ortiz,Residential,Residential,Calle Los Alamos 634,"Jose Leonardo Ortiz, Antofagasta",Antofagasta,77513,-6.743528,-79.837367
+851,Alfredo Gutierrez Rojas,Residential,Residential,Jr. Los Eucaliptos 215,"Jesus Maria, Santiago",Santiago,19031,-12.06752,-77.04174
+852,Elizabeth Valenzuela Vargas,Residential,Residential,Prol. Las Gardenias 1976,"Santa Rosa, Antofagasta",Antofagasta,25512,-6.874471,-79.935074
+853,Sergio Cruz Caceres,Residential,Residential,Psje. Colonial 3467,"Belen, Iquique",Iquique,45576,-3.761635,-73.253097
+854,Cesar Paredes Benavides,Residential,Residential,Psje. Los Eucaliptos 2433,"Centro, Iquique",Iquique,10513,-3.75202,-73.247569
+855,Andres Alvarez Soto,Residential,Residential,Jr. Concepcion 2609,"Villa Maria del Triunfo, Santiago",Santiago,71862,-12.164958,-76.937552
+856,Congreso de la Republica,Government,Government,Av. Las Gardenias 2580,"Centro, Rancagua",Rancagua,62093,-12.06832,-75.203042
+857,Mario Garcia Delgado,Residential,Residential,Av. Colonial 1952,"Centro, Antofagasta",Antofagasta,33520,-6.768661,-79.844182
+858,Pilar Rodriguez Garcia,Residential,Residential,Prol. 28 de Julio 3285,"Nuevo La Serena, La Serena",La Serena,54972,-9.115517,-78.512992
+859,Paola Rivera Ponce,Residential,Residential,Jr. La Marina 2281,"Centro, Iquique",Iquique,62620,-3.748184,-73.254496
+860,Flor Silva Espinoza,Residential,Residential,Prol. La Encalada 1835,"Pimentel, Antofagasta",Antofagasta,32741,-6.832188,-79.941583
+861,Marisol Salazar Ponce,Residential,Residential,Jr. Las Orquideas 1993,"Banos del Inca, Puerto Montt",Puerto Montt,27379,-7.170626,-78.472729
+862,Hector Delgado Ortiz,Residential,Residential,Jr. Los Pinos 2785,"Socabaya, Valparaiso",Valparaiso,63514,-16.464555,-71.521882
+863,Jose Palacios Silva,Residential,Residential,Psje. Grau 547,"El Porvenir, Copiapo",Copiapo,59485,-8.087233,-79.005586
+864,Carlos Hernandez Ruiz,Residential,Residential,Prol. Puno 2313,"La Punta, Vina del Mar",Vina del Mar,93476,-12.062372,-77.163205
+865,Ivan Caceres Arias,Residential,Residential,Psje. Brasil 2368,"San Juan Bautista, Iquique",Iquique,89702,-3.785753,-73.274955
+866,Fernanda Huaman Quispe,Residential,Residential,Calle Bolognesi 2606,"Santa, La Serena",La Serena,14799,-8.989415,-78.618229
+867,Alfredo Ortiz Espinoza,Residential,Residential,Jr. Benavides 2891,"Mariano Melgar, Valparaiso",Valparaiso,51938,-16.401014,-71.493974
+868,Monica Reyes Reyes,Residential,Residential,Av. Ayacucho 1847,"Punchana, Iquique",Iquique,52429,-3.71819,-73.265952
+869,Eduardo Gonzalez Vasquez,Residential,Residential,Calle Las Palmeras 830,"26 de Octubre, Temuco",Temuco,71736,-5.18121,-80.647096
+870,Don Vittorio,Food & Beverage,Enterprise,Calle Santa Cruz 2643,"26 de Octubre, Temuco",Temuco,17867,-5.169838,-80.658769
+871,Molitalia,Food & Beverage,SMB,Av. La Encalada 1714,"Cercado, Valparaiso",Valparaiso,79411,-16.414079,-71.545294
+872,Francisco Palacios Villegas,Residential,Residential,Av. Universitaria 163,"La Tinguina, Talca",Talca,41617,-14.031775,-75.729088
+873,Rodrigo Alvarez Nunez,Residential,Residential,Psje. Primavera 2716,"Pimentel, Antofagasta",Antofagasta,28129,-6.842606,-79.938884
+874,Sergio Valenzuela Garcia,Residential,Residential,Psje. Libertad 407,"Los Olivos, Santiago",Santiago,61565,-11.988174,-77.074
+875,Natalia Diaz Hernandez,Residential,Residential,Prol. Santa Cruz 1061,"Paucarpata, Valparaiso",Valparaiso,86445,-16.428369,-71.509979
+876,Gustavo Soto Ramos,Residential,Residential,Psje. Puno 3485,"Florencia de Mora, Copiapo",Copiapo,97254,-8.088378,-79.020408
+877,Katherine Mendoza Paredes,Residential,Residential,Prol. Las Palmeras 1765,"26 de Octubre, Temuco",Temuco,26839,-5.183547,-80.65774
+878,Lucia Flores Ramirez,Residential,Residential,Jr. Ayacucho 1561,"Hunter, Valparaiso",Valparaiso,86141,-16.448467,-71.547965
+879,Rosario Quispe Martinez,Residential,Residential,Calle Abancay 2393,"26 de Octubre, Temuco",Temuco,63664,-5.170656,-80.64393
+880,Francisco Benavides Castillo,Residential,Residential,Av. Conquistadores 1906,"Bellavista, Vina del Mar",Vina del Mar,19202,-12.056934,-77.126298
+881,Pilar Valenzuela Rivera,Residential,Residential,Jr. Puno 1032,"Carabayllo, Santiago",Santiago,60252,-11.851734,-77.028915
+882,Inmobiliaria Edifica,Real Estate,Enterprise,Prol. Ayacucho 1326,"Centro, Temuco",Temuco,69259,-5.192419,-80.630289
+883,Daniel Quispe Ramirez,Residential,Residential,Av. Grau 2046,"Tambogrande, Temuco",Temuco,15893,-4.928696,-80.340373
+884,Gabriela Ramirez Vasquez,Residential,Residential,Prol. Benavides 2817,"La Victoria, Antofagasta",Antofagasta,18020,-6.797288,-79.836853
+885,Milagros Soto Benavides,Residential,Residential,Psje. 28 de Julio 1494,"Punchana, Iquique",Iquique,22905,-3.70948,-73.253867
+886,Tottus,Retail,Enterprise,Calle Tacna 2043,"26 de Octubre, Temuco",Temuco,90524,-5.182216,-80.651157
+887,Cibertec,Education,SMB,Jr. Grau 2344,"Banos del Inca, Puerto Montt",Puerto Montt,50384,-7.170467,-78.470295
+888,Alicorp,Food & Beverage,SMB,Jr. La Marina 2849,"La Victoria, Antofagasta",Antofagasta,46771,-6.793282,-79.827696
+889,Francisco Gutierrez Gonzalez,Residential,Residential,Av. Benavides 1804,"Pimentel, Antofagasta",Antofagasta,48593,-6.833974,-79.931583
+890,Marriott Santiago,Hospitality,SMB,Prol. La Marina 1560,"Los Aquijes, Talca",Talca,48380,-14.098452,-75.694955
+891,Lorena Torres Torres,Residential,Residential,Calle Santa Cruz 3401,"Centro, Rancagua",Rancagua,51928,-12.072209,-75.198242
+892,Carmen Ortiz Lopez,Residential,Residential,Calle La Marina 2547,"La Victoria, Antofagasta",Antofagasta,96869,-6.794364,-79.839156
+893,Alejandro Rojas Gonzalez,Residential,Residential,Calle Tacna 1660,"San Juan Bautista, Iquique",Iquique,17461,-3.785941,-73.281377
+894,Urbanova,Real Estate,SMB,Av. Independencia 1485,"La Punta, Vina del Mar",Vina del Mar,34781,-12.066759,-77.160356
+895,Patricia Ponce Zarate,Residential,Residential,Av. Independencia 2535,"Santa, La Serena",La Serena,46597,-8.994816,-78.625145
+896,Claudia Garcia Diaz,Residential,Residential,Prol. Caminos del Inca 791,"Hunter, Valparaiso",Valparaiso,34942,-16.45142,-71.550231
+897,Yanacocha,Mining,Enterprise,Jr. Los Eucaliptos 1945,"San Jeronimo, Concepcion",Concepcion,30302,-13.553618,-71.894395
+898,Fernando Ramirez Valenzuela,Residential,Residential,Calle Larco 2598,"Socabaya, Valparaiso",Valparaiso,58774,-16.454912,-71.528484
+899,Monica Ponce Castro,Residential,Residential,Psje. Talca 2016,"Yanahuara, Valparaiso",Valparaiso,29561,-16.393375,-71.554501
+900,Rocio Valenzuela Ortiz,Residential,Residential,Psje. Ayacucho 1905,"Jesus, Puerto Montt",Puerto Montt,50873,-7.241678,-78.393556
+901,Daniel Gutierrez Miranda,Residential,Residential,Psje. Conquistadores 1623,"Barranco, Santiago",Santiago,79396,-12.14576,-77.029662
+902,Rosario Rodriguez Lopez,Residential,Residential,Psje. Emancipacion 1079,"Magdalena, Santiago",Santiago,62822,-12.083726,-77.066782
+903,Milagros Perez Silva,Residential,Residential,Jr. Conquistadores 1643,"Banos del Inca, Puerto Montt",Puerto Montt,66177,-7.172095,-78.46518
+904,Elizabeth Romero Castillo,Residential,Residential,Av. Los Eucaliptos 1076,"Centro, Rancagua",Rancagua,56128,-12.06098,-75.211512
+905,Carla Ponce Martinez,Residential,Residential,Psje. Las Palmeras 957,"Castilla, Temuco",Temuco,12095,-5.198878,-80.653749
+906,Raul Espinoza Zarate,Residential,Residential,Calle Los Alamos 1295,"Florencia de Mora, Copiapo",Copiapo,82665,-8.08385,-79.015963
+907,Rodrigo Valenzuela Fernandez,Residential,Residential,Calle Los Alamos 1922,"Centro, Rancagua",Rancagua,28609,-12.068426,-75.210682
+908,Manuel Quispe Quispe,Residential,Residential,Psje. Los Eucaliptos 211,"Parcona, Talca",Talca,58010,-14.035197,-75.695281
+909,Cecilia Cruz Ortiz,Residential,Residential,Prol. Brasil 2996,"Punchana, Iquique",Iquique,53277,-3.719848,-73.264417
+910,Paola Sanchez Delgado,Residential,Residential,Psje. Santa Cruz 1420,"Santa, La Serena",La Serena,27712,-8.996143,-78.61997
+911,Ana Herrera Silva,Residential,Residential,Calle Valparaiso 380,"Centro, Talca",Talca,76904,-14.059902,-75.722447
+912,Rocio Fernandez Zarate,Residential,Residential,Psje. Bolognesi 1898,"Barranco, Santiago",Santiago,30105,-12.150086,-77.027867
+913,Oechsle,Retail,SMB,Calle Conquistadores 1452,"Centro, La Serena",La Serena,55466,-9.085685,-78.570452
+914,Gabriel Castro Vargas,Residential,Residential,Av. Las Begonias 2939,"Florencia de Mora, Copiapo",Copiapo,32847,-8.092331,-79.013795
+915,Municipalidad de Miraflores,Government,Government,Prol. Las Begonias 939,"San Jeronimo, Concepcion",Concepcion,63272,-13.550004,-71.90743
+916,Natalia Ponce Arias,Residential,Residential,Jr. Las Begonias 1258,"San Sebastian, Concepcion",Concepcion,72962,-13.541198,-71.938882
+917,Carmen Reyes Medina,Residential,Residential,Prol. Huancavelica 298,"Socabaya, Valparaiso",Valparaiso,41523,-16.458523,-71.532372
+918,Vanessa Nunez Soto,Residential,Residential,Psje. Las Begonias 458,"Nuevo La Serena, La Serena",La Serena,42669,-9.120607,-78.518036
+919,Fernando Ponce Diaz,Residential,Residential,Jr. Reducto 2948,"El Tambo, Rancagua",Rancagua,70126,-12.049581,-75.222708
+920,Fernando Torres Ramos,Residential,Residential,Prol. Los Alamos 850,"Cerro Colorado, Valparaiso",Valparaiso,85616,-16.377312,-71.580382
+921,Sandra Rivera Miranda,Residential,Residential,Psje. Libertad 2941,"Los Olivos, Santiago",Santiago,63914,-11.990722,-77.078576
+922,Bimbo Chile,Food & Beverage,SMB,Jr. Grau 1709,"Huancan, Rancagua",Rancagua,77315,-12.116987,-75.208068
+923,Luis Romero Mamani,Residential,Residential,Calle Grau 922,"Centro, Iquique",Iquique,86095,-3.742651,-73.253812
+924,Victor Gonzalez Campos,Residential,Residential,Psje. Las Orquideas 1980,"San Juan Bautista, Iquique",Iquique,83520,-3.782538,-73.286068
+925,Karina Castro Medina,Residential,Residential,Psje. Emancipacion 1620,"Centro, Iquique",Iquique,60926,-3.754831,-73.248279
+926,Eduardo Delgado Miranda,Residential,Residential,Calle Concepcion 1657,"Jesus, Puerto Montt",Puerto Montt,45466,-7.240502,-78.38423
+927,Marco Reyes Mamani,Residential,Residential,Psje. Colonial 653,"Jesus, Puerto Montt",Puerto Montt,95174,-7.242218,-78.393737
+928,Paola Nunez Gutierrez,Residential,Residential,Calle Puno 927,"Catacaos, Temuco",Temuco,39392,-5.262693,-80.678331
+929,Mario Valenzuela Delgado,Residential,Residential,Calle Los Cedros 2920,"Centro, Temuco",Temuco,31639,-5.198783,-80.631689
+930,Jose Mendoza Ramirez,Residential,Residential,Calle Javier Prado 715,"Ventanilla, Vina del Mar",Vina del Mar,85459,-11.87108,-77.125103
+931,Patricia Nunez Rivera,Residential,Residential,Jr. El Polo 1921,"Santa, La Serena",La Serena,92071,-8.991915,-78.613925
+932,Ana Flores Martinez,Residential,Residential,Jr. Puno 1720,"Pimentel, Antofagasta",Antofagasta,86121,-6.838098,-79.933411
+933,Marisol Diaz Caceres,Residential,Residential,Av. Valparaiso 1437,"Centro Historico, Concepcion",Concepcion,75725,-13.52456,-71.970995
+934,Elizabeth Gutierrez Garcia,Residential,Residential,Av. Colonial 1859,"La Victoria, Antofagasta",Antofagasta,47972,-6.791406,-79.828869
+935,Jimena Cordova Torres,Residential,Residential,Prol. Los Eucaliptos 102,"Jose Luis Bustamante y Rivero, Valparaiso",Valparaiso,85722,-16.418216,-71.511909
+936,Luis Morales Mamani,Residential,Residential,Av. Brasil 2095,"Carmen de la Legua, Vina del Mar",Vina del Mar,96419,-12.035491,-77.090735
+937,Metro,Retail,SMB,Av. Los Alamos 2029,"Belen, Iquique",Iquique,71761,-3.757739,-73.249049
+938,Francisco Rojas Garcia,Residential,Residential,Psje. Las Gardenias 2910,"Pilcomayo, Rancagua",Rancagua,55615,-12.04379,-75.239564
+939,Daniela Castro Zarate,Residential,Residential,Psje. Tacna 2769,"Centro, Rancagua",Rancagua,17583,-12.064331,-75.212564
+940,Gabriela Paredes Morales,Residential,Residential,Psje. Las Gardenias 2689,"Paucarpata, Valparaiso",Valparaiso,24442,-16.425292,-71.501503
+941,Jose Mamani Caceres,Residential,Residential,Av. San Martin 982,"San Borja, Santiago",Santiago,42817,-12.100738,-76.994617
+942,Antonio Reyes Campos,Residential,Residential,Prol. Talca 2520,"Centro, Puerto Montt",Puerto Montt,70311,-7.169941,-78.507067
+943,Diana Silva Benavides,Residential,Residential,Prol. Las Orquideas 2141,"Hunter, Valparaiso",Valparaiso,10403,-16.458425,-71.544667
+944,Poder Judicial,Government,Government,Av. 28 de Julio 1469,"Banos del Inca, Puerto Montt",Puerto Montt,26029,-7.169347,-78.463223
+945,Ministerio de Salud,Government,Government,Av. San Martin 1522,"Victor Larco Herrera, Copiapo",Copiapo,42092,-8.13908,-79.047989
+946,Francisco Vasquez Garcia,Residential,Residential,Jr. Los Alamos 198,"Catacaos, Temuco",Temuco,68383,-5.258314,-80.677103
+947,Electro Chile,Energy,Enterprise,Calle Javier Prado 1060,"Bellavista, Vina del Mar",Vina del Mar,56364,-12.071089,-77.121858
+948,Marisol Delgado Aguilar,Residential,Residential,Psje. Wilson 2326,"San Sebastian, Concepcion",Concepcion,27787,-13.541883,-71.940294
+949,Alejandro Caceres Lopez,Residential,Residential,Prol. Caminos del Inca 943,"Subtanjalla, Talca",Talca,56253,-14.030704,-75.744878
+950,La Positiva,Insurance,Enterprise,Av. Las Begonias 131,"Parcona, Talca",Talca,77138,-14.048482,-75.705772
+951,Veronica Salazar Espinoza,Residential,Residential,Calle La Encalada 2591,"Jesus, Puerto Montt",Puerto Montt,36698,-7.23618,-78.391679
+952,Hochschild Mining,Mining,Enterprise,Av. Primavera 2231,"Centro Historico, Concepcion",Concepcion,29260,-13.517403,-71.970159
+953,Carla Reyes Condori,Residential,Residential,Jr. Los Cedros 422,"Banos del Inca, Puerto Montt",Puerto Montt,20505,-7.161307,-78.463422
+954,Banco Central de Reserva,Government,Government,Jr. Bolognesi 2029,"Florencia de Mora, Copiapo",Copiapo,41808,-8.089991,-79.015227
+955,Caja Concepcion,Banking,Enterprise,Calle Talca 3236,"Chilca, Rancagua",Rancagua,64308,-12.075493,-75.210264
+956,Engie Chile,Energy,Enterprise,Psje. Javier Prado 3267,"Chilca, Rancagua",Rancagua,68048,-12.083819,-75.2123
+957,Mariela Campos Flores,Residential,Residential,Psje. Abancay 2242,"Santiago, Concepcion",Concepcion,51447,-13.524632,-71.991107
+958,Andres Condori Nunez,Residential,Residential,Jr. Brasil 747,"Llacanora, Puerto Montt",Puerto Montt,16273,-7.188191,-78.434858
+959,Pablo Miranda Martinez,Residential,Residential,Av. Huancavelica 1700,"Belen, Iquique",Iquique,66965,-3.756488,-73.240997
+960,Arturo Silva Torres,Residential,Residential,Prol. Santa Cruz 3002,"Huancan, Rancagua",Rancagua,22300,-12.107028,-75.208724
+961,Alejandro Chavez Vera,Residential,Residential,Psje. Primavera 1589,"Coishco, La Serena",La Serena,58562,-9.019608,-78.620245
+962,Nexa Resources,Mining,Enterprise,Jr. La Marina 241,"Surquillo, Santiago",Santiago,68473,-12.049228,-77.049019
+963,Monica Vega Martinez,Residential,Residential,Prol. El Polo 854,"Catacaos, Temuco",Temuco,40496,-5.258383,-80.668188
+964,Silvia Mamani Castillo,Residential,Residential,Prol. Tacna 3119,"Jesus, Puerto Montt",Puerto Montt,13472,-7.235885,-78.391701
+965,Maria Ruiz Torres,Residential,Residential,Jr. Puno 524,"Centro, Temuco",Temuco,18854,-5.190217,-80.630131
+966,Daniel Morales Reyes,Residential,Residential,Jr. Colonial 983,"Santa, La Serena",La Serena,84593,-8.983943,-78.618412
+967,Julio Alvarez Delgado,Residential,Residential,Jr. Los Alamos 131,"Carmen de la Legua, Vina del Mar",Vina del Mar,15729,-12.050576,-77.100389
+968,Silvia Chavez Gutierrez,Residential,Residential,Av. Las Begonias 3234,"Chilca, Rancagua",Rancagua,74392,-12.077583,-75.219472
+969,Vanessa Medina Rodriguez,Residential,Residential,Prol. Brasil 3314,"Nuevo La Serena, La Serena",La Serena,18985,-9.114279,-78.520858
+970,Claudia Romero Reyes,Residential,Residential,Prol. Abancay 529,"Magdalena, Santiago",Santiago,89219,-12.096152,-77.073726
+971,Jorge Ruiz Villegas,Residential,Residential,Prol. Las Begonias 1955,"Nuevo La Serena, La Serena",La Serena,94854,-9.119181,-78.521378
+972,Fernando Vargas Vargas,Residential,Residential,Calle Independencia 3260,"Coishco, La Serena",La Serena,80870,-9.028266,-78.613361
+973,Carolina Palacios Chavez,Residential,Residential,Prol. La Encalada 2035,"San Juan Bautista, Iquique",Iquique,12116,-3.785456,-73.272419
+974,Ximena Silva Gutierrez,Residential,Residential,Calle Los Eucaliptos 2905,"San Miguel, Santiago",Santiago,11511,-12.070979,-77.09642
+975,Carolina Rivera Ponce,Residential,Residential,Av. Brasil 1252,"Mariano Melgar, Valparaiso",Valparaiso,20268,-16.410938,-71.501826
+976,Daniela Miranda Flores,Residential,Residential,Jr. Bolognesi 3476,"Tambogrande, Temuco",Temuco,42980,-4.917997,-80.339839
+977,Marco Arias Jimenez,Residential,Residential,Prol. Grau 793,"26 de Octubre, Temuco",Temuco,27580,-5.17215,-80.655043
+978,Arturo Condori Ortiz,Residential,Residential,Av. Las Begonias 1452,"Jesus Maria, Santiago",Santiago,12212,-12.07052,-77.042109
+979,Andres Garcia Arias,Residential,Residential,Calle La Encalada 2767,"Centro, Antofagasta",Antofagasta,90892,-6.771234,-79.83548
+980,Oscar Zarate Valenzuela,Residential,Residential,Jr. Independencia 2968,"San Juan de Lurigancho, Santiago",Santiago,33399,-11.975661,-76.994845
+981,Marisol Castillo Ramos,Residential,Residential,Prol. Los Cedros 419,"Castilla, Temuco",Temuco,17688,-5.194171,-80.650287
+982,Hugo Soto Ruiz,Residential,Residential,Calle Concepcion 1491,"26 de Octubre, Temuco",Temuco,63641,-5.180811,-80.658886
+983,Julio Zarate Perez,Residential,Residential,Psje. Santa Cruz 2285,"Nuevo La Serena, La Serena",La Serena,26100,-9.113996,-78.519481
+984,Mariana Salazar Reyes,Residential,Residential,Prol. Las Orquideas 3481,"Centro, Iquique",Iquique,92715,-3.750847,-73.249065
+985,Milagros Silva Nunez,Residential,Residential,Calle Los Alamos 2167,"Belen, Iquique",Iquique,64413,-3.760577,-73.253605
+986,Clinica Santa Maria del Sur,Healthcare,SMB,Psje. Wilson 1951,"Centro, Antofagasta",Antofagasta,45339,-6.779204,-79.844988
+987,Monica Cruz Campos,Residential,Residential,Calle Universitaria 872,"Nuevo La Serena, La Serena",La Serena,22756,-9.122983,-78.523491
+988,Hospital Rebagliati,Healthcare,SMB,Prol. Los Cedros 1480,"San Sebastian, Concepcion",Concepcion,44800,-13.543953,-71.940529
+989,Juan Lopez Ponce,Residential,Residential,Calle Ayacucho 2027,"La Tinguina, Talca",Talca,42754,-14.027424,-75.726615
+990,Pablo Gomez Gomez,Residential,Residential,Prol. Abancay 1916,"Socabaya, Valparaiso",Valparaiso,44032,-16.469514,-71.523213
+991,IDAT,Education,Enterprise,Psje. Los Eucaliptos 2048,"Huancan, Rancagua",Rancagua,16262,-12.111099,-75.217207
+992,San Charbel,Real Estate,SMB,Av. Wilson 2103,"San Juan Bautista, Iquique",Iquique,11397,-3.783584,-73.275098
+993,Mario Vega Castro,Residential,Residential,Jr. Puno 2352,"Santa, La Serena",La Serena,68480,-8.993523,-78.624047
+994,Diego Morales Valenzuela,Residential,Residential,Av. Caminos del Inca 1153,"Pilcomayo, Rancagua",Rancagua,95209,-12.04024,-75.241086
+995,Andres Vasquez Vega,Residential,Residential,Jr. Concepcion 1123,"Saylla, Concepcion",Concepcion,95272,-13.570809,-71.818142
+996,Silvia Cruz Alvarez,Residential,Residential,Prol. Concepcion 2825,"Centro, Rancagua",Rancagua,30533,-12.06441,-75.207184
+997,Pilar Carrasco Hernandez,Residential,Residential,Psje. Las Gardenias 1253,"San Miguel, Santiago",Santiago,23813,-12.07888,-77.086788
+998,Sacyr Chile,Construction,Enterprise,Jr. Abancay 3477,"San Sebastian, Concepcion",Concepcion,35437,-13.541768,-71.943998
+999,Mariela Cordova Palacios,Residential,Residential,Calle Emancipacion 206,"Santa, La Serena",La Serena,23061,-8.980663,-78.616034
+1000,Rosa Vasquez Huaman,Residential,Residential,Av. Los Pinos 1805,"Santiago, Concepcion",Concepcion,29544,-13.522769,-71.988538

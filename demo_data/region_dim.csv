@@ -1,0 +1,13 @@
+region_key,region_name,latitude,longitude,capital_city,area_km2
+400,Metropolitana,-33.4489,-70.6693,Santiago,15403
+401,Valparaiso,-33.0458,-71.6197,Valparaiso,16396
+402,Biobio,-36.8261,-73.0498,Concepcion,37069
+403,Araucania,-38.7359,-72.5904,Temuco,31842
+404,Los Lagos,-41.4693,-72.9424,Puerto Montt,48584
+405,OHiggins,-34.1708,-70.7444,Rancagua,16387
+406,Maule,-35.4264,-71.6554,Talca,30296
+407,Coquimbo,-29.9533,-71.3395,La Serena,40580
+408,Antofagasta,-23.6509,-70.3975,Antofagasta,126049
+409,Los Rios,-39.8142,-73.2459,Valdivia,18430
+410,Tarapaca,-20.2140,-70.1522,Iquique,42226
+411,Atacama,-27.3668,-70.3323,Copiapo,75176

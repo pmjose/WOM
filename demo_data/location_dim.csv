@@ -1,0 +1,36 @@
+location_key,location_name,city,department,location_type,latitude,longitude
+900,Sede Central - General Mackenna Santiago,Santiago Centro,Metropolitana,Headquarters,-33.4372,-70.6506
+901,Oficina Comercial Providencia,Providencia,Metropolitana,Commercial Office,-33.4264,-70.6100
+902,Centro Operaciones Las Condes,Las Condes,Metropolitana,Operations Center,-33.4103,-70.5672
+903,Centro de Datos Santiago Norte,Quilicura,Metropolitana,Data Center,-33.3667,-70.7333
+904,Centro de Datos Santiago Sur,San Bernardo,Metropolitana,Data Center,-33.5922,-70.6997
+905,Oficina Regional Valparaiso,Valparaiso,Valparaiso,Regional Office,-33.0458,-71.6197
+906,Oficina Regional Concepcion,Concepcion,Biobio,Regional Office,-36.8261,-73.0498
+907,Oficina Regional Temuco,Temuco,Araucania,Regional Office,-38.7359,-72.5904
+908,Oficina Regional Antofagasta,Antofagasta,Antofagasta,Regional Office,-23.6509,-70.3975
+909,Oficina Regional Puerto Montt,Puerto Montt,Los Lagos,Regional Office,-41.4693,-72.9424
+910,Oficina Regional Rancagua,Rancagua,OHiggins,Regional Office,-34.1708,-70.7444
+911,Oficina Regional La Serena,La Serena,Coquimbo,Regional Office,-29.9533,-71.3395
+912,Oficina Regional Talca,Talca,Maule,Regional Office,-35.4264,-71.6554
+913,Call Center Santiago Centro,Santiago Centro,Metropolitana,Call Center,-33.4372,-70.6506
+914,Call Center Nunoa,Nunoa,Metropolitana,Call Center,-33.4569,-70.5972
+915,Centro Tecnico Maipu,Maipu,Metropolitana,Technical Center,-33.5167,-70.7583
+916,Centro Tecnico Puente Alto,Puente Alto,Metropolitana,Technical Center,-33.6167,-70.5833
+917,Centro Tecnico La Florida,La Florida,Metropolitana,Technical Center,-33.5167,-70.6000
+918,Almacen Central Pudahuel,Pudahuel,Metropolitana,Warehouse,-33.4333,-70.7500
+919,Almacen Regional Norte,Antofagasta,Antofagasta,Warehouse,-23.6509,-70.3975
+920,Almacen Regional Sur,Concepcion,Biobio,Warehouse,-36.8261,-73.0498
+921,Tienda Costanera Center,Providencia,Metropolitana,Retail Store,-33.4178,-70.6061
+922,Tienda Parque Arauco,Las Condes,Metropolitana,Retail Store,-33.4000,-70.5750
+923,Tienda Mall Plaza Vespucio,La Florida,Metropolitana,Retail Store,-33.5167,-70.5958
+924,Tienda Alto Las Condes,Las Condes,Metropolitana,Retail Store,-33.4000,-70.5833
+925,Tienda Mall Plaza Oeste,Cerrillos,Metropolitana,Retail Store,-33.5000,-70.7167
+926,Tienda Mall del Centro,Santiago Centro,Metropolitana,Retail Store,-33.4417,-70.6542
+927,Remoto Chile,Remote,Multiple,Remote Work,-33.4489,-70.6693
+928,Centro de Monitoreo NOC,Las Condes,Metropolitana,NOC,-33.4103,-70.5672
+929,Data Center Principal,Quilicura,Metropolitana,Data Center,-33.3667,-70.7333
+930,Data Center Backup,San Bernardo,Metropolitana,Data Center,-33.5922,-70.6997
+931,Oficina Administrativa La Reina,La Reina,Metropolitana,Administrative Office,-33.4500,-70.5500
+932,Tienda Vina del Mar,Vina del Mar,Valparaiso,Retail Store,-33.0153,-71.5503
+933,Tienda Talcahuano,Talcahuano,Biobio,Retail Store,-36.7167,-73.1167
+934,Tienda Iquique,Iquique,Tarapaca,Retail Store,-20.2140,-70.1522

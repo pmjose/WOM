@@ -1,0 +1,52 @@
+vendor_key,vendor_name,vertical,address,city,county,postcode
+1,Huawei Chile,Network Equipment,Av. Javier Prado Este 4600,San Isidro Santiago,Santiago,15036
+2,ZTE Chile,Network Equipment,Av. Republica de Panama 3535,San Isidro Santiago,Santiago,15047
+3,Nokia Chile,Network Equipment,Av. Victor Andres Belaunde 147,San Isidro Santiago,Santiago,15046
+4,Furukawa Electric LatAm,Fiber Cable,Av. La Encalada 1257,Surco Santiago,Santiago,15038
+5,Prysmian Group Chile,Fiber Cable,Calle Las Begonias 415,San Isidro Santiago,Santiago,15046
+6,Corning Chile,Fiber Optics,Av. Camino Real 456,San Isidro Santiago,Santiago,15073
+7,CommScope Chile,Network Infrastructure,Jr. Las Orquideas 585,San Isidro Santiago,Santiago,15047
+8,TP-Link Chile,Consumer Equipment,Av. Petit Thouars 4653,Miraflores Santiago,Santiago,15074
+9,Ubiquiti Networks LatAm,Network Equipment,Av. Valparaiso 2450,Lince Santiago,Santiago,15046
+10,MikroTik Distribuidor Chile,Network Equipment,Jr. Union 264,Santiago Centro,Santiago,15001
+11,Cisco Systems Chile,Enterprise Networking,Av. Jorge Basadre 349,San Isidro Santiago,Santiago,15073
+12,Juniper Networks Chile,Enterprise Networking,Av. Rivera Navarrete 501,San Isidro Santiago,Santiago,15046
+13,Arista Networks Chile,Data Center,Calle Los Tulipanes 147,San Isidro Santiago,Santiago,15046
+14,Amazon Web Services Chile,Cloud Provider,Av. La Encalada 1257,Surco Santiago,Santiago,15038
+15,Google Cloud Chile,Cloud Provider,Av. Jorge Basadre 349,San Isidro Santiago,Santiago,15073
+16,Microsoft Azure Chile,Cloud Provider,Av. Jorge Basadre 168,San Isidro Santiago,Santiago,15073
+17,Oracle Cloud Chile,Cloud Provider,Av. Victor Andres Belaunde 280,San Isidro Santiago,Santiago,15046
+18,DirecTV Chile,Content Provider,Av. Canaval y Moreyra 380,San Isidro Santiago,Santiago,15046
+19,Netflix Chile,Content Provider,Calle Las Begonias 475,San Isidro Santiago,Santiago,15046
+20,Disney+ Chile,Content Provider,Av. Paseo de la Republica 3220,San Isidro Santiago,Santiago,15073
+21,HBO Max Chile,Content Provider,Av. Javier Prado Este 476,San Isidro Santiago,Santiago,15036
+22,L1MAX Chile,Content Provider,Av. Del Ejercito 2630,Miraflores Santiago,Santiago,15074
+23,Paramount+ Chile,Content Provider,Av. La Encalada 1420,Surco Santiago,Santiago,15038
+24,Star+ Chile,Content Provider,Calle Las Orquideas 585,San Isidro Santiago,Santiago,15047
+25,Electronica Hiraoka,Consumer Retail,Jr. Union 244,Santiago Centro,Santiago,15001
+26,Tiendas EFE,Consumer Retail,Av. Abancay 594,Santiago Centro,Santiago,15001
+27,Curacao Chile,Consumer Retail,Av. Oscar Benavides 3866,Vina del Mar,Vina del Mar,07001
+28,Plaza Vea,Retail Partner,Av. Salaverry 2224,San Isidro Santiago,Santiago,15073
+29,Sodimac Chile,Retail Partner,Av. Angamos Este 1805,Surquillo Santiago,Santiago,15047
+30,Maestro Chile,Retail Partner,Av. Republica de Panama 3030,San Isidro Santiago,Santiago,15047
+31,OSIPTEL,Regulatory,Calle De la Prosa 136,San Borja Santiago,Santiago,15036
+32,MTC Chile,Regulatory,Jr. Zorritos 1203,Santiago Centro,Santiago,15082
+33,Indecopi,Regulatory,Calle De la Prosa 104,San Borja Santiago,Santiago,15036
+34,Claro Chile,Competitor,Av. Nicolas de Pierola 1218,Santiago Centro,Santiago,15001
+35,Movistar Chile,Competitor,Jr. Zorritos 1315,Breña Santiago,Santiago,15082
+36,Entel Chile,Competitor,Av. Victor Andres Belaunde 147,San Isidro Santiago,Santiago,15046
+37,Bitel Chile,Competitor,Av. Juan de Arona 830,San Isidro Santiago,Santiago,15036
+38,Win Chile,Competitor,Av. La Encalada 1257,Surco Santiago,Santiago,15038
+39,GTD Chile,Competitor,Av. Republica de Panama 3055,San Isidro Santiago,Santiago,15047
+40,Fiberlux Chile,Competitor,Jr. Los Sauces 374,San Isidro Santiago,Santiago,15073
+41,Internexa Chile,Carrier Services,Av. Rivera Navarrete 501,San Isidro Santiago,Santiago,15046
+42,Level 3 Chile,Carrier Services,Av. Canaval y Moreyra 380,San Isidro Santiago,Santiago,15046
+43,Lumen Chile,Carrier Services,Av. Victor Andres Belaunde 147,San Isidro Santiago,Santiago,15046
+44,America Movil Chile,Wholesale,Av. Nicolas de Pierola 1218,Santiago Centro,Santiago,15001
+45,Optical Networks Chile,Fiber Infrastructure,Jr. Los Alamos 456,San Isidro Santiago,Santiago,15046
+46,Azteca Comunicaciones Chile,Fiber Infrastructure,Av. Valparaiso 3155,San Isidro Santiago,Santiago,15046
+47,Fortinet Chile,Security,Av. Jorge Basadre 349,San Isidro Santiago,Santiago,15073
+48,Palo Alto Networks Chile,Security,Calle Las Begonias 475,San Isidro Santiago,Santiago,15046
+49,Kaspersky Chile,Security,Av. La Encalada 1257,Surco Santiago,Santiago,15038
+50,Trend Micro Chile,Security,Av. Camino Real 456,San Isidro Santiago,Santiago,15073
+51,Salesforce Chile,CRM Platform,Av. Jorge Basadre 168,San Isidro Santiago,Santiago,15073

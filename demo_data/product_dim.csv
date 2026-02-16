@@ -1,0 +1,57 @@
+product_key,product_name,category_key,category_name,vertical
+1,Plan Movil 100GB,1,Planes Moviles,Movil
+2,Plan Movil 200GB,1,Planes Moviles,Movil
+3,Plan Movil 300GB,1,Planes Moviles,Movil
+4,Plan Movil 400GB,1,Planes Moviles,Movil
+5,Plan Multilinea 2x 400GB,1,Planes Moviles,Movil
+6,Plan Multilinea 3x 400GB,1,Planes Moviles,Movil
+7,Plan Zero eSIM 100GB,2,Prepago,Movil
+8,Recarga Prepago $5.000,2,Prepago,Movil
+9,Recarga Prepago $10.000,2,Prepago,Movil
+10,Recarga Prepago $20.000,2,Prepago,Movil
+11,Bolsa Datos 10GB,2,Prepago,Movil
+12,Bolsa Datos 50GB,2,Prepago,Movil
+13,Internet Fibra 400 Mbps,3,Internet Hogar Fibra,Hogar
+14,Internet Fibra 600 Mbps,3,Internet Hogar Fibra,Hogar
+15,Internet Fibra 800 Mbps,3,Internet Hogar Fibra,Hogar
+16,Internet Fibra 1 Gbps,3,Internet Hogar Fibra,Hogar
+17,Internet + TV Zapping 130 Canales,4,TV Online,Hogar
+18,Zapping TV HD 130+ Canales,4,TV Online,Hogar
+19,Pack HBO Max,4,TV Online,Hogar
+20,Pack Disney+,4,TV Online,Hogar
+21,WOM GO Modem WiFi Portatil,5,Internet Movil BAM,Movil
+22,BAM Plan 50GB,5,Internet Movil BAM,Movil
+23,BAM Plan 100GB,5,Internet Movil BAM,Movil
+24,BAM Bolsa Prepago 20GB,5,Internet Movil BAM,Movil
+25,Smartphone Samsung Galaxy,6,Equipamiento,All
+26,Smartphone Xiaomi Redmi,6,Equipamiento,All
+27,Smartphone iPhone,6,Equipamiento,All
+28,Tablet Samsung,6,Equipamiento,All
+29,Smart Watch,6,Equipamiento,All
+30,Audifonos Bluetooth,6,Equipamiento,All
+31,Router WiFi Hogar,6,Equipamiento,Hogar
+32,Chip SIM Prepago,6,Equipamiento,Movil
+33,eSIM Digital,6,Equipamiento,Movil
+34,Seguro Equipo WOM,7,Servicios Adicionales,All
+35,Roaming WhatsApp Libre,8,Roaming,Movil
+36,Roaming Pack Americas,8,Roaming,Movil
+37,Roaming Pack Europa,8,Roaming,Movil
+38,Roaming Pack Global,8,Roaming,Movil
+39,Promo Portabilidad 46% Dcto,9,Promociones,Movil
+40,Promo Cuotas Sin Interes 24x,9,Promociones,All
+41,Promo Velocidad Doble Fibra,9,Promociones,Hogar
+42,Promo Cero Instalacion,9,Promociones,Hogar
+43,Promo Despacho Gratis,9,Promociones,All
+44,Plan Empresas Corporativo,10,Empresas,Enterprise
+45,Plan Empresas Flota Movil,10,Empresas,Enterprise
+46,Internet Dedicado Empresas,10,Empresas,Enterprise
+47,Centralita Virtual,10,Empresas,Enterprise
+48,Lineas Adicionales Empresas,10,Empresas,Enterprise
+49,5G Premium Speed,1,Planes Moviles,Movil
+50,VoLTE Llamadas HD,7,Servicios Adicionales,Movil
+51,VoWiFi Llamadas WiFi,7,Servicios Adicionales,Movil
+52,App WOM Premium,7,Servicios Adicionales,All
+53,MiWOM Portal Gestion,7,Servicios Adicionales,All
+54,Servicio Tecnico Prioritario,7,Servicios Adicionales,Hogar
+55,Instalacion Express 24h,7,Servicios Adicionales,Hogar
+56,Soporte 24/7,7,Servicios Adicionales,Enterprise
