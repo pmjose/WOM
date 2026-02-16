@@ -126,7 +126,7 @@
 
 - All data processed within Chile/EU
 - DPA (Data Processing Agreement) in place
-- GDPR compliance certified
+- Ley 19628 compliance certified
 - Regular audits required
 
 ### Security Requirements

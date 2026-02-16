@@ -35,7 +35,7 @@
 | `Subscriber_Unit_Economics.md` | LTV/CAC analysis | $56.5K LTV, 6.2x ratio |
 | `Revenue_Mix_Report_Q4_2024.md` | Revenue breakdown | 85% recurring, product mix |
 | `ESG_Sustainability_Report_2024.md` | ESG performance | Net zero 2040, 80% renewable |
-| `Ofcom_Annual_Compliance_Report.md` | Regulatory compliance | OTS ready, 8.5 complaints/100K |
+| `SUBTEL_Annual_Compliance_Report.md` | Regulatory compliance | OTS ready, 8.5 complaints/100K |
 
 #### Vendor Contracts (3 files)
 | Document | Vendor | Value |
@@ -106,7 +106,7 @@
 
 | Topic | Documents |
 |-------|-----------|
-| OSIPTEL | Compliance Report, Market Analysis |
+| SUBTEL | Compliance Report, Market Analysis |
 | One Touch Switch | Compliance Report, Playbooks |
 | PSTN Switch-Off | Strategy, Sales, Marketing |
 | Telecoms Security Act | Compliance Report |
@@ -141,9 +141,9 @@
 
 ### Key Data Points
 - **Currency**: All figures in Pesos Chileanos ($)
-- **Regions**: Santiago, Santiago Metropolitana, La Libertad, Valparaiso, Concepcion, etc.
+- **Regions**: Santiago, Santiago Metropolitana, Maule, Valparaiso, Concepcion, etc.
 - **Competitors**: GTD Chile, Americatel, Mitel, Vonage, Microsoft
-- **Regulator**: OSIPTEL
+- **Regulator**: SUBTEL
 - **Channel Model**: Partner-first (1,050 partners)
 
 ### Product Portfolio

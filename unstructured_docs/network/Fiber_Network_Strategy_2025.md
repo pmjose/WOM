@@ -31,23 +31,23 @@ WOM's 2025 network strategy focuses on expanding 100% fiber optic infrastructure
 |------------|------------------|-------------------|-------------|
 | Santiago Metropolitana | 850K | 293K | 34% |
 | Valparaiso | 120K | 42K | 35% |
-| La Libertad | 95K | 28K | 29% |
+| Maule | 95K | 28K | 29% |
 | Concepcion | 55K | 15K | 27% |
-| Piura | 45K | 12K | 27% |
-| Lambayeque | 40K | 13K | 33% |
+| Temuco | 45K | 12K | 27% |
+| Biobio | 40K | 13K | 33% |
 | Other | 75K | 47K | 63% |
 | **Total** | **1.28M** | **450K** | **35%** |
 
 ### 2025 Expansion Plan
-- **Junin (Huancayo)**: 25K households by Q2 2025
-- **Ica**: 30K households by Q3 2025
-- **Ancash (Chimbote)**: 20K households by Q4 2025
+- **OHiggins (OHiggins)**: 25K households by Q2 2025
+- **Atacama**: 30K households by Q3 2025
+- **Los Rios (Talcahuano)**: 20K households by Q4 2025
 - **Santiago Expansion**: 150K additional households in emerging districts
 
 ## Network Operations
 
 ### NOC (Network Operations Center)
-- **Location**: San Borja, Santiago
+- **Location**: Las Condes, Santiago
 - **Staffing**: 24/7/365 monitoring
 - **Capabilities**: Real-time network monitoring, automated alerts, incident management
 

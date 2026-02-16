@@ -13,7 +13,7 @@ WOM's fiber optic network serves over 450,000 active subscribers across Chile's 
 
 | Component | Primary | Secondary | Capacity |
 |-----------|---------|-----------|----------|
-| Data Center | San Borja, Santiago | San Isidro, Santiago | Full redundancy |
+| Data Center | Las Condes, Santiago | Providencia, Santiago | Full redundancy |
 | OLT Equipment | Huawei MA5800 | ZTE C650 | 1.2M subscribers |
 | Core Routers | Nokia 7750 SR | Nokia 7705 | 400 Gbps backbone |
 | 5G + GPON Ports | 8,500 | 2,000 reserve | 10 Gbps per port |
@@ -27,7 +27,7 @@ WOM's fiber optic network serves over 450,000 active subscribers across Chile's 
 | National Backbone | 200 Gbps | 52% | Own fiber |
 | Santiago Metro Ring | 400 Gbps | 48% | Own fiber |
 | Regional Links | 100 Gbps | 38% | Own + leased |
-| IXP Peering (NAP.pe) | 40 Gbps | 55% | Multiple |
+| IXP Peering (PIT Chile) | 40 Gbps | 55% | Multiple |
 | **Total** | **840 Gbps** | **47%** | - |
 
 ---
@@ -40,13 +40,13 @@ WOM's fiber optic network serves over 450,000 active subscribers across Chile's 
 |------------|------------------|-------------------|-------------|------------|
 | Santiago Metropolitana | 850,000 | 293,000 | 34.5% | +28% |
 | Valparaiso | 120,000 | 42,000 | 35.0% | +32% |
-| La Libertad (Copiapo) | 95,000 | 28,000 | 29.5% | +25% |
+| Maule (Copiapo) | 95,000 | 28,000 | 29.5% | +25% |
 | Concepcion | 55,000 | 15,000 | 27.3% | +35% |
-| Piura | 45,000 | 12,000 | 26.7% | +30% |
-| Lambayeque (Chiclayo) | 40,000 | 13,000 | 32.5% | +22% |
-| Callao | 35,000 | 12,000 | 34.3% | +18% |
-| Ica | 25,000 | 8,000 | 32.0% | +40% |
-| Junín (Huancayo) | 18,000 | 5,500 | 30.6% | +45% |
+| Temuco | 45,000 | 12,000 | 26.7% | +30% |
+| Biobio (Antofagasta) | 40,000 | 13,000 | 32.5% | +22% |
+| Maipu | 35,000 | 12,000 | 34.3% | +18% |
+| Atacama | 25,000 | 8,000 | 32.0% | +40% |
+| Junín (Puerto Montt) | 18,000 | 5,500 | 30.6% | +45% |
 | Other Regions | 17,000 | 5,500 | 32.4% | +38% |
 | **Total Chile** | **1,300,000** | **434,000** | **33.4%** | **+29%** |
 
@@ -54,13 +54,13 @@ WOM's fiber optic network serves over 450,000 active subscribers across Chile's 
 
 | District | Households Passed | Active Subscribers | Penetration |
 |----------|------------------|-------------------|-------------|
-| San Borja | 45,000 | 18,000 | 40% |
-| Miraflores | 52,000 | 22,000 | 42% |
-| San Isidro | 38,000 | 16,500 | 43% |
-| Surco | 85,000 | 32,000 | 38% |
-| La Molina | 48,000 | 17,500 | 36% |
+| Las Condes | 45,000 | 18,000 | 40% |
+| Nunoa | 52,000 | 22,000 | 42% |
+| Providencia | 38,000 | 16,500 | 43% |
+| Vitacura | 85,000 | 32,000 | 38% |
+| Lo Barnechea | 48,000 | 17,500 | 36% |
 | San Miguel | 42,000 | 14,000 | 33% |
-| Pueblo Libre | 28,000 | 9,500 | 34% |
+| Recoleta | 28,000 | 9,500 | 34% |
 | Jesús María | 32,000 | 12,000 | 38% |
 | Magdalena | 24,000 | 8,500 | 35% |
 | Lince | 22,000 | 7,800 | 35% |
@@ -177,9 +177,9 @@ WOM's fiber optic network serves over 450,000 active subscribers across Chile's 
 | Department | Target HH | Investment | Timeline |
 |------------|-----------|------------|----------|
 | Junín (expansion) | +25,000 | $ 8M | Q1-Q2 2025 |
-| Ica (expansion) | +30,000 | $ 10M | Q2-Q3 2025 |
-| Ancash (Chimbote) | +20,000 | $ 7M | Q3-Q4 2025 |
-| Tacna | +15,000 | $ 5M | Q4 2025 |
+| Atacama (expansion) | +30,000 | $ 10M | Q2-Q3 2025 |
+| Los Rios (Talcahuano) | +20,000 | $ 7M | Q3-Q4 2025 |
+| Arica | +15,000 | $ 5M | Q4 2025 |
 | Santiago Emerging Districts | +150,000 | $ 35M | All 2025 |
 | **Total 2025** | **+240,000** | **$ 65M** | - |
 
@@ -220,7 +220,7 @@ WOM's fiber optic network serves over 450,000 active subscribers across Chile's 
 
 | Standard | Status | Renewal |
 |----------|--------|---------|
-| OSIPTEL Regulations | Compliant | Ongoing |
+| SUBTEL Regulations | Compliant | Ongoing |
 | Data Protection (Chile) | Compliant | Ongoing |
 | ISO 27001 | In Progress | Q3 2025 |
 | Quality Management | Certified | Dec 2025 |

@@ -189,10 +189,10 @@ Q4 2024 marketing delivered strong results with 6,850 MQLs generated from $4.2M 
 |--------|------|------------|----------|
 | Santiago | 1,850 | 27% | $14M |
 | Santiago Metropolitana | 1,050 | 15% | $7M |
-| La Libertad | 920 | 13% | $6M |
+| Maule | 920 | 13% | $6M |
 | Valparaiso | 650 | 9% | $4.5M |
 | Valparaiso | 580 | 8% | $4M |
-| Lambayeque | 520 | 8% | $3.5M |
+| Atacama | 520 | 8% | $3.5M |
 | Other Chile | 780 | 11% | $5M |
 | International | 500 | 7% | $4M |
 | **Total** | **6,850** | **100%** | **$48M** |

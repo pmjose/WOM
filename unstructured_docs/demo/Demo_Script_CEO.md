@@ -38,9 +38,9 @@ This demo is designed for CEO/Board-level audiences at WOM Chile, focusing on st
 
 **Expected Insights:**
 - Valparaiso subscribers: 42K (up 85% YoY) - fastest growing region
-- La Libertad (Copiapo): 28K subscribers, strong enterprise uptake
+- Maule (Copiapo): 28K subscribers, strong enterprise uptake
 - Concepcion: 15K subscribers, tourism sector driving demand
-- Piura & Lambayeque: Combined 25K, coastal corridor growth
+- Temuco & Biobio: Combined 25K, coastal corridor growth
 - Regional markets now represent 35% of new subscriber additions
 - Average installation time in regions: 4.2 days (vs 2.8 days in Santiago)
 
@@ -55,8 +55,8 @@ This demo is designed for CEO/Board-level audiences at WOM Chile, focusing on st
 - WOM fiber market share: ~8% nationally, 15% in premium segment
 - Claro: Largest overall, but hybrid network limits speeds
 - Movistar: Legacy infrastructure, losing premium customers
-- Entel/Bitel: Focused on mobile, limited fiber presence
-- Win Chile: Similar positioning, regional competitor
+- Entel/GTD: Focused on mobile, limited fiber presence
+- VTR: Similar positioning, regional competitor
 - Customer NPS: +62 vs industry average +35
 - Churn rate: 1.8% monthly (vs industry 2.5%)
 
@@ -85,7 +85,7 @@ This demo is designed for CEO/Board-level audiences at WOM Chile, focusing on st
 **Expected Insights:**
 - 2025 Subscriber Target: 650K (44% growth)
 - 2025 MRR Target: $ 42M
-- New regions: Junin (Huancayo), Ica expansion
+- New regions: OHiggins (OHiggins), Atacama expansion
 - Enterprise segment target: 25% of revenue (from 20%)
 - CapEx plan: $ 45M for network expansion
 - New products: Business VoIP, Managed WiFi for enterprises
@@ -129,7 +129,7 @@ As Chile continues its digital transformation, WOM is positioned to be the prefe
 |--------|---------|---------|--------|
 | Santiago Metropolitana | 293K | 240K | +22% |
 | Valparaiso | 42K | 23K | +85% |
-| La Libertad | 28K | 18K | +56% |
+| Maule | 28K | 18K | +56% |
 | Concepcion | 15K | 8K | +88% |
 | Other Regions | 72K | 44K | +64% |
 
@@ -138,4 +138,4 @@ As Chile continues its digital transformation, WOM is positioned to be the prefe
 **Demo Duration:** 10 minutes  
 **Audience:** CEO, Board members, Investors  
 **Key Message:** Chile's fiber leader delivering strategic intelligence  
-**Source:** Q4 2024 Results, Currency: Chilevian Pesos ($)
+**Source:** Q4 2024 Results, Currency: Chilean Pesos ($)

@@ -124,16 +124,16 @@ This directory contains comprehensive business documents across multiple formats
 - **Equipment**: Router WiFi 5/6, Mesh WiFi, ONT
 
 ### Competitors Referenced
-- Claro Chile, Movistar Chile, Entel Chile, Bitel, Win Chile
+- Claro Chile, Movistar Chile, Entel Chile, GTD, VTR
 
 ### Partners Referenced
 - Huawei, Nokia, ZTE, Furukawa, DirecTV, L1MAX, Netflix, HBO Max
 
 ### Regions Referenced
-- Santiago, Valparaiso, La Libertad, Concepcion, Piura, Lambayeque, Cajamarca, Junin, Ancash, Ica, Callao, Loreto
+- Santiago, Valparaiso, Maule, Concepcion, Temuco, Biobio, Los Lagos, OHiggins, Los Rios, Atacama, Maipu, Magallanes
 
 ---
 
 **Last Updated**: November 2025  
 **Demo Ready**: ✅ All documents optimised for Cortex Search indexing
-**Currency**: Chilevian Pesos ($)
+**Currency**: Chilean Pesos ($)

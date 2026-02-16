@@ -67,7 +67,7 @@ This policy establishes guidelines for vendor selection, management, and evaluat
 
 ### Compliance Requirements
 - All vendors must maintain ISO 27001 certification
-- GDPR compliance mandatory for data processors
+- Ley 19628 compliance mandatory for data processors
 - Chile Telecoms Security Act compliance for network vendors
 - Annual security assessments required
 

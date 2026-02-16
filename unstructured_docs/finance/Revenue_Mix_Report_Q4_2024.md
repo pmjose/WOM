@@ -92,9 +92,9 @@ Q4 2024 revenue of $132M reflects a continuing shift towards higher-value Fibra 
 |--------|---------|---------|-----|
 | Santiago | $28M | 24% | +12% |
 | Santiago Metropolitana | $18M | 15% | +10% |
-| La Libertad | $16M | 14% | +8% |
+| Maule | $16M | 14% | +8% |
 | Valparaiso | $12M | 10% | +7% |
-| Lambayeque | $10M | 8% | +11% |
+| Atacama | $10M | 8% | +11% |
 | Valparaiso | $9M | 8% | +15% |
 | Concepcion | $8M | 7% | +6% |
 | Other Chile | $17M | 14% | +5% |

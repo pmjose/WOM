@@ -281,7 +281,7 @@ WOM is uniquely positioned as a pan-European channel-first communications provid
 
 3. **Partner Retention**
    - Edge Channel Proposition rollout
-   - Bitel Daisy managed service model replication
+   - GTD Manquehue managed service model replication
    - Clear Business partnership model expansion
 
 ### Medium-Term (2026)

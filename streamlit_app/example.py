@@ -1351,7 +1351,7 @@ PAGES = {
         "insights": [
             "AHT, FCR, CSAT by queue",
             "Ticket categories and resolution times",
-            "Complaint volumes and Ombudsman escalation rate",
+            "Complaint volumes and SUBTEL Appeals escalation rate",
             "Agent CSAT rankings"
         ]
     },
@@ -1532,20 +1532,20 @@ PAGES = {
         "title": "Regulatory & Compliance",
         "persona": "Head of Regulatory Affairs / Compliance Director",
         "duration": "10 minutes",
-        "focus": "Ofcom compliance, SLA management, GDPR, complaint handling, service quality reporting",
+        "focus": "SUBTEL compliance, SLA management, Ley de Proteccion de Datos, complaint handling, service quality reporting",
         "views": ["SLA", "COMPLAINT", "NETWORK_OPS", "MOBILE"],
         "questions": [
             "Show me our regulatory compliance status - SLA performance, complaint metrics, and any areas of concern.",
             "How are we performing against our published SLAs? Show me breach rates and credit liability.",
-            "Are we meeting Ofcom complaint handling requirements? Show me resolution times and escalation rates.",
+            "Are we meeting SUBTEL complaint handling requirements? Show me resolution times and escalation rates.",
             "Are we meeting our network quality commitments? Show me coverage, availability, and performance metrics.",
-            "What data do we need for our quarterly Ofcom submission? Summarize key metrics."
+            "What data do we need for our quarterly SUBTEL submission? Summarize key metrics."
         ],
         "insights": [
             "SLA attainment rate",
             "Complaint-to-subscriber ratio",
-            "Ombudsman escalation rate",
-            "Ofcom reporting requirements"
+            "SUBTEL Appeals escalation rate",
+            "SUBTEL reporting requirements"
         ]
     },
     "20_VP_Security": {
@@ -1659,16 +1659,16 @@ PAGES = {
         "views": ["B2B_CONTRACT", "COMPLAINT", "SLA", "FINANCE"],
         "questions": [
             "What is our B2B contract portfolio? Show me total contract value, contracts by status, and upcoming renewals.",
-            "Show me our formal complaint trends - how many Ofcom escalations and ombudsman cases do we have?",
+            "Show me our formal complaint trends - how many SUBTEL escalations and ombudsman cases do we have?",
             "What's our SLA compliance rate? Show me any breaches and potential financial exposure.",
             "What are the key liability and indemnity terms in our strategic vendor contracts?",
-            "What is our GDPR compliance framework? Show me data protection obligations and privacy-related complaints.",
+            "What is our Ley de Proteccion de Datos compliance framework? Show me data protection obligations and privacy-related complaints.",
             "What active legal matters do we have? Show me open disputes, litigation status, and potential financial exposure.",
             "Which B2B contracts have the highest risk?"
         ],
         "insights": [
             "Contract portfolio: £50M+ ACV",
-            "Ofcom escalations tracking",
+            "SUBTEL escalations tracking",
             "SLA breach credits",
             "Legal matters and exposure"
         ]
@@ -1960,7 +1960,7 @@ def render_executive_summary():
             <h4 style="color: #1B2A4E; margin-top: 0;">🔒 Security & Governance</h4>
             <ul style="color: #1B2A4E; margin: 0; padding-left: 1.2rem;">
                 <li><strong>Single source</strong> of truth</li>
-                <li><strong>GDPR/CCPA</strong> compliance built-in</li>
+                <li><strong>Ley de Proteccion de Datos/CCPA</strong> compliance built-in</li>
                 <li><strong>Row/column</strong> level access control</li>
                 <li><strong>Full audit</strong> trail & lineage</li>
             </ul>
@@ -4229,7 +4229,7 @@ def render_persona_hub():
             "title": "Regulatory & Compliance",
             "persona": "Head of Regulatory",
             "duration": "10 min",
-            "focus": "Ofcom compliance tracking, SLA management, GDPR requirements, and service quality reporting",
+            "focus": "SUBTEL compliance tracking, SLA management, Ley de Proteccion de Datos requirements, and service quality reporting",
             "snowflake_value": "Compliance automation with regulatory reporting dashboards",
             "icon": "⚖️",
             "featured": False,
@@ -10851,7 +10851,7 @@ def render_cto_technology():
                 <div style="display: flex; gap: 0.75rem; font-size: 0.8rem; justify-content: center; margin-top: 1rem;">
                     <span style="background: #D1FAE5; color: #065F46; padding: 0.3rem 0.6rem; border-radius: 20px;">ISO 27001 ✓</span>
                     <span style="background: #D1FAE5; color: #065F46; padding: 0.3rem 0.6rem; border-radius: 20px;">SOC 2 ✓</span>
-                    <span style="background: #D1FAE5; color: #065F46; padding: 0.3rem 0.6rem; border-radius: 20px;">GDPR ✓</span>
+                    <span style="background: #D1FAE5; color: #065F46; padding: 0.3rem 0.6rem; border-radius: 20px;">Ley de Proteccion de Datos ✓</span>
                 </div>
                 """, unsafe_allow_html=True)
         
@@ -17858,7 +17858,7 @@ def render_vp_customer_service():
                         <div style="font-size: 0.65rem; color: #6B7280;">Avg: 4.1 days</div>
                     </div>
                     <div style="background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%); border-radius: 12px; padding: 0.75rem; text-align: center;">
-                        <div style="font-size: 0.7rem; color: #5B21B6;">Ombudsman</div>
+                        <div style="font-size: 0.7rem; color: #5B21B6;">SUBTEL Appeals</div>
                         <div style="font-size: 1.3rem; font-weight: 700; color: #8B5CF6;">8</div>
                         <div style="font-size: 0.65rem; color: #6B7280;">2.8% escalation</div>
                     </div>
@@ -24109,7 +24109,7 @@ def render_regulatory_compliance():
     st.markdown("""
     <div class="main-header">
         <h1>Regulatory & Compliance Dashboard</h1>
-        <p>Ofcom Compliance, SLA Management & Service Quality</p>
+        <p>SUBTEL Compliance, SLA Management & Service Quality</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -24147,7 +24147,7 @@ def render_regulatory_compliance():
         .reg-stat-label { color: rgba(255,255,255,0.6); font-size: 0.65rem; }
         </style>
         """, unsafe_allow_html=True)
-        st.markdown("""<div class="reg-compliance"><div class="reg-header"><div class="reg-title">⚖️ Regulatory Compliance Status</div><div class="reg-score"><div class="reg-score-val">97.8%</div><div class="reg-score-label">SLA Attainment</div></div></div><div class="reg-items"><div class="reg-item"><div class="reg-item-icon">🛡️</div><div class="reg-item-name">Ofcom SLAs</div><div class="reg-item-status pass"><span class="reg-check-icon">✓</span> Compliant</div></div><div class="reg-item"><div class="reg-item-icon">📋</div><div class="reg-item-name">GDPR</div><div class="reg-item-status pass"><span class="reg-check-icon">✓</span> Compliant</div></div><div class="reg-item"><div class="reg-item-icon">📊</div><div class="reg-item-name">ADR Scheme</div><div class="reg-item-status pass"><span class="reg-check-icon">✓</span> Active</div></div><div class="reg-item"><div class="reg-item-icon">⏱️</div><div class="reg-item-name">Response Time</div><div class="reg-item-status warn">⚠ Monitor</div></div></div><div class="reg-stats"><div class="reg-stat"><div class="reg-stat-val">9.4</div><div class="reg-stat-label">Complaints/1K</div></div><div class="reg-stat"><div class="reg-stat-val">8</div><div class="reg-stat-label">Ombudsman Cases</div></div><div class="reg-stat"><div class="reg-stat-val">99.1%</div><div class="reg-stat-label">Network SLA</div></div></div></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="reg-compliance"><div class="reg-header"><div class="reg-title">⚖️ Regulatory Compliance Status</div><div class="reg-score"><div class="reg-score-val">97.8%</div><div class="reg-score-label">SLA Attainment</div></div></div><div class="reg-items"><div class="reg-item"><div class="reg-item-icon">🛡️</div><div class="reg-item-name">SUBTEL SLAs</div><div class="reg-item-status pass"><span class="reg-check-icon">✓</span> Compliant</div></div><div class="reg-item"><div class="reg-item-icon">📋</div><div class="reg-item-name">Ley de Proteccion de Datos</div><div class="reg-item-status pass"><span class="reg-check-icon">✓</span> Compliant</div></div><div class="reg-item"><div class="reg-item-icon">📊</div><div class="reg-item-name">SERNAC</div><div class="reg-item-status pass"><span class="reg-check-icon">✓</span> Active</div></div><div class="reg-item"><div class="reg-item-icon">⏱️</div><div class="reg-item-name">Response Time</div><div class="reg-item-status warn">⚠ Monitor</div></div></div><div class="reg-stats"><div class="reg-stat"><div class="reg-stat-val">9.4</div><div class="reg-stat-label">Complaints/1K</div></div><div class="reg-stat"><div class="reg-stat-val">8</div><div class="reg-stat-label">SUBTEL Appeals Cases</div></div><div class="reg-stat"><div class="reg-stat-val">99.1%</div><div class="reg-stat-label">Network SLA</div></div></div></div>""", unsafe_allow_html=True)
         
         st.markdown("""
         <style>
@@ -24176,11 +24176,11 @@ def render_regulatory_compliance():
                 <div class="kpi-icon">📋</div>
                 <div class="kpi-label">Complaints/1K Subs</div>
                 <div class="kpi-value">9.4</div>
-                <div class="kpi-delta positive">Below Ofcom avg</div>
+                <div class="kpi-delta positive">Below SUBTEL avg</div>
             </div>
             <div class="kpi-card" style="--accent: #F59E0B;">
                 <div class="kpi-icon">⚖️</div>
-                <div class="kpi-label">Ombudsman Cases</div>
+                <div class="kpi-label">SUBTEL Appeals Cases</div>
                 <div class="kpi-value">8</div>
                 <div class="kpi-delta positive">2.8% escalation</div>
             </div>
@@ -24206,13 +24206,13 @@ def render_regulatory_compliance():
             </div>
             <div class="kpi-card" style="--accent: #EC4899;">
                 <div class="kpi-icon">🔒</div>
-                <div class="kpi-label">GDPR Requests</div>
+                <div class="kpi-label">Ley de Proteccion de Datos Requests</div>
                 <div class="kpi-value">24</div>
                 <div class="kpi-delta positive">All within SLA</div>
             </div>
             <div class="kpi-card" style="--accent: #6366F1;">
                 <div class="kpi-icon">📊</div>
-                <div class="kpi-label">Next Ofcom Report</div>
+                <div class="kpi-label">Next SUBTEL Report</div>
                 <div class="kpi-value">14 days</div>
                 <div class="kpi-delta positive">Data ready</div>
             </div>
@@ -24312,7 +24312,7 @@ def render_regulatory_compliance():
             st.markdown("**Regulatory Submission Readiness**")
             with st.container(border=True):
                 report_df = pd.DataFrame({
-                    'Report': ['Ofcom SLA', 'GDPR Audit', 'ADR Review', 'Ombudsman'],
+                    'Report': ['SUBTEL SLA', 'Ley de Proteccion de Datos Audit', 'ADR Review', 'SUBTEL Appeals'],
                     'Ready': [92, 88, 81, 76]
                 })
                 report_bar = alt.Chart(report_df).mark_bar(cornerRadiusTopRight=6, cornerRadiusBottomRight=6).encode(
@@ -24437,15 +24437,15 @@ def render_regulatory_compliance():
                 <div class="reg-ops-card">
                     <div class="reg-ops-label">Complaints/1K</div>
                     <div class="reg-ops-value">9.4</div>
-                    <div class="reg-ops-delta">Below Ofcom avg</div>
+                    <div class="reg-ops-delta">Below SUBTEL avg</div>
                 </div>
                 <div class="reg-ops-card">
-                    <div class="reg-ops-label">Ombudsman</div>
+                    <div class="reg-ops-label">SUBTEL Appeals</div>
                     <div class="reg-ops-value">2.8%</div>
                     <div class="reg-ops-delta">Target <2%</div>
                 </div>
                 <div class="reg-ops-card">
-                    <div class="reg-ops-label">GDPR Ready</div>
+                    <div class="reg-ops-label">Ley de Proteccion de Datos Ready</div>
                     <div class="reg-ops-value">90%</div>
                     <div class="reg-ops-delta">Audit March</div>
                 </div>
@@ -24457,13 +24457,13 @@ def render_regulatory_compliance():
         ops_col1, ops_col2 = st.columns(2)
         
         with ops_col1:
-            st.markdown("**GDPR Request Mix**")
+            st.markdown("**Ley de Proteccion de Datos Request Mix**")
             with st.container(border=True):
-                gdpr_df = pd.DataFrame({
+                compliance_df = pd.DataFrame({
                     'Type': ['Access', 'Deletion', 'Portability', 'Correction'],
                     'Requests': [12, 6, 4, 2]
                 })
-                gdpr_bar = alt.Chart(gdpr_df).mark_bar(cornerRadiusTopRight=6, cornerRadiusBottomRight=6).encode(
+                compliance_bar = alt.Chart(compliance_df).mark_bar(cornerRadiusTopRight=6, cornerRadiusBottomRight=6).encode(
                     x=alt.X('Requests:Q', title='Requests'),
                     y=alt.Y('Type:N', sort='-x', title=None),
                     color=alt.Color('Type:N', legend=None, scale=alt.Scale(
@@ -24471,10 +24471,10 @@ def render_regulatory_compliance():
                     )),
                     tooltip=['Type:N', 'Requests:Q']
                 ).properties(height=170)
-                st.altair_chart(gdpr_bar, use_container_width=True)
+                st.altair_chart(compliance_bar, use_container_width=True)
         
         with ops_col2:
-            st.markdown("**Ombudsman Escalations Trend**")
+            st.markdown("**SUBTEL Appeals Escalations Trend**")
             with st.container(border=True):
                 months = ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan']
                 esc_df = pd.DataFrame({
@@ -24528,7 +24528,7 @@ def render_regulatory_compliance():
             st.markdown("**Open Cases by Regulator**")
             with st.container(border=True):
                 regulator_df = pd.DataFrame({
-                    'Regulator': ['Ofcom', 'ICO', 'ADR', 'Local'],
+                    'Regulator': ['SUBTEL', 'ICO', 'ADR', 'Local'],
                     'Cases': [18, 9, 6, 4]
                 })
                 regulator_arc = alt.Chart(regulator_df).mark_arc(innerRadius=55).encode(
@@ -24692,7 +24692,7 @@ def render_regulatory_compliance():
                             <td style="text-align: right; padding: 0.5rem;"><span style="background: #D1FAE5; color: #065F46; padding: 0.2rem 0.5rem; border-radius: 12px;">Met</span></td>
                         </tr>
                         <tr>
-                            <td style="padding: 0.5rem;">GDPR Response</td>
+                            <td style="padding: 0.5rem;">Ley de Proteccion de Datos Response</td>
                             <td style="text-align: right; padding: 0.5rem;">30 days</td>
                             <td style="text-align: right; padding: 0.5rem;">12 days</td>
                             <td style="text-align: right; padding: 0.5rem;"><span style="background: #D1FAE5; color: #065F46; padding: 0.2rem 0.5rem; border-radius: 12px;">Met</span></td>
@@ -24793,14 +24793,14 @@ def render_regulatory_compliance():
 
         st.markdown('<div class="section-header">AI Executive Summary</div>', unsafe_allow_html=True)
         if st.session_state.get('sf_highlights', True):
-            st.info("❄️ **Snowflake Intelligence** shows compliance trending above target, but ombudsman escalation remains above the 2% goal. Focused early‑resolution workflows and GDPR readiness actions can close the gap before the March audit.")
+            st.info("❄️ **Snowflake Intelligence** shows compliance trending above target, but ombudsman escalation remains above the 2% goal. Focused early‑resolution workflows and Ley de Proteccion de Datos readiness actions can close the gap before the March audit.")
 
         st.markdown('<div class="section-header">Signals & Insights</div>', unsafe_allow_html=True)
         sig_col1, sig_col2, sig_col3 = st.columns(3)
         with sig_col1:
             with st.container(border=True):
                 st.markdown("**Escalation Risk**")
-                st.caption("Ombudsman cases at 2.8% driven by billing dispute delays.")
+                st.caption("SUBTEL Appeals cases at 2.8% driven by billing dispute delays.")
         with sig_col2:
             with st.container(border=True):
                 st.markdown("**SLA Stability**")
@@ -24808,7 +24808,7 @@ def render_regulatory_compliance():
         with sig_col3:
             with st.container(border=True):
                 st.markdown("**Audit Readiness**")
-                st.caption("GDPR readiness at 90%; data retention gaps remain.")
+                st.caption("Ley de Proteccion de Datos readiness at 90%; data retention gaps remain.")
 
         st.markdown('<div class="section-header">AI-Powered Strategic Recommendations</div>', unsafe_allow_html=True)
         rec_col1, rec_col2, rec_col3 = st.columns(3)
@@ -24819,10 +24819,10 @@ def render_regulatory_compliance():
         with rec_col2:
             with st.container(border=True):
                 st.markdown("**SLA Monitoring**")
-                st.caption("Automate SLA variance alerts for Ofcom submissions.")
+                st.caption("Automate SLA variance alerts for SUBTEL submissions.")
         with rec_col3:
             with st.container(border=True):
-                st.markdown("**GDPR Controls**")
+                st.markdown("**Ley de Proteccion de Datos Controls**")
                 st.caption("Complete retention policy updates ahead of March audit.")
 
         st.markdown('<div class="section-header">Regulatory & Compliance Strategic Priorities — Q1 2026</div>', unsafe_allow_html=True)
@@ -24834,7 +24834,7 @@ def render_regulatory_compliance():
                 <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
                     <span style="background: #DC2626; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600;">PRIORITY 1</span>
                 </div>
-                <h4 style="color: #1B2A4E; margin: 0 0 0.5rem 0;">Zero Ofcom Breaches</h4>
+                <h4 style="color: #1B2A4E; margin: 0 0 0.5rem 0;">Zero SUBTEL Breaches</h4>
                 """, unsafe_allow_html=True)
                 st.markdown("""
                 - Current: **2** minor issues
@@ -24848,7 +24848,7 @@ def render_regulatory_compliance():
                 <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
                     <span style="background: #F59E0B; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600;">PRIORITY 2</span>
                 </div>
-                <h4 style="color: #1B2A4E; margin: 0 0 0.5rem 0;">Ombudsman < 2%</h4>
+                <h4 style="color: #1B2A4E; margin: 0 0 0.5rem 0;">SUBTEL Appeals < 2%</h4>
                 """, unsafe_allow_html=True)
                 st.markdown("""
                 - Current: **2.8%** escalation
@@ -24862,7 +24862,7 @@ def render_regulatory_compliance():
                 <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
                     <span style="background: #10B981; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600;">PRIORITY 3</span>
                 </div>
-                <h4 style="color: #1B2A4E; margin: 0 0 0.5rem 0;">GDPR Audit Ready</h4>
+                <h4 style="color: #1B2A4E; margin: 0 0 0.5rem 0;">Ley de Proteccion de Datos Audit Ready</h4>
                 """, unsafe_allow_html=True)
                 st.markdown("""
                 - Audit: March 2026
@@ -24872,7 +24872,7 @@ def render_regulatory_compliance():
                 """)
         
         st.markdown('<div class="section-header">Ask Snowflake Intelligence</div>', unsafe_allow_html=True)
-        questions = ["Show me our regulatory compliance status.", "How are we performing against published SLAs?", "Are we meeting Ofcom complaint handling requirements?", "What data do we need for our Ofcom submission?"]
+        questions = ["Show me our regulatory compliance status.", "How are we performing against published SLAs?", "Are we meeting SUBTEL complaint handling requirements?", "What data do we need for our SUBTEL submission?"]
         sf_intel_url = "https://ai.snowflake.com/sfseeurope/pjose_aws3"
         cols = st.columns(2)
         for i, q in enumerate(questions):
@@ -28615,7 +28615,7 @@ def render_vp_legal():
         .legal-alert-label { color: rgba(255,255,255,0.6); font-size: 0.6rem; text-transform: uppercase; }
         </style>
         """, unsafe_allow_html=True)
-        st.markdown("""<div class="legal-contracts"><div class="legal-header"><div class="legal-title">📋 Contract Lifecycle</div><div class="legal-value"><div class="legal-value-amount">£52.4M</div><div class="legal-value-label">Portfolio Value</div></div></div><div class="legal-pipeline"><div class="legal-stage"><div class="legal-stage-icon">📝</div><div class="legal-stage-name">Draft</div><div class="legal-stage-count">24</div></div><span class="legal-arrow">→</span><div class="legal-stage"><div class="legal-stage-icon">🔍</div><div class="legal-stage-name">Review</div><div class="legal-stage-count">18</div></div><span class="legal-arrow">→</span><div class="legal-stage"><div class="legal-stage-icon">✍️</div><div class="legal-stage-name">Signing</div><div class="legal-stage-count">12</div></div><span class="legal-arrow">→</span><div class="legal-stage"><div class="legal-stage-icon">✅</div><div class="legal-stage-name">Active</div><div class="legal-stage-count">524</div></div><span class="legal-arrow">→</span><div class="legal-stage"><div class="legal-stage-icon">🔄</div><div class="legal-stage-name">Renewal</div><div class="legal-stage-count">47</div></div></div><div class="legal-alerts"><div class="legal-alert"><div class="legal-alert-val">18</div><div class="legal-alert-label">Open Disputes</div></div><div class="legal-alert"><div class="legal-alert-val">8</div><div class="legal-alert-label">Ombudsman Cases</div></div><div class="legal-alert"><div class="legal-alert-val">£420K</div><div class="legal-alert-label">Risk Exposure</div></div></div></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="legal-contracts"><div class="legal-header"><div class="legal-title">📋 Contract Lifecycle</div><div class="legal-value"><div class="legal-value-amount">£52.4M</div><div class="legal-value-label">Portfolio Value</div></div></div><div class="legal-pipeline"><div class="legal-stage"><div class="legal-stage-icon">📝</div><div class="legal-stage-name">Draft</div><div class="legal-stage-count">24</div></div><span class="legal-arrow">→</span><div class="legal-stage"><div class="legal-stage-icon">🔍</div><div class="legal-stage-name">Review</div><div class="legal-stage-count">18</div></div><span class="legal-arrow">→</span><div class="legal-stage"><div class="legal-stage-icon">✍️</div><div class="legal-stage-name">Signing</div><div class="legal-stage-count">12</div></div><span class="legal-arrow">→</span><div class="legal-stage"><div class="legal-stage-icon">✅</div><div class="legal-stage-name">Active</div><div class="legal-stage-count">524</div></div><span class="legal-arrow">→</span><div class="legal-stage"><div class="legal-stage-icon">🔄</div><div class="legal-stage-name">Renewal</div><div class="legal-stage-count">47</div></div></div><div class="legal-alerts"><div class="legal-alert"><div class="legal-alert-val">18</div><div class="legal-alert-label">Open Disputes</div></div><div class="legal-alert"><div class="legal-alert-val">8</div><div class="legal-alert-label">SUBTEL Appeals Cases</div></div><div class="legal-alert"><div class="legal-alert-val">£420K</div><div class="legal-alert-label">Risk Exposure</div></div></div></div>""", unsafe_allow_html=True)
         
         st.markdown("""
         <style>
@@ -28648,7 +28648,7 @@ def render_vp_legal():
             </div>
             <div class="kpi-card" style="--accent: #EF4444;">
                 <div class="kpi-icon">📑</div>
-                <div class="kpi-label">Ombudsman Cases</div>
+                <div class="kpi-label">SUBTEL Appeals Cases</div>
                 <div class="kpi-value">8</div>
                 <div class="kpi-delta negative">Active</div>
             </div>
@@ -28668,7 +28668,7 @@ def render_vp_legal():
             </div>
             <div class="kpi-card" style="--accent: #14B8A6;">
                 <div class="kpi-icon">🔒</div>
-                <div class="kpi-label">GDPR Requests</div>
+                <div class="kpi-label">Ley de Proteccion de Datos Requests</div>
                 <div class="kpi-value">24</div>
                 <div class="kpi-delta positive">All within SLA</div>
             </div>
@@ -28760,7 +28760,7 @@ def render_vp_legal():
         comp_col1, comp_col2 = st.columns(2)
         
         with comp_col1:
-            st.markdown("**Ombudsman Cases Trend**")
+            st.markdown("**SUBTEL Appeals Cases Trend**")
             with st.container(border=True):
                 months = ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan']
                 omb_df = pd.DataFrame({
@@ -28775,19 +28775,19 @@ def render_vp_legal():
                 st.altair_chart(omb_line, use_container_width=True)
         
         with comp_col2:
-            st.markdown("**GDPR Request Mix**")
+            st.markdown("**Ley de Proteccion de Datos Request Mix**")
             with st.container(border=True):
-                gdpr_df = pd.DataFrame({
+                compliance_df = pd.DataFrame({
                     'Type': ['Access', 'Deletion', 'Portability', 'Correction'],
                     'Requests': [12, 6, 4, 2]
                 })
-                gdpr_bar = alt.Chart(gdpr_df).mark_bar(cornerRadiusTopRight=6, cornerRadiusBottomRight=6).encode(
+                compliance_bar = alt.Chart(compliance_df).mark_bar(cornerRadiusTopRight=6, cornerRadiusBottomRight=6).encode(
                     x=alt.X('Requests:Q', title='Requests'),
                     y=alt.Y('Type:N', sort='-x', title=None),
                     color=alt.value('#29B5E8'),
                     tooltip=['Type:N', 'Requests:Q']
                 ).properties(height=170)
-                st.altair_chart(gdpr_bar, use_container_width=True)
+                st.altair_chart(compliance_bar, use_container_width=True)
         
     with tab_ops:
         st.markdown("""
@@ -28880,7 +28880,7 @@ def render_vp_legal():
                 <div class="legal-ops-card">
                     <div class="legal-ops-label">Compliance</div>
                     <div class="legal-ops-value">97.8%</div>
-                    <div class="legal-ops-delta">Ofcom</div>
+                    <div class="legal-ops-delta">SUBTEL</div>
                 </div>
             </div>
         </div>
@@ -28977,7 +28977,7 @@ def render_vp_legal():
                             <td style="text-align: right; padding: 0.5rem;"><span style="background: #FEF3C7; color: #92400E; padding: 0.2rem 0.5rem; border-radius: 12px;">Negotiation</span></td>
                         </tr>
                         <tr style="border-bottom: 1px solid #F3F4F6;">
-                            <td style="padding: 0.5rem;">GDPR Complaint</td>
+                            <td style="padding: 0.5rem;">Ley de Proteccion de Datos Complaint</td>
                             <td style="text-align: right; padding: 0.5rem;">£50K</td>
                             <td style="text-align: right; padding: 0.5rem;"><span style="background: #E0F2FE; color: #0369A1; padding: 0.2rem 0.5rem; border-radius: 12px;">Review</span></td>
                         </tr>
@@ -28996,11 +28996,11 @@ def render_vp_legal():
                 st.markdown("""
                 <div style="font-size: 0.85rem;">
                     <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #E5E7EB;">
-                        <span>Ofcom Compliance</span>
+                        <span>SUBTEL Compliance</span>
                         <span style="background: #D1FAE5; color: #065F46; padding: 0.2rem 0.5rem; border-radius: 12px;">Compliant</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #E5E7EB;">
-                        <span>GDPR</span>
+                        <span>Ley de Proteccion de Datos</span>
                         <span style="background: #D1FAE5; color: #065F46; padding: 0.2rem 0.5rem; border-radius: 12px;">Compliant</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #E5E7EB;">
@@ -31427,7 +31427,7 @@ def render_data_monetization():
             shares_df = pd.DataFrame({
                 'Share Name': ['MVNO_Partner_Feed', 'Enterprise_Dashboard', 'Marketplace_Coverage', 'CleanRoom_MediaCo', 'Regulatory_Reporting', 'Research_Academic'],
                 'Type': ['Direct Share', 'Direct Share', 'Marketplace', 'Clean Room', 'Direct Share', 'Private Exchange'],
-                'Consumer': ['VirginMedia, Sky Mobile', 'Vodafone Enterprise', 'Public (89 subscribers)', 'WPP, Publicis, Omnicom', 'Ofcom, FCA', 'UCL, Imperial, Oxford'],
+                'Consumer': ['VirginMedia, Sky Mobile', 'Vodafone Enterprise', 'Public (89 subscribers)', 'WPP, Publicis, Omnicom', 'SUBTEL, FCA', 'UCL, Imperial, Oxford'],
                 'Data Products': ['Usage, Billing, Network KPIs', 'Customer 360, Support Tickets', 'Coverage Maps, QoE Index', 'Audience Segments, Attribution', 'Compliance Reports, CDRs', 'Anonymized Network Data'],
                 'Records Shared': ['142M/day', '2.4M/day', '50M static', '12M/query', '8M/month', '500M static'],
                 'Revenue/Month': ['£124,000', '£48,000', '£86,000', '£52,000', 'Regulatory', '£18,000'],
@@ -31488,7 +31488,7 @@ def render_data_monetization():
                     st.markdown("- PII tokenization with secure vaults")
                     st.divider()
                     st.markdown("**Consent Management**")
-                    st.markdown("- GDPR Article 6 legal basis tracking")
+                    st.markdown("- Ley de Proteccion de Datos Article 6 legal basis tracking")
                     st.markdown("- Opt-out propagation across all products")
                     st.markdown("- Purpose limitation enforcement")
                     st.divider()
@@ -32430,8 +32430,8 @@ def render_architecture_page():
         # External & Partner Systems
         st.markdown("**External & Partner Data** — Third-Party & Reference Data")
         external_data = pd.DataFrame({
-            'System': ['Experian Consumer', 'Ofcom Porting Hub', 'ONS Statistics', 'Weather API', 'Snowflake Marketplace'],
-            'Provider': ['Experian', 'Ofcom', 'UK Gov', 'Met Office', 'Various'],
+            'System': ['Experian Consumer', 'SUBTEL Porting Hub', 'ONS Statistics', 'Weather API', 'Snowflake Marketplace'],
+            'Provider': ['Experian', 'SUBTEL', 'UK Gov', 'Met Office', 'Various'],
             'Data Type': ['Credit Scores, Demographics', 'Port-in/out, PAC Codes', 'Census, Postcode, Economic', 'Weather, Forecasts, Alerts', 'Market Data, Benchmarks'],
             'Ingestion': ['SFTP Batch', 'API Gateway', 'S3 Download', 'REST API', 'Data Share'],
             'Frequency': ['Weekly', 'Real-time', 'Monthly', 'Hourly', 'Live'],
@@ -32898,12 +32898,12 @@ def render_architecture_page():
         
         comp_cols = st.columns(6)
         compliance = [
-            ("GDPR", "EU Data Protection", "#3B82F6"),
+            ("Ley de Proteccion de Datos", "EU Data Protection", "#3B82F6"),
             ("SOC 2", "Type II Certified", "#10B981"),
             ("ISO 27001", "InfoSec Management", "#8B5CF6"),
             ("PCI DSS", "Payment Security", "#F59E0B"),
             ("HIPAA", "Health Data Ready", "#EC4899"),
-            ("Ofcom", "UK Telecom Regs", "#29B5E8")
+            ("SUBTEL", "UK Telecom Regs", "#29B5E8")
         ]
         for col, (name, desc, color) in zip(comp_cols, compliance):
             with col:
@@ -33173,7 +33173,7 @@ def main():
         
         # Regulatory Compliance
         {"name": "Compliance Status", "dashboard": "19_Regulatory_Compliance", "label": "Regulatory Compliance"},
-        {"name": "Ofcom Metrics", "dashboard": "19_Regulatory_Compliance", "label": "Regulatory Compliance"},
+        {"name": "SUBTEL Metrics", "dashboard": "19_Regulatory_Compliance", "label": "Regulatory Compliance"},
         {"name": "SLA Performance", "dashboard": "19_Regulatory_Compliance", "label": "Regulatory Compliance"},
         
         # VP Security
@@ -33286,7 +33286,7 @@ def main():
         "16_VP_Field_Operations": ["field ops", "technician", "work orders", "first time fix"],
         "17_VP_Strategy": ["strategy", "competitor", "market share", "arpu", "pricing"],
         "18_VP_Communications": ["communications", "sentiment", "media", "brand"],
-        "19_Regulatory_Compliance": ["regulatory", "compliance", "ofcom", "sla"],
+        "19_Regulatory_Compliance": ["regulatory", "compliance", "subtel", "sla"],
         "20_VP_Security": ["security", "fraud", "incidents", "risk"],
         "21_VP_Enterprise_Sales": ["enterprise sales", "pipeline", "contracts", "account health"],
         "22_VP_Wholesale": ["wholesale", "mvno", "interconnect", "wholesale revenue"],

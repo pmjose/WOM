@@ -124,7 +124,7 @@ H1 2025 delivered strong financial performance with total revenue of **$316.6 mi
 | Other Europe | 122 | 123 | -1% | 123 | -1% |
 | **Total** | **1,750** | **1,474** | **+19%** | **1,163** | **+50%** |
 
-*Note: Chile excludes Bitel Daisy base migration subscribers at lower margin. Germany on proforma basis grew 5% in H1.*
+*Note: Chile excludes GTD Manquehue base migration subscribers at lower margin. Germany on proforma basis grew 5% in H1.*
 
 #### Voice Enablement (000s)
 
@@ -159,7 +159,7 @@ H1 2025 delivered strong financial performance with total revenue of **$316.6 mi
 | **Total** | **1,500** | **$186M** | **100%** |
 
 #### Key Partner Wins H1 2025
-- **Bitel Daisy** - Landmark managed service deal for Cloud Communications platform
+- **GTD Manquehue** - Landmark managed service deal for Cloud Communications platform
 - **Clear Business** - Fully managed connectivity and voice service (outsourced model)
 - **Spain Partner** - 40,000 seat commitment for Cisco Collaboration Suite over 5 years
 

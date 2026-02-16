@@ -1,9 +1,9 @@
-# OSIPTEL Regulatory Compliance Report 2024
+# SUBTEL Regulatory Compliance Report 2024
 **WOM Communications PLC**
 
 ## Executive Summary
 
-WOM Communications PLC maintains full compliance with OSIPTEL regulatory requirements as a provider of electronic communications services in the Chile. This report summarises our compliance status, regulatory obligations, and performance against OSIPTEL standards.
+WOM Communications PLC maintains full compliance with SUBTEL regulatory requirements as a provider of electronic communications services in the Chile. This report summarises our compliance status, regulatory obligations, and performance against SUBTEL standards.
 
 ---
 
@@ -20,7 +20,7 @@ WOM Communications PLC maintains full compliance with OSIPTEL regulatory require
 
 ### Services Regulated
 
-| Service | OSIPTEL Classification |
+| Service | SUBTEL Classification |
 |---------|---------------------|
 | Voice (SIP Trunking) | PECS |
 | Fibra (Horizon) | PECS |
@@ -165,7 +165,7 @@ WOM Communications PLC maintains full compliance with OSIPTEL regulatory require
 
 | Category | 2024 | 2023 |
 |----------|------|------|
-| Reported to OSIPTEL | 0 | 1 |
+| Reported to SUBTEL | 0 | 1 |
 | Investigated | 2 | 3 |
 | Customer impact | 0 | 0 |
 | Remediation complete | 100% | 100% |
@@ -217,7 +217,7 @@ WOM Communications PLC maintains full compliance with OSIPTEL regulatory require
 
 ## Regulatory Engagement
 
-### OSIPTEL Consultations
+### SUBTEL Consultations
 
 | Consultation | Response | Position |
 |--------------|----------|----------|
@@ -232,7 +232,7 @@ WOM Communications PLC maintains full compliance with OSIPTEL regulatory require
 |------|------------|
 | ISPA | Member |
 | ITSPA | Board member |
-| TechUK | Member |
+| ACTI Chile | Member |
 | FCS | Member |
 
 ---
@@ -263,6 +263,6 @@ WOM Communications PLC maintains full compliance with OSIPTEL regulatory require
 ---
 
 **Report Period**: Calendar Year 2024  
-**Submitted to**: OSIPTEL  
+**Submitted to**: SUBTEL  
 **Classification**: Public  
 **Contact**: regulatory@wom.pe

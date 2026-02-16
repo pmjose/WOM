@@ -77,9 +77,9 @@ Q4 2024 delivered strong seat growth across all product categories, with total F
 |--------|---------|------------|------------|
 | Santiago | 198,000 | +22% | 23% |
 | Santiago Metropolitana | 137,000 | +18% | 16% |
-| La Libertad | 120,000 | +20% | 14% |
+| Maule | 120,000 | +20% | 14% |
 | Valparaiso | 94,000 | +17% | 11% |
-| Lambayeque | 77,000 | +19% | 9% |
+| Atacama | 77,000 | +19% | 9% |
 | Valparaiso | 68,000 | +24% | 8% |
 | Concepcion | 60,000 | +16% | 7% |
 | East of Santiago | 52,000 | +21% | 6% |

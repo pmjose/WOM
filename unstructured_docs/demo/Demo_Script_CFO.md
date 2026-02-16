@@ -63,7 +63,7 @@ This demo is designed for CFO and Finance leadership at WOM Chile, focusing on Q
 **Expected Insights:**
 - **Santiago Metropolitana:** $ 62M revenue, 70% gross margin (scale benefits)
 - **Valparaiso:** $ 12M revenue, 65% gross margin (fastest growing)
-- **La Libertad:** $ 8M revenue, 64% gross margin
+- **Maule:** $ 8M revenue, 64% gross margin
 - **Concepcion:** $ 4.5M revenue, 62% gross margin
 - **Other Regions:** $ 8.7M revenue, 58% gross margin (higher installation costs)
 - Regional expansion investment: $ 8M CapEx for coverage
@@ -156,7 +156,7 @@ This transforms Finance from report builders to real-time insight providers."
 |--------|---------|--------|-------------|
 | Santiago Metropolitana | $ 62M | 70% | 293K |
 | Valparaiso | $ 12M | 65% | 42K |
-| La Libertad | $ 8M | 64% | 28K |
+| Maule | $ 8M | 64% | 28K |
 | Concepcion | $ 4.5M | 62% | 15K |
 | Other | $ 8.7M | 58% | 72K |
 
@@ -165,4 +165,4 @@ This transforms Finance from report builders to real-time insight providers."
 **Demo Duration:** 10 minutes  
 **Audience:** CFO, Finance leadership, Investors, Board  
 **Key Message:** Financial intelligence for Chile's fastest growing fiber ISP  
-**Currency:** Chilevian Pesos ($)
+**Currency:** Chilean Pesos ($)

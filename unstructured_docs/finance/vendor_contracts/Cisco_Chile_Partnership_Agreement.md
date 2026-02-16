@@ -149,7 +149,7 @@
 |----------|--------|-------|
 | ISO 27001 | Certified | Both |
 | SOC 2 | Certified | Both |
-| GDPR | Compliant | Both |
+| Ley 19628 | Compliant | Both |
 | Chile Telecom | Licensed | WOM |
 
 ### Audit Rights

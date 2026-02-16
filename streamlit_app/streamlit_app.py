@@ -1653,7 +1653,7 @@ if selected_menu == "Intro":
     """, unsafe_allow_html=True)
 
     # Hub banner HTML (single line to avoid indentation issues)
-    st.markdown("""<div class="hub-banner"><div class="hub-particles"><div class="hub-particle" style="left: 10%; top: 80%; animation-delay: 0s;"></div><div class="hub-particle small" style="left: 20%; top: 70%; animation-delay: 0.5s;"></div><div class="hub-particle" style="left: 30%; top: 85%; animation-delay: 1s;"></div><div class="hub-particle small" style="left: 40%; top: 75%; animation-delay: 1.5s;"></div><div class="hub-particle" style="left: 50%; top: 90%; animation-delay: 2s;"></div><div class="hub-particle small" style="left: 60%; top: 80%; animation-delay: 2.5s;"></div><div class="hub-particle" style="left: 70%; top: 85%; animation-delay: 3s;"></div><div class="hub-particle small" style="left: 80%; top: 75%; animation-delay: 3.5s;"></div><div class="hub-particle" style="left: 90%; top: 80%; animation-delay: 0.8s;"></div><div class="hub-sparkle" style="left: 15%; top: 20%; animation-delay: 0s;"></div><div class="hub-sparkle" style="left: 85%; top: 30%; animation-delay: 1s;"></div><div class="hub-sparkle" style="left: 45%; top: 15%; animation-delay: 2s;"></div></div><div class="hub-title">❄️ Snowflake AI Data Cloud</div><div class="hub-subtitle">Breaking Down Data Silos in Real-Time</div><div class="hub-content"><div class="hub-sources"><div class="hub-source"><span class="hub-source-icon">📡</span><span class="hub-source-label">Network</span></div><div class="hub-source"><span class="hub-source-icon">⚙️</span><span class="hub-source-label">OSS/BSS</span></div><div class="hub-source"><span class="hub-source-icon">🏪</span><span class="hub-source-label">Marketplace</span></div></div><div class="hub-arrows"><span class="hub-arrow">→</span><span class="hub-arrow">→</span><span class="hub-arrow">→</span></div><div class="es-hub-center"><span class="es-hub-center-icon">❄️</span><span class="es-hub-center-label">Snowflake</span></div><div class="hub-arrows"><span class="hub-arrow">→</span><span class="hub-arrow">→</span><span class="hub-arrow">→</span></div><div class="hub-sources"><div class="hub-source"><span class="hub-source-icon">📊</span><span class="hub-source-label">Analytics</span></div><div class="hub-source"><span class="hub-source-icon">🤖</span><span class="hub-source-label">AI/ML</span></div><div class="hub-source"><span class="hub-source-icon">💡</span><span class="hub-source-label">Insights</span></div></div></div><div class="es-hub-stats"><div class="es-hub-stat"><div class="es-hub-stat-value">60%</div><div class="es-hub-stat-label">Faster Insights</div></div><div class="es-hub-stat"><div class="es-hub-stat-value">40%</div><div class="es-hub-stat-label">Cost Reduction</div></div><div class="es-hub-stat"><div class="es-hub-stat-value">100%</div><div class="es-hub-stat-label">Data Unified</div></div><div class="es-hub-stat"><div class="es-hub-stat-value">5x</div><div class="es-hub-stat-label">ROI</div></div></div></div>""", unsafe_allow_html=True)
+    st.markdown("""<div class="hub-banner"><div class="hub-particles"><div class="hub-particle" style="left: 10%; top: 80%; animation-delay: 0s;"></div><div class="hub-particle small" style="left: 20%; top: 70%; animation-delay: 0.5s;"></div><div class="hub-particle" style="left: 30%; top: 85%; animation-delay: 1s;"></div><div class="hub-particle small" style="left: 40%; top: 75%; animation-delay: 1.5s;"></div><div class="hub-particle" style="left: 50%; top: 90%; animation-delay: 2s;"></div><div class="hub-particle small" style="left: 60%; top: 80%; animation-delay: 2.5s;"></div><div class="hub-particle" style="left: 70%; top: 85%; animation-delay: 3s;"></div><div class="hub-particle small" style="left: 80%; top: 75%; animation-delay: 3.5s;"></div><div class="hub-particle" style="left: 90%; top: 80%; animation-delay: 0.8s;"></div><div class="hub-sparkle" style="left: 15%; top: 20%; animation-delay: 0s;"></div><div class="hub-sparkle" style="left: 85%; top: 30%; animation-delay: 1s;"></div><div class="hub-sparkle" style="left: 45%; top: 15%; animation-delay: 2s;"></div></div><div class="hub-title">❄️ Snowflake AI Data Cloud</div><div class="hub-subtitle">Breaking Down Data Silos in Real-Time</div><div class="hub-content"><div class="hub-sources"><div class="hub-source"><span class="hub-source-icon">📡</span><span class="hub-source-label">Network</span></div><div class="hub-source"><span class="hub-source-icon">⚙️</span><span class="hub-source-label">OSCLP BSS</span></div><div class="hub-source"><span class="hub-source-icon">🏪</span><span class="hub-source-label">Marketplace</span></div></div><div class="hub-arrows"><span class="hub-arrow">→</span><span class="hub-arrow">→</span><span class="hub-arrow">→</span></div><div class="es-hub-center"><span class="es-hub-center-icon">❄️</span><span class="es-hub-center-label">Snowflake</span></div><div class="hub-arrows"><span class="hub-arrow">→</span><span class="hub-arrow">→</span><span class="hub-arrow">→</span></div><div class="hub-sources"><div class="hub-source"><span class="hub-source-icon">📊</span><span class="hub-source-label">Analytics</span></div><div class="hub-source"><span class="hub-source-icon">🤖</span><span class="hub-source-label">AI/ML</span></div><div class="hub-source"><span class="hub-source-icon">💡</span><span class="hub-source-label">Insights</span></div></div></div><div class="es-hub-stats"><div class="es-hub-stat"><div class="es-hub-stat-value">60%</div><div class="es-hub-stat-label">Faster Insights</div></div><div class="es-hub-stat"><div class="es-hub-stat-value">40%</div><div class="es-hub-stat-label">Cost Reduction</div></div><div class="es-hub-stat"><div class="es-hub-stat-value">100%</div><div class="es-hub-stat-label">Data Unified</div></div><div class="es-hub-stat"><div class="es-hub-stat-value">5x</div><div class="es-hub-stat-label">ROI</div></div></div></div>""", unsafe_allow_html=True)
 
     # ── About Snowflake ────────────────────────────────────────────────
     st.markdown('<div class="section-header">About Snowflake</div>', unsafe_allow_html=True)
@@ -1743,7 +1743,7 @@ if selected_menu == "Intro":
     with col2:
         st.markdown("""<div class="kpi-card green"><div class="kpi-head"><span class="kpi-icon">📈</span><span class="kpi-title">Customer Experience</span></div><ul><li><strong>+15 pts</strong> NPS improvement</li><li><strong>25%</strong> call center volume reduction</li><li><strong>Real-time</strong> network issue detection</li><li><strong>360°</strong> unified customer view</li></ul></div>""", unsafe_allow_html=True)
         st.markdown("")
-        st.markdown("""<div class="kpi-card purple"><div class="kpi-head"><span class="kpi-icon">🔒</span><span class="kpi-title">Security & Governance</span></div><ul><li><strong>Single source</strong> of truth</li><li><strong>GDPR/CCPA</strong> compliance built-in</li><li><strong>Row/column</strong> level access control</li><li><strong>Full audit</strong> trail & lineage</li></ul></div>""", unsafe_allow_html=True)
+        st.markdown("""<div class="kpi-card purple"><div class="kpi-head"><span class="kpi-icon">🔒</span><span class="kpi-title">Security & Governance</span></div><ul><li><strong>Single source</strong> of truth</li><li><strong>Ley 19628/CCPA</strong> compliance built-in</li><li><strong>Row/column</strong> level access control</li><li><strong>Full audit</strong> trail & lineage</li></ul></div>""", unsafe_allow_html=True)
 
     # ── Join the Connected Future of Telecom (animated) ────────────────
     st.markdown('<div class="section-header">Join the Connected Future of Telecom</div>', unsafe_allow_html=True)
@@ -2360,7 +2360,7 @@ elif selected_menu == "Executive Overview":
         "Avg Propensity": [0.78, 0.65, 0.52, 0.41],
     })
     db_network_regions = pd.DataFrame({
-        "Region": ["Lima Centro", "Lima Norte", "Lima Sur", "Callao", "Trujillo", "Arequipa"],
+        "Region": ["Santiago Centro", "Santiago Norte", "Santiago Sur", "Maipu", "Concepcion", "Valparaiso"],
         "Network Score": [95.1, 92.4, 90.8, 91.7, 89.9, 88.7],
         "NPS": [54, 49, 45, 47, 42, 39],
         "Incidents": [18, 24, 29, 26, 34, 38],
@@ -2383,13 +2383,13 @@ elif selected_menu == "Executive Overview":
     net_adds = 257
     network_availability = 99.7
     support_csat = 4.2
-    arpu_delta = "+S/3.8"
+    arpu_delta = "+CLP 3.8"
     value_in_flight_m = 1.6
     protectable_arr_m = round(at_risk_revenue_m * 0.6, 1)
 
     # ── Real-Time Business Pulse ──────────────────────────────────────
     st.markdown(
-        f"""<div class="business-pulse"><div class="pulse-header"><div class="pulse-live"><div class="pulse-dot"></div><span class="pulse-title">📊 Real-Time Business Pulse</span></div><div class="pulse-period">● Live</div></div><div class="pulse-metrics"><div class="pulse-metric"><div class="pm-icon">💰</div><div class="pm-val revenue">S/{monthly_revenue_m:.1f}M</div><div class="pm-name">Monthly Revenue</div><div class="pm-trend up"><span>↑</span> +8.4% vs target</div></div><div class="pulse-metric"><div class="pm-icon">👥</div><div class="pm-val customers">{active_subscribers:,}</div><div class="pm-name">Active Subscribers</div><div class="pm-trend up"><span>↑</span> +{net_adds} net adds</div></div><div class="pulse-metric"><div class="pm-icon">⭐</div><div class="pm-val nps">+{nps_score}</div><div class="pm-name">NPS Score</div><div class="pm-trend up"><span>↑</span> +5 pts QoQ</div></div><div class="pulse-metric"><div class="pm-icon">📈</div><div class="pm-val growth">{market_share:.1f}%</div><div class="pm-name">Market Share</div><div class="pm-trend up"><span>↑</span> +0.4% YoY</div></div></div></div>""",
+        f"""<div class="business-pulse"><div class="pulse-header"><div class="pulse-live"><div class="pulse-dot"></div><span class="pulse-title">📊 Real-Time Business Pulse</span></div><div class="pulse-period">● Live</div></div><div class="pulse-metrics"><div class="pulse-metric"><div class="pm-icon">💰</div><div class="pm-val revenue">CLP {monthly_revenue_m:.1f}M</div><div class="pm-name">Monthly Revenue</div><div class="pm-trend up"><span>↑</span> +8.4% vs target</div></div><div class="pulse-metric"><div class="pm-icon">👥</div><div class="pm-val customers">{active_subscribers:,}</div><div class="pm-name">Active Subscribers</div><div class="pm-trend up"><span>↑</span> +{net_adds} net adds</div></div><div class="pulse-metric"><div class="pm-icon">⭐</div><div class="pm-val nps">+{nps_score}</div><div class="pm-name">NPS Score</div><div class="pm-trend up"><span>↑</span> +5 pts QoQ</div></div><div class="pulse-metric"><div class="pm-icon">📈</div><div class="pm-val growth">{market_share:.1f}%</div><div class="pm-name">Market Share</div><div class="pm-trend up"><span>↑</span> +0.4% YoY</div></div></div></div>""",
         unsafe_allow_html=True,
     )
 
@@ -2399,9 +2399,9 @@ elif selected_menu == "Executive Overview":
         # ── Business Health at a Glance ───────────────────────────────────
         st.markdown('<div class="eo-title">Business Health at a Glance</div>', unsafe_allow_html=True)
 
-        st.markdown(f"""<div class="eo-kpi-grid"><div class="eo-kpi" style="--accent: #29B5E8;"><div class="eo-kpi-icon">👥</div><div class="eo-kpi-label">Total Subscribers</div><div class="eo-kpi-value">{active_subscribers:,}</div><div class="eo-kpi-delta positive">↑ +5.2% QoQ</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,35 L15,32 L30,28 L45,25 L60,20 L75,15 L100,8" fill="none" stroke="#29B5E8" stroke-width="2"/><path d="M0,35 L15,32 L30,28 L45,25 L60,20 L75,15 L100,8 L100,40 L0,40 Z" fill="#29B5E8"/></svg></div><div class="eo-kpi" style="--accent: #10B981;"><div class="eo-kpi-icon">💰</div><div class="eo-kpi-label">Quarterly Revenue</div><div class="eo-kpi-value">S/{quarterly_revenue_m:.1f}M</div><div class="eo-kpi-delta positive">↑ +8.4% YoY</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,32 L15,30 L30,26 L45,28 L60,20 L75,14 L100,8" fill="none" stroke="#10B981" stroke-width="2"/><path d="M0,32 L15,30 L30,26 L45,28 L60,20 L75,14 L100,8 L100,40 L0,40 Z" fill="#10B981"/></svg></div><div class="eo-kpi" style="--accent: #8B5CF6;"><div class="eo-kpi-icon">⭐</div><div class="eo-kpi-label">NPS Score</div><div class="eo-kpi-value">+{nps_score}</div><div class="eo-kpi-delta positive">↑ +5 pts</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><rect x="5" y="28" width="10" height="12" fill="#8B5CF6"/><rect x="20" y="24" width="10" height="16" fill="#8B5CF6"/><rect x="35" y="26" width="10" height="14" fill="#8B5CF6"/><rect x="50" y="20" width="10" height="20" fill="#8B5CF6"/><rect x="65" y="16" width="10" height="24" fill="#8B5CF6"/><rect x="80" y="12" width="10" height="28" fill="#8B5CF6"/></svg></div><div class="eo-kpi" style="--accent: #F59E0B;"><div class="eo-kpi-icon">📉</div><div class="eo-kpi-label">Churn Rate</div><div class="eo-kpi-value">{churn_rate:.1f}%</div><div class="eo-kpi-delta positive">↓ -0.7%</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,8 L15,12 L30,16 L45,18 L60,22 L75,28 L100,32" fill="none" stroke="#F59E0B" stroke-width="2"/><path d="M0,8 L15,12 L30,16 L45,18 L60,22 L75,28 L100,32 L100,40 L0,40 Z" fill="#F59E0B"/></svg></div></div>""", unsafe_allow_html=True)
+        st.markdown(f"""<div class="eo-kpi-grid"><div class="eo-kpi" style="--accent: #29B5E8;"><div class="eo-kpi-icon">👥</div><div class="eo-kpi-label">Total Subscribers</div><div class="eo-kpi-value">{active_subscribers:,}</div><div class="eo-kpi-delta positive">↑ +5.2% QoQ</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,35 L15,32 L30,28 L45,25 L60,20 L75,15 L100,8" fill="none" stroke="#29B5E8" stroke-width="2"/><path d="M0,35 L15,32 L30,28 L45,25 L60,20 L75,15 L100,8 L100,40 L0,40 Z" fill="#29B5E8"/></svg></div><div class="eo-kpi" style="--accent: #10B981;"><div class="eo-kpi-icon">💰</div><div class="eo-kpi-label">Quarterly Revenue</div><div class="eo-kpi-value">CLP {quarterly_revenue_m:.1f}M</div><div class="eo-kpi-delta positive">↑ +8.4% YoY</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,32 L15,30 L30,26 L45,28 L60,20 L75,14 L100,8" fill="none" stroke="#10B981" stroke-width="2"/><path d="M0,32 L15,30 L30,26 L45,28 L60,20 L75,14 L100,8 L100,40 L0,40 Z" fill="#10B981"/></svg></div><div class="eo-kpi" style="--accent: #8B5CF6;"><div class="eo-kpi-icon">⭐</div><div class="eo-kpi-label">NPS Score</div><div class="eo-kpi-value">+{nps_score}</div><div class="eo-kpi-delta positive">↑ +5 pts</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><rect x="5" y="28" width="10" height="12" fill="#8B5CF6"/><rect x="20" y="24" width="10" height="16" fill="#8B5CF6"/><rect x="35" y="26" width="10" height="14" fill="#8B5CF6"/><rect x="50" y="20" width="10" height="20" fill="#8B5CF6"/><rect x="65" y="16" width="10" height="24" fill="#8B5CF6"/><rect x="80" y="12" width="10" height="28" fill="#8B5CF6"/></svg></div><div class="eo-kpi" style="--accent: #F59E0B;"><div class="eo-kpi-icon">📉</div><div class="eo-kpi-label">Churn Rate</div><div class="eo-kpi-value">{churn_rate:.1f}%</div><div class="eo-kpi-delta positive">↓ -0.7%</div><svg class="kpi-chart" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M0,8 L15,12 L30,16 L45,18 L60,22 L75,28 L100,32" fill="none" stroke="#F59E0B" stroke-width="2"/><path d="M0,8 L15,12 L30,16 L45,18 L60,22 L75,28 L100,32 L100,40 L0,40 Z" fill="#F59E0B"/></svg></div></div>""", unsafe_allow_html=True)
 
-        st.markdown(f"""<div class="eo-kpi-grid"><div class="eo-kpi" style="--accent: #06B6D4;"><div class="eo-kpi-icon">📡</div><div class="eo-kpi-label">Network Availability</div><div class="eo-kpi-value">{network_availability:.1f}%</div><div class="eo-kpi-delta positive">↑ +0.2%</div></div><div class="eo-kpi" style="--accent: #EC4899;"><div class="eo-kpi-icon">📊</div><div class="eo-kpi-label">ARPU (Blended)</div><div class="eo-kpi-value">S/{arpu_blended:.2f}</div><div class="eo-kpi-delta positive">↑ {arpu_delta}</div></div><div class="eo-kpi" style="--accent: #14B8A6;"><div class="eo-kpi-icon">💬</div><div class="eo-kpi-label">Support CSAT</div><div class="eo-kpi-value">{support_csat:.1f}/5</div><div class="eo-kpi-delta positive">↑ +0.3</div></div><div class="eo-kpi" style="--accent: #EF4444;"><div class="eo-kpi-icon">⚠️</div><div class="eo-kpi-label">At-Risk Revenue</div><div class="eo-kpi-value">S/{at_risk_revenue_m:.1f}M</div><div class="eo-kpi-delta neutral">{int(db_risk['At Risk'].sum())} customers</div></div></div>""", unsafe_allow_html=True)
+        st.markdown(f"""<div class="eo-kpi-grid"><div class="eo-kpi" style="--accent: #06B6D4;"><div class="eo-kpi-icon">📡</div><div class="eo-kpi-label">Network Availability</div><div class="eo-kpi-value">{network_availability:.1f}%</div><div class="eo-kpi-delta positive">↑ +0.2%</div></div><div class="eo-kpi" style="--accent: #EC4899;"><div class="eo-kpi-icon">📊</div><div class="eo-kpi-label">ARPU (Blended)</div><div class="eo-kpi-value">CLP {arpu_blended:.2f}</div><div class="eo-kpi-delta positive">↑ {arpu_delta}</div></div><div class="eo-kpi" style="--accent: #14B8A6;"><div class="eo-kpi-icon">💬</div><div class="eo-kpi-label">Support CSAT</div><div class="eo-kpi-value">{support_csat:.1f}/5</div><div class="eo-kpi-delta positive">↑ +0.3</div></div><div class="eo-kpi" style="--accent: #EF4444;"><div class="eo-kpi-icon">⚠️</div><div class="eo-kpi-label">At-Risk Revenue</div><div class="eo-kpi-value">CLP {at_risk_revenue_m:.1f}M</div><div class="eo-kpi-delta neutral">{int(db_risk['At Risk'].sum())} customers</div></div></div>""", unsafe_allow_html=True)
 
         # ── Executive Performance Signals (Altair charts) ──────────────────
         st.markdown('<div class="eo-title">Executive Performance Signals</div>', unsafe_allow_html=True)
@@ -2415,7 +2415,7 @@ elif selected_menu == "Executive Overview":
                     alt.Chart(seg_df)
                     .mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=22)
                     .encode(
-                        x=alt.X('Revenue:Q', title='Revenue (S/ M)', axis=alt.Axis(format=".1f", tickCount=6)),
+                        x=alt.X('Revenue:Q', title='Revenue (CLP  M)', axis=alt.Axis(format=".1f", tickCount=6)),
                         y=alt.Y('Segment:N', sort='-x', title=None),
                         color=alt.Color(
                             'Segment:N',
@@ -2444,9 +2444,9 @@ elif selected_menu == "Executive Overview":
                 top_seg = seg_df.loc[seg_df["Revenue"].idxmax()]
                 render_ai_recommendation(
                     "Revenue Mix",
-                    f"{top_seg['Segment']} contributes the largest monthly revenue at S/{top_seg['Revenue']:.1f}M.",
+                    f"{top_seg['Segment']} contributes the largest monthly revenue at CLP {top_seg['Revenue']:.1f}M.",
                     f"Protect {top_seg['Segment']} with loyalty bundles while accelerating SMB conversion playbooks.",
-                    "Stabilize core revenue base and add +S/0.3M in 1 quarter.",
+                    "Stabilize core revenue base and add +CLP 0.3M in 1 quarter.",
                 )
 
         with exec_col2:
@@ -2515,7 +2515,7 @@ elif selected_menu == "Executive Overview":
             bridge_df['Label'] = bridge_df['Impact'].apply(lambda v: f"{v:+.1f}M" if v not in [12.0, quarterly_revenue_m] else f"{v:.1f}M")
             bridge_bar = alt.Chart(bridge_df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=56).encode(
                 x=alt.X('Driver:N', title=None, sort=list(bridge_df['Driver']), axis=alt.Axis(labelAngle=0)),
-                y=alt.Y('Impact:Q', title='S/ M'),
+                y=alt.Y('Impact:Q', title='CLP  M'),
                 color=alt.Color(
                     'Type:N',
                     scale=alt.Scale(
@@ -2546,9 +2546,9 @@ elif selected_menu == "Executive Overview":
             down_driver = bridge_df[bridge_df["Type"] == "Down"].sort_values("Impact").iloc[0]
             render_ai_recommendation(
                 "Revenue Bridge",
-                f"Biggest uplift comes from {up_driver['Driver']} (+S/{up_driver['Impact']:.1f}M) while {down_driver['Driver']} is the main drag ({down_driver['Impact']:.1f}M).",
+                f"Biggest uplift comes from {up_driver['Driver']} (+CLP {up_driver['Impact']:.1f}M) while {down_driver['Driver']} is the main drag ({down_driver['Impact']:.1f}M).",
                 f"Double down on {up_driver['Driver']} levers and assign an owner to recover losses from {down_driver['Driver']}.",
-                "Protect ~S/0.4M and improve run-rate predictability.",
+                "Protect ~CLP 0.4M and improve run-rate predictability.",
             )
 
         # ── ARPU & Plan Mix ───────────────────────────────────────────────
@@ -2564,7 +2564,7 @@ elif selected_menu == "Executive Overview":
                     alt.Chart(arpu_df)
                     .mark_bar(cornerRadiusTopRight=8, cornerRadiusBottomRight=8, size=22)
                     .encode(
-                        x=alt.X('ARPU:Q', title='ARPU (S/)', axis=alt.Axis(tickCount=6)),
+                        x=alt.X('ARPU:Q', title='ARPU (CLP )', axis=alt.Axis(tickCount=6)),
                         y=alt.Y('Segment:N', sort='-x', title=None),
                         color=alt.Color(
                             'Segment:N',
@@ -2584,9 +2584,9 @@ elif selected_menu == "Executive Overview":
                 top_arpu = arpu_df.loc[arpu_df["ARPU"].idxmax()]
                 render_ai_recommendation(
                     "ARPU by Segment",
-                    f"{top_arpu['Segment']} has the highest ARPU at S/{top_arpu['ARPU']:.0f}.",
+                    f"{top_arpu['Segment']} has the highest ARPU at CLP {top_arpu['ARPU']:.0f}.",
                     f"Replicate {top_arpu['Segment']} offer architecture into upper SMB to lift blended ARPU.",
-                    "Increase blended ARPU by ~S/1.2 within a quarter.",
+                    "Increase blended ARPU by ~CLP 1.2 within a quarter.",
                 )
         with mix_col:
             st.markdown('<div class="eo-mini-title">Plan Mix by Type</div>', unsafe_allow_html=True)
@@ -2621,7 +2621,7 @@ elif selected_menu == "Executive Overview":
                     "Plan Mix",
                     f"{top_plan['Plan']} is the dominant mix component at {top_plan['Share']:.0f}%.",
                     "Introduce add-on bundles in the dominant plan to monetize without raising churn pressure.",
-                    "Capture +S/0.2M monthly incremental revenue.",
+                    "Capture +CLP 0.2M monthly incremental revenue.",
                 )
 
         # ── Revenue Mix by Customer Segment ────────────────────────────────
@@ -2643,12 +2643,12 @@ elif selected_menu == "Executive Overview":
                     ),
                     tooltip=[
                         alt.Tooltip('Segment:N', title='Segment'),
-                        alt.Tooltip('Revenue:Q', title='Revenue (S/ M)', format='.1f'),
+                        alt.Tooltip('Revenue:Q', title='Revenue (CLP  M)', format='.1f'),
                         alt.Tooltip('Percentage:Q', title='Share %', format='.0f'),
                     ],
                     order=alt.Order('Revenue:Q', sort='descending'),
                 )
-                center_text = alt.Chart(pd.DataFrame({'text': [f'S/{quarterly_revenue_m:.1f}M']})).mark_text(fontSize=24, fontWeight='bold', color='#1B2A4E').encode(text='text:N')
+                center_text = alt.Chart(pd.DataFrame({'text': [f'CLP {quarterly_revenue_m:.1f}M']})).mark_text(fontSize=24, fontWeight='bold', color='#1B2A4E').encode(text='text:N')
                 center_sub = alt.Chart(pd.DataFrame({'text': ['Total Revenue']})).mark_text(fontSize=12, color='#6B7280', dy=20).encode(text='text:N')
                 st.altair_chart(style_exec_chart(donut + center_text + center_sub, height=272), use_container_width=True)
                 dominant_seg = revenue_data.loc[revenue_data["Revenue"].idxmax()]
@@ -2668,7 +2668,7 @@ elif selected_menu == "Executive Overview":
                     q_rev = row["Monthly Revenue M"] * 3
                     share = 100 * q_rev / quarterly_revenue_m
                     seg_arpu = row["Monthly Revenue M"] * 1_000_000 / row["Subscribers"]
-                    seg_info.append((seg, seg_colors[seg], f"S/{q_rev:.1f}M", f"{share:.0f}%", f"S/{seg_arpu:.0f}", seg_growth[seg]))
+                    seg_info.append((seg, seg_colors[seg], f"CLP {q_rev:.1f}M", f"{share:.0f}%", f"CLP {seg_arpu:.0f}", seg_growth[seg]))
                 for i, (seg, color, rev, share, arpu, growth) in enumerate(seg_info):
                     with seg_cols[i]:
                         st.markdown(f"""<div style="background: linear-gradient(135deg, {color}15 0%, {color}08 100%); border-left: 4px solid {color}; border-radius: 0 8px 8px 0; padding: 0.75rem;"><div style="font-weight: 600; color: {color}; font-size: 0.9rem;">{seg}</div><div style="font-size: 1.2rem; font-weight: 700; color: #1B2A4E;">{rev}</div><div style="color: #6B7280; font-size: 0.75rem;">ARPU {arpu} · <span style="color: #10B981;">{growth}</span></div></div>""", unsafe_allow_html=True)
@@ -2687,12 +2687,12 @@ elif selected_menu == "Executive Overview":
                     x='At Risk:Q',
                     y=alt.Y('Segment:N', sort=['Budget', 'Standard', 'Premium', 'VIP']),
                     color=alt.Color('Avg Propensity:Q', scale=alt.Scale(scheme='orangered', domain=[0.4, 0.8]), title='Churn Risk'),
-                    tooltip=['Segment', alt.Tooltip('At Risk:Q', title='Customers'), alt.Tooltip('Revenue at Risk:Q', title='Revenue (S/ K)', format=',.0f'), alt.Tooltip('Avg Propensity:Q', title='Risk Score', format='.0%')],
+                    tooltip=['Segment', alt.Tooltip('At Risk:Q', title='Customers'), alt.Tooltip('Revenue at Risk:Q', title='Revenue (CLP  K)', format=',.0f'), alt.Tooltip('Avg Propensity:Q', title='Risk Score', format='.0%')],
                 )
                 risk_labels = alt.Chart(risk_data).mark_text(align='left', dx=14, fontSize=10, fontWeight='bold', color="#7F1D1D").encode(
                     x='At Risk:Q',
                     y=alt.Y('Segment:N', sort=['Budget', 'Standard', 'Premium', 'VIP']),
-                    text=alt.Text('Revenue at Risk:Q', format='S/,.0fK'),
+                    text=alt.Text('Revenue at Risk:Q', format='CLP ,.0fK'),
                 )
                 st.altair_chart(style_exec_chart(lollipop_line + lollipop_point + risk_labels, height=190), use_container_width=True)
                 highest_risk = risk_data.loc[risk_data["Avg Propensity"].idxmax()]
@@ -2700,11 +2700,11 @@ elif selected_menu == "Executive Overview":
                     "At-Risk Cohorts",
                     f"{highest_risk['Segment']} has the highest churn propensity ({highest_risk['Avg Propensity']:.0%}) with material revenue exposure.",
                     f"Prioritize save-offers and proactive outreach for {highest_risk['Segment']} in the next 2 billing cycles.",
-                    f"Protect up to S/{(highest_risk['Revenue at Risk']/1000):.1f}M ARR from this cohort.",
+                    f"Protect up to CLP {(highest_risk['Revenue at Risk']/1000):.1f}M ARR from this cohort.",
                     level="critical",
                 )
 
-                st.markdown(f"""<div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border-radius: 8px; padding: 0.75rem; margin-top: 0.5rem; border-left: 4px solid #F59E0B;"><div style="display: flex; align-items: center;"><span style="font-size: 1.5rem; margin-right: 0.5rem;">⚠️</span><div><strong style="color: #92400E;">Urgent: {at_risk_customers} customers at risk</strong><div style="color: #B45309; font-size: 0.85rem;">S/{at_risk_revenue_m:.1f}M ARR exposed · Budget segment highest propensity</div></div></div></div>""", unsafe_allow_html=True)
+                st.markdown(f"""<div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border-radius: 8px; padding: 0.75rem; margin-top: 0.5rem; border-left: 4px solid #F59E0B;"><div style="display: flex; align-items: center;"><span style="font-size: 1.5rem; margin-right: 0.5rem;">⚠️</span><div><strong style="color: #92400E;">Urgent: {at_risk_customers} customers at risk</strong><div style="color: #B45309; font-size: 0.85rem;">CLP {at_risk_revenue_m:.1f}M ARR exposed · Budget segment highest propensity</div></div></div></div>""", unsafe_allow_html=True)
 
     with ai_summary_tab:
         # ── C-Level AI Executive Cockpit ──────────────────────────────────
@@ -2716,7 +2716,7 @@ elif selected_menu == "Executive Overview":
             st.markdown(dedent(f"""
             <div class="cxo-snapshot">
                 <div class="cxo-snapshot-title">CEO Snapshot · Next 90 Days</div>
-                <div class="cxo-snapshot-text">Growth remains on-track, but churn concentration in Budget and Standard segments is putting <strong>S/{at_risk_revenue_m:.1f}M ARR</strong> at risk. Fast approval of targeted retention and network quality initiatives can protect ~<strong>S/{protectable_arr_m:.1f}M</strong> in the next quarter.</div>
+                <div class="cxo-snapshot-text">Growth remains on-track, but churn concentration in Budget and Standard segments is putting <strong>CLP {at_risk_revenue_m:.1f}M ARR</strong> at risk. Fast approval of targeted retention and network quality initiatives can protect ~<strong>CLP {protectable_arr_m:.1f}M</strong> in the next quarter.</div>
                 <div class="cxo-snapshot-risk">⚠ Critical Watch: Churn Concentration + Price Pressure</div>
             </div>
             """), unsafe_allow_html=True)
@@ -2726,12 +2726,12 @@ elif selected_menu == "Executive Overview":
             <div class="cxo-value-grid">
                 <div class="cxo-value-card" style="--accent: linear-gradient(90deg, #10B981, #34D399);">
                     <div class="cxo-value-label">North Star · Quarterly Revenue</div>
-                    <div class="cxo-value-number">S/{quarterly_revenue_m:.1f}M</div>
+                    <div class="cxo-value-number">CLP {quarterly_revenue_m:.1f}M</div>
                     <div class="cxo-value-note">Run-rate aligned to growth target</div>
                 </div>
                 <div class="cxo-value-card" style="--accent: linear-gradient(90deg, #3B82F6, #29B5E8);">
                     <div class="cxo-value-label">Value In Flight</div>
-                    <div class="cxo-value-number">S/{value_in_flight_m:.1f}M</div>
+                    <div class="cxo-value-number">CLP {value_in_flight_m:.1f}M</div>
                     <div class="cxo-value-note">Initiatives in execution this quarter</div>
                 </div>
                 <div class="cxo-value-card" style="--accent: linear-gradient(90deg, #F59E0B, #FBBF24);">
@@ -2741,7 +2741,7 @@ elif selected_menu == "Executive Overview":
                 </div>
                 <div class="cxo-value-card" style="--accent: linear-gradient(90deg, #EF4444, #F87171);">
                     <div class="cxo-value-label">Value At Risk</div>
-                    <div class="cxo-value-number">S/{at_risk_revenue_m:.1f}M</div>
+                    <div class="cxo-value-number">CLP {at_risk_revenue_m:.1f}M</div>
                     <div class="cxo-value-note urgent">Urgent containment required in 30 days</div>
                 </div>
             </div>
@@ -2830,7 +2830,7 @@ elif selected_menu == "Executive Overview":
                 })
                 paf_bar = alt.Chart(paf_df).mark_bar(cornerRadiusTopLeft=7, cornerRadiusTopRight=7, size=64).encode(
                     x=alt.X("Stage:N", title=None),
-                    y=alt.Y("Revenue:Q", title="Revenue (S/ M)"),
+                    y=alt.Y("Revenue:Q", title="Revenue (CLP  M)"),
                     color=alt.Color("Type:N", scale=alt.Scale(domain=["Plan", "Actual", "Forecast"], range=["#94A3B8", "#29B5E8", "#10B981"]), legend=None),
                     tooltip=[alt.Tooltip("Stage:N"), alt.Tooltip("Revenue:Q", format=".1f")],
                 )
@@ -2845,7 +2845,7 @@ elif selected_menu == "Executive Overview":
                     "Plan Variance",
                     f"Current quarter is {variance:.1f}M below plan but forecast suggests partial recovery.",
                     "Fast-track retention and enterprise deals to close remaining plan gap.",
-                    "Recover up to S/0.6M against plan by quarter close.",
+                    "Recover up to CLP 0.6M against plan by quarter close.",
                     level="warning",
                 )
 
@@ -2855,12 +2855,12 @@ elif selected_menu == "Executive Overview":
                 <div class="cxo-decision">
                     <span class="cxo-badge high">Immediate</span>
                     <div class="cxo-decision-title">Approve targeted save-offers for Budget cohort</div>
-                    <div class="cxo-decision-meta"><strong>Impact:</strong> Protect S/0.6M ARR<br><strong>Confidence:</strong> 78%<br><strong>Owner:</strong> CCO · <strong>ETA:</strong> 30 days</div>
+                    <div class="cxo-decision-meta"><strong>Impact:</strong> Protect CLP 0.6M ARR<br><strong>Confidence:</strong> 78%<br><strong>Owner:</strong> CCO · <strong>ETA:</strong> 30 days</div>
                 </div>
                 <div class="cxo-decision">
                     <span class="cxo-badge med">Priority</span>
                     <div class="cxo-decision-title">Accelerate enterprise acquisition package</div>
-                    <div class="cxo-decision-meta"><strong>Impact:</strong> +S/0.8M ARR<br><strong>Confidence:</strong> 64%<br><strong>Owner:</strong> CRO · <strong>ETA:</strong> 45 days</div>
+                    <div class="cxo-decision-meta"><strong>Impact:</strong> +CLP 0.8M ARR<br><strong>Confidence:</strong> 64%<br><strong>Owner:</strong> CRO · <strong>ETA:</strong> 45 days</div>
                 </div>
                 <div class="cxo-decision">
                     <span class="cxo-badge ok">Monitor</span>
@@ -2875,25 +2875,25 @@ elif selected_menu == "Executive Overview":
             <div class="cxo-initiatives">
                 <div class="cxo-initiative">
                     <div class="cxo-init-head"><div class="cxo-init-title">Retention War Room</div><span class="cxo-rag amber">At Risk</span></div>
-                    <div class="cxo-init-meta">Owner: CCO · Budget used: 62% · Benefit captured: S/0.42M</div>
+                    <div class="cxo-init-meta">Owner: CCO · Budget used: 62% · Benefit captured: CLP 0.42M</div>
                     <div class="cxo-progress" style="--p: 68%;"><span style="--p: 68%;"></span></div>
                     <div class="cxo-init-foot">Progress: 68% · Next Milestone: Offer rollout for Budget segment</div>
                 </div>
                 <div class="cxo-initiative">
                     <div class="cxo-init-head"><div class="cxo-init-title">Enterprise Expansion Sprint</div><span class="cxo-rag green">On Track</span></div>
-                    <div class="cxo-init-meta">Owner: CRO · Budget used: 48% · Benefit captured: S/0.55M</div>
+                    <div class="cxo-init-meta">Owner: CRO · Budget used: 48% · Benefit captured: CLP 0.55M</div>
                     <div class="cxo-progress" style="--p: 74%;"><span style="--p: 74%;"></span></div>
                     <div class="cxo-init-foot">Progress: 74% · Next Milestone: 20 new high-ARPU accounts</div>
                 </div>
                 <div class="cxo-initiative">
                     <div class="cxo-init-head"><div class="cxo-init-title">Network Quality Recovery Clusters</div><span class="cxo-rag red">Critical</span></div>
-                    <div class="cxo-init-meta">Owner: CTO · Budget used: 39% · Benefit captured: S/0.18M</div>
+                    <div class="cxo-init-meta">Owner: CTO · Budget used: 39% · Benefit captured: CLP 0.18M</div>
                     <div class="cxo-progress" style="--p: 43%;"><span style="--p: 43%;"></span></div>
                     <div class="cxo-init-foot">Progress: 43% · Next Milestone: stabilize 3 low-NPS zones</div>
                 </div>
                 <div class="cxo-initiative">
                     <div class="cxo-init-head"><div class="cxo-init-title">Collections and Credit Optimization</div><span class="cxo-rag green">On Track</span></div>
-                    <div class="cxo-init-meta">Owner: CFO · Budget used: 54% · Benefit captured: S/0.29M</div>
+                    <div class="cxo-init-meta">Owner: CFO · Budget used: 54% · Benefit captured: CLP 0.29M</div>
                     <div class="cxo-progress" style="--p: 71%;"><span style="--p: 71%;"></span></div>
                     <div class="cxo-init-foot">Progress: 71% · Next Milestone: reduce failed payments by 1.2pp</div>
                 </div>
@@ -2918,7 +2918,7 @@ elif selected_menu == "Executive Overview":
                     </div>
                     <div class="cxo-board-cell">
                         <h5>Expected Impact</h5>
-                        <p>Protect up to S/{protectable_arr_m:.1f}M ARR and improve churn by 0.2-0.3pp by next quarter.</p>
+                        <p>Protect up to CLP {protectable_arr_m:.1f}M ARR and improve churn by 0.2-0.3pp by next quarter.</p>
                     </div>
                 </div>
             </div>
@@ -2937,7 +2937,7 @@ elif selected_menu == "Executive Overview":
                 })
                 sc_bar = alt.Chart(scenario_df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=52).encode(
                     x=alt.X("Scenario:N", title=None),
-                    y=alt.Y("Revenue:Q", title="Projected Revenue (S/ M)"),
+                    y=alt.Y("Revenue:Q", title="Projected Revenue (CLP  M)"),
                     color=alt.Color(
                         "Scenario:N",
                         scale=alt.Scale(domain=["Downside", "Base", "Upside"], range=["#EF4444", "#3B82F6", "#10B981"]),
@@ -2963,7 +2963,7 @@ elif selected_menu == "Executive Overview":
                 base_case = scenario_df.loc[scenario_df["Scenario"] == "Base"].iloc[0]
                 render_ai_recommendation(
                     "Revenue Scenarios",
-                    f"Base scenario projects S/{base_case['Revenue']:.1f}M with highest probability ({base_case['Probability']}).",
+                    f"Base scenario projects CLP {base_case['Revenue']:.1f}M with highest probability ({base_case['Probability']}).",
                     "Commit budget to base-case plan while pre-authorizing contingency spend if downside signals trigger.",
                     "Improve forecast confidence and decision speed.",
                 )
@@ -3014,13 +3014,13 @@ elif selected_menu == "Executive Overview":
                 risk_scatter = alt.Chart(risk_radar_df).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
                     x=alt.X("Likelihood:Q", title="Likelihood (1-5)", scale=alt.Scale(domain=[2.2, 4.6])),
                     y=alt.Y("Impact:Q", title="Impact (1-5)", scale=alt.Scale(domain=[2.8, 4.9])),
-                    size=alt.Size("Exposure:Q", title="Exposure (S/ M)", scale=alt.Scale(range=[180, 1500])),
+                    size=alt.Size("Exposure:Q", title="Exposure (CLP  M)", scale=alt.Scale(range=[180, 1500])),
                     color=alt.Color("Exposure:Q", scale=alt.Scale(scheme="redpurple"), legend=None),
                     tooltip=[
                         alt.Tooltip("Risk:N"),
                         alt.Tooltip("Likelihood:Q", format=".1f"),
                         alt.Tooltip("Impact:Q", format=".1f"),
-                        alt.Tooltip("Exposure:Q", title="Exposure (S/ M)", format=".1f"),
+                        alt.Tooltip("Exposure:Q", title="Exposure (CLP  M)", format=".1f"),
                     ],
                 )
                 risk_labels = alt.Chart(risk_radar_df).mark_text(dy=-11, fontSize=9, color="#1E293B").encode(
@@ -3032,7 +3032,7 @@ elif selected_menu == "Executive Overview":
                 top_exposure = risk_radar_df.loc[risk_radar_df["Exposure"].idxmax()]
                 render_ai_recommendation(
                     "Risk Radar",
-                    f"Highest financial exposure is {top_exposure['Risk']} (S/{top_exposure['Exposure']:.1f}M) with high impact/likelihood.",
+                    f"Highest financial exposure is {top_exposure['Risk']} (CLP {top_exposure['Exposure']:.1f}M) with high impact/likelihood.",
                     f"Create executive mitigation track for {top_exposure['Risk']} with weekly progress checkpoints.",
                     "Reduce downside exposure and strengthen board-level risk posture.",
                     level="critical",
@@ -3320,7 +3320,7 @@ elif selected_menu == "Subscribers":
     install_to_activation = round((funnel_df.loc[funnel_df["Stage"] == "Activated", "Users"].iloc[0] / funnel_df.loc[funnel_df["Stage"] == "Installed", "Users"].iloc[0]) * 100, 1)
     activation_lead_days = 2.8
     digital_adoption = round(digital_df.iloc[-1]["SelfService Users"] / total_subs * 100, 1)
-    arpu_uplift = "+S/3.8"
+    arpu_uplift = "+CLP 3.8"
     churn_cost_avoided_m = round(retention_df["Value Saved K"].sum() / 1000, 2)
     ltv_cac_blended = round(channel_econ_df["LTV/CAC"].mean(), 2)
     predictive_churn_index = round(sub_risk["Propensity"].mean() * 100, 1)
@@ -3355,7 +3355,7 @@ elif selected_menu == "Subscribers":
             <div class="sub-pulse-card">
                 <div class="sub-pulse-label">At-Risk Base</div>
                 <div class="sub-pulse-value">{risk_customers}</div>
-                <div class="sub-pulse-delta">S/{risk_arr_m:.1f}M ARR exposed</div>
+                <div class="sub-pulse-delta">CLP {risk_arr_m:.1f}M ARR exposed</div>
             </div>
         </div>
     </div>
@@ -3380,7 +3380,7 @@ elif selected_menu == "Subscribers":
                 <div class="sub-kpi-card"><div class="k">Average Tenure</div><div class="v">{avg_tenure_months:.1f}m</div><div class="d">Customer maturity</div></div>
                 <div class="sub-kpi-card"><div class="k">Long Tenure Mix</div><div class="v">{long_tenure_mix:.1f}%</div><div class="d">13+ months</div></div>
                 <div class="sub-kpi-card"><div class="k">NPS (Weighted)</div><div class="v">+{weighted_nps}</div><div class="d">Brand loyalty</div></div>
-                <div class="sub-kpi-card"><div class="k">ARPU (Blended)</div><div class="v">S/{blended_arpu:.2f}</div><div class="d">{arpu_uplift} vs last qtr</div></div>
+                <div class="sub-kpi-card"><div class="k">ARPU (Blended)</div><div class="v">CLP {blended_arpu:.2f}</div><div class="d">{arpu_uplift} vs last qtr</div></div>
             </div>
         """), unsafe_allow_html=True)
         ov_col1, ov_col2 = st.columns(2)
@@ -3615,11 +3615,11 @@ elif selected_menu == "Subscribers":
         st.markdown(dedent(f"""
             <div class="sub-kpi-grid">
                 <div class="sub-kpi-card crit"><div class="k">At-Risk Subscribers</div><div class="v">{risk_customers:,}</div><div class="d">High-priority cohort</div></div>
-                <div class="sub-kpi-card crit"><div class="k">Revenue at Risk</div><div class="v">S/{risk_arr_m:.1f}M</div><div class="d">ARR exposure</div></div>
+                <div class="sub-kpi-card crit"><div class="k">Revenue at Risk</div><div class="v">CLP {risk_arr_m:.1f}M</div><div class="d">ARR exposure</div></div>
                 <div class="sub-kpi-card"><div class="k">Save Rate</div><div class="v">{save_rate_overall:.1f}%</div><div class="d">Campaign effectiveness</div></div>
                 <div class="sub-kpi-card warn"><div class="k">Risk Coverage</div><div class="v">{risk_coverage:.1f}%</div><div class="d">At-risk contacted</div></div>
                 <div class="sub-kpi-card"><div class="k">Reactivation Rate</div><div class="v">{reactivation_rate:.1f}%</div><div class="d">Win-back performance</div></div>
-                <div class="sub-kpi-card"><div class="k">Churn Cost Avoided</div><div class="v">S/{churn_cost_avoided_m:.2f}M</div><div class="d">Retention value saved</div></div>
+                <div class="sub-kpi-card"><div class="k">Churn Cost Avoided</div><div class="v">CLP {churn_cost_avoided_m:.2f}M</div><div class="d">Retention value saved</div></div>
                 <div class="sub-kpi-card"><div class="k">LTV/CAC (Blended)</div><div class="v">{ltv_cac_blended:.2f}x</div><div class="d">Acquisition efficiency</div></div>
                 <div class="sub-kpi-card warn"><div class="k">Predictive Churn Index</div><div class="v">{predictive_churn_index:.1f}</div><div class="d">Model pressure score</div></div>
             </div>
@@ -3639,7 +3639,7 @@ elif selected_menu == "Subscribers":
                     x="At Risk:Q",
                     y=alt.Y("Segment:N", sort=["Budget", "Standard", "Premium", "VIP"]),
                     color=alt.Color("Propensity:Q", scale=alt.Scale(scheme="orangered"), legend=alt.Legend(title="Churn Risk")),
-                    tooltip=["Segment:N", "At Risk:Q", alt.Tooltip("Revenue at Risk K:Q", title="Revenue at Risk (S/ K)", format=",.0f"), alt.Tooltip("Propensity:Q", format=".0%")],
+                    tooltip=["Segment:N", "At Risk:Q", alt.Tooltip("Revenue at Risk K:Q", title="Revenue at Risk (CLP  K)", format=",.0f"), alt.Tooltip("Propensity:Q", format=".0%")],
                 )
                 st.altair_chart(style_sub_chart(risk_lolli_line + risk_lolli_point, height=230), use_container_width=True)
                 high_risk = sub_risk.loc[sub_risk["Propensity"].idxmax()]
@@ -3647,7 +3647,7 @@ elif selected_menu == "Subscribers":
                     "Risk Concentration",
                     f"{high_risk['Segment']} is the most vulnerable cohort ({high_risk['Propensity']:.0%} propensity).",
                     f"Activate a 2-step save journey for {high_risk['Segment']} with bill-credit + quality assurance callback.",
-                    f"Protect up to S/{(high_risk['Revenue at Risk K']*12/1000):.1f}M ARR from this cohort.",
+                    f"Protect up to CLP {(high_risk['Revenue at Risk K']*12/1000):.1f}M ARR from this cohort.",
                     level="critical",
                 )
 
@@ -3738,7 +3738,7 @@ elif selected_menu == "Subscribers":
                     <span style="font-size: 1.35rem; margin-right: 0.55rem;">⚠️</span>
                     <div>
                         <strong style="color: #92400E;">Urgent: {risk_customers} subscribers at risk</strong>
-                        <div style="color: #B45309; font-size: 0.84rem;">S/{risk_arr_m:.1f}M ARR exposed · Budget segment highest propensity</div>
+                        <div style="color: #B45309; font-size: 0.84rem;">CLP {risk_arr_m:.1f}M ARR exposed · Budget segment highest propensity</div>
                     </div>
                 </div>
             </div>
@@ -3902,7 +3902,7 @@ elif selected_menu == "Revenue Analytics":
     sales_channel_mix["Total Sales M"] = sales_channel_mix["B2C Sales M"] + sales_channel_mix["B2B Sales M"]
 
     sales_region = pd.DataFrame({
-        "Region": ["Lima Metro", "Norte", "Sur", "Centro", "Oriente"],
+        "Region": ["Metropolitana", "Norte", "Sur", "Centro", "Oriente"],
         "B2C Sales M": [1.66, 0.42, 0.33, 0.27, 0.16],
         "B2B Sales M": [0.78, 0.20, 0.15, 0.13, 0.11],
         "Retail Stores": [34, 12, 8, 9, 5],
@@ -3911,8 +3911,8 @@ elif selected_menu == "Revenue Analytics":
     sales_region["Total Sales M"] = sales_region["B2C Sales M"] + sales_region["B2B Sales M"]
 
     sales_reps = pd.DataFrame({
-        "Sales Pod": ["Pod Lima Premium", "Pod Empresas Centro", "Pod Norte FTTH", "Pod Sur Expansions", "Pod Oriente Build"],
-        "Region": ["Lima Metro", "Lima Metro", "Norte", "Sur", "Oriente"],
+        "Sales Pod": ["Pod Santiago Premium", "Pod Empresas Centro", "Pod Norte FTTH", "Pod Sur Expansions", "Pod Sur Build"],
+        "Region": ["Metropolitana", "Metropolitana", "Norte", "Sur", "Oriente"],
         "Sales M": [0.94, 0.81, 0.56, 0.49, 0.31],
         "New Logos": [42, 28, 23, 19, 11],
         "Win Rate %": [38.4, 35.1, 33.8, 31.6, 29.7],
@@ -3934,7 +3934,7 @@ elif selected_menu == "Revenue Analytics":
     sales_pipeline["Total K"] = sales_pipeline["B2C K"] + sales_pipeline["B2B K"]
 
     sales_quota = pd.DataFrame({
-        "Dimension": ["WOM Web", "Tiendas WOM", "Fuerza Comercial FTTH", "Canal Constructoras", "Lima Metro", "Norte", "Sur", "Centro", "Oriente"],
+        "Dimension": ["WOM Web", "Tiendas WOM", "Fuerza Comercial FTTH", "Canal Constructoras", "Metropolitana", "Norte", "Sur", "Centro", "Oriente"],
         "Type": ["Channel", "Channel", "Channel", "Channel", "Region", "Region", "Region", "Region", "Region"],
         "Target M": [1.55, 1.25, 1.00, 0.42, 2.55, 0.66, 0.57, 0.47, 0.35],
         "Actual M": [1.62, 1.27, 0.96, 0.36, 2.44, 0.62, 0.48, 0.40, 0.27],
@@ -3965,7 +3965,7 @@ elif selected_menu == "Revenue Analytics":
     })
 
     sales_install_sla = pd.DataFrame({
-        "Region": ["Lima Metro", "Norte", "Sur", "Centro", "Oriente"],
+        "Region": ["Metropolitana", "Norte", "Sur", "Centro", "Oriente"],
         "Sale to Install Days": [2.6, 3.4, 3.8, 4.1, 4.9],
         "Install to First Invoice Days": [3.2, 3.9, 4.0, 4.4, 5.1],
         "SLA Met %": [95.6, 91.8, 89.7, 88.4, 84.2],
@@ -3981,25 +3981,25 @@ elif selected_menu == "Revenue Analytics":
     })
 
     sales_deals = pd.DataFrame({
-        "Deal": ["Lima Corporate Multi-site", "San Isidro Residencial Tower", "Piura SME Cluster", "Cusco Hospitality Bundle", "Arequipa Industrial Park", "Callao Port Offices"],
+        "Deal": ["Santiago Corporate Multi-site", "Providencia Residencial Tower", "Temuco SME Cluster", "Rancagua Hospitality Bundle", "Valparaiso Industrial Park", "Maipu Port Offices"],
         "Status": ["Won", "Won", "Won", "Lost", "Lost", "Lost"],
         "Value K": [220, 178, 146, 132, 128, 115],
-        "Region": ["Lima Metro", "Lima Metro", "Norte", "Sur", "Sur", "Lima Metro"],
+        "Region": ["Metropolitana", "Metropolitana", "Norte", "Sur", "Sur", "Metropolitana"],
         "Reason": ["Price-value fit", "Fast install SLA", "Partner-led conversion", "Competitor discount", "Long install lead time", "Procurement delay"],
     })
 
-    lima_sales_map = pd.DataFrame({
-        "Neighborhood": ["San Isidro", "Miraflores", "Surco", "La Molina", "San Borja", "Magdalena", "Jesus Maria", "Pueblo Libre", "San Miguel", "Lince", "Ate", "Chorrillos"],
+    santiago_sales_map = pd.DataFrame({
+        "Neighborhood": ["Providencia", "Nunoa", "Vitacura", "Lo Barnechea", "Las Condes", "Macul", "La Reina", "Recoleta", "San Joaquin", "Independencia", "La Florida", "Penalolen"],
         "lat": [-12.097, -12.121, -12.139, -12.084, -12.108, -12.091, -12.074, -12.073, -12.079, -12.086, -12.048, -12.168],
         "lon": [-77.036, -77.030, -76.991, -76.958, -76.994, -77.073, -77.041, -77.070, -77.090, -77.031, -76.915, -77.022],
         "Sales M": [0.41, 0.38, 0.35, 0.29, 0.27, 0.21, 0.23, 0.19, 0.20, 0.18, 0.20, 0.17],
         "B2B Share %": [62, 54, 41, 39, 48, 36, 44, 32, 35, 46, 29, 25],
         "Margin %": [56.8, 55.4, 53.2, 52.7, 53.8, 50.1, 51.5, 49.8, 50.4, 52.0, 48.4, 47.2],
     })
-    lima_sales_map["radius"] = (lima_sales_map["Sales M"] * 9000).round(0)
-    lima_sales_map["r"] = lima_sales_map["Margin %"].apply(lambda v: 16 if v >= 53 else 41 if v >= 50 else 245)
-    lima_sales_map["g"] = lima_sales_map["Margin %"].apply(lambda v: 185 if v >= 53 else 121 if v >= 50 else 158)
-    lima_sales_map["b"] = lima_sales_map["Margin %"].apply(lambda v: 129 if v >= 53 else 255 if v >= 50 else 11)
+    santiago_sales_map["radius"] = (santiago_sales_map["Sales M"] * 9000).round(0)
+    santiago_sales_map["r"] = santiago_sales_map["Margin %"].apply(lambda v: 16 if v >= 53 else 41 if v >= 50 else 245)
+    santiago_sales_map["g"] = santiago_sales_map["Margin %"].apply(lambda v: 185 if v >= 53 else 121 if v >= 50 else 158)
+    santiago_sales_map["b"] = santiago_sales_map["Margin %"].apply(lambda v: 129 if v >= 53 else 255 if v >= 50 else 11)
 
     latest = rev_monthly.iloc[-1]
     prev = rev_monthly.iloc[-2]
@@ -4018,12 +4018,12 @@ elif selected_menu == "Revenue Analytics":
             <span class="rev-pulse-live">Live</span>
         </div>
         <div class="rev-pulse-grid">
-            <div class="rev-pulse-card"><div class="rev-pulse-label">MRR</div><div class="rev-pulse-value">S/{mrr:.2f}M</div><div class="rev-pulse-delta">↑ {mrr_growth:.2f}% MoM</div></div>
-            <div class="rev-pulse-card"><div class="rev-pulse-label">ARR</div><div class="rev-pulse-value">S/{arr:.1f}M</div><div class="rev-pulse-delta">Annualized run-rate</div></div>
+            <div class="rev-pulse-card"><div class="rev-pulse-label">MRR</div><div class="rev-pulse-value">CLP {mrr:.2f}M</div><div class="rev-pulse-delta">↑ {mrr_growth:.2f}% MoM</div></div>
+            <div class="rev-pulse-card"><div class="rev-pulse-label">ARR</div><div class="rev-pulse-value">CLP {arr:.1f}M</div><div class="rev-pulse-delta">Annualized run-rate</div></div>
             <div class="rev-pulse-card"><div class="rev-pulse-label">Gross Margin</div><div class="rev-pulse-value">{gross_margin:.1f}%</div><div class="rev-pulse-delta">Healthy unit economics</div></div>
             <div class="rev-pulse-card"><div class="rev-pulse-label">Collection Rate</div><div class="rev-pulse-value">{collection_rate:.1f}%</div><div class="rev-pulse-delta">Cash discipline</div></div>
-            <div class="rev-pulse-card"><div class="rev-pulse-label">Blended ARPU</div><div class="rev-pulse-value">S/{arpu_blended:.2f}</div><div class="rev-pulse-delta">↑ +S/2.1 QoQ</div></div>
-            <div class="rev-pulse-card"><div class="rev-pulse-label">Revenue at Risk</div><div class="rev-pulse-value">S/{at_risk_rev_m:.2f}M</div><div class="rev-pulse-delta">Watchlist exposure</div></div>
+            <div class="rev-pulse-card"><div class="rev-pulse-label">Blended ARPU</div><div class="rev-pulse-value">CLP {arpu_blended:.2f}</div><div class="rev-pulse-delta">↑ +CLP 2.1 QoQ</div></div>
+            <div class="rev-pulse-card"><div class="rev-pulse-label">Revenue at Risk</div><div class="rev-pulse-value">CLP {at_risk_rev_m:.2f}M</div><div class="rev-pulse-delta">Watchlist exposure</div></div>
         </div>
     </div>
     """), unsafe_allow_html=True)
@@ -4038,12 +4038,12 @@ elif selected_menu == "Revenue Analytics":
             <div class="rev-kpi-grid">
                 <div class="rev-kpi-card"><div class="k">MRR Growth (MoM)</div><div class="v">{mrr_growth:.2f}%</div><div class="d">Top-line acceleration</div></div>
                 <div class="rev-kpi-card"><div class="k">Gross Margin %</div><div class="v">{gross_margin:.1f}%</div><div class="d">Margin efficiency</div></div>
-                <div class="rev-kpi-card"><div class="k">ARPU (Blended)</div><div class="v">S/{arpu_blended:.2f}</div><div class="d">Value quality</div></div>
-                <div class="rev-kpi-card warn"><div class="k">Discount Impact</div><div class="v">S/{latest['Discounts M']:.2f}M</div><div class="d">Revenue dilution</div></div>
+                <div class="rev-kpi-card"><div class="k">ARPU (Blended)</div><div class="v">CLP {arpu_blended:.2f}</div><div class="d">Value quality</div></div>
+                <div class="rev-kpi-card warn"><div class="k">Discount Impact</div><div class="v">CLP {latest['Discounts M']:.2f}M</div><div class="d">Revenue dilution</div></div>
                 <div class="rev-kpi-card"><div class="k">Best Growth Segment</div><div class="v">{rev_segments.loc[rev_segments['Growth %'].idxmax(), 'Segment']}</div><div class="d">{rev_segments['Growth %'].max():.1f}% growth</div></div>
                 <div class="rev-kpi-card"><div class="k">Highest Margin Segment</div><div class="v">{rev_segments.loc[rev_segments['Margin %'].idxmax(), 'Segment']}</div><div class="d">{rev_segments['Margin %'].max():.1f}% margin</div></div>
-                <div class="rev-kpi-card"><div class="k">Quarter Revenue</div><div class="v">S/{(rev_monthly.tail(3)['Net Revenue M'].sum()):.2f}M</div><div class="d">Last 3 months</div></div>
-                <div class="rev-kpi-card crit"><div class="k">Revenue at Risk</div><div class="v">S/{at_risk_rev_m:.2f}M</div><div class="d">Needs mitigation</div></div>
+                <div class="rev-kpi-card"><div class="k">Quarter Revenue</div><div class="v">CLP {(rev_monthly.tail(3)['Net Revenue M'].sum()):.2f}M</div><div class="d">Last 3 months</div></div>
+                <div class="rev-kpi-card crit"><div class="k">Revenue at Risk</div><div class="v">CLP {at_risk_rev_m:.2f}M</div><div class="d">Needs mitigation</div></div>
             </div>
         """), unsafe_allow_html=True)
 
@@ -4053,18 +4053,18 @@ elif selected_menu == "Revenue Analytics":
             with st.container(border=True):
                 mrr_line = alt.Chart(rev_monthly).mark_line(point=True, strokeWidth=3, color="#29B5E8").encode(
                     x=alt.X("Month:N", title=None),
-                    y=alt.Y("Net Revenue M:Q", title="Revenue (S/ M)"),
+                    y=alt.Y("Net Revenue M:Q", title="Revenue (CLP  M)"),
                     tooltip=["Month:N", alt.Tooltip("Net Revenue M:Q", format=".2f"), alt.Tooltip("Collected M:Q", format=".2f")],
                 )
                 coll_line = alt.Chart(rev_monthly).mark_line(point=True, strokeWidth=3, color="#10B981").encode(
                     x=alt.X("Month:N", title=None),
-                    y=alt.Y("Collected M:Q", title="Revenue (S/ M)"),
+                    y=alt.Y("Collected M:Q", title="Revenue (CLP  M)"),
                 )
                 st.altair_chart(style_rev_chart(mrr_line + coll_line, height=230), use_container_width=True)
                 gap = latest["Net Revenue M"] - latest["Collected M"]
                 render_rev_ai_reco(
                     "Cash Conversion",
-                    f"Current month cash gap is S/{gap:.2f}M between net revenue and collections.",
+                    f"Current month cash gap is CLP {gap:.2f}M between net revenue and collections.",
                     "Tighten collections for 1-30 day bucket and auto-reminder cadence.",
                     "Lift collection rate by 0.8-1.2pp in one cycle.",
                     level="warning",
@@ -4078,13 +4078,13 @@ elif selected_menu == "Revenue Analytics":
                     color=alt.Color("Segment:N", scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B"]), legend=alt.Legend(title=None)),
                     tooltip=["Segment:N", alt.Tooltip("Revenue M:Q", format=".2f"), alt.Tooltip("Growth %:Q", format=".1f")],
                 )
-                seg_center = alt.Chart(pd.DataFrame({"t": [f"S/{rev_segments['Revenue M'].sum():.1f}M"]})).mark_text(fontSize=22, fontWeight="bold", color="#0F172A").encode(text="t:N")
+                seg_center = alt.Chart(pd.DataFrame({"t": [f"CLP {rev_segments['Revenue M'].sum():.1f}M"]})).mark_text(fontSize=22, fontWeight="bold", color="#0F172A").encode(text="t:N")
                 seg_sub = alt.Chart(pd.DataFrame({"t": ["Monthly Mix"]})).mark_text(fontSize=11, dy=18, color="#64748B").encode(text="t:N")
                 st.altair_chart(style_rev_chart(seg_donut + seg_center + seg_sub, height=230), use_container_width=True)
                 dom = rev_segments.loc[rev_segments["Revenue M"].idxmax()]
                 render_rev_ai_reco(
                     "Mix Concentration",
-                    f"{dom['Segment']} contributes the highest revenue share at S/{dom['Revenue M']:.2f}M.",
+                    f"{dom['Segment']} contributes the highest revenue share at CLP {dom['Revenue M']:.2f}M.",
                     "Increase SMB and Enterprise expansion to reduce concentration risk.",
                     "Improve resilience of revenue mix against single-segment volatility.",
                 )
@@ -4115,13 +4115,13 @@ elif selected_menu == "Revenue Analytics":
         st.markdown(dedent(f"""
             <div class="rev-kpi-grid">
                 <div class="rev-kpi-card"><div class="k">Collection Rate</div><div class="v">{collection_rate:.1f}%</div><div class="d">Latest month</div></div>
-                <div class="rev-kpi-card warn"><div class="k">90+ Aging</div><div class="v">S/{rev_aging.loc[rev_aging['Bucket']=='90+', 'Amount M'].iloc[0]:.2f}M</div><div class="d">Delinquency risk</div></div>
+                <div class="rev-kpi-card warn"><div class="k">90+ Aging</div><div class="v">CLP {rev_aging.loc[rev_aging['Bucket']=='90+', 'Amount M'].iloc[0]:.2f}M</div><div class="d">Delinquency risk</div></div>
                 <div class="rev-kpi-card"><div class="k">Best ROI Channel</div><div class="v">{rev_channels.loc[rev_channels['ROI x'].idxmax(), 'Channel']}</div><div class="d">{rev_channels['ROI x'].max():.2f}x</div></div>
                 <div class="rev-kpi-card crit"><div class="k">Weak ROI Channel</div><div class="v">{rev_channels.loc[rev_channels['ROI x'].idxmin(), 'Channel']}</div><div class="d">{rev_channels['ROI x'].min():.2f}x</div></div>
-                <div class="rev-kpi-card"><div class="k">Plan Mix ARPU</div><div class="v">S/{arpu_blended:.2f}</div><div class="d">Weighted across plans</div></div>
+                <div class="rev-kpi-card"><div class="k">Plan Mix ARPU</div><div class="v">CLP {arpu_blended:.2f}</div><div class="d">Weighted across plans</div></div>
                 <div class="rev-kpi-card"><div class="k">Discount Ratio</div><div class="v">{(latest['Discounts M']/latest['Invoiced M']*100):.1f}%</div><div class="d">Promotion intensity</div></div>
                 <div class="rev-kpi-card"><div class="k">Gross Margin Trend</div><div class="v">{(rev_monthly['Gross Margin %'].iloc[-1]-rev_monthly['Gross Margin %'].iloc[0]):+.1f}pp</div><div class="d">6-month move</div></div>
-                <div class="rev-kpi-card warn"><div class="k">Cash Gap</div><div class="v">S/{(latest['Net Revenue M']-latest['Collected M']):.2f}M</div><div class="d">Needs cash focus</div></div>
+                <div class="rev-kpi-card warn"><div class="k">Cash Gap</div><div class="v">CLP {(latest['Net Revenue M']-latest['Collected M']):.2f}M</div><div class="d">Needs cash focus</div></div>
             </div>
         """), unsafe_allow_html=True)
 
@@ -4130,7 +4130,7 @@ elif selected_menu == "Revenue Analytics":
             st.markdown('<div class="rev-mini-title">Receivables Aging Waterfall</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 aging_bar = alt.Chart(rev_aging).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=22).encode(
-                    x=alt.X("Amount M:Q", title="Amount (S/ M)"),
+                    x=alt.X("Amount M:Q", title="Amount (CLP  M)"),
                     y=alt.Y("Bucket:N", sort=["Current", "1-30", "31-60", "61-90", "90+"], title=None),
                     color=alt.Color("Bucket:N", legend=None, scale=alt.Scale(range=["#10B981", "#29B5E8", "#6366F1", "#F59E0B", "#EF4444"])),
                     tooltip=["Bucket:N", alt.Tooltip("Amount M:Q", format=".2f")],
@@ -4139,7 +4139,7 @@ elif selected_menu == "Revenue Analytics":
                 over_60 = rev_aging.loc[rev_aging["Bucket"].isin(["61-90", "90+"]), "Amount M"].sum()
                 render_rev_ai_reco(
                     "Receivables Health",
-                    f"Over-60-day receivables are at S/{over_60:.2f}M.",
+                    f"Over-60-day receivables are at CLP {over_60:.2f}M.",
                     "Start escalation workflow for 61+ buckets with account-level prioritization.",
                     "Improve cash collection and reduce bad-debt risk.",
                     level="warning",
@@ -4150,7 +4150,7 @@ elif selected_menu == "Revenue Analytics":
             with st.container(border=True):
                 ch_bars = alt.Chart(rev_channels).transform_fold(["Revenue M", "Cost M"], as_=["Metric", "Amount"]).mark_bar(opacity=0.82, cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
                     x=alt.X("Channel:N", title=None),
-                    y=alt.Y("Amount:Q", title="S/ M"),
+                    y=alt.Y("Amount:Q", title="CLP  M"),
                     color=alt.Color("Metric:N", scale=alt.Scale(domain=["Revenue M", "Cost M"], range=["#29B5E8", "#94A3B8"]), legend=alt.Legend(title=None)),
                     xOffset="Metric:N",
                     tooltip=["Channel:N", "Metric:N", alt.Tooltip("Amount:Q", format=".2f")],
@@ -4174,7 +4174,7 @@ elif selected_menu == "Revenue Analytics":
         with st.container(border=True):
             plan_scatter = alt.Chart(rev_plans).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.4).encode(
                 x=alt.X("Subs:Q", title="Subscribers"),
-                y=alt.Y("ARPU:Q", title="ARPU (S/)"),
+                y=alt.Y("ARPU:Q", title="ARPU (CLP )"),
                 size=alt.Size("Revenue M:Q", scale=alt.Scale(range=[220, 1400]), legend=None),
                 color=alt.Color("Plan:N", legend=alt.Legend(title=None), scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B", "#EF4444"])),
                 tooltip=["Plan:N", alt.Tooltip("Subs:Q", format=","), alt.Tooltip("ARPU:Q", format=".0f"), alt.Tooltip("Revenue M:Q", format=".3f")],
@@ -4186,7 +4186,7 @@ elif selected_menu == "Revenue Analytics":
             top_arpu_plan = rev_plans.loc[rev_plans["ARPU"].idxmax()]
             render_rev_ai_reco(
                 "Plan Monetization",
-                f"{top_arpu_plan['Plan']} has the highest ARPU at S/{top_arpu_plan['ARPU']:.0f}.",
+                f"{top_arpu_plan['Plan']} has the highest ARPU at CLP {top_arpu_plan['ARPU']:.0f}.",
                 f"Use migration offers from WOM Hogar 300 into {top_arpu_plan['Plan']} tiers where feasible.",
                 "Increase blended ARPU while preserving retention.",
             )
@@ -4212,11 +4212,11 @@ elif selected_menu == "Revenue Analytics":
                     <span class="rev-pulse-live">Live</span>
                 </div>
                 <div class="rev-pulse-grid">
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">Total Sales</div><div class="rev-pulse-value">S/{sales_latest['Total Sales M']:.2f}M</div><div class="rev-pulse-delta">{sales_growth:+.2f}% MoM</div></div>
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">B2C Sales</div><div class="rev-pulse-value">S/{sales_latest['B2C Sales M']:.2f}M</div><div class="rev-pulse-delta">{b2c_share:.1f}% mix</div></div>
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">B2B Sales</div><div class="rev-pulse-value">S/{sales_latest['B2B Sales M']:.2f}M</div><div class="rev-pulse-delta">{b2b_share:.1f}% mix</div></div>
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">Digital Sales</div><div class="rev-pulse-value">S/{sales_latest['Digital Sales M']:.2f}M</div><div class="rev-pulse-delta">{digital_share:.1f}% of sales</div></div>
-                    <div class="rev-pulse-card"><div class="rev-pulse-label">Retail Stores</div><div class="rev-pulse-value">S/{sales_latest['Retail Stores M']:.2f}M</div><div class="rev-pulse-delta">{retail_share:.1f}% of sales</div></div>
+                    <div class="rev-pulse-card"><div class="rev-pulse-label">Total Sales</div><div class="rev-pulse-value">CLP {sales_latest['Total Sales M']:.2f}M</div><div class="rev-pulse-delta">{sales_growth:+.2f}% MoM</div></div>
+                    <div class="rev-pulse-card"><div class="rev-pulse-label">B2C Sales</div><div class="rev-pulse-value">CLP {sales_latest['B2C Sales M']:.2f}M</div><div class="rev-pulse-delta">{b2c_share:.1f}% mix</div></div>
+                    <div class="rev-pulse-card"><div class="rev-pulse-label">B2B Sales</div><div class="rev-pulse-value">CLP {sales_latest['B2B Sales M']:.2f}M</div><div class="rev-pulse-delta">{b2b_share:.1f}% mix</div></div>
+                    <div class="rev-pulse-card"><div class="rev-pulse-label">Digital Sales</div><div class="rev-pulse-value">CLP {sales_latest['Digital Sales M']:.2f}M</div><div class="rev-pulse-delta">{digital_share:.1f}% of sales</div></div>
+                    <div class="rev-pulse-card"><div class="rev-pulse-label">Retail Stores</div><div class="rev-pulse-value">CLP {sales_latest['Retail Stores M']:.2f}M</div><div class="rev-pulse-delta">{retail_share:.1f}% of sales</div></div>
                     <div class="rev-pulse-card"><div class="rev-pulse-label">Blended Sales Margin</div><div class="rev-pulse-value">{sales_latest['Blended Margin %']:.1f}%</div><div class="rev-pulse-delta">Margin expansion trend</div></div>
                 </div>
             </div>
@@ -4224,11 +4224,11 @@ elif selected_menu == "Revenue Analytics":
 
         st.markdown(dedent(f"""
             <div class="rev-kpi-grid">
-                <div class="rev-kpi-card"><div class="k">Top Channel</div><div class="v">{best_sales_channel['Channel']}</div><div class="d">S/{best_sales_channel['Total Sales M']:.2f}M</div></div>
-                <div class="rev-kpi-card"><div class="k">Top Region</div><div class="v">{best_sales_region['Region']}</div><div class="d">S/{best_sales_region['Total Sales M']:.2f}M sales</div></div>
+                <div class="rev-kpi-card"><div class="k">Top Channel</div><div class="v">{best_sales_channel['Channel']}</div><div class="d">CLP {best_sales_channel['Total Sales M']:.2f}M</div></div>
+                <div class="rev-kpi-card"><div class="k">Top Region</div><div class="v">{best_sales_region['Region']}</div><div class="d">CLP {best_sales_region['Total Sales M']:.2f}M sales</div></div>
                 <div class="rev-kpi-card"><div class="k">Top Sales Pod</div><div class="v">{top_pod['Sales Pod']}</div><div class="d">{top_pod['Win Rate %']:.1f}% win rate</div></div>
                 <div class="rev-kpi-card warn"><div class="k">Lowest Margin Region</div><div class="v">{sales_region.loc[sales_region['Margin %'].idxmin(), 'Region']}</div><div class="d">{sales_region['Margin %'].min():.1f}% margin</div></div>
-                <div class="rev-kpi-card"><div class="k">Best Product</div><div class="v">{sales_top_product['Product']}</div><div class="d">S/{sales_top_product['Total Sales M']:.2f}M sales</div></div>
+                <div class="rev-kpi-card"><div class="k">Best Product</div><div class="v">{sales_top_product['Product']}</div><div class="d">CLP {sales_top_product['Total Sales M']:.2f}M sales</div></div>
                 <div class="rev-kpi-card"><div class="k">B2C/B2B Balance</div><div class="v">{b2c_share:.0f}% / {b2b_share:.0f}%</div><div class="d">Latest month mix</div></div>
                 <div class="rev-kpi-card"><div class="k">Store Footprint</div><div class="v">{int(sales_region['Retail Stores'].sum())}</div><div class="d">Active retail points</div></div>
                 <div class="rev-kpi-card crit"><div class="k">Sales Concentration</div><div class="v">{(best_sales_region['Total Sales M']/sales_region['Total Sales M'].sum()*100):.1f}%</div><div class="d">Top-region dependence</div></div>
@@ -4241,18 +4241,18 @@ elif selected_menu == "Revenue Analytics":
             with st.container(border=True):
                 b2c_line = alt.Chart(sales_monthly).mark_line(point=True, strokeWidth=3, color="#29B5E8").encode(
                     x=alt.X("Month:N", title=None),
-                    y=alt.Y("B2C Sales M:Q", title="Sales (S/ M)"),
+                    y=alt.Y("B2C Sales M:Q", title="Sales (CLP  M)"),
                     tooltip=["Month:N", alt.Tooltip("B2C Sales M:Q", format=".2f"), alt.Tooltip("B2B Sales M:Q", format=".2f"), alt.Tooltip("Total Sales M:Q", format=".2f")],
                 )
                 b2b_line = alt.Chart(sales_monthly).mark_line(point=True, strokeWidth=3, color="#6366F1").encode(
                     x=alt.X("Month:N", title=None),
-                    y=alt.Y("B2B Sales M:Q", title="Sales (S/ M)"),
+                    y=alt.Y("B2B Sales M:Q", title="Sales (CLP  M)"),
                 )
                 st.altair_chart(style_rev_chart(b2c_line + b2b_line, height=230), use_container_width=True)
                 render_rev_ai_reco(
                     "Commercial Balance",
                     f"B2C leads with {b2c_share:.1f}% share while B2B contributes {b2b_share:.1f}% at higher ticket size.",
-                    "Keep B2C volume engine in digital channels and scale B2B hunting in Lima Metro and Norte.",
+                    "Keep B2C volume engine in digital channels and scale B2B hunting in Metropolitana and Norte.",
                     "Sustain top-line momentum while improving sales quality.",
                 )
 
@@ -4263,7 +4263,7 @@ elif selected_menu == "Revenue Analytics":
                 motion_long = motion_df.melt("Month", var_name="Motion", value_name="Sales M")
                 motion_bar = alt.Chart(motion_long).mark_bar(opacity=0.85).encode(
                     x=alt.X("Month:N", title=None),
-                    y=alt.Y("Sales M:Q", title="Sales (S/ M)"),
+                    y=alt.Y("Sales M:Q", title="Sales (CLP  M)"),
                     color=alt.Color("Motion:N", scale=alt.Scale(domain=["Digital Sales M", "Retail Stores M", "Field Sales M", "Partner Sales M"], range=["#29B5E8", "#10B981", "#6366F1", "#F59E0B"]), legend=alt.Legend(title=None)),
                     tooltip=["Month:N", "Motion:N", alt.Tooltip("Sales M:Q", format=".2f")],
                 )
@@ -4287,7 +4287,7 @@ elif selected_menu == "Revenue Analytics":
                 reg_long = sales_region.melt(id_vars=["Region"], value_vars=["B2C Sales M", "B2B Sales M"], var_name="Segment", value_name="Sales M")
                 reg_bar = alt.Chart(reg_long).mark_bar(opacity=0.84, cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
                     x=alt.X("Region:N", title=None),
-                    y=alt.Y("Sales M:Q", title="Sales (S/ M)"),
+                    y=alt.Y("Sales M:Q", title="Sales (CLP  M)"),
                     color=alt.Color("Segment:N", scale=alt.Scale(domain=["B2C Sales M", "B2B Sales M"], range=["#29B5E8", "#6366F1"]), legend=alt.Legend(title=None)),
                     xOffset="Segment:N",
                     tooltip=["Region:N", "Segment:N", alt.Tooltip("Sales M:Q", format=".2f")],
@@ -4305,7 +4305,7 @@ elif selected_menu == "Revenue Analytics":
             with st.container(border=True):
                 top_region = sales_region.sort_values("Total Sales M", ascending=False)
                 top_reg_bar = alt.Chart(top_region).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=22).encode(
-                    x=alt.X("Total Sales M:Q", title="Total Sales (S/ M)"),
+                    x=alt.X("Total Sales M:Q", title="Total Sales (CLP  M)"),
                     y=alt.Y("Region:N", sort="-x", title=None),
                     color=alt.Color("Margin %:Q", scale=alt.Scale(scheme="blues"), legend=alt.Legend(title="Margin %")),
                     tooltip=["Region:N", alt.Tooltip("Total Sales M:Q", format=".2f"), alt.Tooltip("Margin %:Q", format=".1f"), "Retail Stores:Q"],
@@ -4326,7 +4326,7 @@ elif selected_menu == "Revenue Analytics":
             with st.container(border=True):
                 pod_scatter = alt.Chart(sales_reps).mark_circle(opacity=0.9, stroke="#FFFFFF", strokeWidth=1.2).encode(
                     x=alt.X("Win Rate %:Q", title="Win Rate %"),
-                    y=alt.Y("Sales M:Q", title="Sales (S/ M)"),
+                    y=alt.Y("Sales M:Q", title="Sales (CLP  M)"),
                     size=alt.Size("New Logos:Q", scale=alt.Scale(range=[240, 1300]), legend=alt.Legend(title="New Logos")),
                     color=alt.Color("Region:N", legend=alt.Legend(title=None), scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B", "#EF4444"])),
                     tooltip=["Sales Pod:N", "Region:N", alt.Tooltip("Sales M:Q", format=".2f"), alt.Tooltip("Win Rate %:Q", format=".1f"), "New Logos:Q"],
@@ -4337,7 +4337,7 @@ elif selected_menu == "Revenue Analytics":
                 st.altair_chart(style_rev_chart(pod_scatter + pod_labels, height=235), use_container_width=True)
                 render_rev_ai_reco(
                     "Top Sales Execution",
-                    f"{top_pod['Sales Pod']} leads with S/{top_pod['Sales M']:.2f}M and {top_pod['Win Rate %']:.1f}% win rate.",
+                    f"{top_pod['Sales Pod']} leads with CLP {top_pod['Sales M']:.2f}M and {top_pod['Win Rate %']:.1f}% win rate.",
                     "Codify this pod's discovery and closing framework for other regional teams.",
                     "Increase close rates across the sales organization.",
                 )
@@ -4350,12 +4350,12 @@ elif selected_menu == "Revenue Analytics":
                     color=alt.Color("Product:N", scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981", "#F59E0B", "#EF4444", "#14B8A6"]), legend=alt.Legend(title=None)),
                     tooltip=["Product:N", alt.Tooltip("Total Sales M:Q", format=".2f"), alt.Tooltip("B2C Sales M:Q", format=".2f"), alt.Tooltip("B2B Sales M:Q", format=".2f"), alt.Tooltip("Attach Rate %:Q", format=".1f")],
                 )
-                prod_center = alt.Chart(pd.DataFrame({"t": [f"S/{sales_product_mix['Total Sales M'].sum():.1f}M"]})).mark_text(fontSize=21, fontWeight="bold", color="#0F172A").encode(text="t:N")
+                prod_center = alt.Chart(pd.DataFrame({"t": [f"CLP {sales_product_mix['Total Sales M'].sum():.1f}M"]})).mark_text(fontSize=21, fontWeight="bold", color="#0F172A").encode(text="t:N")
                 prod_sub = alt.Chart(pd.DataFrame({"t": ["Product Sales Mix"]})).mark_text(fontSize=11, dy=18, color="#64748B").encode(text="t:N")
                 st.altair_chart(style_rev_chart(prod_donut + prod_center + prod_sub, height=235), use_container_width=True)
                 render_rev_ai_reco(
                     "Portfolio Sales Priorities",
-                    f"{sales_top_product['Product']} is the strongest product by sales at S/{sales_top_product['Total Sales M']:.2f}M.",
+                    f"{sales_top_product['Product']} is the strongest product by sales at CLP {sales_top_product['Total Sales M']:.2f}M.",
                     "Push attach bundles (Mesh Plus and TV App) into high-volume plans and B2B migrations.",
                     "Increase ARPU and raise cross-sell contribution.",
                 )
@@ -4393,7 +4393,7 @@ elif selected_menu == "Revenue Analytics":
             with st.container(border=True):
                 quota_chart = alt.Chart(sales_quota).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5, opacity=0.85).encode(
                     x=alt.X("Dimension:N", title=None),
-                    y=alt.Y("Actual M:Q", title="Sales (S/ M)"),
+                    y=alt.Y("Actual M:Q", title="Sales (CLP  M)"),
                     color=alt.Color("Type:N", scale=alt.Scale(domain=["Channel", "Region"], range=["#29B5E8", "#10B981"]), legend=alt.Legend(title=None)),
                     tooltip=["Dimension:N", "Type:N", alt.Tooltip("Target M:Q", format=".2f"), alt.Tooltip("Actual M:Q", format=".2f"), alt.Tooltip("Attainment %:Q", format=".1f")],
                 )
@@ -4418,13 +4418,13 @@ elif selected_menu == "Revenue Analytics":
                 fcst_long = sales_forecast.melt(id_vars=["Month", "Actual M"], value_vars=["Fcst -90d M", "Fcst -30d M"], var_name="Forecast", value_name="Forecast M")
                 fcst_line = alt.Chart(fcst_long).mark_line(point=True, strokeWidth=3).encode(
                     x=alt.X("Month:N", title=None),
-                    y=alt.Y("Forecast M:Q", title="Sales (S/ M)"),
+                    y=alt.Y("Forecast M:Q", title="Sales (CLP  M)"),
                     color=alt.Color("Forecast:N", scale=alt.Scale(domain=["Fcst -90d M", "Fcst -30d M"], range=["#94A3B8", "#29B5E8"]), legend=alt.Legend(title=None)),
                     tooltip=["Month:N", "Forecast:N", alt.Tooltip("Forecast M:Q", format=".2f")],
                 )
                 actual_line = alt.Chart(sales_forecast).mark_line(point=True, strokeWidth=3, color="#10B981").encode(
                     x=alt.X("Month:N", title=None),
-                    y=alt.Y("Actual M:Q", title="Sales (S/ M)"),
+                    y=alt.Y("Actual M:Q", title="Sales (CLP  M)"),
                     tooltip=["Month:N", alt.Tooltip("Actual M:Q", format=".2f"), alt.Tooltip("Error -30d %:Q", format=".1f"), alt.Tooltip("Error -90d %:Q", format=".1f")],
                 )
                 st.altair_chart(style_rev_chart(fcst_line + actual_line, height=235), use_container_width=True)
@@ -4443,7 +4443,7 @@ elif selected_menu == "Revenue Analytics":
                 wf["Type"] = wf["Value M"].apply(lambda v: "Up" if v >= 0 else "Down")
                 wf_bar = alt.Chart(wf).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5, size=44).encode(
                     x=alt.X("Step:N", title=None),
-                    y=alt.Y("Value M:Q", title="Impact (S/ M)"),
+                    y=alt.Y("Value M:Q", title="Impact (CLP  M)"),
                     color=alt.Color("Type:N", scale=alt.Scale(domain=["Up", "Down"], range=["#10B981", "#EF4444"]), legend=None),
                     tooltip=["Step:N", alt.Tooltip("Value M:Q", format="+.2f"), alt.Tooltip("Cumulative M:Q", format=".2f")],
                 )
@@ -4452,7 +4452,7 @@ elif selected_menu == "Revenue Analytics":
                 discount_impact = abs(float(sales_waterfall.loc[sales_waterfall["Step"] == "Discounts", "Value M"].iloc[0]))
                 render_rev_ai_reco(
                     "Discount Discipline",
-                    f"Discount drag is S/{discount_impact:.2f}M in the latest month waterfall.",
+                    f"Discount drag is CLP {discount_impact:.2f}M in the latest month waterfall.",
                     "Set discount guardrails by product and require approval above threshold levels.",
                     "Protect margin while sustaining close rates.",
                     level="warning",
@@ -4506,7 +4506,7 @@ elif selected_menu == "Revenue Analytics":
         with st.container(border=True):
             prod_scatter = alt.Chart(sales_productivity).mark_circle(opacity=0.9, stroke="#FFFFFF", strokeWidth=1.2).encode(
                 x=alt.X("Cycle Days:Q", title="Sales Cycle (days)"),
-                y=alt.Y("Revenue per Rep K:Q", title="Revenue per Rep (S/ K)"),
+                y=alt.Y("Revenue per Rep K:Q", title="Revenue per Rep (CLP  K)"),
                 size=alt.Size("Avg Deal Size K:Q", scale=alt.Scale(range=[300, 1800]), legend=alt.Legend(title="Avg Deal Size K")),
                 color=alt.Color("Motion:N", scale=alt.Scale(range=["#29B5E8", "#6366F1", "#10B981"]), legend=alt.Legend(title=None)),
                 tooltip=["Motion:N", alt.Tooltip("Revenue per Rep K:Q", format=".0f"), alt.Tooltip("Win Rate %:Q", format=".1f"), alt.Tooltip("Activity to Close %:Q", format=".1f")],
@@ -4518,17 +4518,17 @@ elif selected_menu == "Revenue Analytics":
             top_motion = sales_productivity.loc[sales_productivity["Revenue per Rep K"].idxmax()]
             render_rev_ai_reco(
                 "Productivity Focus",
-                f"{top_motion['Motion']} delivers the highest productivity at S/{top_motion['Revenue per Rep K']:.0f}K per rep.",
+                f"{top_motion['Motion']} delivers the highest productivity at CLP {top_motion['Revenue per Rep K']:.0f}K per rep.",
                 "Scale playbooks from top motion and rebalance capacity from lower-efficiency motions.",
                 "Lift overall sales productivity and shorten cycle times.",
             )
 
-        st.markdown('<div class="rev-title">Lima Neighborhood Sales Heatmap</div>', unsafe_allow_html=True)
+        st.markdown('<div class="rev-title">Santiago Neighborhood Sales Heatmap</div>', unsafe_allow_html=True)
         with st.container(border=True):
-            lima_layers = [
+            santiago_layers = [
                 pdk.Layer(
                     "ScatterplotLayer",
-                    data=lima_sales_map,
+                    data=santiago_sales_map,
                     get_position="[lon, lat]",
                     get_radius="radius",
                     get_fill_color="[r, g, b, 165]",
@@ -4539,7 +4539,7 @@ elif selected_menu == "Revenue Analytics":
                 ),
                 pdk.Layer(
                     "TextLayer",
-                    data=lima_sales_map,
+                    data=santiago_sales_map,
                     get_position="[lon, lat]",
                     get_text="Neighborhood",
                     get_size=12,
@@ -4549,15 +4549,15 @@ elif selected_menu == "Revenue Analytics":
                     pickable=False,
                 ),
             ]
-            lima_deck = pdk.Deck(
-                layers=lima_layers,
+            santiago_deck = pdk.Deck(
+                layers=santiago_layers,
                 initial_view_state=pdk.ViewState(latitude=-12.10, longitude=-77.03, zoom=11.6, pitch=8),
                 map_style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
                 tooltip={
-                    "html": "<b>{Neighborhood}</b><br/>Sales: S/{Sales M}M<br/>B2B Share: {B2B Share %}%<br/>Margin: {Margin %}%"
+                    "html": "<b>{Neighborhood}</b><br/>Sales: CLP {Sales M}M<br/>B2B Share: {B2B Share %}%<br/>Margin: {Margin %}%"
                 },
             )
-            st.pydeck_chart(lima_deck, use_container_width=True)
+            st.pydeck_chart(santiago_deck, use_container_width=True)
             st.markdown(dedent("""
                 <div style="margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.4rem;">
                     <span style="display:inline-flex; align-items:center; gap:0.34rem; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:999px; padding:0.16rem 0.5rem; font-size:0.72rem; color:#334155; font-weight:700;">
@@ -4571,13 +4571,13 @@ elif selected_menu == "Revenue Analytics":
                     </span>
                 </div>
             """), unsafe_allow_html=True)
-            top_lima = lima_sales_map.loc[lima_sales_map["Sales M"].idxmax()]
-            low_lima = lima_sales_map.loc[lima_sales_map["Margin %"].idxmin()]
+            top_santiago = santiago_sales_map.loc[santiago_sales_map["Sales M"].idxmax()]
+            low_santiago = santiago_sales_map.loc[santiago_sales_map["Margin %"].idxmin()]
             render_rev_ai_reco(
-                "Lima Neighborhood White-Space",
-                f"{top_lima['Neighborhood']} is the top Lima sales pocket at S/{top_lima['Sales M']:.2f}M, while {low_lima['Neighborhood']} has the lowest margin.",
-                f"Keep high-intent investment in {top_lima['Neighborhood']} and run pricing/attach correction in {low_lima['Neighborhood']}.",
-                "Grow Lima revenue while improving unit economics by district.",
+                "Santiago Neighborhood White-Space",
+                f"{top_santiago['Neighborhood']} is the top Santiago sales pocket at CLP {top_santiago['Sales M']:.2f}M, while {low_santiago['Neighborhood']} has the lowest margin.",
+                f"Keep high-intent investment in {top_santiago['Neighborhood']} and run pricing/attach correction in {low_santiago['Neighborhood']}.",
+                "Grow Santiago revenue while improving unit economics by district.",
                 level="warning",
             )
 
@@ -4588,7 +4588,7 @@ elif selected_menu == "Revenue Analytics":
             with st.container(border=True):
                 deals_bar = alt.Chart(sales_deals).mark_bar(cornerRadiusTopLeft=5, cornerRadiusTopRight=5).encode(
                     x=alt.X("Deal:N", title=None),
-                    y=alt.Y("Value K:Q", title="Deal Value (S/ K)"),
+                    y=alt.Y("Value K:Q", title="Deal Value (CLP  K)"),
                     color=alt.Color("Status:N", scale=alt.Scale(domain=["Won", "Lost"], range=["#10B981", "#EF4444"]), legend=alt.Legend(title=None)),
                     tooltip=["Deal:N", "Status:N", "Region:N", alt.Tooltip("Value K:Q", format=".0f"), "Reason:N"],
                 )
@@ -4596,7 +4596,7 @@ elif selected_menu == "Revenue Analytics":
                 lost_top = sales_deals[sales_deals["Status"] == "Lost"].sort_values("Value K", ascending=False).iloc[0]
                 render_rev_ai_reco(
                     "Top Loss Recovery",
-                    f"Highest lost deal is {lost_top['Deal']} at S/{lost_top['Value K']:.0f}K, mostly due to {lost_top['Reason'].lower()}.",
+                    f"Highest lost deal is {lost_top['Deal']} at CLP {lost_top['Value K']:.0f}K, mostly due to {lost_top['Reason'].lower()}.",
                     "Build dedicated save-kit for high-value loss reasons (pricing, SLA, procurement).",
                     "Recover strategic deals and improve win-rate in enterprise opportunities.",
                     level="warning",
@@ -4627,14 +4627,14 @@ elif selected_menu == "Revenue Analytics":
         st.markdown('<div class="rev-title">Revenue Risk and Strategy</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="rev-kpi-grid">
-                <div class="rev-kpi-card crit"><div class="k">Revenue at Risk</div><div class="v">S/{at_risk_rev_m:.2f}M</div><div class="d">Current exposure</div></div>
+                <div class="rev-kpi-card crit"><div class="k">Revenue at Risk</div><div class="v">CLP {at_risk_rev_m:.2f}M</div><div class="d">Current exposure</div></div>
                 <div class="rev-kpi-card warn"><div class="k">Top Risk Driver</div><div class="v">{rev_risk.loc[rev_risk['Exposure M'].idxmax(), 'Risk Driver']}</div><div class="d">Highest exposure line</div></div>
-                <div class="rev-kpi-card"><div class="k">Base Scenario (Q)</div><div class="v">S/{rev_scenario.loc[rev_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0]:.1f}M</div><div class="d">Highest probability</div></div>
-                <div class="rev-kpi-card"><div class="k">Upside Potential</div><div class="v">S/{(rev_scenario.iloc[-1]['Quarter Revenue M']-rev_scenario.iloc[1]['Quarter Revenue M']):.1f}M</div><div class="d">vs base scenario</div></div>
-                <div class="rev-kpi-card warn"><div class="k">Downside Gap</div><div class="v">S/{(rev_scenario.iloc[1]['Quarter Revenue M']-rev_scenario.iloc[0]['Quarter Revenue M']):.1f}M</div><div class="d">vs base scenario</div></div>
+                <div class="rev-kpi-card"><div class="k">Base Scenario (Q)</div><div class="v">CLP {rev_scenario.loc[rev_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0]:.1f}M</div><div class="d">Highest probability</div></div>
+                <div class="rev-kpi-card"><div class="k">Upside Potential</div><div class="v">CLP {(rev_scenario.iloc[-1]['Quarter Revenue M']-rev_scenario.iloc[1]['Quarter Revenue M']):.1f}M</div><div class="d">vs base scenario</div></div>
+                <div class="rev-kpi-card warn"><div class="k">Downside Gap</div><div class="v">CLP {(rev_scenario.iloc[1]['Quarter Revenue M']-rev_scenario.iloc[0]['Quarter Revenue M']):.1f}M</div><div class="d">vs base scenario</div></div>
                 <div class="rev-kpi-card"><div class="k">Risk Coverage</div><div class="v">{(1 - rev_risk['Exposure M'].sum()/arr):.1%}</div><div class="d">ARR protected</div></div>
                 <div class="rev-kpi-card"><div class="k">Collection Quality</div><div class="v">{collection_rate:.1f}%</div><div class="d">Cash resilience</div></div>
-                <div class="rev-kpi-card crit"><div class="k">Delinquency Exposure</div><div class="v">S/{rev_risk.loc[rev_risk['Risk Driver']=='Delinquency', 'Exposure M'].iloc[0]:.2f}M</div><div class="d">Critical watch</div></div>
+                <div class="rev-kpi-card crit"><div class="k">Delinquency Exposure</div><div class="v">CLP {rev_risk.loc[rev_risk['Risk Driver']=='Delinquency', 'Exposure M'].iloc[0]:.2f}M</div><div class="d">Critical watch</div></div>
             </div>
         """), unsafe_allow_html=True)
 
@@ -4643,7 +4643,7 @@ elif selected_menu == "Revenue Analytics":
             st.markdown('<div class="rev-mini-title">Revenue Risk Drivers</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 risk_bar = alt.Chart(rev_risk).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=20).encode(
-                    x=alt.X("Exposure M:Q", title="Exposure (S/ M)"),
+                    x=alt.X("Exposure M:Q", title="Exposure (CLP  M)"),
                     y=alt.Y("Risk Driver:N", sort="-x", title=None),
                     color=alt.Color("Likelihood:Q", scale=alt.Scale(scheme="orangered"), legend=None),
                     tooltip=["Risk Driver:N", alt.Tooltip("Exposure M:Q", format=".2f"), alt.Tooltip("Likelihood:Q", format=".1f")],
@@ -4657,7 +4657,7 @@ elif selected_menu == "Revenue Analytics":
                 top_risk = rev_risk.loc[rev_risk["Exposure M"].idxmax()]
                 render_rev_ai_reco(
                     "Risk Prioritization",
-                    f"{top_risk['Risk Driver']} is the highest exposure risk at S/{top_risk['Exposure M']:.2f}M.",
+                    f"{top_risk['Risk Driver']} is the highest exposure risk at CLP {top_risk['Exposure M']:.2f}M.",
                     f"Assign cross-functional mitigation sprint for {top_risk['Risk Driver']} with weekly governance.",
                     "Reduce downside risk and improve forecast confidence.",
                     level="critical",
@@ -4668,7 +4668,7 @@ elif selected_menu == "Revenue Analytics":
             with st.container(border=True):
                 sc_bar = alt.Chart(rev_scenario).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=56).encode(
                     x=alt.X("Scenario:N", title=None),
-                    y=alt.Y("Quarter Revenue M:Q", title="Revenue (S/ M)"),
+                    y=alt.Y("Quarter Revenue M:Q", title="Revenue (CLP  M)"),
                     color=alt.Color("Scenario:N", scale=alt.Scale(domain=["Downside", "Base", "Upside"], range=["#EF4444", "#3B82F6", "#10B981"]), legend=None),
                     tooltip=["Scenario:N", alt.Tooltip("Quarter Revenue M:Q", format=".1f"), "Probability:N"],
                 )
@@ -4681,7 +4681,7 @@ elif selected_menu == "Revenue Analytics":
                 base_q = rev_scenario.loc[rev_scenario["Scenario"] == "Base", "Quarter Revenue M"].iloc[0]
                 render_rev_ai_reco(
                     "Scenario Planning",
-                    f"Base scenario is S/{base_q:.1f}M with balanced probability weight.",
+                    f"Base scenario is CLP {base_q:.1f}M with balanced probability weight.",
                     "Pre-authorize tactical levers for downside triggers and expansion offers for upside capture.",
                     "Shorten reaction time and stabilize quarter-close outcomes.",
                 )
@@ -4750,8 +4750,8 @@ elif selected_menu == "Revenue Analytics":
 
         st.markdown(dedent(f"""
             <div class="rev-kpi-grid">
-                <div class="rev-kpi-card"><div class="k">Base Quarter</div><div class="v">S/{base_q_whatif:.2f}M</div><div class="d">Reference case</div></div>
-                <div class="rev-kpi-card {'crit' if delta_q_m < 0 else ''}"><div class="k">What-If Quarter</div><div class="v">S/{scenario_q_m:.2f}M</div><div class="d">{delta_q_m:+.2f}M vs base</div></div>
+                <div class="rev-kpi-card"><div class="k">Base Quarter</div><div class="v">CLP {base_q_whatif:.2f}M</div><div class="d">Reference case</div></div>
+                <div class="rev-kpi-card {'crit' if delta_q_m < 0 else ''}"><div class="k">What-If Quarter</div><div class="v">CLP {scenario_q_m:.2f}M</div><div class="d">{delta_q_m:+.2f}M vs base</div></div>
                 <div class="rev-kpi-card {'warn' if scenario_margin < gross_margin else ''}"><div class="k">What-If Margin</div><div class="v">{scenario_margin:.1f}%</div><div class="d">{(scenario_margin-gross_margin):+.1f}pp vs current</div></div>
                 <div class="rev-kpi-card {'crit' if delta_q_m < -0.3 else 'warn' if delta_q_m < 0 else ''}"><div class="k">Scenario Health</div><div class="v">{'At Risk' if delta_q_m < -0.3 else 'Watch' if delta_q_m < 0 else 'Favorable'}</div><div class="d">Composite result</div></div>
             </div>
@@ -4768,7 +4768,7 @@ elif selected_menu == "Revenue Analytics":
                 driver_df["Type"] = driver_df["Impact M"].apply(lambda v: "Up" if v >= 0 else "Down")
                 d_bar = alt.Chart(driver_df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=46).encode(
                     x=alt.X("Driver:N", title=None),
-                    y=alt.Y("Impact M:Q", title="Impact (S/ M)"),
+                    y=alt.Y("Impact M:Q", title="Impact (CLP  M)"),
                     color=alt.Color("Type:N", scale=alt.Scale(domain=["Up", "Down"], range=["#10B981", "#EF4444"]), legend=None),
                     tooltip=["Driver:N", alt.Tooltip("Impact M:Q", format=".2f")],
                 )
@@ -4789,7 +4789,7 @@ elif selected_menu == "Revenue Analytics":
                 })
                 c_bar = alt.Chart(compare_df).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=58).encode(
                     x=alt.X("Case:N", title=None),
-                    y=alt.Y("Revenue M:Q", title="Quarter Revenue (S/ M)"),
+                    y=alt.Y("Revenue M:Q", title="Quarter Revenue (CLP  M)"),
                     color=alt.Color("Case:N", scale=alt.Scale(domain=["Base", "What-If"], range=["#3B82F6", "#10B981" if delta_q_m >= 0 else "#EF4444"]), legend=None),
                     tooltip=["Case:N", alt.Tooltip("Revenue M:Q", format=".2f")],
                 )
@@ -4803,14 +4803,14 @@ elif selected_menu == "Revenue Analytics":
         if delta_q_m >= 0:
             render_rev_ai_reco(
                 "What-If Outcome",
-                f"This scenario improves quarter revenue by S/{delta_q_m:.2f}M with margin at {scenario_margin:.1f}%.",
+                f"This scenario improves quarter revenue by CLP {delta_q_m:.2f}M with margin at {scenario_margin:.1f}%.",
                 "Proceed with pricing and collections levers; keep discount expansion controlled.",
                 "Higher quarter close with stable profitability.",
             )
         else:
             render_rev_ai_reco(
                 "What-If Outcome",
-                f"This scenario reduces quarter revenue by S/{abs(delta_q_m):.2f}M and margin shifts to {scenario_margin:.1f}%.",
+                f"This scenario reduces quarter revenue by CLP {abs(delta_q_m):.2f}M and margin shifts to {scenario_margin:.1f}%.",
                 "Trigger mitigation playbook: protect collections, limit discounting, and prioritize churn containment.",
                 "Contain downside and recover part of the revenue gap before close.",
                 level="critical" if delta_q_m < -0.3 else "warning",
@@ -4821,7 +4821,7 @@ elif selected_menu == "Revenue Analytics":
                 <div style="display: flex; align-items: center;">
                     <span style="font-size: 1.35rem; margin-right: 0.55rem;">⚠️</span>
                     <div>
-                        <strong style="color: #92400E;">Urgent: S/{at_risk_rev_m:.2f}M revenue exposure</strong>
+                        <strong style="color: #92400E;">Urgent: CLP {at_risk_rev_m:.2f}M revenue exposure</strong>
                         <div style="color: #B45309; font-size: 0.84rem;">Top driver: {rev_risk.loc[rev_risk['Exposure M'].idxmax(), 'Risk Driver']} · prioritize mitigation in next cycle</div>
                     </div>
                 </div>
@@ -4978,7 +4978,7 @@ elif selected_menu == "Network Status":
         "Incidents": [1, 1, 2, 4, 3, 2],
     })
     net_regions = pd.DataFrame({
-        "Region": ["Lima Centro", "Lima Norte", "Lima Sur", "Arequipa", "Trujillo", "Piura"],
+        "Region": ["Santiago Centro", "Santiago Norte", "Santiago Sur", "Valparaiso", "Concepcion", "Temuco"],
         "Availability %": [99.94, 99.91, 99.90, 99.86, 99.88, 99.84],
         "NPS": [57, 54, 53, 49, 50, 47],
         "Active OLTs": [82, 63, 58, 36, 34, 29],
@@ -5008,7 +5008,7 @@ elif selected_menu == "Network Status":
         "Probability": ["25%", "50%", "25%"],
     })
     net_map_nodes = pd.DataFrame({
-        "Node": ["Lima Centro", "Lima Norte", "Lima Sur", "Arequipa", "Trujillo", "Piura", "Chiclayo", "Cusco"],
+        "Node": ["Santiago Centro", "Santiago Norte", "Santiago Sur", "Valparaiso", "Concepcion", "Temuco", "Antofagasta", "Rancagua"],
         "lat": [-12.0464, -11.96, -12.24, -16.4090, -8.1118, -5.1945, -6.7714, -13.5319],
         "lon": [-77.0428, -77.07, -76.95, -71.5375, -79.0287, -80.6328, -79.8409, -71.9675],
         "Availability %": [99.94, 99.91, 99.90, 99.86, 99.88, 99.84, 99.87, 99.89],
@@ -5101,13 +5101,13 @@ elif selected_menu == "Network Status":
         "Utilization %": [77, 71, 83, 68, 64],
     })
     net_sla_geo = pd.DataFrame({
-        "City": ["Lima", "Trujillo", "Arequipa", "Piura", "Chiclayo", "Cusco"],
+        "City": ["Santiago", "Concepcion", "Valparaiso", "Temuco", "Antofagasta", "Rancagua"],
         "lat": [-12.0464, -8.1118, -16.4090, -5.1945, -6.7714, -13.5319],
         "lon": [-77.0428, -79.0287, -71.5375, -80.6328, -79.8409, -71.9675],
         "SLA Risk": [31, 38, 43, 48, 36, 34],
     })
     net_opportunity_geo = pd.DataFrame({
-        "Zone": ["Lima Este", "Lima Norte", "Lima Sur", "Trujillo Sur", "Piura Norte", "Arequipa Norte", "Chiclayo Centro", "Cusco Valle"],
+        "Zone": ["Santiago Este", "Santiago Norte", "Santiago Sur", "Concepcion Sur", "Temuco Norte", "Valparaiso Norte", "Antofagasta Centro", "Rancagua Valle"],
         "lat": [-12.00, -11.95, -12.25, -8.16, -5.15, -16.35, -6.78, -13.50],
         "lon": [-76.90, -77.08, -76.92, -79.01, -80.61, -71.50, -79.82, -71.92],
         "Demand Index": [84, 73, 70, 68, 75, 66, 64, 62],
@@ -5119,9 +5119,9 @@ elif selected_menu == "Network Status":
     })
     net_major_cities_geo = pd.DataFrame({
         "City": [
-            "Lima", "Callao", "Arequipa", "Trujillo", "Piura", "Chiclayo", "Cusco", "Iquitos",
-            "Huancayo", "Tacna", "Juliaca", "Pucallpa", "Chimbote", "Cajamarca", "Ayacucho", "Huaraz",
-            "Tumbes", "Moquegua", "Puno", "Tarapoto", "Puerto Maldonado", "Ica", "Sullana", "Cerro de Pasco",
+            "Santiago", "Maipu", "Valparaiso", "Concepcion", "Temuco", "Antofagasta", "Rancagua", "Iquique",
+            "Puerto Montt", "Arica", "Osorno", "Coyhaique", "Talcahuano", "Calama", "Los Angeles", "Curico",
+            "Tumbes", "Moquegua", "Talca", "Tarapoto", "Puerto Maldonado", "Talca", "Sullana", "Cerro de Pasco",
         ],
         "lat": [
             -12.0464, -12.0566, -16.4090, -8.1118, -5.1945, -6.7714, -13.5319, -3.7437,
@@ -5159,7 +5159,7 @@ elif selected_menu == "Network Status":
         "Avg Delay Hr": [6.2, 7.4, 8.6, 9.1, 7.8],
     })
     net_upgrade_program = pd.DataFrame({
-        "Initiative": ["WOM Core Lima Refresh", "WOM Northern Backbone Ring", "WOM OLT Densification Wave 2", "WOM South Fiber Hardening", "WOM Critical Site Power Backup"],
+        "Initiative": ["WOM Core Santiago Refresh", "WOM Northern Backbone Ring", "WOM OLT Densification Wave 2", "WOM South Fiber Hardening", "WOM Critical Site Power Backup"],
         "Domain": ["Core", "Transport", "Access OLT", "Field Fiber", "Power"],
         "Capex M": [1.6, 1.9, 1.3, 1.5, 1.1],
         "Impact Score": [89, 92, 84, 81, 78],
@@ -5167,19 +5167,19 @@ elif selected_menu == "Network Status":
         "Quarter": ["Q1", "Q2", "Q2", "Q3", "Q1"],
     })
     net_spof = pd.DataFrame({
-        "Region": ["Lima Norte", "Lima Sur", "Arequipa", "Trujillo", "Piura"],
+        "Region": ["Santiago Norte", "Santiago Sur", "Valparaiso", "Concepcion", "Temuco"],
         "SPOF Count": [4, 3, 5, 4, 6],
         "Subscribers K": [52, 48, 35, 31, 29],
         "Criticality": [3.2, 2.9, 3.5, 3.1, 3.8],
     })
     net_resilience_sites = pd.DataFrame({
-        "Region": ["Lima Centro", "Lima Norte", "Lima Sur", "Arequipa", "Trujillo", "Piura"],
+        "Region": ["Santiago Centro", "Santiago Norte", "Santiago Sur", "Valparaiso", "Concepcion", "Temuco"],
         "Backup Autonomy Hr": [8.8, 7.6, 7.1, 6.2, 6.5, 5.8],
         "Power Events / Mo": [2.3, 2.8, 2.9, 3.6, 3.1, 3.8],
         "Critical Sites": [24, 19, 18, 12, 11, 10],
     })
     net_enterprise_geo = pd.DataFrame({
-        "City": ["Lima", "Callao", "Trujillo", "Piura", "Arequipa", "Cusco", "Chiclayo", "Ica"],
+        "City": ["Santiago", "Maipu", "Concepcion", "Temuco", "Valparaiso", "Rancagua", "Antofagasta", "Talca"],
         "lat": [-12.0464, -12.056, -8.1118, -5.1945, -16.4090, -13.5319, -6.7714, -14.0678],
         "lon": [-77.0428, -77.118, -79.0287, -80.6328, -71.5375, -71.9675, -79.8409, -75.7286],
         "Accounts": [190, 122, 74, 66, 59, 48, 44, 37],
@@ -5187,7 +5187,7 @@ elif selected_menu == "Network Status":
     })
     net_enterprise_geo["radius"] = (net_enterprise_geo["Accounts"] * 30).clip(lower=1200, upper=7200)
     net_weather_risk_geo = pd.DataFrame({
-        "Zone": ["Lima Norte", "Lima Sur", "Trujillo Costa", "Piura Costa", "Arequipa Valle", "Cusco Sierra"],
+        "Zone": ["Santiago Norte", "Santiago Sur", "Concepcion Costa", "Temuco Costa", "Valparaiso Valle", "Rancagua Sierra"],
         "lat": [-11.95, -12.24, -8.13, -5.22, -16.42, -13.54],
         "lon": [-77.06, -76.97, -79.03, -80.64, -71.54, -71.97],
         "Weather Risk": [72, 66, 78, 84, 63, 57],
@@ -5228,7 +5228,7 @@ elif selected_menu == "Network Status":
     })
     net_critical_sites = pd.DataFrame({
         "Site": ["LIM-CORE-01", "PIU-EDGE-04", "AQP-TR-02", "TRU-ACC-05", "LIM-ACC-09", "CUS-TR-01", "CHI-ACC-03", "LIM-TR-07", "PIU-ACC-02", "AQP-ACC-06"],
-        "Region": ["Lima", "Piura", "Arequipa", "Trujillo", "Lima", "Cusco", "Chiclayo", "Lima", "Piura", "Arequipa"],
+        "Region": ["Santiago", "Temuco", "Valparaiso", "Concepcion", "Santiago", "Rancagua", "Antofagasta", "Santiago", "Temuco", "Valparaiso"],
         "Criticality": [94, 92, 90, 88, 87, 85, 84, 83, 82, 81],
         "Subscribers Impact K": [46, 38, 29, 27, 25, 22, 20, 19, 18, 17],
         "MTTR Min": [62, 68, 58, 56, 54, 52, 50, 49, 48, 47],
@@ -5243,7 +5243,7 @@ elif selected_menu == "Network Status":
         "Status": ["On Track", "Watch", "Watch", "On Track", "On Track"],
     })
     net_customer_link = pd.DataFrame({
-        "Region": ["Lima Centro", "Lima Norte", "Lima Sur", "Arequipa", "Trujillo", "Piura"],
+        "Region": ["Santiago Centro", "Santiago Norte", "Santiago Sur", "Valparaiso", "Concepcion", "Temuco"],
         "Latency ms": [20.5, 22.8, 23.2, 25.4, 24.7, 26.2],
         "Packet Loss %": [0.19, 0.24, 0.26, 0.31, 0.29, 0.34],
         "NPS": [57, 54, 53, 49, 50, 47],
@@ -5489,14 +5489,14 @@ elif selected_menu == "Network Status":
         with enh_col4:
             lens = st.selectbox(
                 "Geography Lens",
-                ["National Peru", "Lima Metro", "Northern Corridor", "Southern Corridor"],
+                ["National Chile", "Metropolitana", "Northern Corridor", "Southern Corridor"],
                 index=0,
                 key="net_map_geo_lens",
             )
 
         lens_view = {
-            "National Peru": {"lat": -11.7, "lon": -76.9, "zoom": 5.35, "pitch": 33},
-            "Lima Metro": {"lat": -12.06, "lon": -77.02, "zoom": 9.2, "pitch": 38},
+            "National Chile": {"lat": -11.7, "lon": -76.9, "zoom": 5.35, "pitch": 33},
+            "Metropolitana": {"lat": -12.06, "lon": -77.02, "zoom": 9.2, "pitch": 38},
             "Northern Corridor": {"lat": -8.2, "lon": -79.5, "zoom": 6.25, "pitch": 34},
             "Southern Corridor": {"lat": -15.0, "lon": -72.2, "zoom": 5.95, "pitch": 34},
         }[lens]
@@ -5668,7 +5668,7 @@ elif selected_menu == "Network Status":
                     layers=live_layers,
                     initial_view_state=pdk.ViewState(latitude=lens_view["lat"], longitude=lens_view["lon"], zoom=lens_view["zoom"], pitch=lens_view["pitch"]),
                     map_style="https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
-                    tooltip={"html": "<b>{Node}{City}{Zone}</b><br/>Status: {Status}<br/>Availability: {Availability %}%<br/>Utilization: {Utilization %}%<br/>Open Incidents: {Open Incidents}<br/>Accounts: {Accounts}<br/>Weather Risk: {Weather Risk}<br/>Phase: {Phase}<br/>Capex: S/{Capex M}M"},
+                    tooltip={"html": "<b>{Node}{City}{Zone}</b><br/>Status: {Status}<br/>Availability: {Availability %}%<br/>Utilization: {Utilization %}%<br/>Open Incidents: {Open Incidents}<br/>Accounts: {Accounts}<br/>Weather Risk: {Weather Risk}<br/>Phase: {Phase}<br/>Capex: CLP {Capex M}M"},
                 )
                 st.pydeck_chart(node_deck, use_container_width=True)
                 st.caption("Watch (yellow) and critical (red) hotspots use pulsing rings, with access-footprint heat and micro-site density layered underneath.")
@@ -5956,7 +5956,7 @@ elif selected_menu == "Network Status":
                 <div class="net-kpi-card crit"><div class="k">#1 Invest</div><div class="v">{top3.iloc[0]['Zone']}</div><div class="d">Priority {top3.iloc[0]['Priority Adj']:.1f} · Payback {top3.iloc[0]['Payback Horizon Mo']:.1f} mo</div></div>
                 <div class="net-kpi-card warn"><div class="k">#2 Invest</div><div class="v">{top3.iloc[1]['Zone']}</div><div class="d">Priority {top3.iloc[1]['Priority Adj']:.1f} · Payback {top3.iloc[1]['Payback Horizon Mo']:.1f} mo</div></div>
                 <div class="net-kpi-card"><div class="k">#3 Invest</div><div class="v">{top3.iloc[2]['Zone']}</div><div class="d">Priority {top3.iloc[2]['Priority Adj']:.1f} · Payback {top3.iloc[2]['Payback Horizon Mo']:.1f} mo</div></div>
-                <div class="net-kpi-card"><div class="k">Top-3 CAPEX</div><div class="v">S/{top3['Capex Horizon M'].sum():.2f}M</div><div class="d">{horizon} targeted build plan</div></div>
+                <div class="net-kpi-card"><div class="k">Top-3 CAPEX</div><div class="v">CLP {top3['Capex Horizon M'].sum():.2f}M</div><div class="d">{horizon} targeted build plan</div></div>
             </div>
         """), unsafe_allow_html=True)
         st.caption(f"Horizon profile active: {horizon} - map geometry and investment economics are scaled for this planning window.")
@@ -6073,7 +6073,7 @@ elif selected_menu == "Network Status":
                 initial_view_state=pdk.ViewState(latitude=-11.6, longitude=-76.8, zoom=5.0, pitch=40),
                 map_style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
                 tooltip={
-                    "html": "<b>{Zone}{City}</b><br/>Tier: {City Tier}<br/>Signal: {Investment Signal}<br/>Invest Rank: #{Rank}<br/>Demand: {Demand Index}<br/>Coverage Gap ({horizon}): {Coverage Gap Horizon %}%<br/>ARR Risk ({horizon}): S/{ARR Horizon M}M<br/>Capex ({horizon}): S/{Capex Horizon M}M<br/>Payback ({horizon}): {Payback Horizon Mo} mo<br/>Priority: {Priority Adj}"
+                    "html": "<b>{Zone}{City}</b><br/>Tier: {City Tier}<br/>Signal: {Investment Signal}<br/>Invest Rank: #{Rank}<br/>Demand: {Demand Index}<br/>Coverage Gap ({horizon}): {Coverage Gap Horizon %}%<br/>ARR Risk ({horizon}): CLP {ARR Horizon M}M<br/>Capex ({horizon}): CLP {Capex Horizon M}M<br/>Payback ({horizon}): {Payback Horizon Mo} mo<br/>Priority: {Priority Adj}"
                 },
             )
             st.pydeck_chart(atlas_deck, use_container_width=True)
@@ -6103,7 +6103,7 @@ elif selected_menu == "Network Status":
             top_zone = opp_df.sort_values("Priority Adj", ascending=False).iloc[0]
             render_net_ai_reco(
                 "Expansion Prioritization Signal",
-                f"Top zone for {horizon} is {top_zone['Zone']} with priority {top_zone['Priority Adj']:.1f}, coverage gap {top_zone['Coverage Gap Horizon %']:.1f}%, and ARR risk S/{top_zone['ARR Horizon M']:.2f}M.",
+                f"Top zone for {horizon} is {top_zone['Zone']} with priority {top_zone['Priority Adj']:.1f}, coverage gap {top_zone['Coverage Gap Horizon %']:.1f}%, and ARR risk CLP {top_zone['ARR Horizon M']:.2f}M.",
                 f"Prioritize phased build in {top_zone['Zone']} and lock field capacity for first-wave execution.",
                 "Improves growth quality by concentrating CAPEX on highest-value, fastest-payback opportunities.",
                 level="critical" if top_zone["Priority Adj"] >= 85 else "warning",
@@ -6238,7 +6238,7 @@ elif selected_menu == "Network Status":
             st.markdown('<div class="net-mini-title">Upgrade Program Impact vs CAPEX</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 upg_scatter = alt.Chart(net_upgrade_program).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
-                    x=alt.X("Capex M:Q", title="CAPEX (S/ M)"),
+                    x=alt.X("Capex M:Q", title="CAPEX (CLP  M)"),
                     y=alt.Y("Impact Score:Q", title="Impact Score"),
                     size=alt.Size("Delivery Risk:Q", scale=alt.Scale(range=[260, 1300]), legend=alt.Legend(title="Delivery Risk")),
                     color=alt.Color("Quarter:N", legend=alt.Legend(title="Execution Quarter"), scale=alt.Scale(range=["#3B82F6", "#10B981", "#F59E0B"])),
@@ -6268,7 +6268,7 @@ elif selected_menu == "Network Status":
         st.markdown(dedent(f"""
             <div class="net-kpi-grid">
                 <div class="net-kpi-card {'crit' if service_subs_k > 8 else 'warn'}"><div class="k">Subscribers Impacted</div><div class="v">{service_subs_k:.1f}K</div><div class="d">Current service exposure</div></div>
-                <div class="net-kpi-card {'crit' if service_arr_m > 3.5 else 'warn'}"><div class="k">ARR at Risk</div><div class="v">S/{service_arr_m:.2f}M</div><div class="d">Business impact footprint</div></div>
+                <div class="net-kpi-card {'crit' if service_arr_m > 3.5 else 'warn'}"><div class="k">ARR at Risk</div><div class="v">CLP {service_arr_m:.2f}M</div><div class="d">Business impact footprint</div></div>
                 <div class="net-kpi-card"><div class="k">Enterprise Accounts</div><div class="v">{service_enterprise}</div><div class="d">High-value accounts affected</div></div>
                 <div class="net-kpi-card {'crit' if sla_gap_pp > 0.3 else 'warn' if sla_gap_pp > 0.1 else ''}"><div class="k">SLA Forecast Gap</div><div class="v">{sla_gap_pp:+.2f}pp</div><div class="d">vs weekly target</div></div>
             </div>
@@ -6285,13 +6285,13 @@ elif selected_menu == "Network Status":
                 )
                 impact_line = alt.Chart(net_service_impact).mark_line(point=True, strokeWidth=3, color="#EF4444").encode(
                     x="Incident Type:N",
-                    y=alt.Y("ARR at Risk M:Q", title="ARR at Risk (S/ M)"),
+                    y=alt.Y("ARR at Risk M:Q", title="ARR at Risk (CLP  M)"),
                 )
                 st.altair_chart(style_net_chart(alt.layer(impact_bar, impact_line).resolve_scale(y="independent"), height=235), use_container_width=True)
                 top_impact = net_service_impact.loc[net_service_impact["ARR at Risk M"].idxmax()]
                 render_net_ai_reco(
                     "Business Impact Prioritization",
-                    f"{top_impact['Incident Type']} drives the highest ARR exposure at S/{top_impact['ARR at Risk M']:.2f}M.",
+                    f"{top_impact['Incident Type']} drives the highest ARR exposure at CLP {top_impact['ARR at Risk M']:.2f}M.",
                     f"Prioritize fast-response and prevention controls for {top_impact['Incident Type']} failure patterns.",
                     "Directly protects revenue continuity and enterprise customer confidence.",
                     level="critical",
@@ -6378,7 +6378,7 @@ elif selected_menu == "Network Status":
 
         st.markdown(dedent(f"""
             <div class="net-kpi-grid">
-                <div class="net-kpi-card"><div class="k">Program CAPEX</div><div class="v">S/{total_capex_exec:.1f}M</div><div class="d">Active infrastructure initiatives</div></div>
+                <div class="net-kpi-card"><div class="k">Program CAPEX</div><div class="v">CLP {total_capex_exec:.1f}M</div><div class="d">Active infrastructure initiatives</div></div>
                 <div class="net-kpi-card {'warn' if max_forecast_util >= 85 else ''}"><div class="k">Peak Forecast Utilization</div><div class="v">{max_forecast_util:.0f}%</div><div class="d">90-day projection ceiling</div></div>
                 <div class="net-kpi-card {'warn' if on_track_pct < 70 else ''}"><div class="k">Mitigation On-Track</div><div class="v">{on_track_pct:.0f}%</div><div class="d">Execution confidence</div></div>
                 <div class="net-kpi-card {'crit' if high_critical_sites > 3 else 'warn'}"><div class="k">High-Critical Sites</div><div class="v">{high_critical_sites}</div><div class="d">Requires executive oversight</div></div>
@@ -6496,12 +6496,12 @@ elif selected_menu == "Network Status":
                 )
                 playbook_data = {
                     "Power Failure Cluster": {
-                        "impact": "Availability -0.42pp, 18K subs impacted, ARR risk S/0.74M",
+                        "impact": "Availability -0.42pp, 18K subs impacted, ARR risk CLP 0.74M",
                         "actions": "Activate backup chain, dispatch power crews, prioritize enterprise circuits.",
                         "window": "First 90 minutes critical",
                     },
                     "Backbone Fiber Cut": {
-                        "impact": "Latency +6.8ms, 24K subs impacted, ARR risk S/1.05M",
+                        "impact": "Latency +6.8ms, 24K subs impacted, ARR risk CLP 1.05M",
                         "actions": "Reroute traffic, trigger field splice teams, apply congestion controls.",
                         "window": "First 60 minutes critical",
                     },
@@ -6889,10 +6889,10 @@ elif selected_menu == "Marketing":
     st.markdown(dedent(f"""
         <div class="mkt-pulse">
             <div class="mkt-pulse-grid">
-                <div class="mkt-pulse-card"><div class="k">Revenue Influenced</div><div class="v">S/{total_revenue_m:.2f}M</div><div class="d">Six-month attributable revenue</div></div>
-                <div class="mkt-pulse-card"><div class="k">Pipeline</div><div class="v">S/{pipeline_latest:.2f}M</div><div class="d">Latest month pipeline</div></div>
-                <div class="mkt-pulse-card"><div class="k">Blended ROAS</div><div class="v">{blended_roas:.2f}x</div><div class="d">Revenue per S/ invested</div></div>
-                <div class="mkt-pulse-card"><div class="k">Blended CAC</div><div class="v">S/{blended_cac:,.0f}</div><div class="d">Acquisition efficiency</div></div>
+                <div class="mkt-pulse-card"><div class="k">Revenue Influenced</div><div class="v">CLP {total_revenue_m:.2f}M</div><div class="d">Six-month attributable revenue</div></div>
+                <div class="mkt-pulse-card"><div class="k">Pipeline</div><div class="v">CLP {pipeline_latest:.2f}M</div><div class="d">Latest month pipeline</div></div>
+                <div class="mkt-pulse-card"><div class="k">Blended ROAS</div><div class="v">{blended_roas:.2f}x</div><div class="d">Revenue per CLP  invested</div></div>
+                <div class="mkt-pulse-card"><div class="k">Blended CAC</div><div class="v">CLP {blended_cac:,.0f}</div><div class="d">Acquisition efficiency</div></div>
                 <div class="mkt-pulse-card"><div class="k">Lead → MQL</div><div class="v">{lead_to_mql:.1%}</div><div class="d">Qualification quality</div></div>
                 <div class="mkt-pulse-card"><div class="k">Revenue Growth</div><div class="v">{revenue_growth:+.1f}%</div><div class="d">Six-month trajectory</div></div>
             </div>
@@ -6909,9 +6909,9 @@ elif selected_menu == "Marketing":
         st.markdown('<div class="mkt-title">Marketing Performance Overview</div>', unsafe_allow_html=True)
         st.markdown(dedent(f"""
             <div class="mkt-kpi-grid">
-                <div class="mkt-kpi-card"><div class="k">Total Spend</div><div class="v">S/{total_spend_m:.2f}M</div><div class="d">Six-month investment</div></div>
+                <div class="mkt-kpi-card"><div class="k">Total Spend</div><div class="v">CLP {total_spend_m:.2f}M</div><div class="d">Six-month investment</div></div>
                 <div class="mkt-kpi-card"><div class="k">New Subscribers</div><div class="v">{total_new_subs_k:.1f}K</div><div class="d">Marketing-driven wins</div></div>
-                <div class="mkt-kpi-card {'warn' if blended_cac > 140 else ''}"><div class="k">Blended CAC</div><div class="v">S/{blended_cac:,.0f}</div><div class="d">Efficiency benchmark</div></div>
+                <div class="mkt-kpi-card {'warn' if blended_cac > 140 else ''}"><div class="k">Blended CAC</div><div class="v">CLP {blended_cac:,.0f}</div><div class="d">Efficiency benchmark</div></div>
                 <div class="mkt-kpi-card"><div class="k">SQL to Win</div><div class="v">{sql_to_win:.1%}</div><div class="d">Sales conversion quality</div></div>
             </div>
         """), unsafe_allow_html=True)
@@ -6922,12 +6922,12 @@ elif selected_menu == "Marketing":
             with st.container(border=True):
                 spend_bar = alt.Chart(mkt_monthly).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=34, color="#93C5FD").encode(
                     x=alt.X("Month:N", title=None),
-                    y=alt.Y("Spend M:Q", title="Spend (S/ M)"),
+                    y=alt.Y("Spend M:Q", title="Spend (CLP  M)"),
                     tooltip=["Month:N", alt.Tooltip("Spend M:Q", format=".2f"), alt.Tooltip("Revenue M:Q", format=".2f"), alt.Tooltip("New Subs K:Q", format=".1f")],
                 )
                 rev_line = alt.Chart(mkt_monthly).mark_line(point=True, strokeWidth=3, color="#10B981").encode(
                     x="Month:N",
-                    y=alt.Y("Revenue M:Q", title="Revenue (S/ M)"),
+                    y=alt.Y("Revenue M:Q", title="Revenue (CLP  M)"),
                 )
                 st.altair_chart(style_mkt_chart(alt.layer(spend_bar, rev_line).resolve_scale(y="independent"), height=235), use_container_width=True)
                 render_mkt_ai_reco(
@@ -6941,7 +6941,7 @@ elif selected_menu == "Marketing":
             st.markdown('<div class="mkt-mini-title">Channel Efficiency Matrix</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 ch_scatter = alt.Chart(mkt_channels).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
-                    x=alt.X("CAC:Q", title="CAC (S/)"),
+                    x=alt.X("CAC:Q", title="CAC (CLP )"),
                     y=alt.Y("CVR %:Q", title="Conversion (%)"),
                     size=alt.Size("Spend M:Q", scale=alt.Scale(range=[260, 1500]), legend=None),
                     color=alt.Color("ROAS:Q", scale=alt.Scale(scheme="blues"), legend=alt.Legend(title="ROAS")),
@@ -6970,7 +6970,7 @@ elif selected_menu == "Marketing":
                 )
                 pipe_line = alt.Chart(mkt_monthly).mark_line(point=True, strokeWidth=2.8, color="#10B981").encode(
                     x="Month:N",
-                    y=alt.Y("Pipeline M:Q", title="Pipeline (S/ M)"),
+                    y=alt.Y("Pipeline M:Q", title="Pipeline (CLP  M)"),
                 )
                 st.altair_chart(style_mkt_chart(alt.layer(lead_line, pipe_line).resolve_scale(y="independent"), height=235), use_container_width=True)
                 pipeline_growth = (mkt_monthly.iloc[-1]["Pipeline M"] / mkt_monthly.iloc[0]["Pipeline M"] - 1) * 100
@@ -7105,9 +7105,9 @@ elif selected_menu == "Marketing":
         st.markdown(dedent(f"""
             <div class="mkt-kpi-grid">
                 <div class="mkt-kpi-card crit"><div class="k">Top Risk Driver</div><div class="v">{top_risk_mkt['Risk Driver']}</div><div class="d">Highest exposure line</div></div>
-                <div class="mkt-kpi-card warn"><div class="k">Total Exposure</div><div class="v">S/{mkt_risk['Exposure M'].sum():.2f}M</div><div class="d">Mapped downside</div></div>
-                <div class="mkt-kpi-card"><div class="k">Base Quarter Revenue</div><div class="v">S/{mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0]:.1f}M</div><div class="d">Most probable scenario</div></div>
-                <div class="mkt-kpi-card {'warn' if (mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0] - mkt_scenario.loc[mkt_scenario['Scenario']=='Downside', 'Quarter Revenue M'].iloc[0]) > 0.6 else ''}"><div class="k">Downside Gap</div><div class="v">S/{(mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0] - mkt_scenario.loc[mkt_scenario['Scenario']=='Downside', 'Quarter Revenue M'].iloc[0]):.1f}M</div><div class="d">vs base case</div></div>
+                <div class="mkt-kpi-card warn"><div class="k">Total Exposure</div><div class="v">CLP {mkt_risk['Exposure M'].sum():.2f}M</div><div class="d">Mapped downside</div></div>
+                <div class="mkt-kpi-card"><div class="k">Base Quarter Revenue</div><div class="v">CLP {mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0]:.1f}M</div><div class="d">Most probable scenario</div></div>
+                <div class="mkt-kpi-card {'warn' if (mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0] - mkt_scenario.loc[mkt_scenario['Scenario']=='Downside', 'Quarter Revenue M'].iloc[0]) > 0.6 else ''}"><div class="k">Downside Gap</div><div class="v">CLP {(mkt_scenario.loc[mkt_scenario['Scenario']=='Base', 'Quarter Revenue M'].iloc[0] - mkt_scenario.loc[mkt_scenario['Scenario']=='Downside', 'Quarter Revenue M'].iloc[0]):.1f}M</div><div class="d">vs base case</div></div>
             </div>
         """), unsafe_allow_html=True)
 
@@ -7116,7 +7116,7 @@ elif selected_menu == "Marketing":
             st.markdown('<div class="mkt-mini-title">Marketing Risk Exposure by Driver</div>', unsafe_allow_html=True)
             with st.container(border=True):
                 risk_bar = alt.Chart(mkt_risk).mark_bar(cornerRadiusTopRight=7, cornerRadiusBottomRight=7, size=20).encode(
-                    x=alt.X("Exposure M:Q", title="Exposure (S/ M)"),
+                    x=alt.X("Exposure M:Q", title="Exposure (CLP  M)"),
                     y=alt.Y("Risk Driver:N", sort="-x", title=None),
                     color=alt.Color("Likelihood:Q", scale=alt.Scale(scheme="orangered"), legend=None),
                     tooltip=["Risk Driver:N", alt.Tooltip("Exposure M:Q", format=".2f"), alt.Tooltip("Likelihood:Q", format=".1f")],
@@ -7127,7 +7127,7 @@ elif selected_menu == "Marketing":
                 st.altair_chart(style_mkt_chart(risk_bar + risk_txt, height=235), use_container_width=True)
                 render_mkt_ai_reco(
                     "Risk Prioritization",
-                    f"{top_risk_mkt['Risk Driver']} has the highest exposure at S/{top_risk_mkt['Exposure M']:.2f}M.",
+                    f"{top_risk_mkt['Risk Driver']} has the highest exposure at CLP {top_risk_mkt['Exposure M']:.2f}M.",
                     f"Launch mitigation sprint against {top_risk_mkt['Risk Driver']} with weekly executive tracking.",
                     "Improves forecast reliability and reduces downside variance.",
                     level="critical",
@@ -7138,7 +7138,7 @@ elif selected_menu == "Marketing":
             with st.container(border=True):
                 sc_bar = alt.Chart(mkt_scenario).mark_bar(cornerRadiusTopLeft=6, cornerRadiusTopRight=6, size=56).encode(
                     x=alt.X("Scenario:N", title=None),
-                    y=alt.Y("Quarter Revenue M:Q", title="Revenue (S/ M)"),
+                    y=alt.Y("Quarter Revenue M:Q", title="Revenue (CLP  M)"),
                     color=alt.Color("Scenario:N", scale=alt.Scale(domain=["Downside", "Base", "Upside"], range=["#EF4444", "#3B82F6", "#10B981"]), legend=None),
                     tooltip=["Scenario:N", alt.Tooltip("Quarter Revenue M:Q", format=".1f"), alt.Tooltip("New Subs K:Q", format=".1f"), "Probability:N"],
                 )
@@ -7149,7 +7149,7 @@ elif selected_menu == "Marketing":
                 base_rev = mkt_scenario.loc[mkt_scenario["Scenario"] == "Base", "Quarter Revenue M"].iloc[0]
                 render_mkt_ai_reco(
                     "Scenario Planning",
-                    f"Base case is S/{base_rev:.1f}M with balanced probability and controlled upside/downside ranges.",
+                    f"Base case is CLP {base_rev:.1f}M with balanced probability and controlled upside/downside ranges.",
                     "Pre-approve tactical budget shifts for downside protection and upside acceleration.",
                     "Shortens reaction cycles and stabilizes quarter outcomes.",
                 )
@@ -7160,7 +7160,7 @@ elif selected_menu == "Marketing":
             with st.container(border=True):
                 risk_matrix = alt.Chart(mkt_risk).mark_circle(opacity=0.88, stroke="#FFFFFF", strokeWidth=1.2).encode(
                     x=alt.X("Likelihood:Q", title="Likelihood"),
-                    y=alt.Y("Exposure M:Q", title="Exposure (S/ M)"),
+                    y=alt.Y("Exposure M:Q", title="Exposure (CLP  M)"),
                     size=alt.Size("Exposure M:Q", scale=alt.Scale(range=[300, 1800]), legend=None),
                     color=alt.Color("Risk Driver:N", legend=alt.Legend(title=None), scale=alt.Scale(range=["#EF4444", "#F59E0B", "#3B82F6", "#10B981", "#6366F1"])),
                     tooltip=["Risk Driver:N", alt.Tooltip("Likelihood:Q", format=".1f"), alt.Tooltip("Exposure M:Q", format=".2f")],
@@ -7210,7 +7210,7 @@ elif selected_menu == "Marketing":
                 <div style="display: flex; align-items: center;">
                     <span style="font-size: 1.35rem; margin-right: 0.55rem;">⚠️</span>
                     <div>
-                        <strong style="color: #92400E;">Urgent: {top_risk_mkt['Risk Driver']} exposure at S/{top_risk_mkt['Exposure M']:.2f}M</strong>
+                        <strong style="color: #92400E;">Urgent: {top_risk_mkt['Risk Driver']} exposure at CLP {top_risk_mkt['Exposure M']:.2f}M</strong>
                         <div style="color: #B45309; font-size: 0.84rem;">Highest likelihood-impact concentration in current marketing risk portfolio · trigger mitigation in next planning cycle</div>
                     </div>
                 </div>

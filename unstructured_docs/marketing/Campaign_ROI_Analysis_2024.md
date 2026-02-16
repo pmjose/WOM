@@ -205,10 +205,10 @@ Full year 2024 marketing investment of **$18 million** generated **25,500 MQLs**
 |--------|-------|------|-----|----------|-------|
 | Santiago | $4.2M | 7,200 | $583 | $62M | 30% |
 | Santiago Metropolitana | $2.5M | 4,100 | $610 | $35M | 17% |
-| La Libertad | $2.2M | 3,600 | $611 | $28M | 13% |
+| Maule | $2.2M | 3,600 | $611 | $28M | 13% |
 | Valparaiso | $1.8M | 2,800 | $643 | $22M | 10% |
 | Valparaiso | $1.5M | 2,400 | $625 | $18M | 9% |
-| Lambayeque | $1.3M | 2,100 | $619 | $16M | 8% |
+| Atacama | $1.3M | 2,100 | $619 | $16M | 8% |
 | Concepcion | $1.0M | 1,500 | $667 | $11M | 5% |
 | Other Chile | $1.5M | 1,800 | $833 | $12M | 6% |
 | International | $2.0M | - | - | $6M | 3% |

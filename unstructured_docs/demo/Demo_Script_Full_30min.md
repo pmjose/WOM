@@ -9,7 +9,7 @@ This comprehensive demo covers all business areas for WOM Chile executive leader
 
 **Duration:** 30 minutes  
 **Audience:** C-Suite, Board Members, Investors  
-**Currency:** Chilevian Pesos ($)
+**Currency:** Chilean Pesos ($)
 
 ---
 
@@ -157,7 +157,7 @@ This comprehensive demo covers all business areas for WOM Chile executive leader
 **Expected Insights:**
 - Current: 1.28M households passed
 - 2025 target: 1.8M households
-- New regions: Junin, Ica expansion, Ancash
+- New regions: OHiggins, Atacama expansion, Los Rios
 - CapEx allocated: $ 25M for fiber plant
 
 ---
@@ -223,4 +223,4 @@ WOM is positioned to be Chile's leading fiber ISP, and this platform ensures lea
 **Demo Duration:** 30 minutes  
 **Audience:** C-Suite, Board, Investors  
 **Key Message:** Complete business intelligence for Chile's fastest fiber ISP  
-**Currency:** Chilevian Pesos ($)
+**Currency:** Chilean Pesos ($)

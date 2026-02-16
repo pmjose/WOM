@@ -154,7 +154,7 @@ WOM's international expansion into Netherlands, Spain, and Germany represents a 
 | Emergency Services | ✓ | ✓ | ✓ | Compliant |
 | Data Localisation | Partial | Partial | Strict | Compliant |
 | Number Portability | 10 days | 15 days | 3 days | Supported |
-| GDPR | ✓ | ✓ | ✓ | Compliant |
+| Ley 19628 | ✓ | ✓ | ✓ | Compliant |
 
 ### Certification Status
 

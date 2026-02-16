@@ -52,7 +52,7 @@ This demo is designed for CMO/Marketing leadership audiences at WOM Chile, focus
 **Expected Insights:**
 - Santiago Metropolitana: 65% of leads, $ 48 avg CPL
 - Valparaiso: 12% of leads, $ 55 avg CPL, fastest growing
-- La Libertad: 8% of leads, $ 52 avg CPL
+- Maule: 8% of leads, $ 52 avg CPL
 - Concepcion: 5% of leads, $ 62 avg CPL, tourism segment
 - Other regions: 10% of leads, $ 58 avg CPL
 
@@ -131,4 +131,4 @@ WOM's marketing success is built on data-driven decisions - this platform makes 
 **Demo Duration:** 10 minutes  
 **Audience:** CMO, Marketing Directors, Brand Managers  
 **Key Message:** Data-driven marketing intelligence for Chile's fastest growing fiber ISP  
-**Currency:** Chilevian Pesos ($)
+**Currency:** Chilean Pesos ($)

@@ -272,25 +272,25 @@ FROM WOM_NETWORK_STATUS_DIM;
 
 SELECT '=== DATA QUALITY CHECKS ===' AS section;
 
--- Check for Peru-specific data (no UK references)
-SELECT 'Peru Data Validation' AS check_type,
-       'Customers in Peru regions' AS metric,
+-- Check for Chile-specific data
+SELECT 'Chile Data Validation' AS check_type,
+       'Customers in Chile regions' AS metric,
        COUNT(*) AS count
 FROM WOM_CUSTOMER_DIM
-WHERE city IN ('Lima', 'Arequipa', 'Trujillo', 'Chiclayo', 'Piura', 'Cusco', 'Huancayo', 'Iquitos', 'Tacna', 'Puno');
+WHERE city IN ('Santiago', 'Valparaiso', 'Concepcion', 'Temuco', 'Antofagasta', 'Rancagua', 'Puerto Montt', 'Talca', 'Iquique', 'La Serena');
 
--- Check SF Accounts are Peru-based
-SELECT 'SF Accounts Peru Check' AS check_type,
-       SUM(CASE WHEN billing_state IN ('Lima', 'Arequipa', 'La Libertad', 'Lambayeque', 'Piura', 'Cusco', 'Junin', 'Loreto', 'Tacna', 'Puno', 'Callao', 'Ica') THEN 1 ELSE 0 END) AS peru_accounts,
+-- Check SF Accounts are Chile-based
+SELECT 'SF Accounts Chile Check' AS check_type,
+       SUM(CASE WHEN billing_state IN ('Metropolitana', 'Valparaiso', 'Biobio', 'Araucania', 'Maule', 'OHiggins', 'Los Lagos', 'Antofagasta', 'Coquimbo', 'Los Rios', 'Tarapaca', 'Atacama') THEN 1 ELSE 0 END) AS chile_accounts,
        COUNT(*) AS total_accounts,
-       ROUND(100.0 * SUM(CASE WHEN billing_state IN ('Lima', 'Arequipa', 'La Libertad', 'Lambayeque', 'Piura', 'Cusco', 'Junin', 'Loreto', 'Tacna', 'Puno', 'Callao', 'Ica') THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct_peru
+       ROUND(100.0 * SUM(CASE WHEN billing_state IN ('Metropolitana', 'Valparaiso', 'Biobio', 'Araucania', 'Maule', 'OHiggins', 'Los Lagos', 'Antofagasta', 'Coquimbo', 'Los Rios', 'Tarapaca', 'Atacama') THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct_chile
 FROM WOM_SF_ACCOUNTS;
 
--- Check SF Contacts have Peru phone numbers
-SELECT 'SF Contacts Peru Phone Check' AS check_type,
-       SUM(CASE WHEN phone LIKE '+51%' THEN 1 ELSE 0 END) AS peru_phones,
+-- Check SF Contacts have Chile phone numbers (+56)
+SELECT 'SF Contacts Chile Phone Check' AS check_type,
+       SUM(CASE WHEN phone LIKE '+56%' THEN 1 ELSE 0 END) AS chile_phones,
        COUNT(*) AS total_contacts,
-       ROUND(100.0 * SUM(CASE WHEN phone LIKE '+51%' THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct_peru
+       ROUND(100.0 * SUM(CASE WHEN phone LIKE '+56%' THEN 1 ELSE 0 END) / COUNT(*), 1) AS pct_chile
 FROM WOM_SF_CONTACTS;
 
 -- ========================================================================
